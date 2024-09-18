@@ -4,6 +4,8 @@ theme:
   name: material
   language: es
   favicon: assets/images/logo.ico
+  features:
+    - content.code.copy
   palette: 
     - scheme: default
       primary: deep purple
@@ -20,8 +22,21 @@ theme:
   logo: "assets/images/logo.png"
 nav:
   - Página principal: index.md
+  - UD1 - Introducción a las redes de comunicaciones:
+    - Teoría: ud1.md
+    - Práctica 1.1: pr1.1.md
 
-copyright: "2024 José María Pérez Puentes - Licencia CC BY-NC-SA"
+copyright: "2024 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0"
 
 extra:
   generator: true
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences

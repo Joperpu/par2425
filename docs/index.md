@@ -32,13 +32,14 @@ El módulo busca que el alumnado alance los siguientes objetivos expresados como
 * Administra conmutadores estableciendo opciones de configuración para su integración en la red.
 * Administra las funciones básicas de un router estableciendo opciones de configuración para su integración en la red.
 * Configura redes locales virtuales identificando su campo de aplicación.
-* Realiza tareas avanzadas de administración de red analizando y utilizando protocolos dinámicos de encaminamiento.
-* Conecta redes privadas a redes públicas identificando y aplicando diferentes tecnologías.
+* Realiza tareas avanzadas de administración de red analizando y utilizando protocolos dinámicos de encaminamiento (_RA dualizado_).
+* Conecta redes privadas a redes públicas identificando y aplicando diferentes tecnologías (_RA dualizado_).
 
 ## Sesiones
 
-* ¿?
-* ¿?
+* Miércoles de 19:30 a 21:30 horas.
+* Jueves de 17:00 a 19:30 horas.
+* Viernes de 15:00 a 17:00 horas.
 
 ## Contenidos
 
@@ -58,9 +59,11 @@ La metodología de las clases se basará en una estructura teórico-práctica. E
 
 Se realizará mediante la superación de los resultados de aprendizaje. La calificación final del módulo se realizará según la ponderación de los RA que aparecen en la programación didáctica.
 
-## Bibliografía de aula
+Los instrumentos que se usarán para evaluar serán los siguientes:
 
-* ¿?
+* Ejercicios teóricos o prácticos individuales o en grupo.
+* Pruebas teóricas objetivas.
+* Pruebas prácticas objetivas.
 
 ## Evaluación inicial
 
