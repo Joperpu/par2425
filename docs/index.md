@@ -67,4 +67,4 @@ Los instrumentos que se usarán para evaluar serán los siguientes:
 
 ## Evaluación inicial
 
-Enlace en el curso en [Moodle Centros](https://educacionadistancia.juntadeandalucia.es/centros/cordoba/my/).
+Enlace a la [Evaluación inicial](https://forms.gle/kjF5R8CSzgggZoVAA).
