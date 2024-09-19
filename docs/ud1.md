@@ -221,8 +221,6 @@ La topología celular es un modelo utilizado principalmente en redes de comunica
 	* Internet de las Cosas (IoT): Conectividad para dispositivos y sensores distribuidos en áreas amplias.
 	* Comunicaciones de Emergencia: Redes dedicadas para servicios de seguridad pública y respuesta a emergencias.
 
-
-<!--
 ## Sistemas de numeración
 
 Un sistema de numeración es un conjunto de reglas, convenios y símbolos combinados con palabras que nos permiten expresar verbal y gráficamente los números.
@@ -231,5 +229,72 @@ Existen sistema de numeración posicionales y no posicionales. En los primeros s
 
 En los sistemas posicionales cualquier número puede expresarse como suma de los productos de cada símbolo por la base del sistema de numeración elevada a la posición que ocupa ese símbolo.
 
-De manera forma, **X** es un número representado en un sustema de numeración con base **B**. Este número tiene **n** dígitos que cada uno ocupa la posición **i**: X<sub>0</sub>, X<sub>1</sub>, X<sub>2</sub>... X<sub>n</sub> tenemos
--->
+### Sistema de numeración decimal
+
+El sistema decimal, o base 10, emplea para su representación los dígitos 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9. Siendo sus valores posicionales potencia de 10. Por ejemplo:
+
+<center>![Sistema decimal](assets/images/ud1/img08.png){ width="400" }</center>
+
+### Sistema de numeración binario
+
+El sistema binario o base 2, emplea para su representación los dígitos 0 ó 1, siendo sus valores posicionales potencias de 2. Es el sistema más utilizado en los sistemas digitales. Un ejemplo de su valor en función de la posición sería:
+
+<center>![Sistema decimal](assets/images/ud1/img10.png){ width="400" }</center>
+
+A la hora de representarlo en un ordenador, a cada dígito del sistema binario se le denomina _bit_. Al bit más a la derecha en el número se le conoce como el _bit menos significativo_ (LSB). Por el contrario, el bit más a la izquierda del número recibe el nombre de _bit más significativo_ (MSB).
+
+Así, por ejemplo, en el sistema binario encontramos las siguientes agrupaciones básicas de bits:
+
+* Nibble: 4 bits.
+* Byte: 8 bits.
+* Word: 16 bits.
+* Double word: 32 bits.
+* Quadruple word: 64 bits.
+
+### Sistema de numeración hexadecimal
+
+El sistema hexadecimal o base 16, utiliza 16 dígitos para su representación. Los 10 primeros símbolos son los dígitos del 0 al 9, y los restantes se completan con las letras de la A a la F. 
+
+Sus valores posicionales se ven en la siguiente imagen:
+
+<center>![Sistema hexadecimal](assets/images/ud1/img09.png){ width="400" }</center>
+
+### Sistema de numeración octal
+
+El sistema octal, o base 8, utiliza 8 dígitos para su representación (del 0 al 7), siendo sus valores posicionales como los de la siguiente imagen:
+
+<center>![Sistema octal](assets/images/ud1/img11.png){ width="400" }</center>
+
+### Conversión de decimal a otro sistema
+
+Un procedimiento muy empleado para la conversión es el de las divisiones sucesivas, es decir, se divide el número entre el valor de la base sin ibtener decimales. Los cocientes resultantes se dividen nuevamente hasta que sea menor que la base. Por último, se obtiene el número en el nuevo sistema colocando el último cociente como dígito más significativo y los restos de forma ascendente de izquierda a derecha. Por ejemplo, para convertir el número 43 de sistema decimal a binario se realizaría como se muestra en la siguiente imagen:
+
+<center>![Conversión de decimal a binario](assets/images/ud1/img12.png){ width="400" }</center>
+
+Para convertir el número 543 de sistema decimal a hexadecimal sería de la siguiente forma:
+
+<center>![Conversión de decimal a hexadecimal](assets/images/ud1/img13.png){ width="400" }</center>
+
+Para convertir el número 209 de sistema decimal a sistema octal lo realizaríamos de la siguiente manera:
+
+<center>![Conversión de decimal a octal](assets/images/ud1/img14.png){ width="300" }</center>
+
+### Conversión de cualquier sistema a decimal
+
+Por otro lado, podemos usar un método que nos permite convertir un número en cualquier sistema al sistema decimal, simplemente multiplicando cada dígito por su valor posicional según la base del sistema, y finalmente sumando todos los multiplicando obtenidos.
+
+Por ejemplo, para convertir el número 101101 del sistema binario al sistema decimal:
+
+<center>![Conversión de binario a decimal](assets/images/ud1/img15.png){ width="400" }</center>
+
+Para convertir el número hexadecimal 3C05 a decimal lo haríamos de la siguiente forma:
+
+<center>![Conversión de hexadecimal a decimal](assets/images/ud1/img16.png){ width="400" }</center>
+
+Finalmente, para convertir el número 742 en octal a decimal, sería:
+
+<center>![Conversión de octal a decimal](assets/images/ud1/img17.png){ width="350" }</center>
+
+### Juego para practicar conversiones a binario
+
+En el [siguiente enlace](https://learningcontent.cisco.com/games/binary/index.html) puedes encontrar un pequeño juego web para practicar conversiones de decimal a binario y viceversa.
