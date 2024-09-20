@@ -54,7 +54,7 @@ Realiza las siguientes conversiones entre sistemas de numeración, mostrando tod
 
 ## Criterios de evaluación
 
-Esta práctica evalúa los criterios de evaluación **g)** del **RA1**. Para su correción se tendrá en cuenta:
+Esta práctica evalúa el criterio de evaluación **g)** del **RA1**. Para su correción se tendrá en cuenta:
 
 - Exactitud de la Conversión (40%)
 	- Puntuación: El resultado final debe ser correcto según el sistema de numeración solicitado.
