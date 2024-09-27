@@ -12,7 +12,7 @@ Cisco Packet Tracer es una herramienta de simulación de redes desarrollada por 
 
 ## Descripción de la tarea
 
-Completa el [curso gratuito de introducción a Cisco Packet Tracer](https://www.netacad.com/es/courses/getting-started-cisco-packet-tracer?courseLang=es-XL) y documenta con imágenes todas las tareas que realices en él.
+Completa el [curso gratuito de introducción a Cisco Packet Tracer](https://www.netacad.com/es/courses/getting-started-cisco-packet-tracer?courseLang=es-XL) y documenta con imágenes todas las tareas y exámenes que realices en él.
 
 ## Criterios de evaluación
 
