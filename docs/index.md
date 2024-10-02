@@ -1,6 +1,6 @@
 # Planificación y administración de redes
 
-## Introdución
+## Introducción
 
 Bienvenido a los apuntes del módulo profesional de **Planificación y administración de redes** que se imparte en el primer curso del *Ciclo formativo de Grado Superior de Administración de Sistemas Informáticos en Red*.
 
