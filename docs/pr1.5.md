@@ -14,6 +14,8 @@ Cisco Packet Tracer es una herramienta de simulación de redes desarrollada por 
 
 Completa el [curso gratuito de introducción a Cisco Packet Tracer](https://www.netacad.com/es/courses/getting-started-cisco-packet-tracer?courseLang=es-XL) y documenta con imágenes todas las tareas y exámenes que realices en él.
 
+Nota: Si tienes problemas para instalar Cisco Packet Tracer en Ubuntu sigue los pasos que se indican en [este enlace](https://github.com/PetrusNoleto/Error-in-install-cisco-packet-tracer-in-ubuntu-23.10-unmet-dependencies).
+
 ## Criterios de evaluación
 
 Esta práctica evalúa los criterios de evaluación **g)** y **h)** del **RA1**. Para su correción se tendrá en cuenta:
