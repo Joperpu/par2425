@@ -50,9 +50,9 @@ De manera formal, codificar es expresar una información de acuerdo a una norma 
 
 Existen diferentes tipos de código. Algunos ejemplos son:
 
-- Código ASCII:
-- Código EBCDIC:
-- Código BAUDOT:
+- Código ASCII
+- Código EBCDIC
+- Código BAUDOT
 
 ## Transmisión de datos
 
