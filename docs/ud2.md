@@ -499,12 +499,208 @@ Dependiendo de cómo se organice el envío y la verificación de las tramas, se 
 	* Reenvío Selectivo: El emisor retransmite únicamente la trama que fue identificada como errónea. Este método es conocido como rechazo selectivo y es eficiente en términos de ancho de banda, ya que solo se retransmite la información que realmente falló.
 	* Reenvío No Selectivo: El emisor retransmite la trama con errores y todas las tramas que aún están pendientes de confirmación. Este método, denominado rechazo no selectivo, puede ahorrar tiempo en situaciones donde múltiples tramas podrían estar afectadas por errores, pero consume más ancho de banda debido a la retransmisión adicional.
 
-<!-- ## Direccionamiento IP
+## Direccionamiento IP
 ### Introducción al direccionamiento IP
+
+Para que se puedan mover datos entre nodos de uan red es imprescindible que los equipos tengan instalados una serie de programas llamados protocolos. Estos protocolos contienen todos los pasos que se deben seguir para establecer las conexiones, realizar transferencias de información, controlar los errores, etc.
+
+Ya sabemos que la pila de protocolos más generalizada, por ser la utilizada por todos los dispositivos que se conectan a Internet, es TCP/IP, que no es un único protocolo, sino como su propio nombre indica, una pila de programas o protocolos.
+
+Las reglas que define la pila TCP/IP son independientes del funcionamiento del dispositivo y del sistema operativo que lleva instalado. Por esta razón, cualquier dispositivo se puede comunicar con otro a través de Internet.
+
+Ahora bien, para que un dispositivo pueda tener acceso a una red, y en particular a Internet, no basta con tener instalados los protocolos TCP/IP. Es necesario, además, configurar una serie de parámetros de red, como la dirección IP, la máscara de red, la puerta de enlace predeterminada o los puertos de comunicación. También será necesario disponer de, al menos, una dirección de servidor de nombres o DNS.
+
+### El problema del direccionamiento
+
+El mecanismo de direccionamiento permite distinguir a emisor y receptor dentro de la red. De este modo se puede determinar el equipo que envía la información y el equipo al cual va dirigida.
+
+Este mecanismo consiste en asignar un identificador único a cada uno de los equipos de la red y puede diferir en función del nivel de la arquitectura de red. 
+
+En el modelo TCP/IP:
+
+- **Direccionamiento a nivel de transporte**: puertos.
+- **Direccionamiento a nivel de red**: direcciones lógicas (IP).
+- **Direccionamiento a nivel de acceso al medio**: direcciones físicas (MAC).
+
+#### Direccionamiento a nivel de acceso al medio
+
+El nivel de acceso al medio se encarga, entre otras cosas, de comunicar todos los nodos que están conectados al mismo medio compartido (medio de difusión), es decir, permite la comunicación de equipos que pertenecen a la misma red de área local.
+
+Dado que las LAN suelen ser redes de difusión, desde un punto de vista simplificado podemos verlas como un bus, lo cual implica que no haya necesidad de tomar decisiones sobre el camino que ha de seguir la información: lo que un equipo envía se difunde por la red, de tal forma, que se garantiza la llegada hasta su destinatario.
+
+El direccionamiento a este nivel se basa en las direcciones MAC (también conocidas como direcciones físicas) utilizadas en las cabeceras de las tramas. Las direcciones físicas solo permiten distinguir a unos equipos de otros, pero no a unas redes de otras. En el caso en el que tengamos varias redes comunicadas entre sí, no es posible determinar la red a la que pertenece un equipo fijándonos únicamente en su dirección física.
+
+#### Direccionamiento a nivel de red
+
+En el nivel de red se permite la comunicación entre equipos que se encuentran en redes distintas. Para esto es necesaria la intervención de elementos intermedios, los routers, que se encargan de dirigir la información a su destino. Por otro lado, también es necesario un mecanismo de direccionamiento que permita diferenciar no solo a equipos, sino también a unas redes de otras.
+
+En el nivel de red, el direccionamiento no depende de la tecnología y además permite la distinción entre redes. También se le llama direccionamiento lógico (en contraposición al direccionamiento físico visto anteriormente).
+
+El mecanismo más extendido para el direccionamiento a nivel de red es el utilizado en la arquitectura TCP/IP. En este tipo de redes se utiliza el protocolo IP a nivel de red, por lo tanto hablamos de direccionamiento IP.
+
+El modelo TCP/IP, además, utiliza otros protocolos a nivel de red como pueden ser ICMP, ARP, RIP, OSPF, etc. De todos ellos el protocolo IP es el más importante, puesto que define el formato de los paquetes y de las direcciones IP permitiendo resolver el problema del encaminamiento.
+
 ## Direcciones IP
+
+Una dirección IP permite identificar de manera unívoca la ubicación de un equipo en una red, al igual que una dirección postal identifica una casa en una ciudad.
+
+Las direcciones IP (IPv4) tienen 32 bits formados por 4 campos de 8 bits (octeto), separados por puntos. Por tanto, las direcciones IP están en notación binaria, aunque se traducen habitualmente a representación decimal. Actualmente nos encontramos en un periodo de transición donde se está implementando IPv6, una nueva actualización del protocolo IP que pretende solucionar el problema de agotamiento de direcciones. Aunque IPv6 lleva desarrollándose desde el año 1998 (y en uso desde 2012) aún coexiste con IPv4. Se calcula que en 2020 tan solo el 2,96% de las conexiones totales a Internet eran a través de IPv6.
+
+Ejemplo de dirección IP:
+
+<center>01111111.00000000.00000000.00000001 (127.0.0.1 en decimal).</center>
+
+Cada uno de los campos de 8 bits puede tener un valor comprendido entre el 00000000 (0 en decimal) y 11111111 (255 en decimal). De esta forma se pueden obtener hasta 2<sup>32</sup> direcciones distintas, o lo que es lo mismo, aproximadamente 4.000 millones. Por su parte IPv6 permite hasta 2<sup>128</sup> direcciones distintas, es decir, unos 340 sextillones de direcciones (cerca de 670 mil billones de direcciones por cada milímetro cuadrado de la superficie de la Tierra).
+
+### Componentes de una dirección IP
+
+Una dirección IP, al igual que ocurre con una dirección postal, está formada por varias partes:
+
+- **Dirección de red o identificador de red (ID de red)**: Identifica la red en la que está ubicado el equipo. Todos los equipos de la misma red deben tener el mismo ID de red.
+- **Dirección de host o identificador de host (ID de host)**: Identifica un nodo de una red. El ID de host debe ser exclusivo dentro de cada red, es decir, debe ser único para cada ID de red.
+
+### Clases de direcciones IP
+
+Existen cinco clases de direcciones IP: A, B, C, D y E. En la práctica solo se usan 3, ya que las de clase D son para multicast y las de clase E para uso experimental.
+
+Según una IP sea de clase A, B o C variará el número de bytes que dedica a su ID de red y los que dedica a su ID de host.
+
+- En las direcciones IP de clase A, el ID de red es el primer byte y los res restantes constituyen el identificador de host.
+- En las de clase B, el ID de red son los dos primeros bytes, mientras que los dos últimos son de host.
+- En las de clase C, el ID de red son los tres primeros bytes, mientras que el último es de host.
+
+<center>![Clases de direcciones IP](assets/images/ud2/img29.png){ width="500" }</center>
+
+La diferencia fundamental entre estos tres tipos de redes es el tamaño de las mismas, es decir, el número de nodos que pueden añadirse a cada una de ellas y que viene determinado por el número de bits de la IP que se destinan al identificador de host.
+
+Ahora bien, dada una IP, ¿cómo sabemos a qué clase pertenece?
+
+Para distinguir la clase a la que pertenece una dirección IP, tanto si se encuentra en decimal como si se encuentra en binario, debemos fijarnos en los números por lo que comienza.
+
+A continuación aprenderemos a distinguir la clase de una IP tanto en notación decimal como en notación binaria, y seremos capaces de determinar el número máximo de nodos que puede haber en cada una de ellas.
+
+#### IPs en formato decimal
+
+Supongamos que representamos la IP en formato decimal con la siguiente notación:
+
+<center>*w.x.y.z*</center>
+
+donde w, x, y, z son números en decimal del 0 al 255.
+
+En el cuadro siguiente se resume el número de bytes que dedica cada clase al ID de red y al ID de host, así como la clase a la que pertenece una IP en decimal en función de los valores que tome su primer número *w*.
+
+| Clase | IP | ID de red | ID de host | Valores de *w* |
+| :---: | :--: | :---------: | :----------: | :-------------: |
+| A | w.x.y.z | w.0.0.0 | x.y.z | 0 - 127 |
+| B | w.x.y.z | w.x.0.0 | y.z | 128 - 191 |
+| C | w.x.y.z | w.x.y.0 | z | 192 - 223 |
+| D | w.x.y.z | ---  | --- | 224 - 239 |
+| E | w.x.y.z | ---  | --- | 240 - 255 |
+
+##### Direcciones especiales
+
+- **0.0.0.0**: Dirección sin especificar o en blanco. Dirección temporal utilizada por un ordenador a la espera de que se le sea asignada una IP única de forma dinámica (usando DHCP).
+- **127.0.0.1**: Dirección de *este equipo* o localhost. También conocida como dirección de *loopback*, es utilizada por un equipo para referirse a sí mismo. Cualquier dirección del tipo 127.x.x.x es una dirección de *loopback*.
+- **rr...r|00...0**: Dirección base de una red (cuando todos los bits del identificador de host están puestos a cero). Es una dirección que identifica a toda la red en su conjunto. Por ejemplo: 192.168.2.0 ó 172.16.0.0.
+- **rr...r|11...1**: Dirección de difusión de una red (cuando todos los bits del identificador de host están puestos a uno). Permite enviar un paquete en modo broadcast dirigido a todos los equipos de una red concreta.
+- **255.255.255.255**: Dirección de difusión limitada a la red actual. Permite a un equipo enviar un paquete en modo broadcast limitado a todos los equipos de su misma red.
+
+###### Ejercicio de clase
+
+Dada la IP 192.168.10.37, averiguar:
+
+- La clase de la dirección.
+- La dirección base de la red a la que pertenece la IP.
+- La dirección de difusión de la red.
+
+#### IPs en formato binario
+
+Si una dirección IP viene expresada en formato binario, para determinar la clase a la que pertenece nos fijamos en los primeros bits del primer octeto, según se refleja en la tabla que se muestra a continuación:
+
+| Clase | ID de clase | Nº de bits libres para la red | Nº de bits de host | Nº de redes posibles | Nº de hosts posibles |
+| :---: | :--: | :---------: | :----------: | :-------------: | :------: |
+| A | 0 | 7 bits | 24 bits | 2<sup>7</sup>-2=126 | 2<sup>24</sup>-2=16777214 |
+| B | 10 | 14 bits | 16 bits | 2<sup>14</sup>=26384 | 2<sup>16</sup>-2=65534 |
+| C | 110 | 21 bits | 8 bits | 2<sup>21</sup>=2097152 | 2<sup>8</sup>-2=254 |
+| D | 1110 | 28 bits | --- | --- | --- |
+| E | 11110 | 27 bits | --- | --- | --- |
+
+<center>![Clases de direcciones IP en formato binario](assets/images/ud2/img30.png){ width="800" }</center>
+
+### Direcciones de broadcast
+
+En los apartados anteriores hemos visto que a la hora de contabilizar el número de hosts posibles en una red se eliminaba el caso en el que todos los bits de identificación de host eran "1". Esto era debido a que esas IPs se usaban para mensajes de difusión o broadcast dentro de la red. Ese tipo de mensajes son aquellos que van dirigidos a todos los nodos de la red.
+
+Así pues, para obtener la dirección de broadcast de una red, bastará con poner a "1" todos los bits de identificación de host. En formato decimal correspondería con 255 en los octetos de host.
+
+Ejemplo:
+
+- IP: 172.16.4.3
+- Red: 172.16.0.0
+- Broadcast: 172.16.255.255
+
 ## Máscara de red
+
+Otro parámetro que es necesario configurar para conectar un nodo a una red es la máscara de red. Esta consiste en una especia de dirección IP con todos los bits a "1" en el identificador de red, y todos los bits a "0" en el identificador de host. Por lo tanto, la máscara de red permite identificar el número de bits destinados a red y a host.
+
+Cuando un router recibe un paquete con una IP destino, necesita saber a qué red va dirigido. Para ello se fija en la primera parte de la dirección IP, es decir, su dirección de red. La forma de hacerlo es poner a cero todos los bits del número de host. De esta manera sabe si el destino del paquete está en alguna de las redes que interconecta o es necesario enviar el paquete a otro router.
+
+La máscara de red también puede venir expresada como un número que se escribiría a continuación de la IP correspondiente y que indicaría el número de bits de dicha IP que se toman para la dirección de red.
+
+Ejemplo:
+
+- IP: 172.16.4.3
+- Máscara de red en decimal: 255.255.0.0
+- Máscara de red en binario: 11111111.11111111.00000000.00000000
+- Máscara de red abreviada: 172.16.4.3/16
+
 ## Puerta de enlace predeterminada
+
+Además de la dirección IP y de la máscara de red, el equipo debe saber también hacia donde se envían los paquetes que van hacia Internet. A este parámetro se le denomina puerta de enlace predeterminada, pasarela por defecto o default gateway. Su valor es el de la IP del dispositivo que conecta nuestro equipo con otra red.
+
 ## Asignación de direcciones IP a una red
+
+Supongamos que tenemos una red con 4 ordenadores y queremos asignarles direcciones IP
+
+- Primero hay que elegir una clase que tenga capacidad suficiente para el número de ordenadores que tenemos. También hay que tener en cuenta las previsiones de crecimiento de nuestra red.
+- En nuestro caso, elegimos la clase C porque tiene capacidad para 254 equipos y nosotros tenemos solo 4. Por lo tanto, es la clase más pequeña con capacidad suficiente.
+- Las direcciones de clase C tienen el formato r.r.r.h y se corresponden con el rango 192.0.0.0 hasta 223.255.255.255.
+- Elegimos una dirección de red dentro del rango que esté libre (una que nadie más esté utilizando). Por ejemplo, la dirección 200.11.22.0.
+- La dirección de difusión de nuestra red será por tanto 200.11.22.255.
+- El resto de posibles direcciones (desde la 200.11.22.1 hasta la 200.11.22.254) podemos asignarlas libremente a los hosts que necesitemos sin que haya duplicidad.
+
 ## Direcciones privadas
+
+El rápido crecimiento de ordenadores conectados a Internet ha generado un verdadero problema con la falta de direcciones IP. Además, cualquier sistema que use una dirección IP pública susceptible de sufrir un ataque, requiriendo el uso de dispositivos de protección llamados cortafuegos.
+
+Existen direcciones reservadas para uso interno en redes de áreas local. A estas direcciones se las conoce como direcciones privadas:
+
+- Clase A: 10.h.h.h
+- Clase B: 172.16.h.h hasta 172.31.h.h y direcciones APIPA (169.254.h.h)
+- Clase C: 192.168.0.h hasta 192.168.255.h
+- Clase D: G.G.G.G (224.0.0.0 hasta 239.255.255.255)
+
+Las direcciones APIPA (Automatic Private IP Adressing) son las del tipo 169.254.h.h y son asignadas automáticamente por el sistema operativo cuando un equipo no obtiene respuesta del servidor DHCP.
+
+La finalidad es que al menos haya una configuración mínima que permita una configuración básica entre los equipos de una misma red de área local para poder así compartir recursos.
+
 ## IPv6
--->
+
+El protocolo IPv4 se ha venido utilizando desde 1981. Al principio se supuso que 4000 millones de direcciones IP serían más que suficiente, pero la realidad ha sido otra. Para solucionar este problema se ha venido desarrollando y desplegando el protocolo IPv6. IPv6 utiliza direcciones de 16 bytes, en lugar de los 4 que usaba la versión. Además, el formato de la cabecera de los paquetes de IPv6 es más simple y puede ser procesado por los routers en menos tiempo.
+
+Según la norma RFC 5952, las direcciones IPv6, de 128 bits de longitud, se escriben como ocho grupos de cuatro dígitos hexadecimales. Por ejemplo:
+
+<center>FADB:CA58:96B4:77DC:8975:ABB3:C687:87AB</center>
+
+### Reglas para construir direcciones IPv6
+
+Cada una de las palabras de 16 bits se corresponde con 4 dígitos hexadecimales, que pueden variar desde 0000 hasta FFFF. Dentro de cada palabra no hace falta poner los ceros a la izquierda. Por ejemplo, 01AB:0735:0008:... puede simplificarse como 1AB:735:8:...
+
+Si existen varias palabras consecutivas que son igual a cero, se pueden simplificar usando cuatro puntos (::). Por ejemplo, 17AF:570:A03:60:0:0:0:B9, se simplifica como 17AF:570:A03:60::B9. Estos cuatro puntos sólo pueden aparecer una vez.
+
+### Direcciones IPv6 especiales
+
+- ::1. Dirección de loopback. Equivalente a la 127.0.0.1 de IPv4.
+- ::w.x.y.z. Dirección IPv6 sobre IPv4. Se trata de una dirección IPv6 compatible con IPv4 que permite a los paquetes IPv6 viajar encapsulados por redes IPv4. Ej.: ::192.168.1.1.
+- ::FFFF:w.x.y.z. Dirección IPv4 sobre IPv6. Se trata de una dirección que permitirá a los antiguos paquetes IPv4 circular por las nuevas redes IPv6. Ej.: ::FFFF:192.168.1.1.
+- FE8x::M, FE9x::M, FEAx::M y FEBx::M. Direcciones vínculo-local (local-link ). Son direcciones que se configuran automáticamente a partir de la dirección MAC de la tarjeta de red. Para ello es necesario realizar una serie de transformaciones que permiten obtener la M que está compuesta de 64 bits. Estas direcciones se consideran sólo de cliente, lo cual quiere decir que no pueden utilizarse para un servidor que deba escuchar conexiones entrantes. Ej.: Sin un equipo tiene la MAC 00-0C29-C2-52-FF, pueden obtener una IPv6 automáticamente transformando esta MAC al formato de 64 bits, en este caso, 02-0C-29-FF-FE-C2-52-FF, y añadiendo, por ejemplo, el prefijo FE80::, con lo cual, la dirección IPv6 quedaría como FE80::20C:29FF:FEC2:52FF.
