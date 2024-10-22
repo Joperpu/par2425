@@ -80,7 +80,7 @@ El tester realiza pruebas secuenciales de continuidad y cruces sobre cada conduc
 
 ## Criterios evaluación
 
-Esta práctica evalúa los criterios de evaluación **a)**, **b)** y **c)** del **RA2**. Para su correción se tendrá en cuenta:
+Esta práctica evalúa los criterios de evaluación **a)**, **b)** y **c)** del **RA2**. Para su corrección se tendrá en cuenta:
 
 - Montaje y comprobación correcto del cable cruzado (40%).
 - Montaje y comprobación correcto del cable directo (40%).
