@@ -72,7 +72,7 @@ Responde a las siguientes preguntas y documenta aquello que sea necesario. Utili
 
 <center>![Escenario de Cisco Packet Tracer](assets/images/ud2/img33.png)</center>
 
-1. Realiza el Packet Tracer del escenario que se muestra (lo entregarás cuando finalices la tarea). La dirección de red es la 10.0.0.0, y las IPs de los distintos dispositivos son consecutivas desde la primera disponible.
+1. Realiza el Packet Tracer del escenario que se muestra (lo entregarás cuando finalices la tarea). La dirección de red es la 10.0.0.0/8, y las IPs de los distintos dispositivos son consecutivas desde la primera disponible.
 2. Crea una PDU simple que envía un ping del PC de la izquierda al de la derecha. Usa el icono "Add Simple PDU" (el sobre cerrado) arriba a la izquierda. Pincha primero en el origen y después en el destino del ping.
 3. Usa arp -d para limpiar la cache de las resoluciones arp del equipo origen. Así nos aseguramos de que se va a preguntar a toda la red por la MAC del equipo destino.
 4. Entra en el modo simulación, limpia todos los protocolos y añade sólo los protocolos ARP e ICMP.
