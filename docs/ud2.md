@@ -704,3 +704,44 @@ Si existen varias palabras consecutivas que son igual a cero, se pueden simplifi
 - ::w.x.y.z. Dirección IPv6 sobre IPv4. Se trata de una dirección IPv6 compatible con IPv4 que permite a los paquetes IPv6 viajar encapsulados por redes IPv4. Ej.: ::192.168.1.1.
 - ::FFFF:w.x.y.z. Dirección IPv4 sobre IPv6. Se trata de una dirección que permitirá a los antiguos paquetes IPv4 circular por las nuevas redes IPv6. Ej.: ::FFFF:192.168.1.1.
 - FE8x::M, FE9x::M, FEAx::M y FEBx::M. Direcciones vínculo-local (local-link ). Son direcciones que se configuran automáticamente a partir de la dirección MAC de la tarjeta de red. Para ello es necesario realizar una serie de transformaciones que permiten obtener la M que está compuesta de 64 bits. Estas direcciones se consideran sólo de cliente, lo cual quiere decir que no pueden utilizarse para un servidor que deba escuchar conexiones entrantes. Ej.: Sin un equipo tiene la MAC 00-0C29-C2-52-FF, pueden obtener una IPv6 automáticamente transformando esta MAC al formato de 64 bits, en este caso, 02-0C-29-FF-FE-C2-52-FF, y añadiendo, por ejemplo, el prefijo FE80::, con lo cual, la dirección IPv6 quedaría como FE80::20C:29FF:FEC2:52FF.
+
+## Redes inalámbricas
+
+Las redes inalámbricas han revolucionado la comunicación moderna, permitiendo la conexión y transferencia de datos sin la necesidad de cables físicos. Estas redes utilizan ondas de radio para conectar dispositivos como computadoras, smartphones y otros equipos electrónicos, facilitando la movilidad y flexibilidad en hogares, oficinas y espacios públicos. La tecnología inalámbrica es esencial en nuestra vida diaria, ya que nos permite acceder a internet y compartir información desde casi cualquier lugar.
+
+### WLAN (Wireless Local Area Network)
+
+Una Red de Área Local Inalámbrica (WLAN) es un sistema de comunicación que conecta dispositivos dentro de un área geográfica limitada utilizando ondas de radio en lugar de cables. Las WLAN ofrecen numerosas ventajas, como la movilidad de los usuarios dentro del área de cobertura, la facilidad de instalación y configuración, y la reducción de costos asociados con el cableado. Sin embargo, también presentan desafíos, especialmente en términos de seguridad y gestión de interferencias.
+
+### CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)
+
+El protocolo CSMA/CA es fundamental en las redes inalámbricas para gestionar el acceso al medio de transmisión y minimizar las colisiones de datos. Funciona mediante la escucha activa del canal por parte de los dispositivos antes de transmitir. Si el canal está ocupado, el dispositivo espera un tiempo aleatorio antes de volver a intentarlo. Este proceso reduce la probabilidad de que dos dispositivos transmitan simultáneamente, mejorando así la eficiencia y estabilidad de la red. A diferencia de CSMA/CD, utilizado en redes cableadas, CSMA/CA es más adecuado para entornos inalámbricos donde la detección de colisiones es más compleja.
+
+### Frecuencias Inalámbricas de Wi-Fi
+
+El Wi-Fi opera en varias bandas de frecuencia: 2.4 GHz, 5 GHz y, más recientemente, 6 GHz con la introducción de Wi-Fi 6E. La banda de 2.4 GHz ofrece mayor alcance y es más propensa a interferencias debido a la congestión y al uso de otros dispositivos en esta frecuencia. La banda de 5 GHz proporciona mayores velocidades y menos interferencias, pero con un alcance menor. La banda de 6 GHz expande el espectro disponible, permitiendo más canales y mayores anchos de banda, lo que mejora significativamente el rendimiento y reduce la congestión en entornos densos. La elección de la banda adecuada depende de las necesidades específicas de velocidad, alcance y densidad de dispositivos en la red.
+
+### Modos de Red y Tecnologías: Normas IEEE 802.11
+
+Las normas IEEE 802.11 establecen los estándares para las redes inalámbricas de área local. Desde su introducción, han evolucionado para ofrecer mayores velocidades, mejor eficiencia y mayor seguridad. 
+
+- El estándar 802.11b, operando en la banda de 2.4 GHz, ofrecía velocidades de hasta 11 Mbps. 
+- Posteriormente, el 802.11g aumentó la velocidad hasta 54 Mbps en la misma banda. 
+- El 802.11a, operando en 5 GHz, también ofrecía 54 Mbps pero con menos interferencias. 
+- El 802.11n (Wi-Fi 4) introdujo el uso de múltiples antenas (MIMO) y soportó ambas bandas, alcanzando hasta 600 Mbps. 
+- El 802.11ac (Wi-Fi 5) mejoró aún más las velocidades en la banda de 5 GHz, utilizando tecnologías como MU-MIMO y beamforming para alcanzar varios gigabits por segundo. 
+- El 802.11ax (Wi-Fi 6) y el futuro 802.11be (Wi-Fi 7) continúan esta tendencia, ofreciendo mayores velocidades, eficiencia y capacidad para soportar la creciente demanda de dispositivos conectados.
+
+### Topologías de WLAN 802.11
+
+Las redes inalámbricas pueden configurarse en diferentes topologías según las necesidades. La topología ad-hoc permite que los dispositivos se conecten directamente entre sí sin un punto de acceso central, formando una red peer-to-peer. Esta configuración es útil para conexiones temporales o en entornos donde no existe una infraestructura de red. Por otro lado, la topología de infraestructura utiliza un punto de acceso inalámbrico que actúa como hub central, permitiendo que los dispositivos se conecten entre sí y accedan a redes cableadas e internet. Esta es la configuración más común en hogares y oficinas, ofreciendo mayor control, seguridad y capacidad de gestión.
+
+### SSID y SSID Broadcast
+
+El SSID (Service Set Identifier) es el nombre de una red Wi-Fi que permite identificarla entre múltiples redes disponibles. Es esencial para que los dispositivos puedan encontrar y conectarse a la red deseada. El SSID Broadcast es la función mediante la cual el punto de acceso difunde el nombre de la red, haciéndola visible a los dispositivos cercanos. Deshabilitar el SSID Broadcast puede añadir una capa básica de seguridad al ocultar la red de usuarios no autorizados. Sin embargo, esta medida no es totalmente efectiva por sí sola, ya que existen métodos para detectar redes ocultas.
+
+### Seguridad en Redes Inalámbricas
+
+La seguridad es un aspecto crítico en las redes inalámbricas debido a la naturaleza abierta del medio de transmisión. Sin medidas adecuadas, las redes son vulnerables a accesos no autorizados, robo de información y otros ataques. Una de las medidas básicas es el filtrado de direcciones MAC, que permite controlar qué dispositivos pueden conectarse a la red al permitir o denegar el acceso basado en la dirección MAC única de cada dispositivo. Sin embargo, esta medida puede ser superada mediante técnicas de suplantación de direcciones MAC.
+
+Es esencial cambiar las configuraciones predeterminadas del router, como el SSID y las contraseñas de administración, ya que las configuraciones de fábrica suelen ser conocidas y explotables por atacantes. La autenticación de usuarios mediante contraseñas fuertes y la implementación de protocolos de cifrado robustos son fundamentales. Los protocolos de cifrado han evolucionado desde WEP, que es inseguro y no se recomienda, pasando por WPA y WPA2-PSK, que ofrecen mayores niveles de seguridad. WPA2-PSK, utilizando cifrado AES, es ampliamente utilizado y considerado seguro para la mayoría de las aplicaciones. El más reciente, WPA3, introduce mejoras significativas en la seguridad, protegiendo contra ataques de diccionario y ofreciendo cifrado individualizado en redes abiertas. Además, es recomendable mantener el firmware del router actualizado y considerar el uso de VPNs para añadir capas adicionales de seguridad.
