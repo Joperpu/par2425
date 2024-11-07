@@ -166,7 +166,7 @@ Por último debemos de asegurarnos de que nadie pueda conectar con el router WiF
 
 ## Parte 2
 
-Crea un escenario de una red con un router inalámbrico en el que configuraremos un servidor de autenticación Radius. Añade un ordenador portátil y un _smartphone_ que deberán conectarse a dicha red. La autenticación a través del servidor Radius deberá poseer una clave robusta, puedes seguir [los siguientes pasos](assets/images/ud2/img34.png) para generarla.
+Crea un escenario de una red con un router inalámbrico en el que configuraremos un servidor de autenticación Radius. Añade un ordenador portátil que deberá conectarse a dicha red. La autenticación a través del servidor Radius deberá poseer una clave robusta, puedes seguir [los siguientes pasos](assets/images/ud2/img34.png) para generarla.
 
 ## Criterios de calificación
 
@@ -181,7 +181,7 @@ Parte 2 (50%)
 
 - Creación del Escenario de Red con Router Inalámbrico (10%).
 - Configuración de un Servidor de Autenticación Radius (20%).
-- Conexión de un Ordenador Portátil y un Smartphone a la Red (10%).
+- Conexión de un Ordenador Portátil a la red (10%).
 - Uso de una Clave Robusta para la Autenticación (10%).
 
 
