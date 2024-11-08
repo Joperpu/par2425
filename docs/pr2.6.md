@@ -18,8 +18,8 @@ Requisitos:
 - La primera IP disponible de la red será asignada a la puerta de enlace predeterminada.
 - Los switches segmentarán la red con 5 equipos de escritorio por cada uno de ellos.
 - Los servidores de DHCP, Web y Radius poseerán las 3 siguientes IP disponibles, en ese orden, y no serán asignadas dinámicamente.
-- Los ordenadores de escritorio tendrán IPs estáticas consecutivas, desde la décima disponible para todos los hosts de la red en adelante.
-- Los ordenadores portátiles se conectarán a la red a través de su conexión inalámbrica, para lo cual actuará el servidor Radius, y les será asignada una IP facilitada por el servidor de DHCP.
+- Los ordenadores portátiles se conectarán a la red a través de su conexión inalámbrica, para lo cual actuará el servidor Radius, y tendrán IPs estáticas consecutivas, desde la primera disponible para todos los hosts de la red en adelante, tras la asignación de las IPs anteriores.
+- Los ordenadores de escritorio tendrán IPs dinámicas que serán asignadas por el servidor de DHCP, no pudiendo encontrarse ninguna de las IPs asignadas anteriormente dentro del rango del DHCP.
 - La página _index.html_ del servidor web mostrará el mensaje "¡Hola 1º de ASIR!".
 - El servidor Radius tendrá 5 usuarios y contraseñas distintas, para cada equipo portátil que se conecta a la red.
 - Comprueba que desde todos los equipos se puede acceder a la página _index.html_ del servidor web.
