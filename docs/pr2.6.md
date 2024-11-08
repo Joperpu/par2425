@@ -34,8 +34,8 @@ Esta práctica evalúa los criterios de evaluación **a)**, **d)**, **e)** **f)*
     - Creación y conexión correcta de todos los dispositivos (ordenadores, switches, router inalámbrico y servidores).
 2. Esquema de Direccionamiento IP y Configuración de DHCP (25%)
     - Asignación correcta de las direcciones IP al gateway y a los servidores (DHCP, Web y Radius).
-    - Configuración correcta de direcciones IP estáticas en los ordenadores de escritorio.
-	- Configuración adecuada del servidor DHCP para asignar IPs a los portátiles.
+    - Configuración correcta de direcciones IP estáticas en los ordenadores portátiles.
+	- Configuración adecuada del servidor DHCP para asignar IPs a los ordenadores de sobremesa.
 3. Configuración del Servidor Radius y Autenticación Inalámbrica (20%)
 	- Configuración correcta del servidor Radius con 5 usuarios y contraseñas distintas.
 	- Configuración del router inalámbrico para autenticación mediante Radius.
