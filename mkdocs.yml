@@ -37,8 +37,8 @@ nav:
     - Práctica 2.4: pr2.4.md
     - Práctica 2.5: pr2.5.md
     - Práctica 2.6: pr2.6.md
-  - UD3 - Configuración y administración de conmutadores:
-    - Teoría UD3: ud3.md
+  #- UD3 - Configuración y administración de conmutadores:
+    #- Teoría UD3: ud3.md
 
 copyright: "2024 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0"
 
