@@ -21,6 +21,8 @@ Los estándares de Ethernet abarcan tanto los protocolos de la capa 2 como las t
 - **Subcapa LLC (Logical Link Control)**: Esta subcapa toma los datos del protocolo de red, generalmente un paquete IPv4, y añade información de control para facilitar su entrega al nodo de destino. En un ordenador, el LLC puede considerarse como el software del controlador de la tarjeta de red (NIC, Network Interface Card).
 - **Subcapa MAC (Media Access Control)**: Es la subcapa inferior de la capa de enlace de datos y se implementa en hardware, usualmente en la tarjeta de red del ordenador.
 
+<center>![Estándares Ethernet](assets/images/ud3/img01.png){ width="700" }</center>
+
 La subcapa MAC de Ethernet tiene dos funciones principales:
 
 - **Encapsulación de datos**: Este proceso incluye la creación de tramas antes de la transmisión y su desensamblaje al recibirlas. Para formar la trama, la capa MAC añade un encabezado y una cola al paquete de la capa de red, que ya contiene la información de control añadida por la subcapa LLC.
@@ -44,6 +46,8 @@ Anteriormente, mencionamos que la unidad de datos del protocolo en la capa de en
 - Encabezado: Contiene información de direccionamiento y control necesaria para el envío y la recepción.
 - Datos: Corresponde a la Unidad de Datos de Protocolo (PDU) de nivel 3, generalmente un paquete IP.
 - Tráiler: Incluye información para la detección y posible corrección de errores.
+
+<center>![Trama Ethernet](assets/images/ud3/img02.png){ width="700" }</center>
 
 El tamaño de una trama Ethernet varía entre un mínimo de 64 bytes y un máximo de 1518 bytes. Los campos específicos de una trama Ethernet son los siguientes:
 
@@ -133,6 +137,8 @@ Las direcciones IP se utilizan para identificar el origen y el destino de los pa
 
 Por otro lado, las direcciones MAC de Ethernet tienen un propósito distinto: se usan para entregar la trama, que contiene el paquete IP encapsulado, de un dispositivo a otro dentro de la misma red. Si la dirección IP de destino está en la misma red, la dirección MAC de destino en la trama será la del dispositivo final.
 
+<center>![ARP 1](assets/images/ud3/img03.png){ width="700" }</center>
+
 En la figura anterior, observamos que la trama Ethernet de capa 2 incluye lo siguiente:
 
 - **Dirección MAC de destino**: Es la dirección MAC de la NIC Ethernet del servidor de archivos.
@@ -146,6 +152,8 @@ El paquete IP de capa 3 contiene:
 Sin embargo, cuando la dirección IP de destino está en una red remota, la dirección MAC de destino en la trama es la del gateway (puerta de enlace) predeterminado del host.
 
 Cuando el gateway recibe una trama Ethernet, desencapsula la información de capa 2. A través de la dirección IP de destino, determina el siguiente dispositivo en la ruta y encapsula el paquete IP en una nueva trama de enlace de datos para la interfaz de salida. En cada enlace a lo largo del camino, el paquete IP se encapsula en una trama específica para la tecnología de enlace de datos correspondiente a ese enlace. Si el siguiente salto es el destino final, la dirección MAC de destino será la de la NIC Ethernet de ese dispositivo.
+
+<center>![ARP 2](assets/images/ud3/img04.png){ width="700" }</center>
 
 Entonces, ¿cómo se asocian las direcciones IPv4 de los paquetes con las direcciones MAC en cada enlace durante el trayecto hacia el destino? Esto se logra mediante un proceso conocido como Protocolo de Resolución de Direcciones (ARP).
 
@@ -209,3 +217,75 @@ Además, es posible utilizar comandos para eliminar manualmente todas o algunas 
 
 Hace mucho tiempo que Ethernet se convirtió en el protocolo estándar en nivel de enlace de las LAN. Durante todo este tiempo la tecnología de red ha evolucionado y Ethernet con ella, permitiendo la instalación de una red Ethernet con diferentes topologías, tipos de cableado y velocidades de transmisión. Los principales se resumen en la siguiente tabla.
 
+| Tecnología | Velocidad de transmisión | Tipo de cable | Distancia máxima | Topología |
+| ------- | ------ | ------ | ------ | ------ |
+| 10Base2 | 10 Mbit/s | Coaxial | 185 m | Bus (Conector T) |
+| 10BaseT | 10 Mbit/s | Par trenzado | 100 m | Estrella (Hub o Switch) |
+| 10BaseF | 10 Mbit/s | Fibra óptica | 2000 m | Estrella (Hub o Switch) |
+| 100BaseT4 | 100 Mbit/s | Par Trenzado (categoría 3UTP) | 100 m | Estrella, half-duplex y full-duplex |
+| 100BaseTX | 100 Mbit/s | Par Trenzado (categoría 5UTP) | 100 m | Estrella, half-duplex y full-duplex |
+| 100BaseFX | 100 Mbit/s | Fibra óptica | 2000 m | Estrella y full-duplex |
+| 1000BaseT | 1000 Mbit/s | Par Trenzado (categoría 5e o 6UTP) | 100 m | Estrella y full-duplex |
+| 1000BaseSX | 1000 Mbit/s | Fibra óptica (multimodo) | 550 m | Estrella y full-duplex |
+| 1000BaseLX | 1000 Mbit/s | Fibra óptica (monomodo) | 5000 m | Estrella y full-duplex |
+
+## Configuración de switches
+
+La mayor parte de los switches son autoconfigurables. Al conectar dispositivos de red a sus puertos, comienzan a operar de manera independiente, gestionando el flujo de datos en la capa de enlace y dirigiéndolo hacia los recursos conectados en la red. No obstante, existen switches más avanzados que incorporan un sistema operativo y/o una aplicación web para su configuración. Entre estos, los más reconocidos son los de la marca Cisco, una multinacional tecnológica responsable de más del 60% de los routers en Internet.
+
+Los switches de Cisco ejecutan el sistema operativo Cisco IOS y permiten una configuración manual para adaptarse mejor a las necesidades específicas de la red. Esto incluye ajustar parámetros como la velocidad, el ancho de banda y la seguridad de los puertos. Además, los switches Cisco pueden ser administrados tanto localmente como de forma remota. Para gestionar un switch de manera remota, es necesario configurarlo con una dirección IP y una puerta de enlace predeterminada.
+
+### Secuencia de arranque de un switch
+
+Al encenderse un switch Cisco, este sigue la siguiente secuencia de arranque:
+
+1. **Ejecución del POST (Power-On Self-Test)**: El switch inicia un programa de autodiagnóstico almacenado en la memoria ROM. Este POST verifica el correcto funcionamiento de la CPU, la memoria RAM y la sección del dispositivo flash que contiene el sistema de archivos flash.
+2. **Carga del cargador de arranque**: Tras completar el POST exitosamente, el switch carga el software del cargador de arranque. Este pequeño programa, también almacenado en la ROM, se ejecuta inmediatamente después del POST.
+3. **Inicialización de la CPU a bajo nivel**: El cargador de arranque realiza la inicialización básica de la CPU, configurando los registros que controlan la asignación de la memoria física, la cantidad de memoria disponible y su velocidad.
+4. **Montaje del sistema de archivos flash**: El cargador de arranque inicia el sistema de archivos flash presente en la placa del sistema.
+5. **Carga del sistema operativo IOS**: Finalmente, el cargador de arranque localiza y carga en la memoria una imagen del software del sistema operativo IOS, transfiriendo el control del switch a este. La imagen de Cisco IOS es un archivo con extensión .bin.
+6. **Inicio de las interfaces por IOS**: El sistema operativo IOS activa las interfaces utilizando los comandos especificados en el archivo de configuración de arranque, el cual está almacenado en la NVRAM.
+
+### Indicadores led del switch
+
+Un switch Cisco tiene un conjunto de indicadores led que muestran información sobre el estado y el rendimiento del switch. Dependiendo del modelo habrá diferentes indicadores LEDs con un diverso rango de significados.
+
+<center>![LEDs CISCO](assets/images/ud3/img05.png){ width="700" }</center>
+
+En la imagen anterior aparecen los indicadores de la serie Catalyst 2960. Veamos en detalle cuáles son:
+
+- Sistema (System): Indica que el switch está encendido y funcionando de manera correcta.
+    - Si el LED es verde, significa que el switch opera normalmente.
+	- Un LED de color ámbar indica que está recibiendo energía pero no funciona adecuadamente.
+	- Si el LED está apagado, quiere decir que el switch no recibe energía eléctrica porque está desconectado o el dispositivo está dañado.
+
+- Sistema de Alimentación Redundante (RPS): Este LED muestra el estado del sistema RPS, una característica de Cisco que protege al switch de fallos de corriente que podrían reiniciarlo o dañarlo.
+	- Si está apagado, el switch no está conectado a un sistema RPS.
+	- Un LED verde indica que el switch está conectado a un sistema RPS y que este está listo para suministrar energía en caso de fallo de alimentación.
+	- Si el LED verde parpadea, significa que el RPS está conectado pero está suministrando energía a otro dispositivo.
+	- Un LED ámbar indica que el switch está en modo de espera o presenta una condición de fallo.
+	- Si la luz ámbar parpadea, entonces la alimentación del switch ha fallado y el RPS está proporcionando energía.
+
+Los siguientes indicadores LED se utilizan para seleccionar la información que muestran los LEDs de cada puerto del switch. Al presionar el botón Mode repetidamente, se selecciona uno de ellos, y luego, los LEDs de cada puerto mostrarán información relacionada con el modo elegido.
+
+- Estado del Puerto (Port Status): Un LED verde indica que se ha seleccionado el modo de estado del puerto, que es el modo predeterminado. En este caso, cada LED en los puertos del switch muestra:
+	- Si está apagado, no hay enlace; es decir, no hay ningún dispositivo conectado o hay un fallo en el cable.
+	- Una luz verde indica que el puerto está transmitiendo y recibiendo datos.
+	- Si alterna entre verde y ámbar, hay un fallo en el enlace.
+	- Una luz ámbar señala que el puerto ha sido bloqueado.
+
+- Dúplex del Puerto (Port Duplex): Este indicador muestra si el modo dúplex del puerto está activado. En este modo, los LEDs de los puertos indican:
+	- LEDs apagados: el puerto está en modo half-duplex.
+	- LEDs verdes: el puerto está en modo full-duplex.
+
+- Velocidad del Puerto (Port Speed): Indica la velocidad a la que operan los puertos del switch. En este modo, los LEDs de los puertos muestran:
+	- Sin luz: el puerto opera a 10 Mb/s.
+	- Luz verde: opera a 100 Mb/s.
+	- Luz verde parpadeante: el puerto opera a 1 Gb/s.
+
+- Power over Ethernet (PoE): Este indicador muestra información sobre el estado de PoE. Los LEDs de los puertos pueden indicar:
+	- Apagado: el dispositivo conectado al puerto recibe energía de su propia alimentación de CA.
+	- Verde: el puerto está suministrando energía al dispositivo conectado.
+	- Ámbar: el puerto tiene PoE deshabilitado; por defecto, está habilitado.
+	- Alternando entre verde y ámbar: PoE está siendo denegado, generalmente porque el dispositivo requiere más energía de la que el switch puede proporcionar.
+	- Ámbar parpadeante: PoE no está disponible debido a un fallo.

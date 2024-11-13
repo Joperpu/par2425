@@ -189,4 +189,4 @@ Parte 2 (50%)
 
 Crea un archivo ZIP con la documentación y los archivos de los escenarios de Cisco Packet Tracer, y súbelo en el lugar de la plataforma Moodle Centros habilitado para ello, con el siguiente nombre:
 
-**Apellido1Apellido2_Nombre_PAR_UD2_P5.pdf**
+**Apellido1Apellido2_Nombre_PAR_UD2_P5.zip**

@@ -30,7 +30,7 @@ Documenta todo el proceso con las capturas de pantallas y las explicaciones que 
 
 Esta práctica evalúa los criterios de evaluación **a)**, **d)**, **e)** **f)**, y **g)** del **RA2**. Para su corrección se tendrá en cuenta:
 
-1. Configuración y Diseño de la Red (20%)
+1. Configuración y Diseño de la Red (25%)
     - Creación y conexión correcta de todos los dispositivos (ordenadores, switches, router inalámbrico y servidores).
 2. Esquema de Direccionamiento IP y Configuración de DHCP (25%)
     - Asignación correcta de las direcciones IP al gateway y a los servidores (DHCP, Web y Radius).
@@ -39,16 +39,14 @@ Esta práctica evalúa los criterios de evaluación **a)**, **d)**, **e)** **f)*
 3. Configuración del Servidor Radius y Autenticación Inalámbrica (20%)
 	- Configuración correcta del servidor Radius con 5 usuarios y contraseñas distintas.
 	- Configuración del router inalámbrico para autenticación mediante Radius.
-4. Configuración del Servidor Web (15%)
+4. Configuración del Servidor Web (20%)
     - Instalación y configuración correcta del servidor web.
     - La página index.html muestra el mensaje “¡Hola 1º de ASIR!”.
 5. Verificación y Pruebas (10%)
 	- Comprobación de conectividad y acceso exitoso a la página web desde todos los dispositivos.
-6. Documentación (10%)
-	- Documentación completa del proceso con capturas de pantalla y explicaciones pertinentes.
 
 ## Entrega de la práctica
 
 Crea un archivo ZIP con la documentación y el archivo del escenario de Cisco Packet Tracer, y súbelo en el lugar de la plataforma Moodle Centros habilitado para ello, con el siguiente nombre:
 
-**Apellido1Apellido2_Nombre_PAR_UD2_P6.pdf**
+**Apellido1Apellido2_Nombre_PAR_UD2_P6.zip**
