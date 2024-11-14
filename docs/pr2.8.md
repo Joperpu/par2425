@@ -42,7 +42,14 @@ Recursos:
 
 Esta práctica evalúa los criterios de evaluación **a)**, **d)**, **e)** **f)**, y **g)** del **RA2**. Para su corrección se tendrá en cuenta:
 
-
+1. Comprensión teórica (50%)
+    - Preguntas 1 a 17: Respuestas claras y correctas que demuestren comprensión de los conceptos fundamentales del cableado estructurado.
+2. Análisis práctico (20%)
+    - Pregunta 18: Estudio detallado de la longitud máxima del cableado Ethernet y cálculo preciso del precio, incluyendo desgloses y justificaciones.
+3. Simulación en Cisco Packet Tracer (20%)
+    - Pregunta 19: Simulación correcta del CPD del departamento y del aula, siguiendo las pautas del vídeo y demostrando habilidades prácticas en el uso de la herramienta.
+4. Presentación y redacción (10%)
+    - Organización del contenido, claridad en la exposición, uso adecuado de terminología técnica y ortografía.
 
 ## Entrega de la tarea
 
