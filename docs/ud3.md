@@ -6,15 +6,15 @@ En el modelo OSI hay dos capas tan estrechamente relacionadas que, en el modelo 
 
 La capa de enlace de datos del modelo OSI (Capa 2) tiene las siguientes responsabilidades:
 
-- Detección y corrección de errores: Su función principal es identificar y corregir todos los errores que puedan ocurrir en la línea de comunicación dentro de la misma red.
-- Control de flujo: Se asegura de que un emisor rápido no sature a un receptor más lento, evitando así la pérdida innecesaria de datos.
-- Gestión del medio compartido: En redes donde existe un único medio compartido para la transmisión de información, esta capa se encarga de distribuir su uso entre los diferentes nodos.
+- **Detección y corrección de errores**: Su función principal es identificar y corregir todos los errores que puedan ocurrir en la línea de comunicación dentro de la misma red.
+- **Control de flujo**: Se asegura de que un emisor rápido no sature a un receptor más lento, evitando así la pérdida innecesaria de datos.
+- **Gestión del medio compartido**: En redes donde existe un único medio compartido para la transmisión de información, esta capa se encarga de distribuir su uso entre los diferentes nodos.
 
 En la notación de la capa 2, los dispositivos de red conectados al medio de transmisión se denominan nodos. Estos nodos son responsables de crear y reenviar tramas. La capa de enlace de datos OSI es la encargada de gestionar el intercambio de tramas Ethernet entre los nodos de origen y destino a través de un medio de red físico.
 
 ## Ethernet
 
-Ethernet es la tecnología LAN más utilizada a nivel mundial. Opera en las capas de enlace de datos y física del modelo OSI, y corresponde a la capa de acceso a la red en el modelo de Internet. Es una familia de tecnologías de red definidas en los estándares IEEE 802.2 y 802.3.
+Ethernet es la tecnología LAN más utilizada a nivel mundial. Opera en las capas de enlace de datos y física del modelo OSI, y corresponde a la capa de acceso al medio en el modelo TCP/IP. Es una familia de tecnologías de red definidas en los estándares IEEE 802.2 y 802.3.
 
 Los estándares de Ethernet abarcan tanto los protocolos de la capa 2 como las tecnologías de la capa 1. Ethernet divide sus funciones en dos subcapas:
 
@@ -332,3 +332,147 @@ A continuación, veremos cómo asignar un nombre de host y una dirección IP a u
 
 ### Nombres de dispositivo
 
+Al configurar un dispositivo de red, uno de los primeros pasos es asignarle un nombre de dispositivo único o nombre de host. Los nombres de host aparecen en el indicador del CLI, pueden utilizarse en varios procesos de autenticación entre dispositivos y deben incluirse en los mapas de red.
+
+Si no se configura explícitamente un nombre para el dispositivo, Cisco IOS asigna un nombre predeterminado de fábrica. En el caso de los switches Cisco IOS, el nombre predeterminado es Switch. Si todos los dispositivos de red mantuvieran el nombre predeterminado, sería difícil identificar cada uno de manera individual. Por ejemplo, al acceder a un dispositivo remoto mediante SSH, es crucial confirmar que se está conectado al dispositivo correcto.
+
+Elegir nombres adecuados facilita recordar, analizar e identificar los dispositivos en la red. Los requisitos para los nombres son:
+
+- Comenzar con una letra.
+- No contener espacios.
+- Terminar con una letra o un dígito.
+- Contener letras, dígitos o guiones medios.
+- Tener una longitud máxima de 64 caracteres.
+
+Los nombres de host utilizados en el IOS del dispositivo distinguen entre mayúsculas y minúsculas. Para configurar un nombre de host en el dispositivo, siga estos pasos:
+	
+1. Inicie sesión en el dispositivo utilizando uno de los métodos mencionados anteriormente.
+2. Acceda al modo privilegiado con el comando enable.
+3. Ingrese al modo de configuración global con el comando configure terminal.
+4. Ejecute el comando hostname seguido del nombre deseado para el switch y presione la tecla Intro.
+
+### Interfaz virtual del switch (SVI)
+
+Los switches son dispositivos de capa 2 (nivel de enlace) que disponen de puertos físicos para conectar diferentes equipos. Estos puertos no son compatibles con las direcciones IP de capa 3 (nivel de red). Para asignar una dirección IP a un switch, se utilizan una o más interfaces virtuales de switch (SVI). Estas SVI son interfaces virtuales porque no tienen hardware físico asociado en el dispositivo; se crean mediante software.
+
+La SVI permite administrar un switch de forma remota a través de la red utilizando una conexión IPv4. Cada switch viene configurado por defecto con una SVI, que es la interfaz VLAN1. Por lo tanto, la dirección IP asignada a la SVI se utiliza para acceder al switch de manera remota. No es necesario tener una dirección IP para que el switch realice sus funciones básicas.
+
+Para acceder al switch de forma remota, es necesario configurar una dirección IP y una máscara de subred en la SVI. Para configurar una SVI en un switch, ejecutaremos los siguientes comandos:
+
+```
+Switch>enable 
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 192.168.20.1 255.255.255.0
+Switch(config-if)#no shutdown
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+Switch(config-if)#
+```
+
+### Acceso mediante Telnet
+
+Para abrir una sesión del IOS en un switch mediante Telnet tenemos previamente que configurar este método de acceso. Esta configuración implica dos pasos:
+
+1. Establecer una dirección IP en el dispositivo, que para el caso de los switches ya la hemos visto en el apartado anterior asignando una dirección IP a la SVI.
+2. Configurar una línea virtual VTY que veremos a continuación.
+
+Las líneas de terminal virtual (VTY) habilitan el acceso remoto al dispositivo. La línea VTY, que se utilizan para acceder por Telnet o SSH, debe estar protegida mediante contraseña. Para ello ejecutamos los siguientes comandos:
+
+```
+Switch>enable Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#line vty 0 15
+Switch(config-line)#password cisco
+Switch(config-line)#login 
+Switch(config-line)#exit 
+Switch(config)#
+```
+
+Entramos al modo de línea VTY con el comando de configuración global line vty 0 15. Muchos switches de Cisco admiten hasta 16 líneas VTY que se numeran del 0 al 15. Luego, especificamos la contraseña de VTY con el comando password password. Por último, habilitamos el acceso a VTY con el comando login. Una vez configurada una dirección IP y la línea virtual VTY podemos abrir una sesión con IOS mediante Telnet.
+
+### Acceso remoto seguro por SSH
+
+Telnet no es seguro, ya que los datos en sus paquetes se transmiten sin cifrar. Por este motivo, es especialmente recomendable habilitar SSH en los dispositivos para disponer de un método de acceso remoto seguro. Es posible configurar un dispositivo Cisco para que admita conexiones SSH. Para ello, debemos realizar tres acciones:
+	
+1. Configurar una dirección IP en una interfaz virtual (SVI).
+2. Configurar SSH en el dispositivo Cisco.
+3. Configurar el acceso a las interfaces virtuales.
+
+Primero, el dispositivo debe tener asignada una dirección IP. Para lograr esto, es necesario configurar la interfaz virtual del switch.
+
+```
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z. Switch(config)#interface vlan 1
+
+Switch(config-if)#ip address 192.168.20.1 255.255.255.0
+Switch(config-if)#no shutdown
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+Switch(config-if)#
+```
+
+A continuación, se muestra la sucesión de comandos para habilitar SSH en el switch:
+
+```
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#hostname S1
+S1(config)#ip domain-name cisco.com
+S1(config)#crypto key generate rsa
+The name for the keys will be: S1.cisco.com
+Choose the size of the key modulus in the range of 360 to 2048
+for your
+ General Purpose Keys. Choosing a key modulus greater than 512
+may take
+ a few minutes.
+How many bits in the modulus [512]: 1024
+% Generating 1024 bit RSA keys, keys will be non-exportable...
+[OK]
+S1(config)# username usuario secret cisco
+*mar 1 1:13:48.23: %SSH-5-ENABLED: SSH 1.99 has been enabled
+S1(config)# ip ssh version 2
+S1(config)# 
+```
+
+1. Asigne un nombre de host único y configure el nombre de dominio de la red utilizando el comando ip domain-name en el modo de configuración global.
+2. Es necesario generar claves secretas asimétricas para que el dispositivo pueda cifrar el tráfico SSH. Para crear la clave SSH, use el comando crypto key generate rsa en el modo de configuración global. Se le pedirá que especifique la longitud del módulo en bits. Tenga en cuenta que el tamaño del módulo determina la longitud de la clave y puede configurarse entre 360 y 2048 bits. Cuanto mayor sea el módulo, más segura será la clave, pero también aumentará el tiempo de cifrado y descifrado. La longitud mínima recomendada para el módulo es de 1024 bits.
+3. Cree una entrada de nombre de usuario en la base de datos local utilizando el comando username en el modo de configuración global.
+4. SSH admite las versiones 1 y 2. Al habilitar SSH, se muestra por defecto la versión 1.99. Podemos verificar esto con el comando show ip ssh en el modo EXEC privilegiado. Debido a que la versión 1 tiene vulnerabilidades conocidas, se recomienda habilitar únicamente la versión 2. Activamos la versión 2 de SSH utilizando el comando ip ssh version 2 en el modo de configuración global.
+
+Por último hay que configurar las líneas de terminal virtual (VTY) que habilitan el acceso remoto al dispositivo por SSH. Para ello realizamos lo siguiente:
+
+```
+S1(config)# line vty 0 4
+S1(config-line)# login local
+S1(config-line)# transport input ssh
+S1(config-line)# exit
+S1(config)#
+```
+
+Los comandos anteriores hemos utilizado las cinco primeras líneas VTY (0 a 4) para acceso por SSH. Ahora se puede acceder remotamente al router solo con SSH. En la siguiente imagen se observa una conexión desde un PC conectado a un puerto del switch.
+
+<center>![SSH](assets/images/ud3/img06.png){ width="350" }</center>
+
+Para mostrar los datos de la versión y de configuración de SSH en el dispositivo que se configuró como servidor SSH, usamos el comando show ip ssh. En el ejemplo, se habilitó la versión 2 de SSH. Para revisar las conexiones SSH al dispositivo usamos el comando show ssh.
+
+### Acceso por consola
+
+Se trata de un puerto de administración que permite acceder al switch cuando no está conectado a la red. Este puerto ofrece un canal de gestión dedicado que se utiliza exclusivamente con fines de mantenimiento del dispositivo.
+
+La ventaja de emplear un puerto de consola es que es posible acceder al dispositivo sin necesidad de realizar una configuración previa, a diferencia de lo que ocurre al acceder mediante Telnet o SSH. Sin embargo, presenta el inconveniente de que se requiere acceso físico al dispositivo para conectar un ordenador, equipado con un puerto serie RS232, al puerto de consola del switch utilizando un cable especial. Luego, se inicia una sesión con el IOS mediante un software de emulación de terminal como PuTTY desde el PC.
+
+<center>![Consola](assets/images/ud3/img07.png){ width="700" }</center>
+
+El cable de consola posee en un extremo un conector serial DB-9 que se conecta al puerto serie RS232 del PC, y en el otro extremo un conector RJ-45 que se enchufa al puerto de consola del dispositivo. En los equipos Cisco, contamos con un puerto de consola dedicado exclusivamente a fines administrativos.
+
+<center>![Consola](assets/images/ud3/img08.png){ width="700" }</center>
+
+Podemos probar una conexión mediante el software de simulación de red PacketTracer. Si creamos el siguiente escenario en el que conectamos un portátil al switch 2960 con un cable de consola.
