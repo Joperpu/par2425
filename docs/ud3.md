@@ -344,12 +344,12 @@ Elegir nombres adecuados facilita recordar, analizar e identificar los dispositi
 - Contener letras, dígitos o guiones medios.
 - Tener una longitud máxima de 64 caracteres.
 
-Los nombres de host utilizados en el IOS del dispositivo distinguen entre mayúsculas y minúsculas. Para configurar un nombre de host en el dispositivo, siga estos pasos:
+Los nombres de host utilizados en el IOS del dispositivo distinguen entre mayúsculas y minúsculas. Para configurar un nombre de host en el dispositivo se deben seguir los siguientes pasos:
 	
-1. Inicie sesión en el dispositivo utilizando uno de los métodos mencionados anteriormente.
-2. Acceda al modo privilegiado con el comando enable.
-3. Ingrese al modo de configuración global con el comando configure terminal.
-4. Ejecute el comando hostname seguido del nombre deseado para el switch y presione la tecla Intro.
+1. Iniciar sesión en el dispositivo utilizando uno de los métodos mencionados anteriormente.
+2. Acceder al modo privilegiado con el comando **enable**.
+3. Acceder al modo de configuración global con el comando **configure terminal**.
+4. Ejecutar el comando **hostname** seguido del nombre deseado para el switch.
 
 ### Interfaz virtual del switch (SVI)
 
@@ -475,4 +475,78 @@ El cable de consola posee en un extremo un conector serial DB-9 que se conecta a
 
 <center>![Consola](assets/images/ud3/img08.png){ width="700" }</center>
 
-Podemos probar una conexión mediante el software de simulación de red PacketTracer. Si creamos el siguiente escenario en el que conectamos un portátil al switch 2960 con un cable de consola.
+Podemos probar una conexión mediante Cisco Packet Tracer. Si creamos el siguiente escenario en el que conectamos un portátil al switch 2960 con un cable de consola.
+
+<center>![Consola](assets/images/ud3/img09.png){ width="400" }</center>
+
+El ordenador portátil está conectado a través del puerto RS232 y el switch mediante el puerto de consola. Al acceder al portátil, en la pestaña “Escritorio”, seleccionamos “Terminal”. Aceptamos los parámetros de conexión predeterminados y hacemos clic en el botón “Aceptar”. Observaremos que se muestra la interfaz de texto del Cisco IOS.
+
+<center>![Consola](assets/images/ud3/img10.png){ width="700" }</center>
+
+Los parámetros de conexión por defecto para el software de emulación de terminal serían los siguientes:
+
+- **Bits por segundo**: 9600.
+- **Bits de datos**: 8.
+- **Paridad**: ninguna.
+- **Bits de parada**: 1.
+- **Control de flujo**: ninguno.
+
+### Contraseñas
+
+Los dispositivos de red, incluso los enrutadores inalámbricos para uso doméstico, deben tener siempre contraseñas configuradas para limitar el acceso administrativo. El Cisco IOS puede configurarse para utilizar contraseñas de forma jerárquica y permitir diferentes niveles de privilegios de acceso al dispositivo de red.
+
+#### Modo EXEC privilegiado
+
+La contraseña más importante a configurar es la que permite el acceso al modo EXEC privilegiado. Para proteger este acceso, utilice el comando de configuración global como se muestra en el siguiente ejemplo, donde establecemos la clave “cisco” para ingresar al modo EXEC privilegiado.
+
+```
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#enable secret cisco
+Switch(config)#
+```
+
+Tras esto, si salimos del modo de configuración global y EXEC privilegiado podemos comprobar que si volvemos a entrar en él nos pedirá la clave.
+
+#### Modo EXEC de usuario
+
+Para proteger el acceso a EXEC de usuario, el puerto de consola debe estar configurado. Para ello podemos realizar los siguiente:
+
+```
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#line console 0
+Switch(config-line)#password clase
+Switch(config-line)#login
+Switch(config-line)#exit
+Switch(config)#
+```
+
+Accedemos al modo de configuración de la línea de consola con el comando global line console 0. El número cero se usa para indicar la primera (y en la mayoría de los casos, la única) interfaz de consola. Luego, establecemos la contraseña para el modo EXEC de usuario con el comando password contraseña. Finalmente, activamos el acceso al modo EXEC de usuario utilizando el comando login. A partir de ahora, el acceso a la consola requerirá una contraseña antes de poder entrar en el modo EXEC de usuario.
+
+#### Cifrado de contraseñas
+
+Los archivos **startup-config** y **running-config** muestran la mayoría de las contraseñas en texto plano. Esto representa una amenaza de seguridad, ya que cualquier persona con acceso a estos archivos puede ver las contraseñas utilizadas.
+
+Para cifrar las contraseñas, se puede utilizar el comando global de configuración **service password-encryption**. Este comando aplica un cifrado básico a todas las contraseñas que no estén cifradas. Cabe destacar que este cifrado solo se aplica a las contraseñas dentro del archivo de configuración y no a las contraseñas mientras se transmiten por la red. El objetivo de este comando es prevenir que individuos no autorizados puedan visualizar las contraseñas en el archivo de configuración.
+
+#### Mensajes de aviso
+
+Si bien las contraseñas son una forma de impedir que personas no autorizadas accedan a la red, es fundamental proporcionar un método que informe que solo el personal autorizado debe intentar acceder al dispositivo. Para lograr esto, podemos añadir un mensaje de aviso al inicio de sesión del dispositivo. Estos avisos pueden ser cruciales en procesos legales en caso de demandas por acceso no autorizado. En algunos sistemas legales, no se permite la acusación ni siquiera el monitoreo de usuarios a menos que haya una notificación visible.
+
+Para crear un mensaje de aviso del día en un dispositivo de red, utilice el comando de configuración global **banner motd #mensaje del día#**. El símbolo # en la sintaxis del comando se denomina carácter delimitador y se coloca antes y después del mensaje. El delimitador puede ser cualquier carácter siempre que no aparezca dentro del mensaje, por lo que a menudo se usan símbolos como #. Una vez ejecutado el comando, el aviso aparecerá en todos los intentos posteriores de acceso al dispositivo hasta que se elimine.
+
+Dado que cualquier persona que intente iniciar sesión puede ver estos avisos, es importante redactar el mensaje con cuidado. El contenido o las palabras exactas del aviso dependerán de las leyes locales y de las políticas de la empresa. Debe dejar claro que solo el personal autorizado tiene permiso para acceder al dispositivo. Además, el aviso puede incluir información sobre cierres programados del sistema y otras notificaciones que afecten a todos los usuarios de la red.
+
+### Verificación de los métodos de acceso
+
+Disponemos de algunas de las opciones del comando show que son útiles para verificar las características configurables de un switch. Se exponen en la siguiente tabla:
+
+| Comando | Descripción |
+| ----- | ------ |
+| **show interfaces [id-interfaz]** | Muestra el estado y la configuración de la interfaz |
+| **show ip [id-interfaz]** | Muestra información IP de una interfaz |
+| **show ip ssh** | Muestra la configuración de ssh |
+| **show ssh** | Muestra información sobre ssh |
