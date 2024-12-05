@@ -383,7 +383,8 @@ Para abrir una sesión del IOS en un switch mediante Telnet tenemos previamente 
 Las líneas de terminal virtual (VTY) habilitan el acceso remoto al dispositivo. La línea VTY, que se utilizan para acceder por Telnet o SSH, debe estar protegida mediante contraseña. Para ello ejecutamos los siguientes comandos:
 
 ```
-Switch>enable Switch#configure terminal
+Switch>enable 
+Switch#configure terminal
 Enter configuration commands, one per line. End with CNTL/Z.
 Switch(config)#line vty 0 15
 Switch(config-line)#password cisco
@@ -392,7 +393,7 @@ Switch(config-line)#exit
 Switch(config)#
 ```
 
-Entramos al modo de línea VTY con el comando de configuración global line vty 0 15. Muchos switches de Cisco admiten hasta 16 líneas VTY que se numeran del 0 al 15. Luego, especificamos la contraseña de VTY con el comando password password. Por último, habilitamos el acceso a VTY con el comando login. Una vez configurada una dirección IP y la línea virtual VTY podemos abrir una sesión con IOS mediante Telnet.
+Entramos al modo de línea VTY con el comando de configuración global line vty 0 15. Muchos switches de Cisco admiten hasta 16 líneas VTY que se numeran del 0 al 15. Luego, especificamos la contraseña de VTY con el comando password. Por último, habilitamos el acceso a VTY con el comando login. Una vez configurada una dirección IP y la línea virtual VTY podemos abrir una sesión con IOS mediante Telnet.
 
 ### Acceso remoto seguro por SSH
 
