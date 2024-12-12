@@ -551,3 +551,527 @@ Disponemos de algunas de las opciones del comando show que son útiles para veri
 | **show ip [id-interfaz]** | Muestra información IP de una interfaz |
 | **show ip ssh** | Muestra la configuración de ssh |
 | **show ssh** | Muestra información sobre ssh |
+
+## Gestión de la tabla de direcciones MAC
+
+Aunque la tabla MAC de un switch se llena habitualmente de manera dinámica, también es posible realizar ciertas operaciones manuales sobre ella. Entre las opciones disponibles encontramos las siguientes.
+
+### Visualizar la tabla de direcciones MAC
+
+Para comprobar el contenido de la tabla de direcciones MAC, basta con utilizar el comando show mac-address-table desde el modo EXEC privilegiado. A continuación, se muestra un ejemplo:
+
+```
+Switch#show mac-address-table
+      Mac Address Table
+-------------------------------------------
+Vlan Mac Address Type Ports
+---- ----------- -------- -----
+ 1 0001.6375.a091 DYNAMIC Fa0/1
+ 1 0030.f231.a174 DYNAMIC Fa0/6
+ 1 00d0.ff1a.04a2 DYNAMIC Fa0/5
+Switch#
+```
+
+### Borrado de la tabla de direcciones MAC
+
+Cuando un switch se reinicia, su tabla MAC se vacía automáticamente. Sin embargo, si deseamos eliminar manualmente todas las entradas de la tabla MAC sin necesidad de reiniciar el switch, podemos utilizar el comando clear mac-address-table desde el modo EXEC privilegiado. A continuación, se muestra un ejemplo de cómo realizarlo.
+
+```
+Switch#show mac-address-table
+ Mac Address Table
+-------------------------------------------
+Vlan Mac Address Type Ports
+---- ----------- -------- -----
+ 1 0001.6375.a091 DYNAMIC Fa0/1
+ 1 0030.f231.a174 DYNAMIC Fa0/6
+ 1 00d0.ff1a.04a2 DYNAMIC Fa0/5
+Switch#
+Switch#clear mac-address-table
+Switch#show mac-address-table
+ Mac Address Table
+-------------------------------------------
+Vlan Mac Address Type Ports
+---- ----------- -------- -----
+Switch#
+```
+
+Este procedimiento es especialmente útil para reiniciar el proceso de aprendizaje de direcciones MAC sin afectar el funcionamiento continuo del switch.
+
+## Seguridad del switch
+
+En los siguientes apartados veremos aspectos relativos a la seguridad del switch.
+
+### Puertos sin utilizar
+
+Un método sencillo que muchos administradores emplean para mejorar la seguridad de la red y prevenir accesos no autorizados es desactivar todos los puertos del switch que no estén en uso. Por ejemplo, si un switch cuenta con 24 puertos y solo tres conexiones Fast Ethernet están activas, es recomendable inhabilitar los 21 puertos restantes que no se están utilizando.
+
+Para deshabilitar un puerto específico, se utiliza el comando shutdown en el modo de configuración del puerto correspondiente.
+
+A continuación, se muestra un ejemplo de cómo desactivar el puerto 4 de un switch:
+
+```
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#interface fa0/4
+Switch(config-if)#shutdown
+
+%LINK-5-CHANGED: Interface FastEthernet0/4, changed state to
+administratively down
+Switch(config-if)#exit
+Switch(config)#
+```
+
+En caso de que sea necesario reactivar un puerto previamente deshabilitado, se puede habilitar utilizando el comando no shutdown.
+
+Deshabilitar puertos uno por uno puede ser una tarea extensa y tediosa. Para simplificar este proceso, es posible aplicar configuraciones a varios puertos de forma simultánea. Cuando se necesita configurar un rango de puertos en un switch, se emplea el comando interface range.
+
+A continuación, se muestra un ejemplo de cómo deshabilitar los puertos del 5 al 24 de un switch:
+
+```
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#interface range fa0/5-24
+Switch(config-if-range)#shutdown
+
+%LINK-5-CHANGED: Interface FastEthernet0/5, changed state to
+administratively down
+%LINK-5-CHANGED: Interface FastEthernet0/6, changed state to
+administratively down
+
+%LINK-5-CHANGED: Interface FastEthernet0/24, changed state to
+administratively down
+Switch(config-if-range)#exit
+Switch(config)#exit
+Switch#
+```
+
+En el ejemplo anterior, se ha omitido la salida generada por el cambio de estado de los puertos para simplificar la presentación del comando.
+
+Aunque el proceso de habilitar e inhabilitar puertos pueda resultar largo y laborioso, su implementación contribuye significativamente a mejorar la seguridad de la red, lo que justifica plenamente el tiempo y el esfuerzo invertidos.
+
+### Seguridad de puertos
+
+Una manera eficaz de proteger los puertos de un switch es mediante la implementación de una funcionalidad llamada seguridad de puertos (port security). Esta característica permite convertir un puerto en seguro configurando los siguientes parámetros:
+
+- **Número máximo de direcciones MAC permitidas en un puerto**: Este parámetro limita la cantidad de dispositivos que pueden conectarse al puerto, ayudando a prevenir accesos no autorizados.
+- **Direcciones MAC permitidas en un puerto**: Con este ajuste, se especifican las direcciones MAC de los dispositivos autorizados a conectarse al puerto, de manera que únicamente estos dispositivos puedan acceder al mismo.
+
+Cuando un puerto se configura como seguro y se alcanza el número máximo de direcciones MAC permitidas, cualquier intento de conexión con una dirección MAC no autorizada resultará en una violación de seguridad.
+
+Las direcciones MAC configuradas como seguras no solo se almacenan en la tabla de direcciones MAC estándar del switch, sino también en una tabla específica de direcciones MAC seguras. Esta última se utiliza para gestionar y monitorear las direcciones configuradas como seguras.
+
+A continuación, se muestra un ejemplo basado en un mapa de red para ilustrar esta funcionalidad:
+
+<center>![Seguridad de puertos](assets/images/ud3/img11.png){ width="350" }</center>
+
+En esta red básica, se procederá a configurar la seguridad de puertos en las interfaces Fa0/1 y Fa0/2 para protegerlas frente a accesos no autorizados.
+
+#### Requisitos previos
+
+La funcionalidad de seguridad de puertos requiere los siguientes pasos previos:
+
+1. Configurar el puerto en modo de acceso con el comando switchport mode access.
+2. Habilitar la seguridad de puertos en la interfaz utilizando el comando switchport port-security.
+
+#### Configuración en un puerto individual
+
+Para configurar la seguridad de puertos en la interfaz Fa0/1, se ejecutan los siguientes comandos:
+
+```
+S0>enable
+S0#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+S0(config)#interface fa0/1
+S0(config-if)#switchport mode access
+S0(config-if)#switchport port-security
+S0(config-if)#
+```
+
+#### Configuración en un rango de puertos
+
+Si se necesita configurar varias interfaces de manera simultánea, se emplea el comando interface range. Por ejemplo, para habilitar la seguridad de puertos en Fa0/1 y Fa0/2, se utiliza:
+
+```
+S0(config)#interface range fa0/1-2
+S0(config-if-range)#switchport mode access
+S0(config-if-range)#switchport port-security
+```
+
+#### Configuración del número máximo de direcciones MAC seguras
+
+Para limitar el número de direcciones MAC permitidas en un puerto, se utiliza el comando switchport port-security maximum seguido del número deseado. Por defecto, cada puerto permite una dirección MAC.
+
+```
+S0(config-if)#switchport port-security maximum 2
+```
+
+#### Tipos de direcciones MAC seguras
+
+- **Estáticas**: Configuradas manualmente. Estas direcciones se almacenan en la tabla de direcciones MAC y en la configuración en ejecución. Solo los dispositivos con estas direcciones pueden conectarse al puerto.
+
+Ejemplo:
+
+```
+S0(config-if)#switchport port-security mac-address 00A1.B2C3.D4E5
+```
+
+- **Dinámicas**: Detectadas automáticamente y almacenadas únicamente en la tabla de direcciones MAC. Se eliminan al reiniciar el switch.
+
+- **Persistentes (sticky)**: Detectadas dinámicamente o configuradas manualmente, pero también almacenadas en la configuración en ejecución, lo que permite su retención incluso después de reinicios si se guardan los cambios.
+
+Ejemplo:
+
+```
+S0(config-if)#switchport port-security mac-address sticky
+```
+
+#### Persistencia de las direcciones MAC
+
+Las direcciones MAC configuradas de manera estática o persistente se guardan en la configuración en ejecución (running-config). Para asegurarse de que estas configuraciones persistan tras un reinicio, es necesario guardar la configuración en ejecución en la configuración de inicio (startup-config). Si no se realiza este paso, las direcciones se perderán al reiniciar el dispositivo o desactivar la interfaz.
+
+Con esta configuración básica, los puertos del switch estarán protegidos y limitados a dispositivos autorizados.
+
+#### Dirección MAC segura estática
+
+Cuando se configura una dirección MAC segura estática en un puerto, se utiliza el comando switchport port-security mac-address dirección_mac en el modo de configuración de la interfaz. A continuación, se muestra un ejemplo donde se configura el puerto Fa0/1 para que solo permita la conexión del servidor con una dirección MAC específica.
+
+##### Configuración de una dirección MAC segura estática
+
+1. Configuración del puerto Fa0/1:
+
+```
+S0(config)#interface fa0/1
+S0(config-if)#switchport port-security maximum 1
+S0(config-if)#switchport port-security mac-address 0009.7c13.a073
+```
+
+En esta configuración:
+
+- Se establece el número máximo de direcciones MAC en el puerto como 1.
+- Se asigna estáticamente la dirección MAC del servidor al puerto.
+
+2. Verificación de la configuración en la tabla de direcciones MAC seguras:
+
+```
+S0#show port address
+Secure Mac Address Table
+------------------------------------------------------------
+Vlan    Mac Address       Type               Ports
+----    -----------       ----               -----
+1       0009.7C13.A073    SecureConfigured   FastEthernet0/1
+------------------------------------------------------------
+Total Addresses in System : 0
+Max Addresses limit in System : 1024
+```
+
+La dirección MAC del servidor aparece como SecureConfigured en la tabla de direcciones MAC seguras.
+
+3. Confirmación en el archivo de configuración en ejecución:
+
+```
+S0#show running-config
+Building configuration...
+...
+!
+interface FastEthernet0/1
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address 0009.7C13.A073
+!
+...
+```
+
+La dirección MAC segura estática se encuentra en la configuración en ejecución, lo que permite mantenerla tras reiniciar el switch si se guarda la configuración.
+
+###### Verificación del estado de la seguridad del puerto
+
+El estado de la seguridad del puerto se puede consultar con el comando show port-security interface fa0/1:
+
+```
+S0#show port-security interface fa0/1
+Port Security              : Enabled
+Port Status                : Secure-up
+Violation Mode             : Shutdown
+Aging Time                 : 0 mins
+Aging Type                 : Absolute
+SecureStatic Address Aging : Disabled
+Maximum MAC Addresses      : 1
+Total MAC Addresses        : 1
+Configured MAC Addresses   : 1
+Sticky MAC Addresses       : 0
+Last Source Address:Vlan   : 0009.7C13.A073:1
+Security Violation Count   : 0
+```
+
+Este comando muestra que:
+
+- La seguridad está habilitada (Port Security: Enabled).
+- El puerto está operativo (Port Status: Secure-up).
+- La última dirección MAC detectada corresponde al servidor configurado.
+
+###### Prueba de violación de seguridad
+
+Si un dispositivo no autorizado intenta conectarse, se genera una violación de seguridad y el puerto se desactiva. Por ejemplo, si se desconecta el servidor y se conecta un PC, al enviar una trama el switch detectará la dirección MAC no permitida. El estado del puerto será:
+
+```
+S0#show port-security interface fa0/1
+Port Security              : Enabled
+Port Status                : Secure-shutdown
+Violation Mode             : Shutdown
+Aging Time                 : 0 mins
+Aging Type                 : Absolute
+SecureStatic Address Aging : Disabled
+Maximum MAC Addresses      : 1
+Total MAC Addresses        : 1
+Configured MAC Addresses   : 1
+Sticky MAC Addresses       : 0
+Last Source Address:Vlan   : 0004.9A6B.D7EB:1
+Security Violation Count   : 1
+```
+
+En esta salida:
+
+- El puerto está desactivado (Port Status: Secure-shutdown).
+- La dirección MAC detectada es la del PC que causó la violación.
+- Se registra una violación de seguridad (Security Violation Count: 1).
+
+Este comportamiento asegura que el puerto permanece seguro y solo permite dispositivos autorizados.
+
+#### Dirección MAC segura persistente
+
+Cuando se desea convertir una dirección MAC detectada dinámicamente en una dirección segura persistente y agregarla a la configuración en ejecución, se utiliza el comando switchport port-security mac-address sticky en el modo de configuración de la interfaz.
+
+##### Configuración de direcciones MAC seguras persistentes
+
+###### Habilitar el aprendizaje por persistencia
+
+El aprendizaje por persistencia convierte automáticamente todas las direcciones MAC detectadas dinámicamente, incluso las existentes, en direcciones seguras persistentes. Estas se almacenan en la tabla de direcciones y en la configuración en ejecución.
+
+1. Configuración inicial del puerto:
+
+```
+S0(config)#interface fa0/2
+S0(config-if)#switchport port-security
+S0(config-if)#switchport port-security maximum 2
+```
+
+2. Habilitar el aprendizaje por persistencia:
+
+```
+S0(config-if)#switchport port-security mac-address sticky
+```
+
+###### Verificar las direcciones MAC seguras persistentes
+
+Después de habilitar el aprendizaje por persistencia, las direcciones MAC se convierten en persistentes. Por ejemplo, si un PC ya estaba conectado, su dirección MAC se detecta como segura persistente:
+
+```
+S0#show port address
+Secure Mac Address Table
+------------------------------------------------------------
+Vlan    Mac Address       Type               Ports
+----    -----------       ----               -----
+1       0004.9A6B.D7EB    SecureSticky       FastEthernet0/2
+------------------------------------------------------------
+```
+
+###### Agregar una dirección MAC segura manualmente
+
+Se pueden definir direcciones seguras persistentes manualmente utilizando el comando switchport port-security mac-address sticky dirección_mac.
+
+Ejemplo de configuración:
+
+```
+S0(config-if)#switchport port-security mac-address sticky 0002.16DA.B506
+```
+
+Verificación en la tabla de direcciones:
+
+```
+S0#show port address
+Secure Mac Address Table
+------------------------------------------------------------
+Vlan    Mac Address       Type               Ports
+----    -----------       ----               -----
+1       0004.9A6B.D7EB    SecureSticky       FastEthernet0/2
+1       0002.16DA.B506    SecureSticky       FastEthernet0/2
+------------------------------------------------------------
+```
+
+###### Guardar la configuración en ejecución
+
+Para preservar las direcciones seguras tras un reinicio, se debe guardar la configuración en ejecución en la configuración de inicio:
+
+```
+S0#copy running-config startup-config
+```
+
+##### Estado del puerto con direcciones seguras persistentes
+
+El estado del puerto muestra información detallada sobre las direcciones seguras configuradas:
+
+```
+S0#show port-security interface fa0/2
+Port Security              : Enabled
+Port Status                : Secure-up
+Violation Mode             : Shutdown
+Maximum MAC Addresses      : 2
+Total MAC Addresses        : 2
+Sticky MAC Addresses       : 2
+```
+
+##### Violaciones de seguridad
+
+Si un tercer dispositivo intenta conectarse al puerto, superando el límite configurado, se produce una violación de seguridad. El puerto entra en estado Secure-shutdown:
+
+```
+S0#show port-security interface fa0/2
+Port Security              : Enabled
+Port Status                : Secure-shutdown
+Violation Mode             : Shutdown
+Last Source Address:Vlan   : 0002.1740.57EC:1
+Security Violation Count   : 1
+```
+
+Para recuperar el puerto, es necesario solucionar la violación y reactivarlo manualmente.
+
+##### Desactivar el aprendizaje por persistencia
+
+Si se desactiva el aprendizaje por persistencia con el comando no switchport port-security mac-address sticky, las direcciones persistentes permanecen en la tabla de direcciones, pero se eliminan de la configuración en ejecución.
+
+Para preservar las configuraciones, es necesario guardarlas antes de reiniciar el switch:
+
+```
+S0#copy running-config startup-config
+```
+
+Esta funcionalidad es útil para gestionar dispositivos de forma dinámica y garantizar la seguridad de la red mediante un control detallado de las conexiones permitidas.
+
+#### Borrado de la tabla de direcciones MAC seguras
+
+Cuando se agrega una dirección MAC segura persistente, permanece en la tabla de direcciones por un tiempo que puede configurarse mediante el comando switchport port-security aging time minutos en el modo de configuración de la interfaz. Este tiempo puede variar entre 0 y 1440 minutos:
+
+- 0 (por defecto): Las direcciones MAC seguras permanecen indefinidamente, hasta que se reinicie el switch o se eliminen manualmente.
+
+##### Configuración del tiempo de persistencia
+
+Ejemplo para configurar el tiempo de persistencia a 60 minutos:
+
+```
+S0(config)#interface fa0/2
+S0(config-if)#switchport port-security aging time 60
+```
+
+En este caso, las direcciones MAC seguras persistentes se eliminarán automáticamente de la tabla después de 60 minutos.
+
+##### Eliminación de direcciones MAC seguras
+
+Para eliminar direcciones MAC seguras de la tabla de manera manual, se utiliza el comando clear port-security { all | configured | sticky | dynamic } en el modo de ejecución privilegiado. Cada argumento permite seleccionar qué direcciones eliminar:
+
+- **all**: Elimina todas las direcciones MAC seguras de la tabla.
+- **configured**: Borra únicamente las direcciones MAC configuradas estáticamente.
+- **sticky**: Elimina las direcciones seguras persistentes.
+- **dynamic**: Elimina las direcciones detectadas dinámicamente.
+
+Ejemplo para eliminar únicamente las direcciones seguras persistentes:
+
+```
+S0#clear port-security sticky
+```
+
+#### Modos de violación de seguridad
+
+Cuando un dispositivo se conecta a un puerto del switch protegido y su dirección MAC no figura en la lista de direcciones permitidas, se produce una violación de seguridad. El switch puede configurarse para responder ante estas violaciones mediante uno de los modos de violación de seguridad.
+
+El comportamiento del switch varía según el modo configurado en el puerto:
+	
+1. **Protect (Proteger)**:
+	- Cuando se alcanza el límite de direcciones MAC permitidas, las tramas provenientes de direcciones MAC desconocidas se descartan.
+	- No se envía ninguna notificación al administrador sobre la violación de seguridad.
+	- Este modo evita interrupciones en el puerto pero no genera alertas.
+2. **Restrict (Restringir)**:
+	- Similar al modo Protect, descarta las tramas con direcciones de origen desconocidas cuando se alcanza el límite de direcciones MAC permitidas.
+	- A diferencia de Protect, genera notificaciones de violación, como logs o SNMP traps, para alertar al administrador.
+	- También incrementa el contador de violaciones de seguridad.
+3. **Shutdown (Desactivar)**:
+	- Este es el modo predeterminado. Ante una violación de seguridad, el puerto se desactiva automáticamente y entra en estado err-disabled.
+	- El LED del puerto se apaga y el contador de violaciones de seguridad aumenta.
+	- Para reactivar el puerto, es necesario ejecutar los comandos shutdown y no shutdown en la interfaz afectada.
+
+#### Recuperación de un puerto
+
+Cuando ocurre una violación de seguridad y la interfaz se desactiva, es posible reactivarla mediante el siguiente procedimiento. Este proceso incluye deshabilitar y luego habilitar nuevamente la interfaz con los comandos shutdown y no shutdown.
+
+Reactivación de una interfaz desactivada
+
+1. Acceder al modo de configuración global:
+
+```
+S0#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+```
+
+2. Acceder al puerto desactivado, por ejemplo, Fa0/1:
+
+```
+S0(config)#interface fa0/1
+```
+
+3. Desactivar el puerto con el comando shutdown:
+
+```
+S0(config-if)#shutdown
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to administratively down
+```
+
+4. Reactivar el puerto con el comando no shutdown:
+
+```
+S0(config-if)#no shutdown
+```
+
+Tras ejecutar los comandos anteriores, es posible verificar el estado de la interfaz utilizando el comando show port-security interface [id-interfaz]. Por ejemplo:
+
+```
+S0(config-if)#do show port-security interface fa0/1
+Port Security              : Enabled
+Port Status                : Secure-down
+Violation Mode             : Shutdown
+Aging Time                 : 0 mins
+Aging Type                 : Absolute
+SecureStatic Address Aging : Disabled
+Maximum MAC Addresses      : 1
+Total MAC Addresses        : 1
+Configured MAC Addresses   : 1
+Sticky MAC Addresses       : 0
+Last Source Address:Vlan   : 00E0.8F55.3AB1:1
+Security Violation Count   : 1
+```
+
+- Secure-down: El puerto está activo pero no tiene un dispositivo conectado que coincida con una dirección MAC permitida.
+- Secure-up: El puerto pasa a este estado cuando se conecta un dispositivo autorizado.
+
+
+#### Verificación del puerto
+
+Para revisar la configuración de seguridad en una interfaz específica o en todo el switch, se utiliza el comando show port-security:
+
+1. Verificar la seguridad de todas las interfaces del switch:
+
+```
+S0#show port-security
+```
+
+2. Verificar la seguridad de una interfaz específica:
+
+```
+S0#show port-security interface fa0/1
+```
+
+Este comando proporciona detalles sobre:
+
+- El estado del puerto.
+- El número de direcciones MAC configuradas.
+- Violaciones de seguridad registradas.
