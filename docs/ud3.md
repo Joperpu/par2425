@@ -1075,3 +1075,594 @@ Este comando proporciona detalles sobre:
 - El estado del puerto.
 - El número de direcciones MAC configuradas.
 - Violaciones de seguridad registradas.
+
+## Etherchannel
+
+En una topología conmutada, los enlaces entre switches soportan más tráfico al transmitir tramas desde un switch que conecta varios dispositivos hacia otro switch con dispositivos conectados.
+
+De todos los puertos disponibles en un switch, se recomienda utilizar los puertos Gigabit Ethernet, ya que ofrecen un mayor ancho de banda que los puertos FastEthernet. Sin embargo, en ocasiones esto no es suficiente y es necesario aumentar el ancho de banda entre switches para evitar cuellos de botella.
+
+Un EtherChannel es una interfaz lógica que agrupa varias interfaces físicas para proporcionar mayor ancho de banda, balanceo de carga y tolerancia a fallos. Por ejemplo, si se agrupan 4 puertos FastEthernet en un único EtherChannel, se obtiene una interfaz lógica con un ancho de banda de 400 Mbps. Es posible agrupar hasta 8 puertos en un único EtherChannel.
+
+<center>![Etherchannel](assets/images/ud3/img12.png){ width="700" }</center>
+
+En la figura anterior se observan dos switches conectados mediante 4 enlaces FastEthernet, cada uno con un ancho de banda de 100 Mbps. Al combinar estos enlaces mediante un EtherChannel, se obtiene un ancho de banda total de 400 Mbps. Para lograrlo, es necesario configurar el EtherChannel en ambos switches, de forma que se gestione la comunicación de datos entre ellos.
+
+Un EtherChannel se puede configurar para que funcione en uno de los siguientes tres modos:
+	1.	PAgP (Port Aggregation Protocol).
+	2.	LACP (Link Aggregation Control Protocol).
+	3.	On.
+
+Con los dos primeros modos (PAgP y LACP), se utiliza un protocolo de negociación para determinar qué puertos se activan en el EtherChannel. En cambio, con el modo On, no se realiza ninguna negociación.
+
+### Configurar Etherchannel
+
+Al configurar un EtherChannel, es necesario seguir los siguientes pasos:
+
+1. **Crear la interfaz lógica del EtherChannel**: Se utiliza el comando interface port-channel número en el modo de configuración global.
+
+2. **Especificar las interfaces físicas que forman el EtherChannel y configurar el protocolo**: Esto se realiza con el comando channel-group número mode modo en el modo de configuración de la interfaz.
+	
+3. **Establecer el criterio de balanceo de carga del EtherChannel**: Se utiliza el comando port-channel load-balance criterio en el modo de configuración global.
+
+El modo de operación del EtherChannel puede configurarse con alguno de los siguientes protocolos:
+
+- LACP (Link Aggregation Control Protocol):
+	- Definido en el estándar IEEE 802.3ad.
+	- Permite la conexión de switches Cisco con switches de otras marcas que cumplen el estándar.
+- PAgP (Port Aggregation Protocol):
+	- Protocolo propietario de Cisco.
+	- Solo está disponible en switches Cisco.
+
+Al asignar el port-channel creado a las interfaces físicas, es necesario especificar el número del port-channel y el modo de operación. Los modos disponibles son:
+
+- **desirable**: Utiliza el protocolo PAgP. El puerto inicia la negociación con el otro extremo, que debe estar configurado en modo auto.
+- **auto**: Utiliza el protocolo PAgP. El puerto espera paquetes de negociación desde el otro extremo, que debe estar configurado en modo desirable.
+- **active**: Utiliza el protocolo LACP. El puerto inicia la negociación de forma activa con el otro extremo, que debe estar configurado en modo passive.
+- **passive**: Utiliza el protocolo LACP. El puerto acepta los paquetes de negociación desde el otro extremo, que debe estar configurado en modo active.
+- **on**: No se realiza ninguna negociación. Ambos extremos deben configurarse en este modo para que el EtherChannel funcione correctamente. Este modo se utiliza cuando uno o ambos switches no soportan los protocolos PAgP o LACP. En este caso, es necesario que los dos extremos coincidan en velocidad y modo de transmisión.
+
+Supongamos un caso básico donde dos switches están conectados mediante dos puertos Gigabit Ethernet y se desea crear un EtherChannel con un ancho de banda de 2 Gbps.
+
+<center>![Etherchannel](assets/images/ud3/img13.png){ width="700" }</center>
+
+Para crear la interfaz lógica de un EtherChannel, se debe ejecutar el siguiente comando en el modo de configuración global:
+
+```
+S1(config)#interface port-channel 1
+S1(config-if)#
+```
+
+A continuación, se asignan las interfaces físicas al port-channel creado. En este ejemplo, se seleccionan las dos interfaces GigabitEthernet:
+
+```
+S1(config)#interface range g0/1-2
+S1(config-if-range)#channel-group 1 mode desirable
+S1(config-if-range)#
+```
+
+Cuando los puertos de ambos extremos negocian para establecer el EtherChannel, parámetros como la velocidad, el estado troncal y el identificador VLAN se configuran automáticamente.
+
+En este ejemplo, se ha utilizado el protocolo PAgP en el switch S1 con el modo desirable. Por tanto, en el otro extremo del enlace (switch S2), los puertos deben configurarse en modo auto, permitiendo que la negociación sea iniciada por el primer extremo:
+
+```
+S2(config)#interface range g0/1-2
+S2(config-if-range)#channel-group 1 mode auto
+S2(config-if-range)#
+```
+
+También es posible asignar el port-channel directamente a las interfaces físicas sin necesidad de crear la interfaz lógica previamente. En este caso, el port-channel se crea automáticamente al asignarlo a las interfaces.
+
+Por ejemplo, si se ejecutan los siguientes comandos:
+
+```
+S1(config)#interface range g0/1-2
+S1(config-if-range)#channel-group 1 mode desirable
+Creating a port-channel interface Port-channel 1
+S1(config-if-range)#
+```
+
+Aparece un mensaje indicando que se ha creado la interfaz Port-channel 1 de manera automática.
+
+### Balanceo de carga
+
+El balanceo de carga en un EtherChannel determina qué enlace físico se utiliza para enviar una trama desde un switch a otro. Para realizar este balanceo, el sistema operativo IOS toma el patrón binario de las direcciones involucradas en la trama o paquete, lo reduce a un valor numérico y selecciona uno de los enlaces del canal.
+
+El balanceo de carga puede basarse en la dirección MAC, la dirección IP (ya que el paquete IP va encapsulado en el campo de datos de la trama), tanto en origen como en destino, o en una combinación de ambas. El método elegido se aplica a todos los EtherChannels configurados en el switch.
+
+Para configurar el balanceo de carga, se utiliza el comando de configuración global:
+
+```
+port-channel load-balance modo
+```
+
+**Modos de balanceo de carga disponibles**
+
+1.	**dst-ip**: Utiliza la dirección IP de destino para distribuir los paquetes:
+	- Paquetes enviados desde la misma dirección IP hacia diferentes direcciones IP de destino pueden ser transmitidos por diferentes puertos del canal.
+	- Paquetes desde diferentes direcciones IP de origen hacia la misma IP de destino se enviarán siempre por el mismo enlace.
+2. **dst-mac**: Utiliza la dirección MAC de destino para distribuir los paquetes:
+	- Paquetes enviados al mismo destino se transmiten por el mismo puerto.
+	- Paquetes enviados a diferentes destinos se distribuyen por distintos puertos.
+3. **src-dst-ip**: Combina las direcciones IP de origen y destino (operación XOR con ambas):
+	- Paquetes entre un host específico y un destino específico se envían por el mismo puerto.
+	- Cada combinación diferente de origen y destino se distribuye por distintos puertos.
+4. **src-dst-mac**: Combina las direcciones MAC de origen y destino (operación XOR con ambas):
+	- Paquetes entre un host de origen y un destino específico se transmiten por el mismo puerto.
+	- Cada combinación única de origen y destino utiliza un puerto diferente.
+5. **src-ip**: Utiliza la dirección IP de origen para distribuir los paquetes:
+	- Paquetes desde diferentes direcciones IP de origen utilizan puertos diferentes.
+	- Paquetes enviados desde la misma dirección IP utilizan el mismo puerto.
+6. **src-mac**: Utiliza la dirección MAC de origen para distribuir los paquetes:
+	- Paquetes desde diferentes hosts utilizan puertos diferentes.
+	- Paquetes desde el mismo host utilizan el mismo puerto.
+
+La elección del método de balanceo de carga depende de la posición del switch en la red y del tipo de tráfico que necesita distribuirse equitativamente.
+
+Por ejemplo, si se tiene un EtherChannel en el que cuatro PCs se comunican con un router:
+
+- Como el router tiene una única dirección MAC, se recomienda configurar el balanceo de carga en el switch basado en la dirección de origen. Esto garantiza que el switch utiliza todo el ancho de banda hacia el router.
+- Por otro lado, en el router, el balanceo de carga debe basarse en la dirección de destino porque el tráfico será distribuido entre las múltiples direcciones de los PCs.
+
+<center>![Balanceo de carga](assets/images/ud3/img14.png){ width="350" }</center>
+
+Siguiendo con nuestro ejemplo, si queremos configurar el balanceo de carga para que el switch S1 utilice como criterio la dirección MAC de origen y el switch S2 utilice la dirección MAC de destino, se deben ejecutar los siguientes comandos:
+
+Configuración en el switch S1
+
+```
+S1>enable
+S1#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+S1(config)#port-channel load-balance src-mac
+S1(config)#
+```
+
+Configuración en el switch S2
+
+```
+S2>enable
+S2#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+S2(config)#port-channel load-balance dst-mac
+S2(config)#
+```
+
+### Verificación de la configuración de Etherchannel
+
+| Comando | Descripción |
+| ---- | ----- |
+|show etherchannel summary | Muestra información resumida de los etherchannels configurados |
+| show etherchannel portchannel | Muestra información de la configuración de etherchannels |
+
+## STP
+
+STP (Spanning Tree Protocol) es un protocolo de la capa de enlace que permite la existencia de caminos redundantes en la red, al mismo tiempo que previene la formación de bucles.
+
+Para que una red Ethernet funcione de manera correcta, debe existir únicamente un camino activo entre dos dispositivos finales. Cuando hay múltiples caminos activos, pueden formarse bucles en la red, lo cual genera problemas como:
+
+- Recepción de mensajes duplicados por parte de los dispositivos finales.
+- Los switches pueden aprender direcciones MAC de los dispositivos en múltiples interfaces.
+
+Estos problemas pueden provocar una red inestable.
+
+La operación del protocolo STP es transparente para los dispositivos finales. Esto significa que los dispositivos no son capaces de detectar si están conectados a un segmento simple de LAN o a una LAN conmutada con múltiples segmentos.
+
+El propósito principal de STP es evitar la creación de bucles al conectar switches en una red con caminos redundantes. Esta redundancia es necesaria para:
+
+- Tener enlaces de respaldo que se activen únicamente en caso de fallo en alguno de los enlaces principales.
+- Garantizar que los usuarios puedan seguir utilizando la red incluso si ocurre una falla en un enlace.
+
+Sin el protocolo STP, no sería posible contar con enlaces redundantes, ya que estos provocarían bucles y saturación de la red.
+
+En una red donde existen dos enlaces redundantes entre SW1 y SW2, se crea un bucle potencial. Por ejemplo, si PC3 envía tráfico de difusión hacia PC4, este tráfico circularía de manera continua entre ambos switches, saturando la red.
+
+<center>![Balanceo de carga](assets/images/ud3/img15.png){ width="700" }</center>
+
+Sin embargo, al ejecutarse STP en los switches, uno de los enlaces entre SW1 y SW2 será bloqueado por el protocolo. De esta manera:
+
+- El otro enlace permanecerá activo y transmitirá el tráfico normalmente.
+- El enlace bloqueado solo entrará en funcionamiento si se detecta un fallo en el enlace principal.
+
+De este modo, STP asegura un funcionamiento eficiente y estable de la red, permitiendo la redundancia sin que se generen bucles.
+
+### Árbol de expansión
+
+Para suministrar la redundancia de enlaces y evitar bucles, STP (Spanning Tree Protocol) define un árbol de expansión en el que participan todos los switches, formando una red con topología de árbol. Para lograrlo, STP coloca ciertos enlaces en estado bloqueado y deja otros en estado de envío. Si un enlace en estado de envío deja de estar disponible, STP reconfigura la red activando los enlaces que estaban bloqueados y reconstruyendo los caminos.
+
+STP utiliza un algoritmo de expansión de árbol para seleccionar un switch raíz en la red conmutada. A partir de este switch raíz, calcula el mejor camino sin bucles a través de la red asignando un rol a cada puerto, en función del papel que desempeña en la topología. Los roles de puerto pueden ser:
+
+- **Raíz**: Puerto en estado de envío seleccionado por el árbol de expansión.
+- **Designado**: Puerto en estado de envío para cada segmento de la red.
+- **Alternativo**: Puerto en estado bloqueado que proporciona un camino alternativo hacia el switch raíz en el árbol de expansión.
+- **Backup**: Puerto en estado bloqueado en un bucle.
+
+El switch raíz es aquel que tiene todos sus puertos en roles designados o backup.
+
+STP establece caminos de datos redundantes en estado bloqueado (espera). Si falla un segmento de la red, el algoritmo de STP recalcula la topología del árbol y activa los caminos previamente bloqueados para asegurar la continuidad del tráfico.
+
+Los switches utilizan tramas BPDU (Bridge Protocol Data Units) que se envían y reciben a intervalos regulares. Estas tramas:
+
+- No se reenvían a otros switches.
+- Contienen información sobre el switch que las envía.
+
+Cuando dos puertos en un switch forman parte de un bucle, STP utiliza los siguientes criterios para determinar qué puerto se pone en estado de envío y cuál en estado bloqueado:
+	
+1. **Costo del enlace**: Se utiliza el costo del camino, que representa la velocidad del enlace.
+2. **Prioridad del puerto**: Representa la localización del puerto en la topología de red y lo óptimo que resulta para transmitir tráfico.
+
+Cada puerto de un switch puede estar en alguno de los siguientes estados:
+
+- **Bloqueado**: El puerto no envía tramas.
+- **En escucha**: Primer estado transicional después de bloqueado, cuando se decide desbloquear el puerto.
+- **Aprendiendo**: El puerto se prepara para participar en el envío de tramas y comienza a aprender direcciones MAC.
+- **Envío**: El puerto envía tramas y participa activamente en el tráfico de la red.
+- **Deshabilitado**: El puerto no participa en el árbol. Esto ocurre si está deshabilitado, no tiene cable conectado o no ejecuta STP.
+
+#### Raíz del árbol de expansión
+
+La clave para construir un árbol de expansión es elegir el switch raíz en la red conmutada. Este switch se convierte en el punto central de la red, y todas las demás decisiones, como qué puertos estarán en estado bloqueado o estado de envío, se toman desde su perspectiva.
+
+En un entorno conmutado que incluye varias VLANs, cada VLAN debe tener su propio switch raíz. Este switch puede ser el mismo para todas las VLANs o ser diferente para cada una.
+
+La elección del switch raíz es fundamental. Puede realizarse de dos formas:
+
+1. **Administración manual**: Es preferible que la selección sea realizada por el administrador de red, ya que esta suele ser la solución más óptima.
+2. **Selección automática entre switches**: Los switches intercambian información con sus vecinos mediante BPDU para determinar el switch raíz.
+
+El switch elegido como raíz no necesita ser el más potente, sino el más centralizado en la red. Esto se debe a que los datos fluyen a través de la red desde la perspectiva del switch raíz.
+
+Los switches que actúan como backbone son buenos candidatos para ser el switch raíz, ya que:
+
+- No suelen conectar dispositivos finales como PCs o servidores.
+- Los cambios en la red tienen menos probabilidades de afectarlos.
+
+Un switch mantiene una instancia de árbol de expansión por cada VLAN activa configurada en él. Cada instancia tiene un ID de puente asociado, compuesto por:
+
+- Prioridad del switch (un valor configurable).
+- Dirección MAC del switch.
+
+El switch con el ID de puente más bajo se convierte en el switch raíz para la VLAN correspondiente. El ID de puente se calcula combinando:
+
+- El valor de prioridad del switch (por defecto 32768).
+- La dirección MAC del switch.
+
+Si todos los switches tienen el valor de prioridad por defecto, se selecciona como switch raíz el que tenga la dirección MAC más baja.
+
+#### Coste del enlace
+
+Previamente se mencionó que STP utiliza el coste del enlace para determinar qué puerto se pondrá en estado de envío y cuál en estado bloqueado al construir el árbol de expansión.
+
+El coste del enlace depende del ancho de banda del camino. Es inversamente proporcional al ancho de banda, por lo que un camino con bajo coste es preferible a un camino con alto coste.
+
+La siguiente tabla muestra el coste de enlace para diferentes valores de ancho de banda:
+
+| Velocidad de enlace | Valor de coste |
+| ---- | ---- |
+| 10 Gbps | 2 |
+| 1 Gbps | 4 |
+| 100 Mbps | 19 |
+| 10 Mbps | 100 |
+
+<center>![Balanceo de carga](assets/images/ud3/img16.png){ width="700" }</center>
+
+Como se observa en la red de la imagen anterior, el switch 4 tiene dos caminos para alcanzar el switch raíz (switch 1).
+
+- El coste del camino acumulado por la izquierda es 23 (19 + 4).
+- El coste del camino acumulado por la derecha es 8 (4 + 4).
+
+Por lo tanto, el mejor camino para alcanzar el switch raíz desde el switch 4 es a través del camino de la derecha (con el valor de coste más bajo). El puerto en el switch 4 conectado al camino de la derecha es seleccionado como puerto raíz.
+
+#### Prioridad del puerto
+
+Cada puerto de un switch tiene un valor de prioridad en STP, que por defecto es 128. El ID de puerto STP se compone del valor de prioridad y el número del puerto, separados por un punto. Por ejemplo, el ID 128.21 corresponde al puerto 21 con un valor de prioridad de 128.
+
+Cuando un switch debe seleccionar el puerto raíz, utiliza el coste del enlace de cada puerto para decidir cuál se bloquea y cuál permanece en estado de envío. Sin embargo, si todos los puertos conectados a otros switches tienen el mismo coste de enlace, se emplea el valor de prioridad del puerto para romper el empate.
+
+Si todos los puertos tienen el mismo valor de prioridad (valor predeterminado de 128), entonces se utiliza el número de puerto para romper el empate, seleccionando el puerto con el número más bajo. Esta situación puede variar si se cambia la prioridad del puerto de manera manual.
+
+<center>![Balanceo de carga](assets/images/ud3/img17.png){ width="250" }</center>
+
+Supongamos dos switches conectados como se muestra en la siguiente figura. Ambos switches están conectados a través de los puertos Fa0/23 y Fa0/24, lo que crea un bucle en la red. En esta situación, el switch superior ha sido designado como switch raíz.
+
+- Los dos puertos Fa0/23 y Fa0/24 tienen el mismo coste del enlace.
+- Para romper el empate, STP utiliza el valor de prioridad del puerto.
+- Si la prioridad no ha sido modificada (por defecto 128), se selecciona el puerto con el número más bajo.
+
+Por lo tanto, el puerto Fa0/23 será seleccionado como el puerto raíz, y el puerto Fa0/24 será bloqueado para evitar el bucle.
+
+En esta situación, el switch 10 debe seleccionar un puerto raíz y ambos enlaces tienen el mismo coste. Como ambos puertos tienen, por defecto, su prioridad en 128, se utiliza el número de puerto para romper el empate.
+
+Por lo tanto, el puerto Fa0/23 será designado como puerto raíz, al tener un número inferior al otro puerto.
+
+### Configuración de STP
+
+Por defecto, STP está activado en los switches Cisco. Para ilustrar su configuración, utilizaremos una red conmutada donde existen caminos redundantes entre dos PCs, lo que puede generar bucles.
+
+<center>![STP](assets/images/ud3/img18.png){ width="600" }</center>
+
+
+En nuestro caso, la configuración incluirá:
+
+1. Establecer el switch raíz.
+2. Designar una raíz secundaria en caso de fallo del switch raíz.
+3. Modificar los valores por defecto del coste de enlace y la prioridad del puerto para ajustar el árbol de expansión.
+
+Antes de comenzar, es importante identificar el switch raíz. Para ello, se ejecuta el comando show spanning-tree en cualquier switch. Por ejemplo, en S2:
+
+```
+S2#show spanning-tree
+VLAN0001
+ Spanning tree enabled protocol ieee
+ Root ID    Priority    32769
+            Address     0001.6487.D80E
+            Cost        8
+            Port        26(GigabitEthernet0/2)
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+
+ Bridge ID  Priority    32769 (priority 32768 sys-id-ext 1)
+            Address     00E0.B05C.7192
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+            Aging Time  20
+
+Interface        Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+Fa0/1           Altn  BLK 19         128.1    P2p
+Gi0/1           Desg  FWD 4          128.25   P2p
+Gi0/2           Root  FWD 4          128.26   P2p
+```
+
+La salida del comando se divide en varias secciones:
+	
+1. **Root ID**: Muestra la información del switch raíz:
+	- Prioridad: 32768.
+	- Dirección MAC: 0001.6487.D80E. Esta dirección MAC identifica que el switch raíz es el S0.
+2. **Bridge ID**: Muestra la configuración actual del switch local (S2):
+	- Prioridad: 32769 (valor por defecto: 32768 + sys-id-ext 1).
+	- Dirección MAC: 00E0.B05C.7192.
+3. **Estado de las interfaces**:
+	- Fa0/1: Tiene un coste de 19 (100 Mbps) y está en estado bloqueado (BLK).
+	- Gi0/1 y Gi0/2: Tienen un coste de 4 (1 Gbps) y están en estado de envío (FWD).
+	- Gi0/2 es el puerto raíz, es decir, el puerto que conecta con el switch raíz. Esto se indica con el rol Root en la columna Role.
+
+Si ejecutamos el mismo comando show spanning-tree en S0, veremos en la sección Root ID un texto que indica “This bridge is the root”, confirmando que este switch es la raíz del árbol STP.
+
+```
+S0#show spanning-tree
+VLAN0001
+ Spanning tree enabled protocol ieee
+ Root ID    Priority    32769
+            Address     0001.6487.D80E
+            This bridge is the root
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+
+ Bridge ID  Priority    32769 (priority 32768 sys-id-ext 1)
+            Address     0001.6487.D80E
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+            Aging Time  20
+
+Interface        Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+Fa0/3           Desg  FWD 19         128.3    P2p
+Fa0/1           Desg  FWD 19         128.1    P2p
+Gi0/1           Desg  FWD 4          128.25   P2p
+Fa0/2           Desg  FWD 19         128.2    P2p
+S0#
+```
+
+#### Selección del switch raíz
+
+Para configurar un switch como raíz de una VLAN, se utiliza el comando de configuración global:
+
+```
+spanning-tree vlan vlan-id root primary
+```
+
+Este comando modifica la prioridad del switch del valor predeterminado (32768) a 24576, lo que provoca que el switch se convierta en la raíz para la VLAN especificada. Si existe algún switch con una prioridad inferior a 24576, el comando ajusta automáticamente la prioridad a uno menos que la prioridad más baja detectada.
+
+En nuestra red de ejemplo, vamos a configurar el switch S2 como raíz, ya que no conecta equipos finales y puede actuar como red troncal para el conjunto de switches. Para seleccionarlo como raíz de la VLAN 1, se ejecuta el siguiente comando:
+
+```
+S2(config)#spanning-tree vlan 1 root primary
+```
+
+Después de ejecutar el comando, podemos verificar el estado de STP con el comando show spanning-tree. La salida en S2 sería la siguiente:
+
+```
+S2(config)#do show spanning-tree
+VLAN0001
+ Spanning tree enabled protocol ieee
+ Root ID    Priority    24577
+            Address     00E0.B05C.7192
+            This bridge is the root
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+
+ Bridge ID  Priority    24577 (priority 24576 sys-id-ext 1)
+            Address     00E0.B05C.7192
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+            Aging Time  20
+
+Interface        Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+Fa0/1           Desg  LSN 19         128.1    P2p
+Gi0/1           Desg  FWD 4          128.25   P2p
+Gi0/2           Desg  FWD 4          128.26   P2p
+S2(config)#
+```
+
+- La prioridad del switch ha cambiado a 24577 (prioridad base de 24576 más sys-id-ext 1).
+- El switch muestra el texto “This bridge is the root”, indicando que se ha convertido en la raíz del árbol STP.
+- Todos los puertos conectados a otros switches están en estado de envío (FWD) y tienen rol Designado (Desg), lo que es normal para el switch raíz.
+
+#### Establecer la raíz secundaria
+
+Cuando configuramos un switch como raíz secundaria, su prioridad se modifica desde el valor por defecto de 32768 a 28672. Esto garantiza que el switch se convierta en raíz de la VLAN si el switch raíz primario falla, siempre y cuando los otros switches tengan el valor de prioridad por defecto 32768, lo que hace improbable que se conviertan en raíz.
+
+El comando para configurar un switch como raíz secundaria es el siguiente:
+
+```
+S3(config)#spanning-tree vlan 1 root secondary
+```
+
+Este comando se puede ejecutar en más de un switch para configurar múltiples switches raíz de backup en caso de fallo del switch raíz primario.
+
+Al ejecutar el comando show spanning-tree en S3, se obtiene lo siguiente:
+
+```
+S3(config)#do show spanning-tree
+VLAN0001
+ Spanning tree enabled protocol ieee
+ Root ID    Priority    24577
+            Address     00E0.B05C.7192
+            Cost        4
+            Port        25 (GigabitEthernet0/1)
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+
+ Bridge ID  Priority    28673 (priority 28672 sys-id-ext 1)
+            Address     0010.1178.220A
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+            Aging Time  20
+
+Interface        Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+Fa0/1           Desg  FWD 19         128.1    P2p
+Fa0/2           Desg  FWD 19         128.2    P2p
+Gi0/1           Root  FWD 4          128.25   P2p
+```
+
+- La prioridad del switch ha cambiado a 28673 (valor de 28672 más sys-id-ext 1).
+- El switch raíz sigue siendo el que tiene la prioridad 24577 con la dirección MAC 00E0.B05C.7192.
+- El puerto Gi0/1 es el puerto raíz en este switch, con un coste de 4, lo que representa un enlace GigabitEthernet.
+- Las otras interfaces Fa0/1 y Fa0/2 están en estado de envío (FWD) y con rol Designado (Desg).
+
+#### Establecer el coste del enlace
+
+Cada puerto de un switch no raíz tiene un coste de enlace que depende de la velocidad del puerto. Al sumar todos los costes de los enlaces que llevan al switch raíz, se obtiene el valor del camino acumulado hasta la raíz.
+
+El valor por defecto del coste de cada puerto puede ser modificado manualmente con el siguiente comando en el modo de configuración de interfaz:
+
+```
+spanning-tree vlan 1 cost valor
+```
+
+En la red de ejemplo, el switch S0 tiene bloqueado su puerto Fa0/1. Esto se debe a que, al ser un puerto FastEthernet con velocidad de 100 Mbps, su coste por defecto es 19. En cambio, el camino alternativo hacia el switch raíz pasando por S1 tiene un coste acumulado de 8 (dos enlaces GigabitEthernet con un coste de 4 cada uno).
+
+La siguiente salida muestra el estado de STP en S0:
+
+```
+S0(config)#do show spanning-tree
+VLAN0001
+ Spanning tree enabled protocol ieee
+ Root ID    Priority    24577
+            Address     00E0.B05C.7192
+            Cost        8
+            Port        25 (GigabitEthernet0/1)
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+
+ Bridge ID  Priority    32769 (priority 32768 sys-id-ext 1)
+            Address     0001.6487.D80E
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+            Aging Time  20
+
+Interface        Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+Fa0/2           Altn  BLK 19         128.2    P2p
+Fa0/3           Desg  FWD 19         128.3    P2p
+Gi0/1           Root  FWD 4          128.25   P2p
+Fa0/1           Altn  BLK 19         128.1    P2p
+S0(config)#
+```
+
+Para comprobar el estado de un puerto en particular, como Fa0/1, se puede usar el siguiente comando:
+
+```
+S0#show spanning-tree interface fa0/1
+Vlan            Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+VLAN0001        Altn  BLK 19         128.1    P2p
+```
+
+En el ejemplo, el puerto Fa0/1 del switch S0 está bloqueado debido a su coste por defecto de 19. Si deseamos que S0 alcance la raíz directamente a través del puerto Fa0/1, podemos modificar el coste del puerto a un valor más bajo, por ejemplo, 7.
+
+Se utiliza el siguiente procedimiento:
+
+```
+S0(config)#interface fa0/1
+S0(config-if)#spanning-tree vlan 1 cost 7
+S0(config-if)#
+```
+
+Al realizar esta configuración, el puerto Fa0/1 se desbloquea y pasa al estado LSN (listening) o escuchando, ya que STP está reconfigurando la red. Podemos verificar su estado ejecutando:
+
+```
+S0(config-if)#do show spanning-tree interface fa0/1
+Vlan            Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+VLAN0001        Root  LSN 7          128.1    P2p
+S0(config-if)#
+```
+
+Pasados unos segundos, el puerto Fa0/1 pasará al estado FWD (forwarding) o envío, activándose como puerto raíz. Esta acción provoca que el puerto Gi0/1, que anteriormente era el puerto raíz, se desactive para evitar bucles. El coste del puerto se puede establecer manualmente en un rango de valores entre 1 y 200.000.000.
+
+#### Establecer la prioridad del puerto
+
+Si ocurre un bucle, el algoritmo STP considera la prioridad del puerto para decidir qué interfaz poner en estado de envío en caso de empate en el coste del enlace.
+
+- Se pueden asignar valores de prioridad altos a interfaces que se desean seleccionar primero.
+- Las interfaces con valores de prioridad bajos serán seleccionadas en último lugar.
+
+Si todas las interfaces tienen el mismo valor de prioridad, el algoritmo selecciona la interfaz con el identificador más bajo para ponerla en estado de envío y bloquea las demás.
+
+Los valores posibles de prioridad están entre 0 y 240, configurables en incrementos de 16. El valor por defecto es 128.
+
+Para modificar la prioridad el comando utilizado es:
+
+```
+spanning-tree vlan vlan-id port-priority prioridad
+```
+
+Supongamos que en el switch S1 queremos asignar una prioridad de 112 a la interfaz g0/1. La configuración sería la siguiente:
+
+```
+S1(config)#interface g0/1
+S1(config-if)#spanning-tree vlan 1 port-priority 112
+S1(config-if)#
+```
+
+Al ejecutar el comando show spanning-tree, se obtiene la siguiente salida:
+
+```
+S1(config-if)#do show spanning-tree
+VLAN0001
+ Spanning tree enabled protocol ieee
+ Root ID    Priority    24577
+            Address     00E0.B05C.7192
+            Cost        4
+            Port        26 (GigabitEthernet0/2)
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+
+ Bridge ID  Priority    32769 (priority 32768 sys-id-ext 1)
+            Address     00E0.A329.D001
+            Hello Time  2 sec  Max Age  20 sec  Forward Delay  15 sec
+            Aging Time  20
+
+Interface        Role  Sts Cost      Prio.Nbr Type
+---------------- ----  --- --------- -------- --------------------------------
+Fa0/1           Desg  FWD 19         128.1    P2p
+Gi0/2           Root  FWD 4          128.26   P2p
+Gi0/1           Desg  LSN 4          112.25   P2p
+S1(config-if)#
+```
+
+- La prioridad del puerto Gi0/1 se ha modificado a 112 (columna Prio.Nbr).
+- El puerto ha pasado temporalmente al estado LSN (listening), ya que STP está recalculando la topología.
+
+#### Comprobaciones de STP
+
+| Comando | Descripción |
+| ---- | ---- |
+| show spanning-tree vlan <rango-vlans> | Muestra información sobre STP en las VLANs indicadas |
+| show spanning-tree detail | Muestra información detallada sobre STP |
+| show spanning-tree active | Muestra información sobre las interfaces activas |
+| show spanning-tree summary | Muestra un resumen de STP |
+| show spanning-tree interface <interfaz> [detail] | Muestra información sobre STP en una interfaz concreta. | 
