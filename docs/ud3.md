@@ -1089,9 +1089,10 @@ Un EtherChannel es una interfaz lógica que agrupa varias interfaces físicas pa
 En la figura anterior se observan dos switches conectados mediante 4 enlaces FastEthernet, cada uno con un ancho de banda de 100 Mbps. Al combinar estos enlaces mediante un EtherChannel, se obtiene un ancho de banda total de 400 Mbps. Para lograrlo, es necesario configurar el EtherChannel en ambos switches, de forma que se gestione la comunicación de datos entre ellos.
 
 Un EtherChannel se puede configurar para que funcione en uno de los siguientes tres modos:
-	1.	PAgP (Port Aggregation Protocol).
-	2.	LACP (Link Aggregation Control Protocol).
-	3.	On.
+
+1. PAgP (Port Aggregation Protocol).
+2. LACP (Link Aggregation Control Protocol).
+3. On.
 
 Con los dos primeros modos (PAgP y LACP), se utiliza un protocolo de negociación para determinar qué puertos se activan en el EtherChannel. En cambio, con el modo On, no se realiza ninguna negociación.
 
