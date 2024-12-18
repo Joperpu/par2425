@@ -1370,8 +1370,6 @@ Supongamos dos switches conectados como se muestra en la siguiente figura. Ambos
 - Para romper el empate, STP utiliza el valor de prioridad del puerto.
 - Si la prioridad no ha sido modificada (por defecto 128), se selecciona el puerto con el número más bajo.
 
-Por lo tanto, el puerto Fa0/23 será seleccionado como el puerto raíz, y el puerto Fa0/24 será bloqueado para evitar el bucle.
-
 En esta situación, el switch 10 debe seleccionar un puerto raíz y ambos enlaces tienen el mismo coste. Como ambos puertos tienen, por defecto, su prioridad en 128, se utiliza el número de puerto para romper el empate.
 
 Por lo tanto, el puerto Fa0/23 será designado como puerto raíz, al tener un número inferior al otro puerto.
