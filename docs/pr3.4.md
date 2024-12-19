@@ -45,8 +45,8 @@ Configurar STP en una red conmutada para prevenir bucles y garantizar la redunda
 
 ### Tareas a realizar:
 	
-1. Configurar S1 como switch raíz primario para la VLAN 1.
-2. Configurar S2 como switch raíz secundario para la VLAN 1.
+1. Configurar S1 como switch raíz primario.
+2. Configurar S2 como switch raíz secundario.
 3. Modificar el coste del enlace en S3 para que su puerto Fa0/2 tenga un valor de 10.
 4. Modificar la prioridad del puerto Fa0/1 en S2 a un valor de 96.
 5. Verificar el estado de STP en todos los switches usando el comando show spanning-tree.
