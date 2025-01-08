@@ -1607,8 +1607,8 @@ Pasados unos segundos, el puerto Fa0/1 pasará al estado FWD (forwarding) o env�
 
 Si ocurre un bucle, el algoritmo STP considera la prioridad del puerto para decidir qué interfaz poner en estado de envío en caso de empate en el coste del enlace.
 
-- Se pueden asignar valores de prioridad altos a interfaces que se desean seleccionar primero.
-- Las interfaces con valores de prioridad bajos serán seleccionadas en último lugar.
+- Se pueden asignar valores de prioridad bajos a interfaces que se desean seleccionar primero.
+- Las interfaces con valores de prioridad bajos serán seleccionadas en primer lugar.
 
 Si todas las interfaces tienen el mismo valor de prioridad, el algoritmo selecciona la interfaz con el identificador más bajo para ponerla en estado de envío y bloquea las demás.
 
