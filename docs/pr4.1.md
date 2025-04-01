@@ -8,6 +8,6 @@ Configura las interfaces que se presentan usando los pasos que se indican en los
 
 ## Entrega de la práctica
 
-Contesta a las cuestiones, genera un documento .PDF, y súbelo en el lugar de la plataforma Moodle Centros habilitado para ello, con el siguiente nombre:
+Crea y configura el escenario y súbelo en el lugar de la plataforma Moodle Centros habilitado para ello, con el siguiente nombre:
 
-**Apellido1Apellido2_Nombre_PAR_UD4_P1.pdf**
+**Apellido1Apellido2_Nombre_PAR_UD4_P1.pkt**
