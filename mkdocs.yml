@@ -46,8 +46,11 @@ nav:
     - Práctica 3.3: pr3.3.md
     - Práctica 3.4: pr3.4.md
     - Práctica 3.5: pr3.5.md
+  - UD4 - Configuración y administración básica de routers:
+    - Teoría UD4: ud4.md
+    - Práctica 4.1: pr4.1.md
 
-copyright: "2024 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0"
+copyright: "2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0"
 
 extra:
   generator: true
