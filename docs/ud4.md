@@ -489,18 +489,18 @@ Este comando muestra la tabla de enrutamiento IPv4 del dispositivo. La salida in
 
 Las entradas de la tabla de enrutamiento pueden ser generadas por distintos mecanismos, dependiendo de cómo se ha configurado y gestionado la red. Las formas más comunes de añadir rutas a la tabla son las siguientes:
 
-- Interfaces de ruta local. Se generan automáticamente cuando una interfaz del router ha sido configurada con una dirección IP válida y se encuentra activa.
-- Interfaces conectadas directamente. También se agregan de forma automática cuando una interfaz está configurada y operativa. Representan redes directamente accesibles a través del router.
-- Rutas estáticas. Estas entradas se crean manualmente por parte del administrador y se incorporan a la tabla de enrutamiento siempre que la interfaz de salida asociada esté activa.
-- Protocolos de enrutamiento dinámico. Las rutas se añaden automáticamente cuando se implementan protocolos como EIGRP u OSPF, los cuales descubren redes de forma dinámica mediante el intercambio de información entre routers.
+- **Interfaces de ruta local**. Se generan automáticamente cuando una interfaz del router ha sido configurada con una dirección IP válida y se encuentra activa.
+- **Interfaces conectadas directamente**. También se agregan de forma automática cuando una interfaz está configurada y operativa. Representan redes directamente accesibles a través del router.
+- **Rutas estáticas**. Estas entradas se crean manualmente por parte del administrador y se incorporan a la tabla de enrutamiento siempre que la interfaz de salida asociada esté activa.
+- **Protocolos de enrutamiento dinámico**. Las rutas se añaden automáticamente cuando se implementan protocolos como EIGRP u OSPF, los cuales descubren redes de forma dinámica mediante el intercambio de información entre routers.
 
 Cada entrada de la tabla de enrutamiento incluye un código identificador que indica el origen de dicha ruta, es decir, cómo fue aprendida o configurada. A continuación se detallan los códigos más comunes:
 
-- L: Indica una dirección IP asignada directamente a una interfaz del router. Esta entrada permite al router identificar si un paquete está destinado a él mismo o si debe reenviarlo.
-- C: Representa una red conectada directamente. Se trata de redes accesibles mediante interfaces activas del router.
-- S: Hace referencia a una ruta estática, es decir, configurada manualmente para alcanzar una red específica.
-- D: Señala una ruta descubierta dinámicamente mediante el protocolo EIGRP (Enhanced Interior Gateway Routing Protocol).
-- O: Indica una ruta aprendida dinámicamente a través del protocolo de enrutamiento OSPF (Open Shortest Path First).
+- **L**: Indica una dirección IP asignada directamente a una interfaz del router. Esta entrada permite al router identificar si un paquete está destinado a él mismo o si debe reenviarlo.
+- **C**: Representa una red conectada directamente. Se trata de redes accesibles mediante interfaces activas del router.
+- **S**: Hace referencia a una ruta estática, es decir, configurada manualmente para alcanzar una red específica.
+- **D**: Señala una ruta descubierta dinámicamente mediante el protocolo EIGRP (Enhanced Interior Gateway Routing Protocol).
+- **O**: Indica una ruta aprendida dinámicamente a través del protocolo de enrutamiento OSPF (Open Shortest Path First).
 
 Estos códigos ayudan a interpretar y analizar el contenido de la tabla de enrutamiento, facilitando la gestión y diagnóstico de la red.
 
