@@ -344,4 +344,3 @@ reload
 ```
 
 Esta combinación de comandos restablece el switch a sus condiciones iniciales, eliminando tanto las VLANs como cualquier otra configuración almacenada.
-
