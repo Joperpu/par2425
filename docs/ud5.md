@@ -229,7 +229,7 @@ Estas VLANs están pensadas para escenarios de mayor escala, como entornos gesti
 
 Este comportamiento hace que las VLANs de rango extendido sean menos versátiles en entornos donde se requiere gestión centralizada mediante VTP, pero útiles cuando se necesita una gran cantidad de identificadores VLAN para segmentación avanzada.
 
-### 2.2 Asignación de puertos
+### Asignación de puertos
 
 Una vez creada una VLAN, el siguiente paso consiste en asignar puertos del switch a dicha VLAN. Cada puerto de acceso puede pertenecer únicamente a una VLAN a la vez.
 
