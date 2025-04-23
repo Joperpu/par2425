@@ -236,7 +236,7 @@ Una vez creada una VLAN, el siguiente paso consiste en asignar puertos del switc
 En el contexto de una VLAN, existen dos tipos principales de puertos:
 
 - **Puerto de acceso**: Se utiliza para conectar dispositivos finales como PCs, impresoras o teléfonos IP. Las tramas que circulan por este tipo de puerto no están etiquetadas con información VLAN.
-**Puerto troncal**: Se utiliza para establecer enlaces entre switches, permitiendo el transporte de tráfico de múltiples VLANs. Las tramas que se envían o reciben a través de un puerto troncal sí llevan etiquetas VLAN (802.1Q).
+- **Puerto troncal**: Se utiliza para establecer enlaces entre switches, permitiendo el transporte de tráfico de múltiples VLANs. Las tramas que se envían o reciben a través de un puerto troncal sí llevan etiquetas VLAN (802.1Q).
 
 Este apartado se centra en la configuración de puertos de acceso. La configuración de puertos troncales se abordará más adelante.
 
