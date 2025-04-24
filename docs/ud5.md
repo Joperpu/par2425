@@ -344,3 +344,491 @@ reload
 ```
 
 Esta combinación de comandos restablece el switch a sus condiciones iniciales, eliminando tanto las VLANs como cualquier otra configuración almacenada.
+
+### Verificación de la información de VLAN
+
+Una vez configuradas las VLANs en un switch, es posible verificar su estado y propiedades utilizando distintos comandos del modo EXEC privilegiado del sistema operativo Cisco IOS.
+
+El comando principal para consultar esta información es:
+
+```
+show vlan [brief | id <id-vlan> | name <nombre> | summary]
+```
+
+Donde cada argumento permite visualizar información específica:
+
+- **brief**: Muestra un resumen de todas las VLANs, indicando su nombre, estado y los puertos asociados.
+- **id**: Muestra los detalles de una VLAN concreta, identificada por su ID.
+- **name**: Presenta la información de una VLAN específica, utilizando su nombre.
+- **summary**: Proporciona una vista condensada de todas las VLANs.
+
+Ejemplo de salida del comando show vlan
+
+El siguiente ejemplo muestra la ejecución del comando sin argumentos adicionales, lo que genera una tabla completa con todas las VLANs configuradas:
+
+```
+S1>enable
+S1#show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gig0/1, Gig0/2
+10   Administracion                   active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                 Fa0/5, Fa0/6, Fa0/7, Fa0/8
+20   I+D                              active    Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                 Fa0/13, Fa0/14, Fa0/15, Fa0/16
+30   Facturacion                      active    Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                 Fa0/21, Fa0/22, Fa0/23, Fa0/24
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID     MTU  Parent RingNo BridgeNo Stp BrdgMode Trans1 Trans2
+---- ----- -------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001   1500    -      -       -       -     -      0      0
+10   enet  100010   1500    -      -       -       -     -      0      0
+20   enet  100020   1500    -      -       -       -     -      0      0
+30   enet  100030   1500    -      -       -       -     -      0      0
+1002 fddi  101002   1500    -      -       -       -     -      0      0
+1003 tr    101003   1500    -      -       -       -     -      0      0
+1004 fdnet 101004   1500    -      -       -     ieee    -      0      0
+1005 trnet 101005   1500    -      -       -     ibm     -      0      0
+```
+
+**Consultas específicas**
+
+Para visualizar solo la información de una VLAN concreta, se puede utilizar:
+
+```
+S1#show vlan id 10
+```
+
+Salida esperada:
+
+```
+VLAN Name             Status    Ports
+---- ---------------- --------- -------------------------------
+10   Administracion    active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                 Fa0/5, Fa0/6, Fa0/7, Fa0/8
+
+VLAN Type  SAID     MTU  Parent RingNo BridgeNo Stp BrdgMode Trans1 Trans2
+---- ----- -------- ----- ------ ------ -------- ---- -------- ------ ------
+10   enet  100010   1500    -      -       -       -     -      0      0
+```
+
+Este mismo resultado se puede obtener usando el nombre de la VLAN en lugar de su ID:
+
+```
+S1#show vlan name Administracion
+```
+
+Ambos comandos son útiles para validar que los puertos han sido asignados correctamente a cada VLAN y que la configuración está activa.
+
+### Configuración de enlaces troncales
+
+Un enlace troncal de VLAN es una conexión entre dos switches que permite el tránsito de tráfico correspondiente a múltiples VLANs. Por defecto, todos los tráficos de VLANs son transportados por el enlace, salvo que se restrinjan las VLANs permitidas de forma manual o dinámica.
+
+Para configurar una interfaz como puerto troncal, se utiliza el siguiente comando desde el modo de configuración de interfaz:
+
+```
+switchport mode trunk
+```
+
+Este comando configura la interfaz en modo troncal permanente, permitiendo el etiquetado de tramas conforme al estándar IEEE 802.1Q.
+
+Ejemplo de configuración de un enlace troncal entre S1 y S2
+
+Supongamos que los switches S1 y S2 están interconectados mediante sus interfaces GigabitEthernet0/1. Ambos puertos deben configurarse como troncales. La configuración sería la siguiente:
+
+En S1:
+
+```
+S1>enable
+S1#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+S1(config)#interface g0/1
+S1(config-if)#switchport mode trunk
+```
+
+Al aplicar esta configuración, es posible que aparezcan mensajes indicando el cambio de estado del protocolo de línea:
+
+```
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+```
+
+En S2:
+
+```
+S2>enable
+S2#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+S2(config)#interface g0/1
+S2(config-if)#switchport mode trunk
+```
+
+Una vez configurado el enlace troncal entre S1 y S2, será necesario repetir el mismo procedimiento para establecer el enlace troncal entre S2 y S3, utilizando las interfaces correspondientes de cada switch.
+
+Esta configuración asegura que las VLANs puedan propagarse correctamente entre los distintos switches del entorno conmutado.
+
+#### VLAN nativa
+
+Como se explicó anteriormente, la VLAN nativa es aquella a la que se asignan las tramas que llegan por un puerto troncal sin etiqueta VLAN. Por defecto, esta VLAN es la número 1, aunque por motivos de seguridad se recomienda utilizar una VLAN diferente.
+
+La asignación de una VLAN nativa distinta se realiza desde el modo de configuración de interfaz con el siguiente comando:
+
+```
+switchport trunk native vlan id-vlan
+```
+
+Por ejemplo, para configurar la VLAN 99 como VLAN nativa en el puerto troncal del switch S1:
+
+```
+S1(config)#interface g0/1
+S1(config-if)#switchport trunk native vlan 99
+```
+
+Si el puerto correspondiente en el otro extremo del enlace (en este caso, en el switch S2) aún tiene configurada la VLAN nativa por defecto (1), aparecerá una advertencia:
+
+```
+%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet0/1 (99), with S2 GigabitEthernet0/1 (1).
+```
+
+Esto indica una discrepancia entre las VLAN nativas en ambos extremos del troncal. Para corregirlo, se debe configurar también en S2 la misma VLAN nativa:
+
+```
+S2(config)#interface g0/1
+S2(config-if)#switchport trunk native vlan 99
+```
+
+#### Seguridad VLAN
+
+Para limitar el tráfico de VLANs que puede transitar por un enlace troncal, se puede definir una lista explícita de VLANs permitidas. Esto se hace con el siguiente comando:
+
+```
+switchport trunk allowed vlan lista-vlan
+```
+
+Por ejemplo, si se desea permitir únicamente el tráfico etiquetado de las VLANs 10, 20, 30, y la VLAN nativa 99 en el puerto troncal g0/1 del switch S1, se configuraría así:
+
+```
+S1(config-if)#switchport trunk allowed vlan 10,20,30,99
+```
+
+#### EtherChannel como enlace troncal
+
+Dado que los enlaces entre switches suelen manejar un volumen de tráfico considerable, es recomendable utilizar puertos Gigabit Ethernet. Sin embargo, los switches suelen tener un número limitado de estos puertos. Para superar esta limitación y aumentar el ancho de banda, se puede utilizar un EtherChannel.
+
+Un EtherChannel agrupa varias interfaces físicas en una única interfaz lógica, lo que permite sumar el ancho de banda de las interfaces agrupadas. Por ejemplo, un EtherChannel compuesto por cuatro interfaces FastEthernet proporciona un ancho de banda de 400 Mbps.
+
+<center>![EtherChannell como enlace troncal](assets/images/ud5/img04.png){ width="400" }</center>
+
+Es posible utilizar un EtherChannel como enlace troncal entre switches. En el siguiente ejemplo, se agrupan las interfaces GigabitEthernet0/1 y GigabitEthernet0/2 del switch S1:
+
+```
+S1(config)#interface port-channel 1
+S1(config-if)#exit
+S1(config)#interface range g0/1-2
+S1(config-if-range)#channel-group 1 mode on
+```
+
+En el switch S2 deben ejecutarse los mismos comandos para formar el EtherChannel.
+
+Una vez creado, se configura como troncal de la misma manera que se haría con una interfaz física:
+
+```
+S1(config)#interface port-channel 1
+S1(config-if)#switchport mode trunk
+```
+
+Los mismos comandos deben ejecutarse también en el switch S2 para completar la configuración del enlace troncal sobre EtherChannel.
+
+### Restablecimiento del enlace troncal al estado predeterminado
+
+Si se desea devolver un puerto configurado como enlace troncal a su estado por defecto, es necesario restablecer los parámetros que se hayan modificado, como la lista de VLANs permitidas, la VLAN nativa y el modo de operación del puerto.
+
+Para ello, se deben ejecutar los siguientes comandos:
+
+```
+S1(config)#interface g0/1
+S1(config-if)#no switchport trunk allowed vlan 10,20,30,99
+S1(config-if)#no switchport trunk native vlan 99
+S1(config-if)#switchport mode access
+```
+
+Con esta configuración:
+
+- Se elimina la lista de VLANs permitidas personalizada.
+- Se restaura la VLAN nativa a la predeterminada (VLAN 1).
+- El puerto se configura nuevamente como puerto de acceso, saliendo del modo troncal.
+
+## Enrutamiento entre VLANs
+
+Los dispositivos ubicados en diferentes VLANs no pueden comunicarse entre sí sin la intervención de un dispositivo de capa 3 que realice funciones de enrutamiento. Los switches de capa 2 tienen capacidades limitadas en lo que respecta al procesamiento de IPv4 e IPv6, por lo que no son adecuados para esta tarea, especialmente cuando se requiere enrutamiento dinámico.
+
+Para proporcionar conectividad entre VLANs, es necesario utilizar un router o un switch de capa 3 (también conocido como switch multicapa). El proceso de envío de tráfico entre VLANs mediante un dispositivo de capa 3 se denomina enrutamiento entre VLANs.
+
+Existen tres métodos principales para implementar el enrutamiento entre VLANs:
+
+- Enrutamiento entre VLANs tradicional (obsoleto).
+- Router-on-a-stick.
+- Enrutamiento mediante interfaces virtuales de switch (SVI).
+
+### Enrutamiento entre VLANs tradicional
+
+En este método, ya en desuso, se utiliza un router con múltiples interfaces físicas, cada una conectada a un puerto del switch configurado en una VLAN específica. Cada puerto del switch debe estar en modo acceso y vinculado a una VLAN determinada.
+
+Por cada VLAN que se desea enrutar, se requiere una interfaz física distinta en el router. Esta interfaz se configura con una dirección IP perteneciente a la subred asociada a la VLAN correspondiente. De esta forma, el router actúa como puerta de enlace (gateway) para los dispositivos de la VLAN.
+
+Limitaciones:
+
+- Escalabilidad muy reducida: el número de VLANs enrutables está limitado por la cantidad de interfaces físicas disponibles en el router.
+- Uso poco eficiente del hardware disponible.
+
+Ejemplo de configuración
+
+<center>![VLANs](assets/images/ud5/img05.png){ width="600" }</center>
+
+En la topología propuesta, se conecta el router R1 al switch S1 con dos interfaces físicas:
+
+- La interfaz G0/0 del router se conecta al puerto Fa0/2 del switch (asignado a la VLAN 10).
+- La interfaz G0/1 se conecta al puerto Fa0/9 del switch (asignado a la VLAN 20).
+
+Configuración del router:
+
+```
+R1>enable
+R1#configure terminal
+R1(config)#interface g0/0
+R1(config-if)#ip address 192.168.0.1 255.255.255.0
+R1(config-if)#no shutdown
+
+R1(config-if)#interface g0/1
+R1(config-if)#ip address 192.168.1.1 255.255.255.0
+R1(config-if)#no shutdown
+```
+
+Una vez configurado, los dispositivos de ambas VLANs pueden utilizar el router como gateway y comunicarse entre sí a través de él.
+
+Verificación:
+
+Al configurar adecuadamente las direcciones IP en los PCs (por ejemplo, PC1 y PC4), se puede verificar la conectividad mediante el comando ping.
+
+Este método resulta ineficiente y está obsoleto en entornos modernos, donde se utilizan soluciones como router-on-a-stick o switches multicapa con SVI para ofrecer mayor escalabilidad y flexibilidad.
+
+### Enrutamiento entre VLANs mediante Router-on-a-Stick
+
+El enrutamiento entre VLANs utilizando interfaces físicas individuales presenta una clara limitación: los routers disponen de un número reducido de interfaces físicas. A medida que crece el número de VLANs en una red, asignar una interfaz física por VLAN se vuelve inviable.
+
+Una solución eficiente es implementar subinterfaces virtuales sobre una única interfaz física del router, configurada como enlace troncal. Este método se denomina router-on-a-stick y permite enrutar tráfico entre múltiples VLANs a través de una sola interfaz física.
+
+<center>![Enrutamiento VLANs](assets/images/ud5/img06.png){ width="600" }</center>
+
+Funcionamiento:
+
+- Una única interfaz física del router se conecta al switch mediante un enlace troncal.
+- En esa interfaz física se configuran varias subinterfaces, una por cada VLAN.
+- Cada subinterfaz se configura con:
+- Una dirección IP correspondiente a la subred de la VLAN.
+- Una identificación de VLAN mediante encapsulation dot1Q.
+
+Ejemplo de implementación
+
+Supongamos la siguiente conexión:
+
+- Router R1 (G0/0) ↔ Switch S1 (G0/2)
+
+Configuración del switch S1
+
+```
+S1>enable
+S1#configure terminal
+S1(config)#interface g0/2
+S1(config-if)#switchport mode trunk
+```
+
+Configuración del router R1
+
+```
+R1>enable
+R1#configure terminal
+
+R1(config)#interface g0/0.10
+R1(config-subif)#encapsulation dot1Q 10
+R1(config-subif)#ip address 192.168.0.1 255.255.255.0
+
+R1(config)#interface g0/0.20
+R1(config-subif)#encapsulation dot1Q 20
+R1(config-subif)#ip address 192.168.1.1 255.255.255.0
+
+R1(config)#interface g0/0.30
+R1(config-subif)#encapsulation dot1Q 30
+R1(config-subif)#ip address 192.168.2.1 255.255.255.0
+
+R1(config)#interface g0/0
+R1(config-if)#no shutdown
+```
+
+Explicación de la configuración:
+
+- **Subinterfaces**: se crean con el comando interface g0/0.X, donde X suele coincidir con el ID de la VLAN correspondiente.
+- **Encapsulación**: encapsulation dot1Q asocia la subinterfaz a una VLAN específica.
+- **Dirección IP**: cada subinterfaz recibe una IP de su respectiva subred.
+- **Activación**: el comando no shutdown se aplica sobre la interfaz física. Las subinterfaces se activan automáticamente si la interfaz principal está activa.
+
+Ventajas:
+
+- Requiere solo una interfaz física en el router.
+- Permite enrutar entre múltiples VLANs con una solución eficiente y escalable.
+- Simplifica la gestión y mantenimiento en redes medianas y grandes.
+
+
+Una vez aplicada esta configuración, los dispositivos ubicados en diferentes VLANs pueden comunicarse entre sí, ya que el router enruta internamente el tráfico a través de las subinterfaces correspondientes.
+
+### Switch de capa 3
+
+Es habitual que los switches incorporen funciones de nivel 3. Este tipo de switches admite funciones básicas de nivel de red, como el enrutamiento estático.
+Cuando en una topología de red se crea una VLAN, el switch dispone de una interfaz virtual (SVI) a la que podemos asignar una dirección IP. Todos los dispositivos conectados a la VLAN pueden utilizar la dirección IP de la VLAN como puerta de enlace. Además, al configurar la SVI del switch con una dirección IP y activar el enrutamiento, se añade automáticamente a su tabla de enrutamiento una ruta directamente conectada para la red de la VLAN.
+
+Para ilustrar este tipo de topología, vamos a emplear la siguiente red de ejemplo.
+
+<center>![Switch de capa 3](assets/images/ud5/img07.png){ width="750" }</center>
+
+| VLAN | Nombre | Red | Puertos | SVI |
+| -- | -- | -- | -- | -- |
+| VLAN10 | Administración | 192.168.0.0/24 | SW1 -> Fa0/1-9, SW2 -> Fa0/1-9, SW3 -> Fa0/1-9 | 192.168.0.1 | 
+| VLAN20 | I+D | 192.168.1.0/24 | SW1 -> Fa0/10-19, SW2 -> Fa0/10-19, SW3 -> Fa0/10-19 | 192.168.1.1 |
+| VLAN30 | Facturación | 192.168.2.0/24 | SW1 -> Fa0/20-24, SW2 -> Fa0/20-24, SW3 -> Fa0/20-24 | 192.168.2.1 |
+| VLAN40 | Router | 192.168.3.0/24 | SW3 -> G0/1 | 192.168.3.1 |
+
+Es común que muchos switches modernos incluyan capacidades de nivel 3, lo que les permite realizar funciones básicas de red, como el enrutamiento estático.
+
+Cuando se crea una VLAN en una red, el switch genera una interfaz virtual (SVI) a la que se le puede asignar una dirección IP. Esta dirección puede ser utilizada como puerta de enlace por todos los dispositivos conectados a esa VLAN. Al asignar una dirección IP a la SVI y habilitar el enrutamiento, el switch añade automáticamente una ruta directamente conectada a su tabla de enrutamiento para esa red.
+
+Para ilustrar este tipo de configuración, trabajaremos con una topología en la que uno de los switches es de capa 3 y será el encargado de gestionar el enrutamiento entre VLANs. El router que aparece conectado a este switch tiene como función proporcionar salida a Internet para todos los dispositivos de la red. En la red también se incluye un servidor que ofrece servicios DNS y HTTP, lo cual nos permitirá comprobar la conectividad desde cualquier equipo cliente. En cada VLAN, los dispositivos empezarán a recibir direcciones IP a partir del valor 10.
+
+Primero, se procede a crear las VLAN en cada uno de los switches. En el switch S1, la configuración sería la siguiente:
+
+```
+S1(config)#vlan 10
+S1(config-vlan)#name Administracion
+S1(config-vlan)#exit
+S1(config)#vlan 20
+S1(config-vlan)#name I+D
+S1(config-vlan)#exit
+S1(config)#vlan 30
+S1(config-vlan)#name Facturacion
+S1(config-vlan)#exit
+S1(config)#vlan 40
+S1(config-vlan)#name Router
+S1(config-vlan)#exit
+```
+
+Se repite la misma configuración en los switches S2 y S3, creando las mismas VLAN con sus respectivos nombres.
+
+A continuación, se configuran los enlaces troncales entre los switches. El enlace entre S1 y S2 se establece a través de las interfaces GigabitEthernet 0/1 en ambos dispositivos. En el switch S1, los comandos serían:
+
+```
+S1(config)#interface g0/1
+S1(config-if)#switchport trunk encapsulation dot1q
+S1(config-if)#switchport mode trunk
+S1(config-if)#switchport trunk native vlan 99
+S1(config-if)#switchport trunk allowed vlan 10,20,30,40,99
+```
+
+Y en S2:
+
+```
+S2(config)#interface g0/1
+S2(config-if)#switchport trunk encapsulation dot1q
+S2(config-if)#switchport mode trunk
+S2(config-if)#switchport trunk native vlan 99
+S2(config-if)#switchport trunk allowed vlan 10,20,30,40,99
+```
+
+El mismo proceso se realiza para enlazar S2 con S3, utilizando las interfaces G0/2. Luego se procede a asignar los puertos de acceso a cada VLAN en todos los switches.
+
+Por ejemplo, en el switch S1:
+
+```
+S1(config)#interface range fa0/1-9
+S1(config-if-range)#switchport mode access
+S1(config-if-range)#switchport access vlan 10
+...
+```
+
+El siguiente paso consiste en configurar las interfaces virtuales para cada VLAN en el switch de capa 3 (S1). A cada interfaz SVI se le asigna una dirección IP:
+
+```
+S1(config)#interface vlan10
+S1(config-if)#ip address 192.168.0.1 255.255.255.0
+...
+```
+
+Finalmente, para habilitar la función de enrutamiento entre VLANs, es necesario activar el enrutamiento en el switch mediante:
+
+```
+S1(config)#ip routing
+```
+
+Una vez hecho esto, se puede comprobar que la tabla de enrutamiento del switch contiene rutas conectadas para todas las redes de las VLAN creadas.
+
+Cada PC debe tener como puerta de enlace la dirección IP correspondiente a la VLAN en la que se encuentra conectado. Por ejemplo, en el PC0 sería así:
+
+<center>![Switch de capa 3](assets/images/ud5/img08.png){ width="450" }</center>
+
+Podemos comprobar la conectividad en la red haciendo ping desde el PC0 al PC8.
+
+<center>![Switch de capa 3](assets/images/ud5/img09.png){ width="450" }</center>
+
+Una vez establecido el enrutamiento entre las VLANs, se procede a habilitar el acceso a Internet desde los dispositivos de la topología, utilizando enrutamiento estático tanto en el switch multicapa como en el router.
+
+Primero se configuran las interfaces del router con las siguientes instrucciones:
+
+```
+Router(config)#interface g0/0  
+Router(config-if)#ip address 192.168.2.1 255.255.255.0  
+Router(config-if)#no shutdown  
+Router(config-if)#interface g0/1  
+Router(config-if)#ip address 195.0.0.1 255.255.255.0  
+Router(config-if)#no shutdown  
+Router(config-if)#  
+```
+
+A continuación, en el switch multicapa se añade una ruta por defecto utilizando como siguiente salto la IP del router en la VLAN 40:
+
+```
+S1(config)#ip route 0.0.0.0 0.0.0.0 192.168.3.2  
+S1(config)#  
+```
+
+La tabla de enrutamiento del switch S1 quedaría así:
+
+```
+S1#show ip route  
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP  
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area  
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2  
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP  
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area  
+       * - candidate default, U - per-user static route, o - ODR  
+       P - periodic downloaded static route  
+  
+Gateway of last resort is 192.168.3.2 to network 0.0.0.0  
+  
+C 192.168.0.0/24 is directly connected, Vlan10  
+C 192.168.1.0/24 is directly connected, Vlan20  
+C 192.168.2.0/24 is directly connected, Vlan30  
+C 192.168.3.0/24 is directly connected, Vlan40  
+S* 0.0.0.0/0 [1/0] via 192.168.3.2  
+```
+
+Esto permite a los paquetes procedentes de cualquier VLAN alcanzar el exterior. Para el tráfico de retorno, se configura en el router una ruta estática resumida que abarque todas las VLAN internas, utilizando como siguiente salto la dirección IP del switch en la VLAN 40:
+
+```
+Router(config)#ip route 192.168.0.0 255.255.252.0 192.168.3.1  
+Router(config)#  
+```
+
+Con esta configuración, el acceso a Internet se encuentra plenamente habilitado. Se puede verificar accediendo desde el navegador del PC0 al servidor web, siempre que este tenga correctamente definida la puerta de enlace con la dirección IP 195.0.0.1.
