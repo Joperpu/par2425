@@ -42,7 +42,7 @@ Entre las principales ventajas del uso de VLANs se incluyen:
 
 En una red conmutada, cada VLAN corresponde a una red IP independiente. Por ello, el diseño de VLANs debe estar alineado con un esquema de direccionamiento jerárquico, lo que permite una asignación ordenada de bloques de direcciones IP a segmentos específicos de la red. Esta planificación facilita la administración y la escalabilidad de la infraestructura.
 
-<center>![VLANs](assets/images/ud5/img01.png){ width="600" }</center>
+![VLANs](assets/images/ud5/img01.png){ width="600" }
 
 ### Formato de trama
 
@@ -630,8 +630,8 @@ Funcionamiento:
 - Una única interfaz física del router se conecta al switch mediante un enlace troncal.
 - En esa interfaz física se configuran varias subinterfaces, una por cada VLAN.
 - Cada subinterfaz se configura con:
-- Una dirección IP correspondiente a la subred de la VLAN.
-- Una identificación de VLAN mediante encapsulation dot1Q.
+    - Una dirección IP correspondiente a la subred de la VLAN.
+    - Una identificación de VLAN mediante encapsulation dot1Q.
 
 Ejemplo de implementación
 
