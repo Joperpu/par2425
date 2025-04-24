@@ -67,7 +67,7 @@ La etiqueta VLAN de 802.1Q contiene diversos subcampos que permiten identificar 
 - **Identificador de formato canónico (CFI)**: Campo de 1 bit utilizado para habilitar la compatibilidad con tramas Token Ring en enlaces Ethernet.
 - **ID de VLAN (VID)**: Campo de 12 bits que identifica la VLAN a la que pertenece la trama. Este valor permite definir hasta 4096 VLANs diferentes.
 
-<center>![Formato de VLAN](assets/images/ud5/img02.png){ width="600" }</center>
+![Formato de VLAN](assets/images/ud5/img02.png){ width="600" }
 
 Una vez insertada la etiqueta 802.1Q, el switch vuelve a calcular la FCS (Frame Check Sequence) y la reemplaza en la trama, asegurando así la integridad de los datos antes de su retransmisión.
 
@@ -142,7 +142,7 @@ Para que una VLAN funcione correctamente, es necesario realizar una serie de pas
 
 A continuación, se explicarán en detalle cada uno de estos pasos utilizando una red de ejemplo que permitirá ilustrar de forma práctica el proceso completo de configuración de VLANs.
 
-<center>![Red con VLANs](assets/images/ud5/img03.png){ width="600" }</center>
+![Red con VLANs](assets/images/ud5/img03.png){ width="600" }
 
 La tabla de asignación de puertos a las VLANs e IPs de los ordenadores se muestra a continuación:
 
@@ -522,7 +522,7 @@ Dado que los enlaces entre switches suelen manejar un volumen de tráfico consid
 
 Un EtherChannel agrupa varias interfaces físicas en una única interfaz lógica, lo que permite sumar el ancho de banda de las interfaces agrupadas. Por ejemplo, un EtherChannel compuesto por cuatro interfaces FastEthernet proporciona un ancho de banda de 400 Mbps.
 
-<center>![EtherChannell como enlace troncal](assets/images/ud5/img04.png){ width="400" }</center>
+![EtherChannell como enlace troncal](assets/images/ud5/img04.png){ width="400" }
 
 Es posible utilizar un EtherChannel como enlace troncal entre switches. En el siguiente ejemplo, se agrupan las interfaces GigabitEthernet0/1 y GigabitEthernet0/2 del switch S1:
 
@@ -588,7 +588,7 @@ Limitaciones:
 
 Ejemplo de configuración
 
-<center>![VLANs](assets/images/ud5/img05.png){ width="600" }</center>
+![VLANs](assets/images/ud5/img05.png){ width="600" }
 
 En la topología propuesta, se conecta el router R1 al switch S1 con dos interfaces físicas:
 
@@ -623,7 +623,7 @@ El enrutamiento entre VLANs utilizando interfaces físicas individuales presenta
 
 Una solución eficiente es implementar subinterfaces virtuales sobre una única interfaz física del router, configurada como enlace troncal. Este método se denomina router-on-a-stick y permite enrutar tráfico entre múltiples VLANs a través de una sola interfaz física.
 
-<center>![Enrutamiento VLANs](assets/images/ud5/img06.png){ width="600" }</center>
+![Enrutamiento VLANs](assets/images/ud5/img06.png){ width="600" }
 
 Funcionamiento:
 
@@ -693,7 +693,7 @@ Cuando en una topología de red se crea una VLAN, el switch dispone de una inter
 
 Para ilustrar este tipo de topología, vamos a emplear la siguiente red de ejemplo.
 
-<center>![Switch de capa 3](assets/images/ud5/img07.png){ width="750" }</center>
+![Switch de capa 3](assets/images/ud5/img07.png){ width="750" }
 
 | VLAN | Nombre | Red | Puertos | SVI |
 | -- | -- | -- | -- | -- |
@@ -776,11 +776,11 @@ Una vez hecho esto, se puede comprobar que la tabla de enrutamiento del switch c
 
 Cada PC debe tener como puerta de enlace la dirección IP correspondiente a la VLAN en la que se encuentra conectado. Por ejemplo, en el PC0 sería así:
 
-<center>![Switch de capa 3](assets/images/ud5/img08.png){ width="450" }</center>
+![Switch de capa 3](assets/images/ud5/img08.png){ width="450" }
 
 Podemos comprobar la conectividad en la red haciendo ping desde el PC0 al PC8.
 
-<center>![Switch de capa 3](assets/images/ud5/img09.png){ width="450" }</center>
+![Switch de capa 3](assets/images/ud5/img09.png){ width="450" }
 
 Una vez establecido el enrutamiento entre las VLANs, se procede a habilitar el acceso a Internet desde los dispositivos de la topología, utilizando enrutamiento estático tanto en el switch multicapa como en el router.
 
