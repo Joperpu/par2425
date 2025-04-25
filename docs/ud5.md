@@ -832,3 +832,161 @@ Router(config)#
 ```
 
 Con esta configuración, el acceso a Internet se encuentra plenamente habilitado. Se puede verificar accediendo desde el navegador del PC0 al servidor web, siempre que este tenga correctamente definida la puerta de enlace con la dirección IP 195.0.0.1.
+
+## Administración centralizada
+
+VTP (Virtual Trunking Protocol) permite gestionar VLANs de forma centralizada. Sin VTP, cada vez que se crea, modifica o elimina una VLAN es necesario realizar esa configuración manualmente en cada switch de la red.
+
+VTP es un protocolo de Capa 2 del modelo OSI (enlace de datos) que garantiza la coherencia en la creación, gestión y eliminación de VLANs dentro de un dominio común, evitando errores de configuración, duplicación y mejorando la seguridad. Existen tres versiones de VTP: 1, 2 y 3.
+
+### Terminología VTP
+
+Antes de configurar VTP es necesario conocer su terminología básica:
+
+- **Dominio VTP**: Conjunto de switches bajo una administración común. Un switch solo puede pertenecer a un dominio VTP. Por defecto, no pertenece a ninguno hasta que se configure como servidor o reciba una actualización. Las actualizaciones se intercambian por enlaces troncales y contienen el nombre del dominio y un número de revisión. Si un switch recibe una actualización de otro dominio o con número de revisión inferior, la ignora.
+- **Modos VTP**:
+    - **Servidor VTP**: Puede crear, modificar y eliminar VLANs. Es el modo por defecto. Participa activamente en el envío, recepción y sincronización de actualizaciones.
+    - **Cliente VTP**: Recibe y reenvía actualizaciones VTP, pero no puede realizar cambios en la configuración de VLANs.
+    - **VTP Transparente**: No procesa actualizaciones, pero en versiones 2 y 3 puede reenviarlas por los enlaces troncales. No participa en la propagación ni modificación de VLANs.
+    - **VTP Off**: Similar al modo transparente, pero no reenvía ningún tipo de actualización.
+
+### Configuración VTP
+
+El escenario de red que se empleará requiere la configuración del protocolo VTP y sigue estos pasos:
+
+1. **Configuración de los puertos troncales**: Se deben configurar los enlaces entre los tres switches en modo troncal. Además, todos los demás puertos deben configurarse en modo acceso como medida de seguridad.
+2. **Configuración del protocolo VTP**:
+    - Se establecerá un dominio VTP común para los tres switches.
+    - Uno de los switches se configurará en modo servidor VTP.
+    - Los otros dos switches se configurarán en modo cliente VTP.
+    - Las VLANs se crearán únicamente en el switch configurado como servidor.
+    - Finalmente, se asignarán los puertos a las VLAN correspondientes en cada switch.
+
+![VTP](assets/images/ud5/img10.png){ width="500" }
+
+#### Configuración de los puertos troncales
+
+Los enlaces que conectan los switches deben configurarse en modo troncal para permitir el reenvío de tráfico de todas las VLANs. El resto de puertos debe establecerse en modo acceso como medida de seguridad.
+
+En el switch0 (Servidor VTP) se configura lo siguiente:
+
+```
+ServidorVTP>enable
+ServidorVTP#configure terminal
+ServidorVTP(config)#interface g0/1
+ServidorVTP(config-if)#switchport mode trunk
+ServidorVTP(config-if)#interface g0/2
+ServidorVTP(config-if)#switchport mode trunk
+ServidorVTP(config-if)#interface range fa0/1-24
+ServidorVTP(config-if-range)#switchport mode access
+```
+
+En el switch1 se establece la siguiente configuración:
+
+```
+switch1>enable
+switch1#configure terminal
+switch1(config)#interface g0/1
+switch1(config-if)#switchport mode trunk
+switch1(config-if)#interface range fa0/1-24
+switch1(config-if-range)#switchport mode access
+```
+
+Finalmente, en el switch2, la configuración sería:
+
+```
+switch2>enable
+switch2#configure terminal
+switch2(config)#interface g0/2
+switch2(config-if)#switchport mode trunk
+switch2(config-if)#interface range fa0/1-24
+switch2(config-if-range)#switchport mode access
+```
+
+#### Configuración del protocolo VTP en los switches
+
+Para establecer el protocolo VTP, primero se define el dominio con el comando vtp domain nombre. Este parámetro es sensible a mayúsculas y minúsculas. Luego se asigna una contraseña al dominio con vtp password, y se indica el modo de operación con vtp mode {server | client | transparent}.
+
+En el switch servidor se configura lo siguiente:
+
+```
+ServidorVTP(config)#vtp domain ejemplo
+Changing VTP domain name from NULL to ejemplo
+ServidorVTP(config)#vtp password clave1234
+Setting device VLAN database password to clave1234
+ServidorVTP(config)#vtp mode server
+Device mode already VTP SERVER.
+```
+
+En switch1 se ejecuta:
+
+```
+switch1(config)#vtp domain ejemplo
+Domain name already set to ejemplo.
+switch1(config)#vtp password clave1234
+Setting device VLAN database password to clave1234
+switch1(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+```
+
+En switch2 se realiza la misma configuración:
+
+```
+switch2(config)#vtp domain ejemplo
+Domain name already set to ejemplo.
+switch2(config)#vtp password clave1234
+Setting device VLAN database password to clave1234
+switch2(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+```
+
+A continuación se crean las VLANs en el switch servidor, que las propagará automáticamente a los demás switches configurados como clientes:
+
+```
+ServidorVTP(config)#vlan 10
+ServidorVTP(config-vlan)#name Administracion
+ServidorVTP(config-vlan)#vlan 20
+ServidorVTP(config-vlan)#name Ventas
+```
+
+Las VLANs creadas se pueden verificar con el comando show vlan brief.
+
+Salida en el switch servidor:
+
+```
+10  Administracion  active
+20  Ventas         active
+```
+
+Salida en switch1 y switch2:
+
+```
+10  Administracion  active
+20  Ventas         active
+```
+
+Esto confirma que las VLANs fueron correctamente propagadas mediante VTP.
+
+#### Asignación de puertos a las VLANs
+
+En este último paso se asignan los puertos a las VLAN correspondientes. En los switches 1 y 2, los puertos FastEthernet del 1 al 13 se asignan a la VLAN de Administración (VLAN 10), y los puertos del 14 al 24 a la VLAN de Ventas (VLAN 20).
+
+En switch1 se ejecuta:
+
+```
+switch1(config)#interface range fa0/1-13
+switch1(config-if-range)#switchport access vlan 10
+switch1(config-if-range)#interface range fa0/14-24
+switch1(config-if-range)#switchport access vlan 20
+```
+
+En switch2 la configuración es idéntica:
+
+```
+switch2(config)#interface range fa0/1-13
+switch2(config-if-range)#switchport access vlan 10
+switch2(config-if-range)#interface range fa0/14-24
+switch2(config-if-range)#switchport access vlan 20
+```
+
+Una vez asignados los puertos a sus respectivas VLANs, se puede verificar la conectividad entre los PCs pertenecientes a la misma VLAN.
