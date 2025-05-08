@@ -404,3 +404,108 @@ Medidas de seguridad recomendadas:
     - Apagar el router en ausencias prolongadas.
     - Supervisar los accesos a la red desde el panel de administración del router.
 
+#### Acceso WMAN (Wireless Metropolitan Area Network)
+
+- **WiMAX (Worldwide Interoperability for Microwave Access)**: Estándar de comunicación inalámbrica basado en IEEE 802.16. Similar al Wi-Fi, pero diseñado para ofrecer cobertura a gran escala mediante estaciones base que conectan múltiples usuarios a través de paneles exteriores. Aunque su uso ha disminuido en favor de LTE y 5G, sigue empleándose en entornos rurales y conexiones empresariales donde no hay acceso por cable.
+- **LMDS (Local Multipoint Distribution Service)**: Tecnología de altas frecuencias que requiere visibilidad directa entre el emisor y el receptor. Es menos común hoy día por sus altos costes y menor eficiencia frente a tecnologías como fibra o 5G fijo inalámbrico (Fixed Wireless Access).
+- **Radioenlace (Microwave Link)**: Utiliza microondas de alta frecuencia. Necesita línea de visión directa. Se emplea como solución de respaldo o en entornos sin cobertura de fibra o móvil, especialmente para conectar ubicaciones remotas o rurales.
+
+#### Acceso inalámbrico WWAN (Wireless Wide Area Network)
+
+- **2G / GSM** (obsoleto en la mayoría de países):
+    - CSD, GPRS, EDGE: Tecnologías ya en desuso debido a sus bajas velocidades.
+- **3G / UMTS, HSPA, HSPA+**:
+    - UMTS: Hasta 2 Mbps.
+    - HSDPA/HSUPA: Mejoras en bajada y subida. En fase de retirada en muchos países.
+- **4G / LTE** (Long Term Evolution):
+    - Tecnología dominante aún en muchas zonas.
+    - Velocidades reales de hasta 100 Mbps (descarga) y 50 Mbps (subida).
+	- Soporta servicios como VoLTE y redes de emergencia.
+- **4G+ / LTE Advanced / LTE-A Pro**:
+	- Mejora el rendimiento de LTE mediante agregación de portadoras y MIMO avanzado.
+	- Velocidades teóricas de hasta 1 Gbps.
+	- Utilizado como base de transición a 5G.
+- **5G NR (New Radio)**:
+    - Desde 2020
+	- Release 15 y 16: Ya desplegadas.
+	- Release 17 y 18 (en 2024–2025): Incluyen mejoras en latencia, eficiencia energética, soporte para redes privadas, y conectividad masiva para IoT.
+	- Velocidades de hasta 10–20 Gbps en condiciones ideales.
+	- Latencia inferior a 1 ms.
+	- Clave en vehículos autónomos, realidad aumentada/virtual, telemedicina, industria 4.0.
+- **5G FWA (Fixed Wireless Access)**:
+    - Alternativa al FTTH en zonas rurales y suburbanas.
+    - Ofrece velocidades similares a la fibra con menor coste de despliegue.
+- **6G (en fase de investigación y desarrollo)**:
+	•	Se espera su estandarización en torno a 2028.
+	•	Promete velocidades de hasta 1 Tbps, latencias del orden de microsegundos, comunicaciones holográficas, inteligencia artificial integrada en red, y cobertura satelital total.
+- **Acceso por satélite (LEO - Low Earth Orbit)**:
+	- Empresas como Starlink (SpaceX), OneWeb, o Amazon Kuiper están desplegando constelaciones de satélites de baja órbita para ofrecer acceso global a Internet.
+	- Latencia menor que el satélite geoestacionario tradicional.
+	- Ideal para zonas sin infraestructura terrestre.
+
+## Utilización de NAT en los routers CISCO
+
+A continuación se muestran los comandos utilizados para configurar los distintos tipos de NAT según el estándar de Cisco. En todos los casos, es necesario especificar qué interfaz es interna y cuál es externa.
+
+Para definir la interfaz interna:
+
+```
+Router(config)# interface xx/xx  
+Router(config-if)# ip nat inside
+```
+
+Para definir la interfaz externa:
+
+```
+Router(config)# interface xx/xx  
+Router(config-if)# ip nat outside
+```
+
+**NAT estática**
+
+Para realizar siempre la misma traducción entre una IP interna y una IP externa:
+
+```
+Router(config)# ip nat inside source static ipinterna ipexterna
+```
+
+Además, como se ha comentado, es necesario definir cuál es la interfaz interna y cuál la externa.
+
+**NAT dinámica**
+
+En este caso, suele haber pocas IPs externas y muchas IPs internas. A medida que se necesita el acceso al exterior, se van realizando las traducciones. Hay que llevar a cabo varias configuraciones.
+
+Primero se definen las IPs internas, usando una lista de acceso estándar:
+
+```
+Router(config)# ip access-list standard IPs_internas  
+Router(config-std-nacl)# permit ip wildcard
+```
+
+Después, se definen las IPs externas como un pool:
+
+```
+Router(config)# ip nat pool IPs_externas primeraip ultimaip netmask máscara
+```
+
+A continuación, se configura la traducción:
+
+```
+Router(config)# ip nat inside source list IPs_internas pool IPs_externas
+```
+
+También hay que indicar cuál es la interfaz interna y cuál la externa.
+
+**NAT dinámica con sobrecarga**
+
+La configuración es igual que en la NAT dinámica, pero al definir la traducción se añade la palabra overload, lo cual permite traducir también los puertos:
+
+```
+Router(config)# ip nat inside source list IPs_internas pool IPs_externas overload
+```
+
+Si se quiere abrir un puerto en esta configuración, se utiliza el siguiente comando:
+
+```
+Router(config)# ip nat inside source static tcp IP_interna IP_externa puertoaabrir
+```
