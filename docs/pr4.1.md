@@ -2,7 +2,7 @@
 
 Dado el siguiente escenario:
 
-<center>![Configuración interfaces del router](assets/images/ud4/img02.png){ width="700" }</center>
+![Configuración interfaces del router](assets/images/ud4/img02.png){ width="700" }
 
 Configura las interfaces que se presentan usando los pasos que se indican en los apuntes.
 
