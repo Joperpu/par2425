@@ -1,0 +1,2691 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://joperpu.github.io/par2425/ud4/">
+      
+      
+        <link rel="prev" href="../pr3.5/">
+      
+      
+        <link rel="next" href="../pr4.1/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Teoría UD4 - Planificación y administración de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-4-configuracion-y-administracion-basica-de-routers" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Planificación y administración de redes" class="md-header__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Planificación y administración de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teoría UD4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planificación y administración de redes" class="md-nav__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Planificación y administración de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Página principal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD1 - Introducción a las redes de comunicaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 - Introducción a las redes de comunicaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2 - Integración de elementos de una red
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 - Integración de elementos de una red
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3 - Configuración y administración de conmutadores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 - Configuración y administración de conmutadores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4 - Configuración y administración básica de routers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 - Configuración y administración básica de routers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD4
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD4
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puerta-de-enlace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puerta de enlace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablas-de-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tablas de enrutamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-del-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces del router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de arranque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proteger-las-contrasenas-en-el-archivo-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proteger las contraseñas en el archivo de configuración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-interfaces-del-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar interfaces del router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurar interfaces del router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-la-configuracion-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar la configuración de la interfaz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puerta-de-enlace-predeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puerta de enlace predeterminada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Puerta de enlace predeterminada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-la-ip-en-un-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de la IP en un host
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento-ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento IPv4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distancia-administrativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distancia administrativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métrica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#balanceo-de-carga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balanceo de carga
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-de-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla de enrutamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabla de enrutamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-tabla-de-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada de tabla de enrutamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrutamiento-estatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento estático
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrutamiento estático">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutas-estaticas-estandar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas estáticas estándar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas estáticas estándar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-de-siguiente-salto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática de siguiente salto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-conectada-directamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática conectada directamente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-completamente-especificada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática completamente especificada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática por defecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-resumida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática resumida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-flotante" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática flotante
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-las-rutas-estaticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar las rutas estáticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5 - Redes locales virtuales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 - Redes locales virtuales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr5.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD7 - Conexión a redes de área extensa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD7 - Conexión a redes de área extensa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr7.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 7.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#puerta-de-enlace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puerta de enlace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablas-de-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tablas de enrutamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-del-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-del-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interfaces del router
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-arranque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de arranque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración inicial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proteger-las-contrasenas-en-el-archivo-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proteger las contraseñas en el archivo de configuración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-interfaces-del-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar interfaces del router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurar interfaces del router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificar-la-configuracion-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar la configuración de la interfaz
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puerta-de-enlace-predeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puerta de enlace predeterminada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Puerta de enlace predeterminada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-la-ip-en-un-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de la IP en un host
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encaminamiento-ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encaminamiento IPv4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Encaminamiento IPv4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distancia-administrativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Distancia administrativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métrica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#balanceo-de-carga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Balanceo de carga
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-de-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla de enrutamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabla de enrutamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entrada-de-tabla-de-enrutamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada de tabla de enrutamiento
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrutamiento-estatico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento estático
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrutamiento estático">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rutas-estaticas-estandar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rutas estáticas estándar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rutas estáticas estándar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-de-siguiente-salto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática de siguiente salto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-conectada-directamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática conectada directamente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-completamente-especificada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática completamente especificada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática por defecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-resumida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática resumida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruta-estatica-flotante" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ruta estática flotante
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificar-las-rutas-estaticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar las rutas estáticas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unidad-4-configuracion-y-administracion-basica-de-routers">Unidad 4 - Configuración y administración básica de routers</h1>
+<h2 id="encaminamiento">Encaminamiento</h2>
+<p>Además del direccionamiento, que ya vimos en la unidad 2, la capa de red se encarga de encaminar los paquetes entre distintos hosts. Un host puede enviar un paquete a diferentes destinos posibles:</p>
+<ul>
+<li>A sí mismo. Es posible que un host se envíe datos a su propia dirección, utilizando la dirección IPv4 127.0.0.1, conocida como “interfaz de loopback” o bucle invertido.</li>
+<li>A un host dentro de la misma red. En este caso, el host de destino forma parte de la misma red local que el emisor, ya que comparten el mismo identificador de red. Por ejemplo, en una red doméstica pueden coexistir varios dispositivos conectados por cable o de forma inalámbrica, enlazados mediante un dispositivo intermediario como un switch LAN o un punto de acceso Wi-Fi. Este equipo actúa como puente entre los dispositivos de la misma red local. Si el host de origen envía un paquete a otro equipo dentro de la misma red IP, el paquete se transmite a través del intermediario directamente hacia su destino.</li>
+<li>A un host en otra red. Aquí hablamos de un equipo que se encuentra en una red distinta a la del emisor, por lo que no comparten el mismo prefijo de red. En estos casos, los routers se encargan de enlazar distintas redes entre sí. Son los responsables de trasladar los paquetes entre redes diferentes.</li>
+</ul>
+<p>En la mayoría de los casos, los dispositivos necesitan comunicarse más allá de su red local, por ejemplo, al acceder a servicios en Internet. Cuando esto ocurre, es fundamental el uso de routers y del proceso de enrutamiento. El enrutamiento consiste en determinar la mejor ruta posible para hacer llegar un paquete a su destino final.</p>
+<h3 id="puerta-de-enlace">Puerta de enlace</h3>
+<p>El router que se encuentra conectado a la red local recibe el nombre de puerta de enlace predeterminada o gateway por defecto. Este dispositivo tiene la función de dirigir el tráfico de datos hacia redes externas, es decir, fuera del ámbito de la red local.</p>
+<p>En la mayoría de los sistemas, la tabla de enrutamiento del host incluye una entrada correspondiente a esta puerta de enlace. La dirección IPv4 del gateway puede ser asignada automáticamente mediante el protocolo DHCP o bien configurarse manualmente por el usuario o administrador. Por ejemplo, en la ilustración, tanto el PC1 como el PC2 están configurados con la dirección 192.168.10.1 como gateway predeterminado. Esta configuración genera en la tabla de enrutamiento de cada equipo una ruta predeterminada, que será utilizada para enviar paquetes dirigidos a destinos fuera de su red local.</p>
+<p>Esta ruta predeterminada se deriva directamente de la dirección configurada como gateway y aparece en la tabla de enrutamiento del host. De este modo, tanto el PC1 como el PC2 enviarán cualquier tráfico destinado a redes remotas al router R1, siguiendo la ruta predeterminada definida.</p>
+<h3 id="tablas-de-enrutamiento">Tablas de enrutamiento</h3>
+<p>Una tabla de enrutamiento es una estructura de datos que almacena información sobre los posibles caminos que pueden seguir los paquetes para alcanzar un destino. El componente más importante de dicha tabla es la ruta, que identifica una red de destino junto con la dirección IP del siguiente salto, es decir, el router al que se debe enviar el paquete para continuar su trayecto.</p>
+<p>Estas tablas están formadas por múltiples rutas y son únicas en cada dispositivo. Todos los equipos conectados a una red —ya sean PCs, routers, etc.— disponen de su propia tabla de enrutamiento. Cuando un dispositivo necesita enviar datos a otro, consulta esta tabla para determinar cuál es el mejor camino a seguir.</p>
+<p>El funcionamiento básico de una tabla de enrutamiento se resume en los siguientes pasos:</p>
+<ol>
+<li>Un paquete llega al dispositivo o es generado por él (por ejemplo, un PC, router o tablet).</li>
+<li>El sistema operativo del dispositivo analiza la dirección IP de destino para identificar la red de destino y busca la ruta correspondiente en su tabla de enrutamiento.</li>
+<li>Una vez localizada la ruta, se obtiene la dirección IP del router que corresponde al siguiente salto.</li>
+<li>El paquete se envía a esa dirección, es decir, al siguiente dispositivo en la ruta hacia su destino final.</li>
+</ol>
+<p>Este proceso se repite para cada paquete que debe ser transmitido por la red.</p>
+<p>Cuando un host necesita enviar un paquete, utiliza su propia tabla de enrutamiento para decidir a dónde dirigirlo. Si el destino se encuentra en una red diferente, el paquete se envía al router que actúa como puerta de enlace predeterminada. A su vez, el router consultará su propia tabla de enrutamiento para reenviar el paquete adecuadamente.</p>
+<p>La tabla de enrutamiento de un router puede contener varios tipos de rutas:</p>
+<ul>
+<li><strong>Rutas conectadas directamente</strong>. Estas son rutas que corresponden a redes conectadas directamente a alguna de las interfaces activas del router. Cuando una interfaz es configurada con una dirección IP y está operativa, el router añade automáticamente esa red como ruta directa. Cada interfaz del router está conectada a un segmento de red distinto.</li>
+<li><strong>Rutas remotas</strong>. Son rutas que conducen a redes que no están conectadas directamente al router, sino a través de otros routers. Estas rutas pueden configurarse de forma manual por el administrador o aprenderse de manera automática mediante protocolos de enrutamiento dinámico, que permiten a los routers intercambiar información sobre rutas.</li>
+<li><strong>Ruta predeterminada</strong>. Igual que ocurre en los hosts, los routers también disponen de una ruta predeterminada. Esta se utiliza como último recurso para reenviar paquetes cuyo destino no coincide con ninguna de las otras rutas especificadas en la tabla.</li>
+</ul>
+<center>![Enrutamiento](assets/images/ud4/img01.png){ width="700" }</center>
+
+<p>Además de contener información sobre rutas hacia redes directamente conectadas y redes remotas, la tabla de enrutamiento también incluye detalles adicionales como el método mediante el cual se aprendió la ruta, su grado de confiabilidad, la métrica o coste asociado, la fecha y hora de la última actualización, así como la interfaz de red que se debe utilizar para alcanzar el destino especificado.</p>
+<p>Cuando un paquete llega a un router, este analiza su encabezado para identificar la red de destino. Si dicha red aparece en la tabla de enrutamiento, el router reenvía el paquete utilizando los datos especificados en la entrada correspondiente. En el caso de que existan múltiples rutas posibles hacia un mismo destino, el router selecciona la mejor ruta basándose en la métrica, un valor que permite comparar la eficiencia o conveniencia relativa de cada ruta.</p>
+<p>Dado que un router conecta diferentes redes, dispone de múltiples interfaces de red, cada una asociada a una red IP distinta. Al recibir un paquete IP a través de una de sus interfaces, el router debe determinar por cuál de sus interfaces debe reenviarlo. Esta interfaz puede estar directamente conectada a la red de destino o bien llevar el paquete hacia otro router que permitirá continuar el camino hacia su destino final.</p>
+<p>Es importante señalar que un router puede recibir un paquete encapsulado en un tipo de trama de enlace de datos y enviarlo a través de una interfaz que utilice un formato diferente. Por ejemplo, podría recibir un paquete mediante una interfaz Ethernet y reenviarlo a través de una interfaz configurada con el protocolo PPP (Point-to-Point Protocol). La encapsulación de enlace de datos utilizada depende tanto del tipo de interfaz como del medio físico al que esta se encuentra conectada.</p>
+<p>Entre las tecnologías de enlace de datos que pueden estar presentes en las interfaces de un router se encuentran Ethernet, PPP, Frame Relay, DSL, conexiones por cable y tecnologías inalámbricas como Wi-Fi (802.11) o Bluetooth, entre otras.</p>
+<h2 id="configuracion-del-router">Configuración del router</h2>
+<p>Aunque existen diversos modelos y tipos de routers, todos comparten una serie de componentes de hardware fundamentales. Estos son los siguientes:</p>
+<ul>
+<li>Unidad Central de Procesamiento (CPU). Es el componente responsable de ejecutar las instrucciones del sistema operativo del router.</li>
+<li>Memoria. En los routers Cisco se distinguen distintos tipos de memoria, cada uno con funciones específicas:<ul>
+<li>RAM. Es memoria volátil que contiene tanto las aplicaciones en ejecución como los datos necesarios para el funcionamiento del dispositivo.</li>
+<li>ROM. Memoria no volátil que almacena el firmware del router, incluyendo instrucciones básicas para el arranque.</li>
+<li>NVRAM. También no volátil, se utiliza para guardar el archivo de configuración de inicio (startup-config), que se carga durante el arranque del sistema.</li>
+<li>Flash. Es una memoria no volátil destinada al almacenamiento permanente del sistema operativo del router (IOS) y archivos asociados. Durante el proceso de arranque, el archivo IOS se copia desde la memoria Flash a la RAM.</li>
+</ul>
+</li>
+</ul>
+<h3 id="interfaces-del-router">Interfaces del router</h3>
+<p>Un router está provisto de distintas conexiones que se pueden clasificar en dos grupos principales:</p>
+<ul>
+<li>Puertos de administración. Estos puertos están destinados a tareas de configuración, mantenimiento y diagnóstico del equipo. No se utilizan para transmitir tráfico de red. Los dos tipos más comunes son el puerto de consola y el puerto auxiliar.</li>
+<li>Interfaces de banda. Son las interfaces empleadas para la transmisión y recepción de tráfico IP. Incluyen conexiones de red de área local (LAN), como Gigabit Ethernet, y conexiones de red de área extensa (WAN), como interfaces seriales o DSL. Cada una de estas interfaces, una vez configurada y activada, actúa como miembro de una red IP distinta, por lo que debe asignarse una dirección IPv4 y una máscara de subred únicas. El sistema operativo Cisco IOS no permite que dos interfaces activas del mismo router pertenezcan a la misma red IP.</li>
+</ul>
+<p>Por lo general, cada red a la que se conecta un router requiere una interfaz física independiente. Estas interfaces permiten la conexión tanto a redes LAN como a redes WAN. Las redes de área local (LAN), habitualmente basadas en tecnología Ethernet, suelen estar formadas por equipos como ordenadores, impresoras o servidores. Las redes de área extensa (WAN), en cambio, se utilizan para enlazar redes locales a través de grandes distancias. Un caso común es el uso de una conexión WAN para enlazar una LAN con la infraestructura del proveedor de servicios de Internet (ISP).</p>
+<h3 id="proceso-de-arranque">Proceso de arranque</h3>
+<p>El proceso de arranque de un router consta de tres fases principales, que se desarrollan en el siguiente orden:</p>
+<ol>
+<li><strong>Ejecución del POST y carga del programa de arranque</strong>. Al encenderse, el router realiza un procedimiento de autocomprobación conocido como POST (Power-On Self Test), mediante el cual verifica el estado de distintos componentes de hardware como la ROM, la CPU, la RAM y la NVRAM. Una vez finalizado este diagnóstico, el programa de arranque se transfiere desde la ROM a la RAM. La función principal de este programa es localizar el sistema operativo Cisco IOS y cargarlo en memoria para su posterior ejecución.</li>
+<li><strong>Localización y carga del sistema Cisco IOS</strong>. Habitualmente, la imagen del sistema operativo IOS se encuentra almacenada en la memoria flash. Desde allí se copia a la RAM para que la CPU pueda ejecutarla. En caso de que no se disponga de una imagen completa del IOS, el sistema carga una versión reducida que permite diagnosticar problemas y transferir una imagen completa del IOS a la memoria flash.</li>
+<li><strong>Carga del archivo de configuración</strong>. Una vez que el IOS está operativo, el programa de arranque localiza el archivo de configuración almacenado en la NVRAM (startup-config) y lo copia a la RAM. Este archivo se convierte en la configuración activa (running-config), es decir, aquella que se utilizará durante la sesión actual del router.</li>
+</ol>
+<h3 id="configuracion-inicial">Configuración inicial</h3>
+<p>Al igual que en el proceso de configuración inicial de un switch, al configurar un router por primera vez es necesario llevar a cabo una serie de tareas básicas para garantizar su correcta identificación y seguridad. Estas tareas incluyen:</p>
+<ol>
+<li>Asignar un nombre al dispositivo.</li>
+<li>Proteger el modo EXEC de usuario.</li>
+<li>Establecer contraseñas para el acceso remoto mediante Telnet y SSH.</li>
+<li>Asegurar el acceso al modo EXEC privilegiado.</li>
+<li>Ocultar las contraseñas almacenadas en el archivo de configuración.</li>
+<li>Incluir un mensaje de advertencia legal.</li>
+<li>Guardar la configuración realizada.</li>
+</ol>
+<p>A continuación, se detallan los pasos correspondientes a las primeras de estas tareas.</p>
+<p>Como ya se vio en el caso de los switches, es recomendable asignar un nombre de host al router con el fin de identificar el dispositivo en el que se está trabajando. Para ello, se utiliza el comando hostname en el modo de configuración global:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Router&gt;enable  
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Router#configure terminal  
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Router(config)#hostname R1  
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>R1(config)# 
+</span></code></pre></div>
+<p>Para proteger el modo EXEC de usuario, es necesario establecer una contraseña en la línea de consola del router. Esto se consigue mediante la siguiente secuencia de comandos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>R1(config)#line console 0  
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>R1(config-line)#password cisco  
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>R1(config-line)#login  
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>R1(config-line)#exit  
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>R1(config)#  
+</span></code></pre></div>
+<p>En cuanto al acceso remoto a través de Telnet o SSH, se requiere configurar una contraseña para las líneas VTY:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>R1(config)#line vty 0 4  
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>R1(config-line)#password cisco  
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>R1(config-line)#login  
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>R1(config-line)#exit  
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>R1(config)#  
+</span></code></pre></div>
+<p>Cabe señalar que, al igual que con los switches, para poder acceder remotamente al router mediante Telnet o SSH, es imprescindible que el dispositivo tenga asignada una dirección IP. La configuración de las interfaces del router, necesarias para ello, se abordará en apartados posteriores.</p>
+<p>Para asegurar el acceso al modo EXEC privilegiado, basta con establecer una contraseña mediante el comando adecuado. Esta contraseña protegerá el acceso al modo de administración avanzada del router. El comando utilizado es enable secret, y debe ejecutarse desde el modo de configuración global:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>R1(config)#enable secret cisco  
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>R1(config)#  
+</span></code></pre></div>
+<p>Este comando cifra automáticamente la contraseña y proporciona un nivel de seguridad superior en comparación con el comando enable password, que no realiza cifrado por defecto.</p>
+<h4 id="proteger-las-contrasenas-en-el-archivo-de-configuracion">Proteger las contraseñas en el archivo de configuración</h4>
+<p>Una vez configuradas las contraseñas en las diferentes líneas del router, es recomendable cifrarlas para evitar que se almacenen en texto plano dentro del archivo de configuración. Para ello, se utiliza el siguiente comando en el modo de configuración global:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>R1(config)#service password-encryption  
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>R1(config)#  
+</span></code></pre></div>
+<p>A continuación, se puede establecer un mensaje de advertencia que se mostrará a los usuarios antes de acceder al sistema. Este mensaje, conocido como banner de MOTD (Message of the Day), sirve como notificación legal e indica que el acceso está restringido únicamente a personal autorizado:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>R1(config)#banner motd #Solo personal autorizado puede acceder.#  
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>R1(config)#  
+</span></code></pre></div>
+<p>Finalmente, para conservar todos los cambios realizados, es necesario salir del modo de configuración y guardar la configuración activa en la NVRAM, asegurando que esta se mantenga tras un reinicio del dispositivo. El proceso se realiza con los siguientes comandos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>R1(config)#exit  
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>R1#  
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>%SYS-5-CONFIG_I: Configured from console by console  
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>R1#copy running-config startup-config  
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Destination filename [startup-config]?  
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Building configuration...  
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>[OK]  
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>R1#  
+</span></code></pre></div>
+<h3 id="configurar-interfaces-del-router">Configurar interfaces del router</h3>
+<p>Para que un router sea accesible a través de la red, es necesario configurar sus interfaces en banda, es decir, aquellas que permiten el envío y recepción de paquetes IP. Los routers Cisco cuentan con una amplia variedad de interfaces, dependiendo del modelo específico.</p>
+<p>En el caso del router Cisco de la serie 1941, por ejemplo, se dispone de las siguientes interfaces:</p>
+<ul>
+<li>Dos interfaces Gigabit Ethernet: GigabitEthernet 0/0 (G0/0) y GigabitEthernet 0/1 (G0/1).</li>
+<li>Una tarjeta de interfaz WAN serial (WIC), que incluye dos interfaces: Serial 0/0/0 (S0/0/0) y Serial 0/0/1 (S0/0/1).</li>
+</ul>
+<p>La configuración de una interfaz de red se realiza utilizando el comando ip address, que se introduce en el modo de configuración de interfaz. Este comando se emplea para asignar una dirección IPv4 y su correspondiente máscara de subred.</p>
+<p>A continuación, se mostrará un ejemplo práctico de configuración basado en una red específica.</p>
+<center>![Configuración interfaces del router](assets/images/ud4/img02.png){ width="700" }</center>
+
+<p>El router R1 se conecta a LAN1, compuesta por un switch y un PC, a través de su interfaz GigabitEthernet 0/0. De manera similar, el router R2 establece conexión con LAN2, que también incluye un switch y un PC, mediante su interfaz GigabitEthernet 0/0. Finalmente, el router R3 se conecta a LAN3, la cual presenta la misma estructura de dispositivos. Siempre que un router se conecte a una red local (LAN), se emplearán interfaces de tipo GigabitEthernet, adecuadas para redes locales de alta velocidad.</p>
+<p>Por otra parte, los routers están interconectados mediante enlaces seriales, formando una red WAN. Estas conexiones utilizan las interfaces Serial 0/0/0 (Se0/0/0). Siempre que sea posible, se recomienda usar interfaces seriales para la interconexión entre routers, reservando las interfaces Ethernet para conexiones dentro de la red local, donde ofrecen un mejor rendimiento en ese contexto.</p>
+<p>A continuación, se presenta el esquema de direccionamiento utilizado en esta topología de red.</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Red</th>
+      <th>Dispositivo</th>
+      <th>Dirección IP</th>
+      <th>Interfaz</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">LAN1</td>
+      <td>PC0</td>
+      <td>192.168.0.2/24</td>
+      <td>NIC</td>
+    </tr>
+    <tr>
+      <td>R1</td>
+      <td>192.168.0.1/24</td>
+      <td>G0/0</td>
+    </tr>
+
+    <tr>
+      <td rowspan="4">WAN</td>
+      <td>R1</td>
+      <td>172.16.0.1/16</td>
+      <td>Se0/0/0</td>
+    </tr>
+    <tr>
+      <td>R2</td>
+      <td>172.16.0.2/16</td>
+      <td>Se0/0/0</td>
+    </tr>
+    <tr>
+      <td>R2</td>
+      <td>172.17.0.1/16</td>
+      <td>Se0/0/1</td>
+    </tr>
+    <tr>
+      <td>R3</td>
+      <td>172.17.0.2/16</td>
+      <td>Se0/0/0</td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">LAN2</td>
+      <td>R2</td>
+      <td>192.168.1.1/24</td>
+      <td>G0/0</td>
+    </tr>
+    <tr>
+      <td>PC1</td>
+      <td>192.168.1.2/24</td>
+      <td>NIC</td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">LAN3</td>
+      <td>R3</td>
+      <td>192.168.2.1</td>
+      <td>G0/0</td>
+    </tr>
+    <tr>
+      <td>PC2</td>
+      <td>192.168.2.2</td>
+      <td>NIC</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Comenzamos configurando la interfaz Gi0/0 del router R1.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>R1&gt;enable
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Password:
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>R1#configure terminal
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Enter configuration commands, one per line. End with CNTL/Z.
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>R1(config)#interface g0/0
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>R1(config-if)#ip address 192.168.0.1 255.255.255.0
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>R1(config-if)#description Interfaz LAN1
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>R1(config-if)#no shutdown
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>R1(config-if)#
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>R1(config-if)#exit
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>R1(config)#
+</span></code></pre></div>
+<p>Para configurar una interfaz en un router, es necesario acceder a ella mediante el comando interface id-interfaz. A continuación, se asigna la dirección IP correspondiente utilizando el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ip address dirección-IP máscara
+</span></code></pre></div>
+<p>Opcionalmente, se puede añadir una descripción con el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>description descripción
+</span></code></pre></div>
+<p>El comando no shutdown permite activar la interfaz, funcionando como si se le suministrara energía. No obstante, para que la capa física se active correctamente, la interfaz debe estar conectada a otro dispositivo, como un switch o un router.</p>
+<p>En el ejemplo anterior, se ha configurado la interfaz GigabitEthernet 0/0, que puede identificarse indistintamente con los formatos g0/0, gi0/0 o gigabitethernet 0/0, como se muestra a continuación:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>R1(config)#interface g0/0
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>R1(config-if)#exit
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>R1(config)#interface gi0/0
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>R1(config-if)#exit
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>R1(config)#interface gigabitEthernet 0/0
+</span></code></pre></div>
+<p>A continuación, se procede a configurar la interfaz serial 0/0/0 del router R1, la cual establece la conexión WAN con el router R2. El procedimiento de configuración es similar al utilizado para las interfaces Ethernet, aunque en el caso de las interfaces seriales se requiere un paso adicional.</p>
+<p>En el diagrama de red, se observa que una de las conexiones seriales incluye un icono de reloj en uno de sus extremos. Esto indica que la conexión es de tipo sincronizada, por lo que es necesario definir manualmente la velocidad del reloj en el extremo que actúa como DCE (Data Communications Equipment), es decir, el que lleva el icono del reloj. En este ejemplo, dicha función corresponde a la interfaz Serial 0/0/0 del router R1.</p>
+<p>La configuración de esta interfaz se realiza con la siguiente secuencia de comandos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>R1&gt;enable  
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Password:  
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>R1#configure terminal  
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>R1(config)#interface s0/0/0  
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>R1(config-if)#ip address 172.16.0.1 255.255.0.0  
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>R1(config-if)#clock rate 4000000  
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>R1(config-if)#description Conexion WAN R2  
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>R1(config-if)#no shutdown  
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>R1(config-if)#exit  
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>R1(config)#  
+</span></code></pre></div>
+<p>Como se ha observado, el comando clock rate seguido de un valor numérico permite definir la velocidad del reloj en una interfaz serial configurada como DCE. En este ejemplo se ha utilizado la velocidad máxima permitida, que es de 4.000.000 bits por segundo (bps).</p>
+<h4 id="verificar-la-configuracion-de-la-interfaz">Verificar la configuración de la interfaz</h4>
+<p>Para comprobar que las interfaces del router han sido configuradas correctamente, se dispone de varios comandos de verificación. Uno de los más útiles es show ip interface brief, que se ejecuta desde el modo EXEC privilegiado. Este comando muestra un resumen de todas las interfaces del dispositivo, incluyendo su dirección IPv4 asignada, el método de asignación, y el estado operativo.</p>
+<p>En condiciones normales, una interfaz correctamente configurada y conectada debe mostrar el estado “up” tanto en la columna Status como en la de Protocol. Cualquier otro valor, como “administratively down” o “down”, puede indicar un problema de configuración, de conexión física o de cableado.</p>
+<p>Ejemplo de salida del comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>R1#show ip interface brief  
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Interface              IP-Address      OK? Method Status            Protocol  
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>GigabitEthernet0/0     192.168.0.1     YES manual up                up  
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>GigabitEthernet0/1     unassigned      YES unset  administratively down down  
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Serial0/0/0            172.16.0.1      YES manual up                up  
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Serial0/0/1            unassigned      YES unset  down              down  
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Vlan1                  unassigned      YES unset  administratively down down  
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>R1#  
+</span></code></pre></div>
+<p>Además, es posible verificar la conectividad entre dispositivos mediante el comando ping, el cual permite enviar paquetes ICMP al destino especificado. Los routers Cisco envían, por defecto, cinco paquetes consecutivos y muestran el resultado con signos de exclamación (!) cuando la respuesta ha sido satisfactoria. También se indican los tiempos de ida y vuelta (RTT) mínimo, promedio y máximo.</p>
+<p>A continuación, se muestra un ejemplo en el que el router R1 realiza una prueba de conectividad con el router R2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>R1#ping 172.16.0.2  
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Type escape sequence to abort.  
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Sending 5, 100-byte ICMP Echos to 172.16.0.2, timeout is 2 seconds:  
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>!!!!!  
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Success rate is 100 percent (5/5), round-trip min/avg/max = 2/4/6 ms  
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>R1#  
+</span></code></pre></div>
+<p>El resultado confirma que se ha establecido correctamente la comunicación entre ambos dispositivos.</p>
+<h3 id="puerta-de-enlace-predeterminada">Puerta de enlace predeterminada</h3>
+<p>Para que un dispositivo pueda comunicarse a través de una red, es necesario configurarlo con ciertos parámetros que lo identifiquen correctamente dentro de la topología. Estos elementos esenciales son:</p>
+<ul>
+<li><strong>Dirección IP</strong>. Permite identificar de forma única a un host dentro de su red local.</li>
+<li><strong>Máscara de subred</strong>. Define a qué subred pertenece el host, facilitando la segmentación y el enrutamiento.</li>
+<li><strong>Puerta de enlace predeterminada</strong>. Es la dirección IP del router al que se deben enviar los paquetes cuyo destino no se encuentra dentro de la misma subred local.</li>
+</ul>
+<center>![Puerta de enlace predeterminada](assets/images/ud4/img03.png){ width="700" }</center>
+
+<p>Cuando un host envía un paquete dirigido a otro dispositivo ubicado dentro de su misma red IP, el paquete se entrega directamente a través de la interfaz del host hacia el dispositivo de destino. Sin embargo, si el paquete tiene como destino un dispositivo ubicado en una red diferente, el host no puede comunicarse directamente con él. En su lugar, el paquete se reenvía a la puerta de enlace predeterminada, que es la encargada de redirigirlo hacia su destino final. La puerta de enlace actúa, por tanto, como intermediario entre la red local y las redes externas, y en muchos casos permite el acceso a Internet.</p>
+<p>Generalmente, la puerta de enlace predeterminada corresponde a la dirección IP de la interfaz del router que está conectada directamente a la red local. Este router posee una tabla de enrutamiento que contiene información tanto de las redes directamente conectadas como de aquellas remotas, y se encarga de determinar la mejor ruta para alcanzar cualquier destino.</p>
+<p>Por ejemplo, si el PC1 desea enviar un paquete a un servidor web ubicado en la dirección 176.16.1.99, identificará que dicho servidor no pertenece a su red local. En consecuencia, el PC enviará el paquete a la dirección MAC de su puerta de enlace predeterminada. La Unidad de Datos del Protocolo (PDU) generada incluirá las direcciones MAC e IP tanto de origen como de destino, lo que permite que el paquete sea encaminado adecuadamente hasta alcanzar su objetivo.</p>
+<h4 id="configuracion-de-la-ip-en-un-host">Configuración de la IP en un host</h4>
+<p>Como se explicó anteriormente, para que un equipo pueda comunicarse en la red, es imprescindible que tenga configurados los parámetros IP necesarios. Estos parámetros pueden asignarse de forma estática, mediante configuración manual por parte del administrador de red, o de forma dinámica, utilizando un servidor DHCP (Dynamic Host Configuration Protocol).</p>
+<p>Si un PC únicamente necesita comunicarse con otros dispositivos dentro de su misma red local, basta con que tenga asignadas una dirección IP y una máscara de subred. No obstante, si requiere establecer comunicación con equipos ubicados en redes distintas, también será necesario configurar la puerta de enlace predeterminada, que permitirá enviar el tráfico hacia destinos fuera de la red local.</p>
+<center>![Configuración IP](assets/images/ud4/img04.png){ width="300" }</center>
+
+<h2 id="encaminamiento-ipv4">Encaminamiento IPv4</h2>
+<p>Una de las funciones fundamentales de un router es determinar la ruta óptima para el envío de paquetes hacia su destino. Para ello, el router consulta su tabla de enrutamiento, en busca de una coincidencia entre la dirección IP de destino del paquete y alguna de las redes listadas en dicha tabla. El resultado de esta búsqueda puede derivar en una de las siguientes tres situaciones:</p>
+<ul>
+<li>
+<p><strong>Red conectada directamente</strong>. Si la dirección IP de destino pertenece a una red que está conectada de forma directa a una de las interfaces del router, el paquete se reenvía directamente al dispositivo de destino. En este caso, la IP de destino es la de un host que se encuentra en la misma red que una de las interfaces del router.</p>
+</li>
+<li>
+<p><strong>Red remota</strong>. Si la dirección IP de destino corresponde a una red que no está directamente conectada, el router reenvía el paquete a otro router. Las redes remotas sólo pueden alcanzarse mediante el reenvío de paquetes hacia otras redes, a través de dispositivos intermedios.</p>
+</li>
+<li>
+<p><strong>Sin ruta específica</strong>. Si la dirección IP de destino no coincide con ninguna red directamente conectada ni remota, el router verifica si dispone de una ruta predeterminada, también conocida como gateway de último recurso. Esta ruta puede ser configurada manualmente o aprendida dinámicamente. Si dicha ruta existe, el paquete se reenvía a través de ella. En caso de que no exista una ruta predeterminada, el router descarta el paquete por no tener una ruta válida para su entrega.</p>
+</li>
+</ul>
+<center>![Reenvío de paquetes](assets/images/ud4/img05.png){ width="600" }</center>
+
+<p>Es posible que un router disponga de múltiples rutas hacia una misma red de destino. En tal caso, debe determinar cuál de ellas representa la mejor ruta. Este proceso implica evaluar todas las rutas disponibles hacia dicha red y seleccionar la más eficiente o la que ofrezca el camino más corto. Cada una de estas rutas puede implicar el uso de una interfaz de salida distinta en el router para alcanzar el destino.</p>
+<p>Cuando existen varias rutas hacia la misma red, el router necesita información adicional presente en la tabla de enrutamiento para tomar una decisión adecuada. Esta información se basa en dos parámetros fundamentales: la distancia administrativa y la métrica.</p>
+<h3 id="distancia-administrativa">Distancia administrativa</h3>
+<p>En un entorno en el que un router está configurado con varios protocolos de enrutamiento o rutas estáticas, puede suceder que diferentes métodos descubran una misma red de destino. Por ejemplo, si se habilitan simultáneamente los protocolos RIP y EIGRP, ambos pueden identificar rutas hacia la misma red.</p>
+<p>Para resolver esta situación, el sistema operativo IOS de Cisco utiliza un valor denominado distancia administrativa (AD, por sus siglas en inglés). Esta métrica se emplea para determinar qué ruta debe ser instalada en la tabla de enrutamiento cuando hay múltiples opciones disponibles. La distancia administrativa representa el grado de confiabilidad del origen de la ruta: cuanto menor sea el valor de AD, mayor será la preferencia que el router otorgará a esa ruta.</p>
+<p>Los valores de AD están predefinidos por el sistema según el tipo de origen de la ruta (por ejemplo, ruta estática, protocolo dinámico, ruta conectada directamente, etc.). A continuación, se proporciona una tabla con los valores típicos de distancia administrativa utilizados por diferentes métodos de enrutamiento.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de ruta</th>
+<th>Distancia administrativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conectada directamente</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Estática</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RIP</td>
+<td>120</td>
+</tr>
+<tr>
+<td>IGRP</td>
+<td>100</td>
+</tr>
+<tr>
+<td>EIGRP</td>
+<td>90</td>
+</tr>
+<tr>
+<td>OSPF</td>
+<td>110</td>
+</tr>
+</tbody>
+</table>
+<p>La distancia administrativa es el primer criterio que utiliza un router para decidir qué ruta seleccionar cuando dos protocolos de enrutamiento distintos proporcionan información hacia el mismo destino. En estos casos, el router elige la ruta con la menor distancia administrativa, ya que representa la opción más confiable.</p>
+<p>Como se indicaba en la tabla anterior, cuando un router debe escoger entre una ruta estática y una ruta aprendida mediante un protocolo de enrutamiento dinámico, dará preferencia a la ruta estática, ya que posee una AD más baja. De igual forma, una ruta conectada directamente, con una distancia administrativa de 0, tendrá siempre prioridad sobre una ruta estática, cuya AD es típicamente 1.</p>
+<h3 id="metrica">Métrica</h3>
+<p>Una vez que se ha determinado el protocolo de enrutamiento a utilizar en función de la distancia administrativa, es posible que dicho protocolo proporcione varias rutas alternativas hacia un mismo destino. Dado que estas rutas comparten la misma AD, se requiere un segundo criterio para tomar una decisión: la métrica.</p>
+<p>La métrica es un valor numérico que cuantifica la “distancia” o el coste asociado a una ruta específica. Este valor permite al router identificar cuál de las rutas disponibles es más eficiente. Por tanto, la mejor ruta es aquella que presenta la métrica más baja.</p>
+<p>Cada protocolo de enrutamiento define su propia forma de calcular la métrica, y puede basarse en uno o varios parámetros, como el número de saltos, el ancho de banda, el retardo, la carga o la confiabilidad del enlace.</p>
+<p>A continuación, se presenta un ejemplo práctico con una red compuesta por los routers R1, R2, R3 y R4, que servirá para ilustrar cómo se aplica el concepto de métrica en la selección de rutas.</p>
+<center>![Métrica](assets/images/ud4/img06.png){ width="500" }</center>
+
+<p>El router R1 debe decidir cuál es la mejor ruta para alcanzar la red 172.16.23.0/24, ya que existen dos caminos posibles: uno directo a través de R4, y otro más largo que pasa por R2 → R3 → R4. A primera vista, parecería lógico suponer que el camino más corto, el que conecta directamente con R4, sería el más adecuado. De hecho, esto es precisamente lo que ocurre cuando se utiliza el protocolo de enrutamiento RIP en toda la topología.</p>
+<p>En el caso de RIP (Routing Information Protocol), la métrica utilizada para determinar la mejor ruta es el número de saltos hasta el destino. Cuantos menos routers intermedios haya, mejor se considera la ruta. En este escenario, R1 evalúa ambas opciones y determina que llegar a 172.16.23.0/24 a través de R4 representa el mejor camino, ya que solo requiere 1 salto. En cambio, seguir la ruta R2 → R3 → R4 implica 3 saltos. Como en todos los protocolos de enrutamiento, la ruta con la métrica más baja es la preferida y es la que se instala en la tabla de enrutamiento.</p>
+<p>Sin embargo, no todos los protocolos de enrutamiento basan su decisión exclusivamente en la cantidad de saltos. Por ejemplo, si esta misma red estuviese utilizando OSPF (Open Shortest Path First), el cálculo sería diferente. En lugar de contar los saltos, OSPF evalúa el ancho de banda acumulado de los enlaces a lo largo del camino hacia el destino. De este modo, OSPF puede optar por un camino más largo en número de saltos, siempre que tenga un mejor rendimiento en términos de ancho de banda.</p>
+<p>El protocolo OSPF asigna a cada enlace un valor llamado costo, que representa el “precio” relativo de utilizar dicho enlace. Este valor se calcula mediante la fórmula:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Costo = 100.000.000 / BW
+</span></code></pre></div>
+<p>donde BW es el ancho de banda del enlace expresado en bits por segundo (bps). La constante 100.000.000 se utiliza como referencia para un enlace de 100 Mbps (FastEthernet).</p>
+<p>Aplicando esta fórmula a los enlaces del ejemplo, se obtienen los siguientes costos:</p>
+<ul>
+<li>R1 → R2 = 100 (porque 100.000.000 / 1.000.000 = 100)</li>
+<li>R2 → R3 = 100</li>
+<li>R3 → R4 = 390 (100.000.000 / 256.000)</li>
+<li>R4 → Red de destino = 1 (enlace de 100 Mbps)</li>
+<li>R1 → R4 = 781 (100.000.000 / 128.000)</li>
+</ul>
+<p>Sumando los costos para cada ruta completa:</p>
+<ul>
+<li>Vía R1 → R4 → destino: 781 + 1 = 782</li>
+<li>Vía R1 → R2 → R3 → R4 → destino: 100 + 100 + 390 + 1 = 591</li>
+</ul>
+<p>Por tanto, aunque el camino que pasa por R2, R3 y R4 incluye más saltos, OSPF lo prefiere porque tiene un costo total menor, lo que se traduce en mejor eficiencia de red. El router R1 seleccionará esta ruta como la óptima y la instalará en su tabla de enrutamiento.</p>
+<h2 id="balanceo-de-carga">Balanceo de carga</h2>
+<p>Balanceo de carga</p>
+<p>Cuando un router detecta dos o más rutas hacia un mismo destino que presentan idéntica métrica, puede utilizar todas ellas de manera equitativa para reenviar paquetes. Este mecanismo se conoce como balanceo de carga de mismo costo (equal-cost load balancing). En estos casos, la tabla de enrutamiento del router incluye una única entrada de destino, pero asociada a varias interfaces de salida, cada una correspondiente a una de las rutas con el mismo costo.</p>
+<p>El router distribuye el tráfico entre estas interfaces, utilizando todas las rutas disponibles de forma equilibrada, lo que permite una mejor utilización de los recursos de red y una mayor eficiencia en la transmisión de datos.</p>
+<h2 id="tabla-de-enrutamiento">Tabla de enrutamiento</h2>
+<p>La tabla de enrutamiento de un router es un archivo de datos almacenado en la RAM, que contiene información clave sobre cómo alcanzar diferentes redes. En concreto, almacena datos sobre:</p>
+<ul>
+<li>
+<p>Rutas conectadas directamente. Corresponden a redes que están enlazadas directamente con alguna de las interfaces activas del router. Estas rutas se añaden automáticamente a la tabla cuando una interfaz se configura con una dirección IP válida y está habilitada.</p>
+</li>
+<li>
+<p>Rutas remotas. Representan redes que no están directamente conectadas al router, sino que se alcanzan a través de otros routers. Estas rutas pueden configurarse manualmente (rutas estáticas) o aprenderse dinámicamente mediante el uso de protocolos de enrutamiento como RIP, OSPF o EIGRP.</p>
+</li>
+</ul>
+<p>En términos generales, una tabla de enrutamiento contiene asociaciones entre redes y “siguientes saltos”. Esto significa que, para alcanzar una red de destino, el router debe reenviar el paquete a otro router específico (el siguiente salto) o a una interfaz de salida concreta que lo dirige hacia ese destino.</p>
+<p>En los routers Cisco, se puede utilizar el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>show ip route
+</span></code></pre></div>
+<p>Este comando muestra la tabla de enrutamiento IPv4 del dispositivo. La salida incluye información detallada sobre cada ruta, como la forma en que fue descubierta (estática, dinámica, conectada), el tiempo de permanencia en la tabla, y la interfaz exacta que debe emplearse para reenviar paquetes hacia cada red de destino.</p>
+<center>![Router R1](assets/images/ud4/img07.png){ width="600" }</center>
+
+<p>Las entradas de la tabla de enrutamiento pueden ser generadas por distintos mecanismos, dependiendo de cómo se ha configurado y gestionado la red. Las formas más comunes de añadir rutas a la tabla son las siguientes:</p>
+<ul>
+<li><strong>Interfaces de ruta local</strong>. Se generan automáticamente cuando una interfaz del router ha sido configurada con una dirección IP válida y se encuentra activa.</li>
+<li><strong>Interfaces conectadas directamente</strong>. También se agregan de forma automática cuando una interfaz está configurada y operativa. Representan redes directamente accesibles a través del router.</li>
+<li><strong>Rutas estáticas</strong>. Estas entradas se crean manualmente por parte del administrador y se incorporan a la tabla de enrutamiento siempre que la interfaz de salida asociada esté activa.</li>
+<li><strong>Protocolos de enrutamiento dinámico</strong>. Las rutas se añaden automáticamente cuando se implementan protocolos como EIGRP u OSPF, los cuales descubren redes de forma dinámica mediante el intercambio de información entre routers.</li>
+</ul>
+<p>Cada entrada de la tabla de enrutamiento incluye un código identificador que indica el origen de dicha ruta, es decir, cómo fue aprendida o configurada. A continuación se detallan los códigos más comunes:</p>
+<ul>
+<li><strong>L</strong>: Indica una dirección IP asignada directamente a una interfaz del router. Esta entrada permite al router identificar si un paquete está destinado a él mismo o si debe reenviarlo.</li>
+<li><strong>C</strong>: Representa una red conectada directamente. Se trata de redes accesibles mediante interfaces activas del router.</li>
+<li><strong>S</strong>: Hace referencia a una ruta estática, es decir, configurada manualmente para alcanzar una red específica.</li>
+<li><strong>D</strong>: Señala una ruta descubierta dinámicamente mediante el protocolo EIGRP (Enhanced Interior Gateway Routing Protocol).</li>
+<li><strong>O</strong>: Indica una ruta aprendida dinámicamente a través del protocolo de enrutamiento OSPF (Open Shortest Path First).</li>
+</ul>
+<p>Estos códigos ayudan a interpretar y analizar el contenido de la tabla de enrutamiento, facilitando la gestión y diagnóstico de la red.</p>
+<h3 id="entrada-de-tabla-de-enrutamiento">Entrada de tabla de enrutamiento</h3>
+<p>En siguiente imagen, se muestra una entrada de la tabla de enrutamiento IPv4 en el R1 para la ruta a la red remota 10.1.1.0/24.</p>
+<center>![Entrada de tabla de enrutamiento](assets/images/ud4/img08.png){ width="600" }</center>
+
+<p>Cada entrada en la tabla de enrutamiento proporciona información detallada que permite al router tomar decisiones informadas sobre el reenvío de paquetes. Los campos más relevantes que se incluyen en una entrada son los siguientes:</p>
+<ul>
+<li><strong>Origen de la ruta</strong>: Indica cómo fue aprendida la ruta, ya sea de forma estática, conectada directamente o mediante un protocolo de enrutamiento dinámico.</li>
+<li><strong>Red de destino</strong>: Especifica la dirección de la red remota a la que se desea llegar.</li>
+<li><strong>Distancia administrativa</strong>: Representa el nivel de confiabilidad del origen de la ruta. Cuanto menor sea este valor, mayor será la prioridad de dicha ruta frente a otras alternativas.</li>
+<li><strong>Métrica</strong>: Es el valor asignado que permite determinar la eficiencia de la ruta hacia la red remota. Al igual que la distancia administrativa, los valores más bajos indican rutas preferidas.</li>
+<li><strong>Siguiente salto</strong>: Corresponde a la dirección IPv4 del router al que se debe reenviar el paquete en el camino hacia el destino final.</li>
+<li><strong>Marca de tiempo (timestamp)</strong>: Indica el tiempo transcurrido desde que la ruta fue aprendida o actualizada por el protocolo de enrutamiento.</li>
+<li><strong>Interfaz de salida</strong>: Es la interfaz física o lógica del router a través de la cual se debe enviar el paquete para alcanzar la red de destino.</li>
+</ul>
+<h2 id="enrutamiento-estatico">Enrutamiento estático</h2>
+<p>Las rutas estáticas son configuradas manualmente por el administrador de red y establecen una ruta explícita entre dos dispositivos dentro de una red. Este tipo de rutas se añaden de forma deliberada en la tabla de enrutamiento.</p>
+<p>Existen varios tipos comunes de rutas estáticas que pueden encontrarse en una tabla de enrutamiento:</p>
+<ul>
+<li><strong>Ruta estática estándar</strong>: Dirigida a una red específica.</li>
+<li><strong>Ruta estática predeterminada</strong>: Utilizada cuando no se conoce una ruta específica hacia un destino.</li>
+<li><strong>Ruta estática resumida</strong>: Agrupa varias rutas en una sola entrada para simplificar la tabla.</li>
+<li><strong>Ruta estática flotante</strong>: Se emplea como respaldo de una ruta principal; solo se utiliza si la ruta preferida deja de estar disponible.</li>
+</ul>
+<p>El uso de enrutamiento estático presenta una serie de ventajas frente al enrutamiento dinámico:</p>
+<ul>
+<li>No se propagan a través de la red, lo cual mejora la seguridad al evitar anuncios innecesarios.</li>
+<li>Consumen menos ancho de banda, ya que no se intercambia información de enrutamiento de forma continua.</li>
+<li>No implican carga de CPU adicional para cálculos o actualizaciones de rutas.</li>
+<li>La ruta utilizada para enviar los datos es conocida y predecible, lo que facilita el control y diagnóstico.</li>
+</ul>
+<p>Sin embargo, también conlleva ciertas desventajas importantes:</p>
+<ul>
+<li>Requiere tiempo considerable para su configuración inicial y mantenimiento posterior.</li>
+<li>Es propenso a errores de configuración, especialmente en redes de gran tamaño.</li>
+<li>Necesita intervención manual cada vez que cambia alguna condición en la red.</li>
+<li>No es adecuado para redes en expansión, ya que su gestión se vuelve cada vez más compleja.</li>
+<li>Exige un conocimiento detallado de toda la topología de red para poder implementar rutas estáticas de forma correcta y efectiva.</li>
+</ul>
+<h3 id="rutas-estaticas-estandar">Rutas estáticas estándar</h3>
+<p>Las rutas estáticas pueden configurarse para permitir el acceso a una red remota específica. En el caso de IPv4, la configuración se realiza utilizando el comando ip route desde el modo de configuración global del router:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Router(config)# ip route network mask { next-hop-ip | exit-intf } [AD]
+</span></code></pre></div>
+<p>Los parámetros que deben especificarse en este comando son los siguientes:</p>
+<ul>
+<li><strong>network mask</strong>: Dirección de red de destino junto con su máscara expresada en notación decimal.</li>
+<li><strong>next-hop-ip</strong>: Dirección IP del siguiente salto, es decir, la IP del dispositivo al que se debe reenviar el paquete.</li>
+<li><strong>exit-intf</strong>: Interfaz de salida del router. En lugar de indicar la dirección IP del siguiente salto, puede especificarse la interfaz por la que se transmitirá el paquete.</li>
+<li><strong>AD</strong>: Distancia administrativa, aplicable únicamente en el caso de las rutas estáticas flotantes, que actúan como rutas de respaldo.</li>
+</ul>
+<p>El siguiente salto puede definirse de tres formas distintas: mediante una dirección IP, una interfaz de salida, o ambos. Dependiendo de cómo se especifique, se distinguen los siguientes tipos de rutas estáticas:</p>
+<ul>
+<li><strong>Ruta del siguiente salto</strong>: Se proporciona únicamente la dirección IP del siguiente salto. Antes de reenviar el paquete, el router debe realizar una resolución de ruta, lo que implica dos búsquedas en la tabla de enrutamiento: una para encontrar la interfaz de salida correspondiente y otra para reenviar el paquete.</li>
+<li><strong>Ruta estática conectada directamente</strong>: Solo se indica la interfaz de salida. En este caso, el router no necesita realizar búsquedas adicionales, ya que conoce directamente por dónde debe enviar el paquete.</li>
+<li><strong>Ruta estática especificada completamente</strong>: Se definen tanto la dirección IP del siguiente salto como la interfaz de salida. Este tipo de configuración exige que el siguiente salto esté directamente conectado a la interfaz indicada. Es una práctica que solo se utilizaba en versiones antiguas del sistema operativo Cisco IOS.</li>
+</ul>
+<p>En la tabla de enrutamiento, las rutas estáticas se representan con el código “S”.</p>
+<p>En el contexto de la red de ejemplo, es posible configurar múltiples rutas estáticas en cada router con el objetivo de alcanzar aquellas redes remotas a las que no se tiene acceso directo. Se asume que las interfaces de cada router ya han sido configuradas correctamente.</p>
+<h4 id="ruta-estatica-de-siguiente-salto">Ruta estática de siguiente salto</h4>
+<p>Para configurar una ruta estática de siguiente salto, es necesario especificar la dirección IP del router al que se deben reenviar los paquetes. A continuación, se muestra el procedimiento de configuración en el router R1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>R1&gt;enable  
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Password:  
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>R1#configure terminal  
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>R1(config)#ip route 192.168.1.0 255.255.255.0 172.16.0.2  
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>R1(config)#ip route 172.17.0.0 255.255.0.0 172.16.0.2  
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>R1(config)#ip route 192.168.2.0 255.255.255.0 172.16.0.2  
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>R1(config)#  
+</span></code></pre></div>
+<p>Con estos comandos se han definido rutas estáticas de siguiente salto. En el primer caso, se indica que todos los paquetes cuyo destino sea la red 192.168.1.0/24 deben ser enviados a la dirección 172.16.0.2, que corresponde a la interfaz Serial 0/0/0 del router R2, conectada directamente a la interfaz serial del router R1.</p>
+<p>Es importante destacar que la dirección IP del siguiente salto no corresponde a la interfaz de salida del propio router, sino a la dirección IP del router vecino al que se debe reenviar el tráfico.</p>
+<h4 id="ruta-estatica-conectada-directamente">Ruta estática conectada directamente</h4>
+<p>También es posible definir una ruta estática conectada directamente indicando la interfaz de salida en lugar de la dirección IP del siguiente salto. En este caso, se especifica una interfaz del propio router R1 como punto de salida para el reenvío de paquetes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>R1(config)#ip route 192.168.1.0 255.255.255.0 s0/0/0  
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>R1(config)#  
+</span></code></pre></div>
+<p>Como puede observarse, desde R1 se accede a todas las redes remotas a través de su enlace serial con R2.</p>
+<p>En el caso del router R2, también es necesario configurar rutas estáticas para alcanzar redes que no están directamente conectadas a él. Las configuraciones correspondientes serían las siguientes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Router&gt;enable  
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Router#configure terminal  
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>Router(config)#ip route 192.168.0.0 255.255.255.0 172.16.0.1  
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>Router(config)#ip route 192.168.2.0 255.255.255.0 172.17.0.2  
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>Router(config)#  
+</span></code></pre></div>
+<ul>
+<li>La primera ruta permite a R2 enviar paquetes destinados a la red 192.168.0.0/24 a través del router R1 (IP 172.16.0.1).</li>
+<li>La segunda permite alcanzar la red 192.168.2.0/24 a través del router R3, utilizando como siguiente salto la dirección 172.17.0.2.</li>
+</ul>
+<p>Estas rutas estáticas completan la conectividad entre redes no directamente accesibles desde R2.</p>
+<h4 id="ruta-estatica-completamente-especificada">Ruta estática completamente especificada</h4>
+<p>El uso de una ruta estática conectada directamente puede producir comportamientos incongruentes o inesperados, dependiendo de la topología de red. En el ejemplo actual, la conexión entre R1 y R2 se realiza a través de una red serial punto a punto, lo que implica que R1 tiene un único dispositivo en ese enlace: R2, ubicado en el extremo opuesto.</p>
+<p>No obstante, si la conexión se realizara mediante interfaces Ethernet, la situación sería diferente. En una red de acceso múltiple, como ocurre con Ethernet, pueden coexistir varios dispositivos en el mismo segmento de red: hosts, switches e incluso múltiples routers. En estos casos, indicar únicamente la interfaz de salida en una ruta estática no proporciona al router información suficiente para identificar con precisión el dispositivo del siguiente salto.</p>
+<p>Por ejemplo, si R1 estuviera conectado a R2 mediante la interfaz GigabitEthernet 0/1, y dicha interfaz estuviera enlazada a un switch compartido con otros hosts, el router sabría que debe encapsular el paquete en una trama Ethernet y enviarlo a través de GigabitEthernet 0/1. Sin embargo, R1 no tendría forma de conocer la dirección IP del siguiente salto, por lo que no podría determinar la dirección MAC a la que debe enviar dicha trama.</p>
+<p>Según la topología y la configuración del resto de los routers, esta ruta estática podría funcionar o no. Por ello, cuando se utiliza una interfaz Ethernet como salida, se recomienda emplear una ruta estática completamente especificada, en la que se indique tanto la interfaz de salida como la dirección IP del siguiente salto.</p>
+<p>A modo de ejemplo, las rutas estáticas en R3 se podrían configurar de la siguiente manera:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>R3&gt;enable  
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>R3#configure terminal  
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>R3(config)#ip route 192.168.1.0 255.255.255.0 172.17.0.1 s0/0/0  
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>R3(config)#ip route 192.168.0.0 255.255.255.0 172.17.0.1 s0/0/0  
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>R3(config)#ip route 172.16.0.0 255.255.255.0 172.17.0.1 s0/0/0  
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>R3(config)#  
+</span></code></pre></div>
+<p>Una vez configuradas correctamente todas las rutas necesarias en los distintos routers, cualquier dispositivo de la red debería poder comunicarse mediante ping con cualquier otro, garantizando así la conectividad completa entre las diferentes redes.</p>
+<h3 id="ruta-estatica-por-defecto">Ruta estática por defecto</h3>
+<p>Una ruta predeterminada es una entrada en la tabla de enrutamiento que coincide con cualquier dirección de destino. Se utiliza cuando un paquete no encuentra una coincidencia más específica en la tabla. Esta ruta actúa como una solución de último recurso para reenviar tráfico hacia destinos desconocidos.</p>
+<p>Una ruta predeterminada puede ser aprendida dinámicamente mediante protocolos de enrutamiento o configurada manualmente como una ruta estática. En este último caso, la ruta se define utilizando la red de destino 0.0.0.0/0, lo que indica que aplica a cualquier dirección IP. Al configurar esta ruta, el router establece un gateway de último recurso.</p>
+<p>Para crear una ruta estática predeterminada IPv4, se emplea la misma sintaxis utilizada para las rutas estáticas estándar, con la diferencia de que se especifica 0.0.0.0 como dirección de red y 0.0.0.0 como máscara de subred:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Router(config)# ip route 0.0.0.0 0.0.0.0 { exit-intf | next-hop-ip }
+</span></code></pre></div>
+<p>A continuación, se muestra un ejemplo práctico utilizando la misma red anterior. Supongamos que en R3 no se han configurado rutas estáticas para alcanzar las redes remotas. Dado que R3 accede al resto de las redes a través de su conexión con R2, una alternativa más sencilla es definir una única ruta predeterminada en lugar de múltiples rutas estáticas.</p>
+<p>La configuración sería la siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>R3&gt;enable  
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>Password:  
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>R3#configure terminal  
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>R3(config)#ip route 0.0.0.0 0.0.0.0 172.17.0.1  
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>R3(config)#  
+</span></code></pre></div>
+<p>De este modo, cualquier paquete cuyo destino no coincida con otra ruta más específica será reenviado a través del router R2, utilizando como siguiente salto la dirección 172.17.0.1.</p>
+<p>Una vez aplicada esta configuración, se puede comprobar la conectividad realizando un ping desde PC2 a PC0, verificando que ambos dispositivos pueden comunicarse correctamente a través de la red.</p>
+<h3 id="ruta-estatica-resumida">Ruta estática resumida</h3>
+<p>Para reducir el número de entradas en la tabla de enrutamiento, es posible agrupar varias rutas estáticas en una única entrada mediante una técnica conocida como resumen de rutas estáticas (static route summarization). Esta opción se puede aplicar siempre que se cumplan las siguientes condiciones:</p>
+<ul>
+<li>Las redes de destino sean contiguas, es decir, puedan representarse mediante una sola dirección de red con una máscara de subred adecuada.</li>
+<li>Todas las rutas que se desean resumir utilicen la misma interfaz de salida o el mismo siguiente salto.</li>
+</ul>
+<p>Este enfoque permite optimizar la tabla de enrutamiento, reduciendo su tamaño y facilitando su mantenimiento. A continuación, se presentará un ejemplo basado en una topología de red específica.</p>
+<center>![Ruta estática resumida](assets/images/ud4/img09.png){ width="700" }</center>
+
+<p>En el ejemplo mostrado, el router R1 necesita configurar cuatro rutas estáticas individuales para alcanzar las redes comprendidas entre 192.168.0.0/24 y 192.168.3.0/24. No obstante, estas rutas pueden reemplazarse por una única ruta estática resumida, lo que permite reducir el número de entradas en la tabla de enrutamiento y, en consecuencia, mejorar la eficiencia del proceso de reenvío de paquetes.</p>
+<p>Para determinar una ruta estática resumida que sustituya a varias rutas individuales, es necesario identificar la parte común de las direcciones de red involucradas. Esta parte compartida permitirá establecer una sola entrada que abarque el mismo rango de direcciones mediante el uso de una máscara de subred adecuada. En nuestro ejemplo:</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th rowspan="2" style="text-align: center; vertical-align: middle;">Red</th>
+      <th colspan="3" style="text-align: center; vertical-align: middle;">Parte de Red</th>
+      <th style="text-align: center; vertical-align: middle;">Parte de host</th>
+    </tr>
+    <tr>
+      <th style="text-align: center; vertical-align: middle;">Octeto 1</th>
+      <th style="text-align: center; vertical-align: middle;">Octeto 2</th>
+      <th style="text-align: center; vertical-align: middle;">Octeto 3</th>
+      <th style="text-align: center; vertical-align: middle;">Octeto 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>192.168.0.0/24</td>
+      <td>11000000</td>
+      <td>10101000</td>
+      <td>00000000</td>
+      <td>00000000</td>
+    </tr>
+    <tr>
+      <td>192.168.1.0/24</td>
+      <td>11000000</td>
+      <td>10101000</td>
+      <td>00000001</td>
+      <td>00000000</td>
+    </tr>
+    <tr>
+      <td>192.168.2.0/24</td>
+      <td>11000000</td>
+      <td>10101000</td>
+      <td>00000010</td>
+      <td>00000000</td>
+    </tr>
+    <tr>
+      <td>192.168.3.0/24</td>
+      <td>11000000</td>
+      <td>10101000</td>
+      <td>00000011</td>
+      <td>00000000</td>
+    </tr>
+    <tr>
+      <td>Parte común</td>
+      <td>11000000</td>
+      <td>10101000</td>
+      <td>000000</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Al analizar los bits binarios de las redes, se observa que los primeros 22 bits son idénticos en todas ellas, mientras que los dos últimos bits del tercer octeto varían. Esto indica que es posible agrupar las redes 192.168.0.0/24 hasta 192.168.3.0/24 mediante una única ruta resumida.</p>
+<p>Completando con ceros la parte común, se obtiene la dirección de red 192.168.0.0/22, que abarca todas las redes mencionadas. De esta manera, en lugar de configurar cuatro rutas estáticas individuales en el router R1, basta con configurar una única ruta estática resumida, como se muestra a continuación:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>R1&gt;enable  
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>R1#configure terminal  
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>R1(config)#ip route 192.168.0.0 255.255.252.0 172.17.0.2  
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>R1(config)#  
+</span></code></pre></div>
+<p>Esta configuración optimiza la tabla de enrutamiento y simplifica el mantenimiento de la red.</p>
+<h3 id="ruta-estatica-flotante">Ruta estática flotante</h3>
+<p>Las rutas estáticas flotantes son rutas estáticas configuradas con una distancia administrativa mayor que la de otra ruta existente, ya sea estática o dinámica. Su propósito principal es actuar como rutas de respaldo, que solo se utilizan en caso de que la ruta principal deje de estar disponible.</p>
+<p>Por defecto, las rutas estáticas tienen una distancia administrativa de 1, lo que las convierte en preferidas frente a rutas aprendidas mediante protocolos de enrutamiento dinámico. A modo de referencia, a continuación se muestran las distancias administrativas predeterminadas de algunos protocolos de enrutamiento dinámico comunes:</p>
+<ul>
+<li>EIGRP: 90</li>
+<li>IGRP: 100</li>
+<li>OSPF: 110</li>
+<li>IS-IS: 115</li>
+<li>RIP: 120</li>
+</ul>
+<p>La distancia administrativa de una ruta estática puede modificarse para hacer que dicha ruta tenga menor prioridad, de forma que no se utilice mientras exista una ruta con mejor precedencia. En este caso, la ruta estática se considera “flotante” porque permanece inactiva hasta que se pierde la ruta de preferencia, momento en el cual puede activarse automáticamente y asumir el tráfico como vía alternativa.</p>
+<p>Para implementar este comportamiento, se configura la ruta estática con una distancia administrativa mayor que la de la ruta principal. El router evaluará todas las rutas disponibles hacia un destino y seleccionará siempre aquella con la distancia administrativa más baja, ya que representa la opción más confiable.</p>
+<p>Para configurar una ruta estática flotante IPv4, se utiliza el comando ip route en modo de configuración global, añadiendo explícitamente la distancia administrativa como parámetro adicional. Si no se especifica este valor, el router aplicará el valor predeterminado (1).</p>
+<p>A continuación, se presentará un ejemplo práctico basado en una topología de red concreta.</p>
+<center>![Ruta estática flotante](assets/images/ud4/img10.png){ width="700" }</center>
+
+<p>En este escenario, la ruta predeterminada preferida para ir desde la red 192.168.0.0/24 hacia la 192.168.1.0/24 es a través del enlace entre R2 y R3. La conexión con R1 se debe usar únicamente como respaldo.</p>
+<p>En el router R2, se configura una ruta estática principal hacia la red 192.168.1.0/24 apuntando a R3. Como no se especifica ninguna distancia administrativa, se aplica el valor predeterminado de 1, que le otorga prioridad.</p>
+<p>A su vez, se configura una ruta estática flotante a la misma red, esta vez apuntando a R1 y con una distancia administrativa de 5, que es mayor que la de la ruta principal. Por tanto, esta ruta no se instala inicialmente en la tabla de enrutamiento, sino que queda inactiva hasta que la ruta preferente deje de estar disponible.</p>
+<p>Configuración en R2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>R2&gt;enable  
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>R2#configure terminal  
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>R2(config)#ip route 192.168.1.0 255.255.255.0 172.17.0.2  
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>R2(config)#ip route 192.168.1.0 255.255.255.0 172.16.0.2 5  
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>R2(config)#  
+</span></code></pre></div>
+<p>Al ejecutar el comando show ip route, solo se muestra la ruta estática preferida:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>R2#show ip route  
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>...  
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>S 192.168.1.0/24 [1/0] via 172.17.0.2  
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>...
+</span></code></pre></div>
+<p>No obstante, si se consulta la configuración en ejecución (show running-config), se podrán ver ambas rutas:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>ip route 192.168.1.0 255.255.255.0 172.17.0.2  
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>ip route 192.168.1.0 255.255.255.0 172.16.0.2 5  
+</span></code></pre></div>
+<p>De forma análoga, en R3 se puede configurar el acceso a la red 192.168.0.0/24 utilizando una ruta principal y una flotante:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>R3&gt;enable  
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>R3#configure terminal  
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>R3(config)#ip route 192.168.0.0 255.255.255.0 172.17.0.1  
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>R3(config)#ip route 192.168.0.0 255.255.255.0 172.18.0.1 5  
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>R3(config)#  
+</span></code></pre></div>
+<p>En condiciones normales, la comunicación entre ambas LANs se realiza por la ruta más corta. Sin embargo, si el enlace entre R2 y R3 falla, entran en funcionamiento las rutas estáticas flotantes como respaldo. Para que el enrutamiento funcione correctamente en esta situación, también es necesario que R1 tenga configuradas rutas adecuadas hacia ambas redes.</p>
+<p>Supongamos ahora que se produce un fallo en el enlace entre R2 y R3, por ejemplo, desactivando la interfaz Serial 0/0/1 en R2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>R2(config)#interface s0/0/1  
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>R2(config-if)#shutdown  
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>%LINK-5-CHANGED: Interface Serial0/0/1, changed state to administratively down  
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to down  
+</span></code></pre></div>
+<p>A continuación, si consultamos nuevamente la tabla de enrutamiento de R2, observaremos que la ruta flotante ha sido activada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>R2(config-if)#do show ip route  
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>...  
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>S 192.168.1.0/24 [5/0] via 172.16.0.2  
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>...
+</span></code></pre></div>
+<p>Esto demuestra que, ante una caída de la ruta principal, el router es capaz de utilizar automáticamente la ruta estática flotante para mantener la conectividad. En la siguiente imagen podemos ver la traza de conectividad de PC0 a PC1:</p>
+<center>![Tracert](assets/images/ud4/img11.png){ width="600" }</center>
+
+<h3 id="verificar-las-rutas-estaticas">Verificar las rutas estáticas</h3>
+<p>Además de utilizar comandos como ping y traceroute para comprobar la conectividad entre PCs ubicados en redes distintas, es posible verificar directamente las rutas estáticas configuradas en el router mediante diversos comandos show.</p>
+<p>Entre los más utilizados se encuentran:</p>
+<ul>
+<li><strong>show ip route</strong>: muestra toda la tabla de enrutamiento, incluyendo rutas conectadas, dinámicas y estáticas.</li>
+<li><strong>show ip route static</strong>: lista únicamente las rutas estáticas.</li>
+<li><strong>show ip route [red]</strong>: permite visualizar información detallada sobre una ruta específica hacia una red concreta.</li>
+</ul>
+<p>A continuación, se muestran varios ejemplos ejecutados en R1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>R1(config)#do show ip route  
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP  
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area  
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2  
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP  
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area  
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>       * - candidate default, U - per-user static route, o - ODR  
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>       P - periodic downloaded static route  
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>Gateway of last resort is 172.16.0.2 to network 0.0.0.0  
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a> 172.16.0.0/16 is variably subnetted, 2 subnets, 2 masks  
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>C    172.16.0.0/16 is directly connected, Serial0/0/0  
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>L    172.16.0.1/32 is directly connected, Serial0/0/0  
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>S    172.17.0.0/16 [1/0] via 172.16.0.2  
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>
+</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>192.168.0.0/24 is variably subnetted, 2 subnets, 2 masks  
+</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>C    192.168.0.0/24 is directly connected, GigabitEthernet0/0  
+</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>L    192.168.0.1/32 is directly connected, GigabitEthernet0/0  
+</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>S    192.168.1.0/24 [1/0] via 172.16.0.2  
+</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>S    192.168.2.0/24 [1/0] via 172.16.0.2  
+</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a>S*   0.0.0.0/0 [1/0] via 172.16.0.2  
+</span><span id="__span-30-24"><a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a>R1(config)#  
+</span></code></pre></div>
+<p>En la última línea se puede observar la ruta predeterminada configurada anteriormente, identificada por el asterisco * y con la dirección IP del siguiente salto.</p>
+<p>Para mostrar solamente las rutas estáticas, se puede usar:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>R1(config)#do show ip route static  
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>S    192.168.1.0/24 [1/0] via 172.16.0.2  
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>R1(config)#  
+</span></code></pre></div>
+<p>Por último, para examinar la ruta hacia una red específica, se emplea:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>R1(config)#do show ip route 192.168.1.0  
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Routing entry for 192.168.1.0/24  
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>  Known via &quot;static&quot;, distance 1, metric 0  
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>  Routing Descriptor Blocks:  
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>  * 172.16.0.2  
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>      Route metric is 0, traffic share count is 1  
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>R1(config)#  
+</span></code></pre></div>
+<p>Estos comandos permiten verificar no solo qué rutas están activas, sino también cómo fueron aprendidas, su distancia administrativa, la métrica, y el siguiente salto o interfaz utilizada para alcanzar el destino.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

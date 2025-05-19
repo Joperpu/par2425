@@ -1,0 +1,2957 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://joperpu.github.io/par2425/ud5/">
+      
+      
+        <link rel="prev" href="../pr4.5/">
+      
+      
+        <link rel="next" href="../pr5.1/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Teoría UD5 - Planificación y administración de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-5-redes-locales-virtuales" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Planificación y administración de redes" class="md-header__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Planificación y administración de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teoría UD5
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planificación y administración de redes" class="md-nav__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Planificación y administración de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Página principal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD1 - Introducción a las redes de comunicaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 - Introducción a las redes de comunicaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2 - Integración de elementos de una red
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 - Integración de elementos de una red
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3 - Configuración y administración de conmutadores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 - Configuración y administración de conmutadores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4 - Configuración y administración básica de routers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 - Configuración y administración básica de routers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5 - Redes locales virtuales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 - Redes locales virtuales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD5
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD5
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#necesidad-de-utilizar-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Necesidad de utilizar VLANs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-de-una-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beneficios de una VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-trama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato de trama
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formato de trama">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalles-del-campo-de-etiqueta-de-la-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalles del campo de etiqueta de la VLAN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de VLAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de VLAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vlan-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-predeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN predeterminada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN nativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-de-administracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN de administración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enlace-troncal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlace troncal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificadores-de-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identificadores de VLAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identificadores de VLAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vlans-de-rango-normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLANs de rango normal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlans-de-rango-extendido" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLANs de rango extendido
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-puertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de puertos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asignación de puertos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-puertos-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de puertos de acceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-varios-puertos-simultaneamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de varios puertos simultáneamente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambio-de-pertenencia-de-puertos-a-una-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cambio de pertenencia de puertos a una VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-de-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminación de VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminación de VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-completa-del-archivo-vlandat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminación completa del archivo vlan.dat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacion-de-la-informacion-de-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificación de la información de VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-enlaces-troncales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de enlaces troncales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración de enlaces troncales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vlan-nativa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN nativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etherchannel-como-enlace-troncal" class="md-nav__link">
+    <span class="md-ellipsis">
+      EtherChannel como enlace troncal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restablecimiento-del-enlace-troncal-al-estado-predeterminado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restablecimiento del enlace troncal al estado predeterminado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrutamiento-entre-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento entre VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrutamiento entre VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enrutamiento-entre-vlans-tradicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento entre VLANs tradicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrutamiento-entre-vlans-mediante-router-on-a-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento entre VLANs mediante Router-on-a-Stick
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-de-capa-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch de capa 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administracion-centralizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administración centralizada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administración centralizada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminologia-vtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminología VTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-vtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración VTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración VTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-los-puertos-troncales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de los puertos troncales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-del-protocolo-vtp-en-los-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del protocolo VTP en los switches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-puertos-a-las-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de puertos a las VLANs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr5.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD7 - Conexión a redes de área extensa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD7 - Conexión a redes de área extensa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr7.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 7.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducción">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#necesidad-de-utilizar-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Necesidad de utilizar VLANs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beneficios-de-una-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beneficios de una VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-trama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato de trama
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formato de trama">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detalles-del-campo-de-etiqueta-de-la-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detalles del campo de etiqueta de la VLAN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de VLAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de VLAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vlan-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN de datos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-predeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN predeterminada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN nativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-de-administracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN de administración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enlace-troncal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enlace troncal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#identificadores-de-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identificadores de VLAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Identificadores de VLAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vlans-de-rango-normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLANs de rango normal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlans-de-rango-extendido" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLANs de rango extendido
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-puertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de puertos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asignación de puertos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-puertos-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de puertos de acceso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-varios-puertos-simultaneamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de varios puertos simultáneamente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambio-de-pertenencia-de-puertos-a-una-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cambio de pertenencia de puertos a una VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-de-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminación de VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminación de VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eliminacion-completa-del-archivo-vlandat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminación completa del archivo vlan.dat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacion-de-la-informacion-de-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificación de la información de VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-enlaces-troncales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de enlaces troncales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración de enlaces troncales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vlan-nativa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN nativa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-vlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad VLAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etherchannel-como-enlace-troncal" class="md-nav__link">
+    <span class="md-ellipsis">
+      EtherChannel como enlace troncal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restablecimiento-del-enlace-troncal-al-estado-predeterminado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Restablecimiento del enlace troncal al estado predeterminado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrutamiento-entre-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento entre VLANs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrutamiento entre VLANs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enrutamiento-entre-vlans-tradicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento entre VLANs tradicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrutamiento-entre-vlans-mediante-router-on-a-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrutamiento entre VLANs mediante Router-on-a-Stick
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#switch-de-capa-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch de capa 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administracion-centralizada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administración centralizada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administración centralizada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminologia-vtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminología VTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-vtp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración VTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración VTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-los-puertos-troncales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de los puertos troncales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-del-protocolo-vtp-en-los-switches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del protocolo VTP en los switches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-puertos-a-las-vlans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de puertos a las VLANs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unidad-5-redes-locales-virtuales">Unidad 5 - Redes locales virtuales</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>El rendimiento de la red es un aspecto clave para la productividad de cualquier organización. Una de las estrategias más eficaces para mejorar dicho rendimiento consiste en dividir grandes dominios de difusión en dominios más pequeños. Por diseño, los routers no reenvían tramas de difusión entre interfaces, ya que su función principal es interconectar redes, no proporcionar conectividad directa a los dispositivos finales.</p>
+<p>La provisión de acceso a la red local (LAN) recae normalmente en los switches de capa de acceso. A través de un switch de capa 2 es posible crear una VLAN (Red de Área Local Virtual), permitiendo así segmentar el dominio de difusión, de forma similar a como lo haría un dispositivo de capa 3.</p>
+<p>Las VLANs permiten organizar la red de forma lógica, independientemente de la ubicación física de los dispositivos, y se integran habitualmente en el diseño de red para alinearse con la estructura organizativa.</p>
+<p>Sin embargo, al segmentar la red en VLANs, es necesario un mecanismo de nivel 3 que permita la comunicación entre ellas. Este proceso de enrutamiento entre VLANs puede llevarse a cabo mediante un router o una interfaz de un switch de capa 3, facilitando así el control y la gestión del tráfico inter-VLAN.</p>
+<p>Este capítulo se divide en dos partes:</p>
+<ul>
+<li>La primera trata sobre la configuración, administración y resolución de problemas relacionados con VLANs y enlaces troncales.</li>
+<li>La segunda se centra en la implementación del enrutamiento entre VLANs utilizando un router.</li>
+</ul>
+<h3 id="necesidad-de-utilizar-vlans">Necesidad de utilizar VLANs</h3>
+<p>En un entorno conmutado, las VLANs permiten segmentar la red y ofrecen mayor flexibilidad organizativa. Permiten agrupar dispositivos lógicamente, de forma que los equipos dentro de una misma VLAN se comunican como si estuvieran conectados directamente al mismo medio físico, aunque en realidad estén dispersos físicamente.</p>
+<p>Las VLANs facilitan al administrador la división de la red basándose en criterios como:</p>
+<ul>
+<li>Función de los usuarios.</li>
+<li>Equipos de proyecto.</li>
+<li>Aplicaciones concretas.</li>
+</ul>
+<p>Esto se logra sin depender de la ubicación física de los dispositivos. A pesar de compartir la misma infraestructura física, los dispositivos pertenecientes a distintas VLANs funcionan como si estuvieran en redes separadas. Los paquetes de unidifusión, difusión y multidifusión se transmiten únicamente dentro de la VLAN de origen.</p>
+<p>Cada VLAN se considera una red lógica independiente. Para que los dispositivos en diferentes VLANs puedan comunicarse, es necesario un dispositivo que proporcione funcionalidad de enrutamiento.</p>
+<p>Una VLAN define un dominio de difusión lógico que puede extenderse a múltiples segmentos LAN físicos. Esto mejora el rendimiento de la red al limitar el alcance del tráfico de difusión a cada VLAN.</p>
+<h3 id="beneficios-de-una-vlan">Beneficios de una VLAN</h3>
+<p>Entre las principales ventajas del uso de VLANs se incluyen:</p>
+<ul>
+<li><strong>Seguridad</strong>: Permiten aislar grupos con datos sensibles, reduciendo el riesgo de acceso no autorizado o pérdida de información confidencial.</li>
+<li><strong>Reducción de costos</strong>: Al disminuir la necesidad de realizar actualizaciones de infraestructura y al optimizar el uso del ancho de banda y los enlaces existentes, se reducen los costos operativos.</li>
+<li><strong>Mejor rendimiento</strong>: La segmentación lógica de la red en dominios de difusión más pequeños reduce el tráfico innecesario, lo que mejora el rendimiento general.</li>
+<li><strong>Control de dominios de difusión</strong>: Limitar el número de dispositivos en un mismo dominio de difusión aumenta la eficiencia de la red.</li>
+</ul>
+<p>En una red conmutada, cada VLAN corresponde a una red IP independiente. Por ello, el diseño de VLANs debe estar alineado con un esquema de direccionamiento jerárquico, lo que permite una asignación ordenada de bloques de direcciones IP a segmentos específicos de la red. Esta planificación facilita la administración y la escalabilidad de la infraestructura.</p>
+<p><img alt="VLANs" src="../assets/images/ud5/img01.png" width="600" /></p>
+<h3 id="formato-de-trama">Formato de trama</h3>
+<p>Los switches operan en la capa 2 del modelo OSI, y toman decisiones de reenvío utilizando la información contenida en el encabezado de la trama Ethernet. A diferencia de los routers, no utilizan tablas de enrutamiento para determinar el destino de los paquetes.</p>
+<p>Las tramas Ethernet estándar no contienen información sobre VLANs. Por esta razón, cuando una trama debe atravesar un enlace troncal (que transporta tráfico de múltiples VLANs), es necesario añadir información adicional que identifique a qué VLAN pertenece. Este proceso se denomina etiquetado (tagging).</p>
+<p>El etiquetado se realiza mediante la inserción de un encabezado conforme al estándar IEEE 802.1Q, el cual añade una etiqueta de 4 bytes a la trama Ethernet. Esta etiqueta especifica la VLAN de pertenencia de la trama.</p>
+<p>Cuando un switch recibe una trama desde un puerto en modo acceso que pertenece a una VLAN, el switch:</p>
+<ul>
+<li>Añade la etiqueta VLAN correspondiente al encabezado de la trama.</li>
+<li>Recalcula la FCS (secuencia de verificación de trama).</li>
+<li>Envía la trama etiquetada por el enlace troncal correspondiente.</li>
+</ul>
+<h4 id="detalles-del-campo-de-etiqueta-de-la-vlan">Detalles del campo de etiqueta de la VLAN</h4>
+<p>La etiqueta VLAN de 802.1Q contiene diversos subcampos que permiten identificar y clasificar el tráfico:</p>
+<ul>
+<li><strong>Tipo (TPID)</strong>: Campo de 2 bytes denominado “Identificador de protocolo de etiqueta”. Para tramas Ethernet etiquetadas, este valor se establece en 0x8100 en hexadecimal.</li>
+<li><strong>Prioridad de usuario</strong>: Campo de 3 bits que permite implementar niveles de calidad de servicio (QoS) para el tráfico.</li>
+<li><strong>Identificador de formato canónico (CFI)</strong>: Campo de 1 bit utilizado para habilitar la compatibilidad con tramas Token Ring en enlaces Ethernet.</li>
+<li><strong>ID de VLAN (VID)</strong>: Campo de 12 bits que identifica la VLAN a la que pertenece la trama. Este valor permite definir hasta 4096 VLANs diferentes.</li>
+</ul>
+<p><img alt="Formato de VLAN" src="../assets/images/ud5/img02.png" width="600" /></p>
+<p>Una vez insertada la etiqueta 802.1Q, el switch vuelve a calcular la FCS (Frame Check Sequence) y la reemplaza en la trama, asegurando así la integridad de los datos antes de su retransmisión.</p>
+<h3 id="tipos-de-vlan">Tipos de VLAN</h3>
+<p>Existen distintos tipos de VLANs, clasificadas según el tipo de tráfico que gestionan o la función que cumplen dentro de la red. A continuación se describen los tipos más comunes:</p>
+<h4 id="vlan-de-datos">VLAN de datos</h4>
+<p>Una VLAN de datos es aquella configurada para transportar el tráfico generado por los usuarios finales. No debe confundirse con las VLANs utilizadas para tráfico de administración o de voz. Por ello, es habitual mantener el tráfico de voz y de administración separado del tráfico de datos de usuario.</p>
+<ul>
+<li>A veces se conoce también como VLAN de usuario.</li>
+<li>Su función principal es dividir la red en grupos lógicos de usuarios o dispositivos, facilitando así la segmentación y gestión del tráfico.</li>
+</ul>
+<h4 id="vlan-predeterminada">VLAN predeterminada</h4>
+<p>En el arranque inicial de un switch, todos los puertos pertenecen a la VLAN predeterminada, que corresponde a la VLAN 1.</p>
+<ul>
+<li>Esta VLAN no puede eliminarse ni renombrarse.</li>
+<li>Todo el tráfico de control de capa 2 se asocia a la VLAN 1 por defecto.</li>
+<li>Aunque cumple con todas las funciones básicas de una VLAN, es recomendable no usarla para la operación normal de la red, por motivos de seguridad y buenas prácticas.</li>
+</ul>
+<h4 id="vlan-nativa">VLAN nativa</h4>
+<p>Una VLAN nativa es aquella asociada a un puerto de enlace troncal. Estos puertos permiten la transmisión de tráfico de múltiples VLANs entre switches.</p>
+<ul>
+<li>Los enlaces troncales transportan tanto tramas etiquetadas (con identificador 802.1Q) como tramas sin etiquetar.</li>
+<li>El tráfico sin etiquetar que entra a través de un puerto troncal se asigna automáticamente a la VLAN nativa de ese puerto.</li>
+<li>De forma predeterminada, la VLAN nativa es la VLAN 1.</li>
+<li>Las tramas de la VLAN nativa no llevan etiqueta cuando se transmiten por el enlace troncal, y el switch receptor las asocia a su VLAN nativa local.</li>
+<li>Este mecanismo se diseñó para asegurar la interoperabilidad con dispositivos antiguos que no son compatibles con 802.1Q.</li>
+</ul>
+<p>Por motivos de seguridad, se recomienda:</p>
+<ul>
+<li>No utilizar la VLAN 1 como VLAN nativa.</li>
+<li>Crear una VLAN dedicada exclusivamente como nativa, sin que se asigne a ningún otro propósito en la red.</li>
+</ul>
+<h4 id="vlan-de-administracion">VLAN de administración</h4>
+<p>Una VLAN de administración es aquella que se utiliza para acceder remotamente a la gestión del switch.</p>
+<ul>
+<li>Por defecto, la VLAN 1 actúa como VLAN de administración.</li>
+<li>Para habilitar el acceso remoto, se debe configurar una dirección IP y una máscara de subred en la interfaz virtual (SVI) de la VLAN correspondiente.</li>
+<li>Esto permite gestionar el dispositivo mediante protocolos como HTTP, Telnet, SSH o SNMP.</li>
+<li>Aunque la VLAN 1 se utiliza por defecto, se recomienda asignar otra VLAN para funciones de administración, con el fin de mejorar la seguridad y el aislamiento del tráfico de gestión.</li>
+</ul>
+<h3 id="enlace-troncal">Enlace troncal</h3>
+<p>Un enlace troncal (trunk) es una conexión punto a punto entre dos dispositivos de red que permite transportar tráfico de múltiples VLANs a través de un solo enlace físico.</p>
+<p>Este tipo de enlace es fundamental para extender las VLANs a lo largo de toda la red, permitiendo que los dispositivos ubicados en distintos switches, pero pertenecientes a la misma VLAN, puedan comunicarse entre sí sin necesidad de pasar por un router.</p>
+<p>Cisco implementa el estándar IEEE 802.1Q como protocolo de etiquetado de VLANs para los enlaces troncales. Este protocolo es compatible con interfaces Fast Ethernet, Gigabit Ethernet y 10-Gigabit Ethernet.</p>
+<p>Las VLANs perderían gran parte de su funcionalidad sin los enlaces troncales, ya que estos enlaces permiten que:</p>
+<ul>
+<li>El tráfico de todas las VLANs configuradas se propague entre los switches.</li>
+<li>Los switches mantengan la separación lógica de las VLANs, incluso cuando los dispositivos están distribuidos en diferentes ubicaciones físicas.</li>
+</ul>
+<p>Un enlace troncal no está asignado a una VLAN específica. En su lugar, actúa como canal común para el tráfico de varias VLANs entre switches o entre un switch y un router. También es posible configurar un enlace troncal entre un switch y un servidor o dispositivo con una interfaz de red (NIC) compatible con 802.1Q.</p>
+<p>En los switches Cisco Catalyst, por defecto todos los puertos de enlace troncal aceptan tráfico de todas las VLANs, salvo que se especifique lo contrario mediante configuración. Esto facilita la interoperabilidad y la expansión de las VLANs dentro de un dominio conmutado.</p>
+<h2 id="gestion-de-vlans">Gestión de VLANs</h2>
+<p>Para que una VLAN funcione correctamente, es necesario realizar una serie de pasos en la configuración de los dispositivos de red. Estos pasos son esenciales para garantizar que los dispositivos pertenecientes a la misma VLAN puedan comunicarse, y que el tráfico entre VLANs esté adecuadamente controlado. Las operaciones necesarias son las siguientes:</p>
+<ol>
+<li><strong>Crear la VLAN</strong>: Se debe definir la VLAN dentro del switch, asignándole un número identificador (ID) y, opcionalmente, un nombre descriptivo.</li>
+<li><strong>Asignar puertos a la VLAN</strong>: Los puertos del switch que se utilizarán para conectar dispositivos a la VLAN deben configurarse explícitamente para formar parte de esa VLAN. Esta asignación puede ser estática (manual) o dinámica (mediante protocolos como VMPS).</li>
+<li><strong>Crear enlaces troncales (si es necesario)</strong>: En entornos con varios switches interconectados, es imprescindible establecer enlaces troncales entre ellos. Esto permite que el tráfico de diferentes VLANs pueda circular entre switches, asegurando la conectividad entre dispositivos de una misma VLAN ubicados en diferentes puntos de la red.</li>
+<li><strong>Verificar la conectividad</strong>: Una vez completada la configuración, es importante comprobar el correcto funcionamiento de las VLANs. Esto incluye validar que los dispositivos asignados a una misma VLAN puedan comunicarse entre sí y que no exista comunicación entre VLANs distintas (salvo que esté configurado un router o un switch de capa 3 para tal fin).</li>
+</ol>
+<p>A continuación, se explicarán en detalle cada uno de estos pasos utilizando una red de ejemplo que permitirá ilustrar de forma práctica el proceso completo de configuración de VLANs.</p>
+<p><img alt="Red con VLANs" src="../assets/images/ud5/img03.png" width="600" /></p>
+<p>La tabla de asignación de puertos a las VLANs e IPs de los ordenadores se muestra a continuación:</p>
+<table>
+<thead>
+<tr>
+<th>VLAN</th>
+<th>Nombre</th>
+<th>Red</th>
+<th>Puertos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLAN10</td>
+<td>Administración</td>
+<td>192.168.0.0/24</td>
+<td>S1 -&gt; 1 a 8, S2 -&gt; 1 a 8, S3 -&gt; 1 a 8</td>
+</tr>
+<tr>
+<td>VLAN20</td>
+<td>I+D</td>
+<td>192.168.1.0/24</td>
+<td>S1 -&gt; 9 a 16, S2 -&gt; 9 a 16, S3-&gt; 9 a 16</td>
+</tr>
+<tr>
+<td>VLAN30</td>
+<td>Facturación</td>
+<td>192.168.2.0/24</td>
+<td>S1 -&gt; 17 a 24, S2 -&gt; 17 a 24, S3 -&gt; 17 a 24</td>
+</tr>
+</tbody>
+</table>
+<p>Los enlaces troncales se crean con los puertos GigabitEthernet. El primero es de S1-G0/1 a S2-G0/1 y el segundo de S2-G0/2 a S3-G0/1.</p>
+<h3 id="creacion-de-vlans">Creación de VLANs</h3>
+<p>Al configurar VLANs en un switch, los parámetros definidos se almacenan de forma persistente en la memoria flash del dispositivo, concretamente en un archivo llamado vlan.dat. Esta memoria no se borra al apagar el switch, por lo que no es necesario ejecutar el comando copy running-config startup-config para conservar las VLANs creadas.</p>
+<p>Sin embargo, dado que la creación de VLANs suele ir acompañada de otras configuraciones (como la asignación de puertos, enlaces troncales o direcciones de administración), sí se recomienda guardar los cambios de la configuración en ejecución para asegurar que el resto de la configuración también se mantenga tras un reinicio.</p>
+<p>La creación de una VLAN se realiza desde el modo de configuración global, utilizando el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>vlan &lt;id-vlan&gt;
+</span></code></pre></div>
+<p>Donde &lt;id-vlan&gt; es un número entero que identifica de forma única a la VLAN.</p>
+<p>Una vez creada, es una buena práctica asignar un nombre descriptivo mediante el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>name &lt;nombre&gt;
+</span></code></pre></div>
+<p>Este comando se introduce en el modo de configuración de VLAN.</p>
+<p>Las VLANs deben configurarse de forma coherente en todos los switches del entorno conmutado, especialmente si se desea que tengan conectividad a través de enlaces troncales.</p>
+<p>A continuación se muestra un ejemplo de configuración básica de VLANs en el switch S1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>S1&gt;enable  
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>S1#configure terminal  
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>S1(config)#vlan 10  
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>S1(config-vlan)#name Administracion  
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>S1(config-vlan)#exit  
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>S1(config)#vlan 20  
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>S1(config-vlan)#name I+D  
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>S1(config-vlan)#exit  
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>S1(config)#vlan 30  
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>S1(config-vlan)#name Facturacion  
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>S1(config-vlan)#exit  
+</span></code></pre></div>
+<p>Con estos comandos, se han creado tres VLANs distintas, cada una con un nombre representativo de su función dentro de la organización.</p>
+<h4 id="identificadores-de-vlan">Identificadores de VLAN</h4>
+<p>Los switches Cisco admiten una cantidad variable de VLANs, aunque este número suele ser más que suficiente para cubrir las necesidades de la mayoría de las organizaciones. En total, pueden definirse hasta 4096 VLANs, ya que el campo de identificación de VLAN (VID) en el encabezado 802.1Q es de 12 bits (2¹² = 4096).</p>
+<p>Las VLANs se dividen en dos rangos:</p>
+<ul>
+<li><strong>VLANs de rango normal</strong>: Identificadas por valores del 1 al 1005.</li>
+<li><strong>VLANs de rango extendido</strong>: Identificadas por valores del 1006 al 4094.</li>
+</ul>
+<h5 id="vlans-de-rango-normal">VLANs de rango normal</h5>
+<p>Estas VLANs se utilizan comúnmente en redes de pequeñas y medianas empresas. Sus características principales son:</p>
+<ul>
+<li>Se identifican mediante un ID de VLAN entre 1 y 1005.</li>
+<li>Los ID del 1002 al 1005 están reservados para tecnologías heredadas como Token Ring y FDDI (Fiber Distributed Data Interface).</li>
+<li>Las VLANs con ID 1 y del 1002 al 1005 se crean de forma automática y no pueden eliminarse.</li>
+<li>La configuración de estas VLANs se almacena en la memoria flash, dentro del archivo vlan.dat.</li>
+<li>El protocolo VTP (VLAN Trunking Protocol), que facilita la gestión de VLANs entre múltiples switches, solo admite VLANs de este rango.</li>
+</ul>
+<h5 id="vlans-de-rango-extendido">VLANs de rango extendido</h5>
+<p>Estas VLANs están pensadas para escenarios de mayor escala, como entornos gestionados por proveedores de servicios o grandes empresas multinacionales. Sus características son:</p>
+<ul>
+<li>Se identifican mediante un ID de VLAN entre 1006 y 4094.</li>
+<li>No se almacenan en el archivo vlan.dat, sino que, por defecto, se guardan en la configuración en ejecución.</li>
+<li>Admiten menos funciones en comparación con las VLANs de rango normal.</li>
+<li>VTP no detecta ni propaga VLANs de este rango.</li>
+</ul>
+<p>Este comportamiento hace que las VLANs de rango extendido sean menos versátiles en entornos donde se requiere gestión centralizada mediante VTP, pero útiles cuando se necesita una gran cantidad de identificadores VLAN para segmentación avanzada.</p>
+<h3 id="asignacion-de-puertos">Asignación de puertos</h3>
+<p>Una vez creada una VLAN, el siguiente paso consiste en asignar puertos del switch a dicha VLAN. Cada puerto de acceso puede pertenecer únicamente a una VLAN a la vez.</p>
+<p>En el contexto de una VLAN, existen dos tipos principales de puertos:</p>
+<ul>
+<li><strong>Puerto de acceso</strong>: Se utiliza para conectar dispositivos finales como PCs, impresoras o teléfonos IP. Las tramas que circulan por este tipo de puerto no están etiquetadas con información VLAN.</li>
+<li><strong>Puerto troncal</strong>: Se utiliza para establecer enlaces entre switches, permitiendo el transporte de tráfico de múltiples VLANs. Las tramas que se envían o reciben a través de un puerto troncal sí llevan etiquetas VLAN (802.1Q).</li>
+</ul>
+<p>Este apartado se centra en la configuración de puertos de acceso. La configuración de puertos troncales se abordará más adelante.</p>
+<h4 id="configuracion-de-puertos-de-acceso">Configuración de puertos de acceso</h4>
+<p>De forma predeterminada, todos los puertos de un switch Cisco se encuentran en modo acceso. No obstante, es una buena práctica configurar explícitamente este modo como medida de seguridad, utilizando el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>switchport mode access
+</span></code></pre></div>
+<p>A continuación, se debe asignar el puerto a una VLAN específica mediante:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>switchport access vlan &lt;id-vlan&gt;
+</span></code></pre></div>
+<p>Por ejemplo, para asignar el puerto FastEthernet 0/1 a la VLAN 10 en el switch S1, se utilizarían los siguientes comandos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>S1&gt;enable  
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>S1#configure terminal  
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Enter configuration commands, one per line. End with CNTL/Z.  
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>S1(config)#interface fa0/1  
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>S1(config-if)#switchport mode access  
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>S1(config-if)#switchport access vlan 10  
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>S1(config-if)#exit  
+</span></code></pre></div>
+<h4 id="configuracion-de-varios-puertos-simultaneamente">Configuración de varios puertos simultáneamente</h4>
+<p>La asignación individual de puertos puede resultar lenta y repetitiva. Para agilizar el proceso, se puede utilizar el comando interface range, que permite configurar múltiples interfaces a la vez.</p>
+<p>A continuación se muestra cómo asignar varios puertos a diferentes VLANs en un solo bloque de comandos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>S1(config)#interface range fa0/2 - 8  
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>S1(config-if-range)#switchport mode access  
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>S1(config-if-range)#switchport access vlan 10  
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>S1(config-if-range)#exit  
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>S1(config)#interface range fa0/9 - 16  
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>S1(config-if-range)#switchport mode access  
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>S1(config-if-range)#switchport access vlan 20  
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>S1(config-if-range)#exit  
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>S1(config)#interface range fa0/17 - 24  
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>S1(config-if-range)#switchport mode access  
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>S1(config-if-range)#switchport access vlan 30  
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>S1(config-if-range)#exit  
+</span></code></pre></div>
+<p>Con esta configuración, los puertos FastEthernet 0/2 al 0/8 se asignan a la VLAN 10, los puertos 0/9 al 0/16 a la VLAN 20, y los puertos 0/17 al 0/24 a la VLAN 30. Esta técnica es especialmente útil para realizar configuraciones rápidas y consistentes en switches con muchos puertos.</p>
+<h3 id="cambio-de-pertenencia-de-puertos-a-una-vlan">Cambio de pertenencia de puertos a una VLAN</h3>
+<p>Es posible modificar la pertenencia VLAN de un puerto de forma sencilla, sin necesidad de eliminar previamente su configuración actual.</p>
+<p>Una opción consiste en utilizar el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>no switchport access vlan
+</span></code></pre></div>
+<p>Este comando, ejecutado desde el modo de configuración de interfaz, devuelve el puerto a su estado predeterminado, asignándolo nuevamente a la VLAN 1.</p>
+<p>En cualquier caso, no es necesario eliminar una VLAN de un puerto antes de reasignarlo a otra VLAN. Basta con asignar una nueva VLAN al puerto, lo que reemplaza automáticamente su pertenencia anterior. Esto permite reconfigurar rápidamente la topología lógica de una red sin necesidad de pasos intermedios.</p>
+<h3 id="eliminacion-de-vlans">Eliminación de VLANs</h3>
+<p>Para eliminar una VLAN del switch, se utiliza el siguiente comando desde el modo de configuración global:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>no vlan &lt;id-vlan&gt;
+</span></code></pre></div>
+<p>Este comando elimina la VLAN especificada solo si no tiene puertos asignados. Por ello, antes de eliminar una VLAN es necesario reasignar todos sus puertos a otra VLAN activa. Si no se realiza esta reasignación, los puertos que permanecen sin VLAN quedarán inactivos y sin capacidad de comunicación hasta que se les asigne una nueva VLAN válida.</p>
+<h4 id="eliminacion-completa-del-archivo-vlandat">Eliminación completa del archivo vlan.dat</h4>
+<p>También se puede restablecer completamente la configuración de VLANs eliminando el archivo vlan.dat, que contiene la base de datos de VLANs del switch. Para ello, desde el modo EXEC privilegiado, se ejecuta:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>delete flash:vlan.dat
+</span></code></pre></div>
+<p>Si el archivo vlan.dat no ha sido movido de su ubicación por defecto, se puede utilizar la versión abreviada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>delete vlan.dat
+</span></code></pre></div>
+<p>Una vez eliminado este archivo, es necesario reiniciar el switch para que los cambios surtan efecto. Tras el reinicio, las VLANs configuradas anteriormente ya no estarán presentes y el switch volverá a su estado predeterminado en cuanto a VLANs.</p>
+<p>Para restaurar por completo el switch a su configuración de fábrica, también se recomienda borrar el archivo de configuración de inicio mediante:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>erase startup-config
+</span></code></pre></div>
+<p>Y, a continuación, reiniciar el dispositivo con el comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>reload
+</span></code></pre></div>
+<p>Esta combinación de comandos restablece el switch a sus condiciones iniciales, eliminando tanto las VLANs como cualquier otra configuración almacenada.</p>
+<h3 id="verificacion-de-la-informacion-de-vlan">Verificación de la información de VLAN</h3>
+<p>Una vez configuradas las VLANs en un switch, es posible verificar su estado y propiedades utilizando distintos comandos del modo EXEC privilegiado del sistema operativo Cisco IOS.</p>
+<p>El comando principal para consultar esta información es:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>show vlan [brief | id &lt;id-vlan&gt; | name &lt;nombre&gt; | summary]
+</span></code></pre></div>
+<p>Donde cada argumento permite visualizar información específica:</p>
+<ul>
+<li><strong>brief</strong>: Muestra un resumen de todas las VLANs, indicando su nombre, estado y los puertos asociados.</li>
+<li><strong>id</strong>: Muestra los detalles de una VLAN concreta, identificada por su ID.</li>
+<li><strong>name</strong>: Presenta la información de una VLAN específica, utilizando su nombre.</li>
+<li><strong>summary</strong>: Proporciona una vista condensada de todas las VLANs.</li>
+</ul>
+<p>Ejemplo de salida del comando show vlan</p>
+<p>El siguiente ejemplo muestra la ejecución del comando sin argumentos adicionales, lo que genera una tabla completa con todas las VLANs configuradas:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>S1&gt;enable
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>S1#show vlan
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>VLAN Name                             Status    Ports
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>---- -------------------------------- --------- -------------------------------
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>1    default                          active    Gig0/1, Gig0/2
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>10   Administracion                   active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>                                                 Fa0/5, Fa0/6, Fa0/7, Fa0/8
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>20   I+D                              active    Fa0/9, Fa0/10, Fa0/11, Fa0/12
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>                                                 Fa0/13, Fa0/14, Fa0/15, Fa0/16
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>30   Facturacion                      active    Fa0/17, Fa0/18, Fa0/19, Fa0/20
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>                                                 Fa0/21, Fa0/22, Fa0/23, Fa0/24
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>1002 fddi-default                     active    
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>1003 token-ring-default               active    
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>1004 fddinet-default                  active    
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>1005 trnet-default                    active    
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>VLAN Type  SAID     MTU  Parent RingNo BridgeNo Stp BrdgMode Trans1 Trans2
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>---- ----- -------- ----- ------ ------ -------- ---- -------- ------ ------
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>1    enet  100001   1500    -      -       -       -     -      0      0
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>10   enet  100010   1500    -      -       -       -     -      0      0
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>20   enet  100020   1500    -      -       -       -     -      0      0
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>30   enet  100030   1500    -      -       -       -     -      0      0
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>1002 fddi  101002   1500    -      -       -       -     -      0      0
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>1003 tr    101003   1500    -      -       -       -     -      0      0
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>1004 fdnet 101004   1500    -      -       -     ieee    -      0      0
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>1005 trnet 101005   1500    -      -       -     ibm     -      0      0
+</span></code></pre></div>
+<p><strong>Consultas específicas</strong></p>
+<p>Para visualizar solo la información de una VLAN concreta, se puede utilizar:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>S1#show vlan id 10
+</span></code></pre></div>
+<p>Salida esperada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>VLAN Name             Status    Ports
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>---- ---------------- --------- -------------------------------
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>10   Administracion    active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>                                 Fa0/5, Fa0/6, Fa0/7, Fa0/8
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>VLAN Type  SAID     MTU  Parent RingNo BridgeNo Stp BrdgMode Trans1 Trans2
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>---- ----- -------- ----- ------ ------ -------- ---- -------- ------ ------
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>10   enet  100010   1500    -      -       -       -     -      0      0
+</span></code></pre></div>
+<p>Este mismo resultado se puede obtener usando el nombre de la VLAN en lugar de su ID:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>S1#show vlan name Administracion
+</span></code></pre></div>
+<p>Ambos comandos son útiles para validar que los puertos han sido asignados correctamente a cada VLAN y que la configuración está activa.</p>
+<h3 id="configuracion-de-enlaces-troncales">Configuración de enlaces troncales</h3>
+<p>Un enlace troncal de VLAN es una conexión entre dos switches que permite el tránsito de tráfico correspondiente a múltiples VLANs. Por defecto, todos los tráficos de VLANs son transportados por el enlace, salvo que se restrinjan las VLANs permitidas de forma manual o dinámica.</p>
+<p>Para configurar una interfaz como puerto troncal, se utiliza el siguiente comando desde el modo de configuración de interfaz:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>switchport mode trunk
+</span></code></pre></div>
+<p>Este comando configura la interfaz en modo troncal permanente, permitiendo el etiquetado de tramas conforme al estándar IEEE 802.1Q.</p>
+<p>Ejemplo de configuración de un enlace troncal entre S1 y S2</p>
+<p>Supongamos que los switches S1 y S2 están interconectados mediante sus interfaces GigabitEthernet0/1. Ambos puertos deben configurarse como troncales. La configuración sería la siguiente:</p>
+<p>En S1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>S1&gt;enable
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>S1#configure terminal
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Enter configuration commands, one per line. End with CNTL/Z.
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>S1(config)#interface g0/1
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>S1(config-if)#switchport mode trunk
+</span></code></pre></div>
+<p>Al aplicar esta configuración, es posible que aparezcan mensajes indicando el cambio de estado del protocolo de línea:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+</span></code></pre></div>
+<p>En S2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>S2&gt;enable
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>S2#configure terminal
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Enter configuration commands, one per line. End with CNTL/Z.
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>S2(config)#interface g0/1
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>S2(config-if)#switchport mode trunk
+</span></code></pre></div>
+<p>Una vez configurado el enlace troncal entre S1 y S2, será necesario repetir el mismo procedimiento para establecer el enlace troncal entre S2 y S3, utilizando las interfaces correspondientes de cada switch.</p>
+<p>Esta configuración asegura que las VLANs puedan propagarse correctamente entre los distintos switches del entorno conmutado.</p>
+<h4 id="vlan-nativa_1">VLAN nativa</h4>
+<p>Como se explicó anteriormente, la VLAN nativa es aquella a la que se asignan las tramas que llegan por un puerto troncal sin etiqueta VLAN. Por defecto, esta VLAN es la número 1, aunque por motivos de seguridad se recomienda utilizar una VLAN diferente.</p>
+<p>La asignación de una VLAN nativa distinta se realiza desde el modo de configuración de interfaz con el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>switchport trunk native vlan id-vlan
+</span></code></pre></div>
+<p>Por ejemplo, para configurar la VLAN 99 como VLAN nativa en el puerto troncal del switch S1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>S1(config)#interface g0/1
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>S1(config-if)#switchport trunk native vlan 99
+</span></code></pre></div>
+<p>Si el puerto correspondiente en el otro extremo del enlace (en este caso, en el switch S2) aún tiene configurada la VLAN nativa por defecto (1), aparecerá una advertencia:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>%CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on GigabitEthernet0/1 (99), with S2 GigabitEthernet0/1 (1).
+</span></code></pre></div>
+<p>Esto indica una discrepancia entre las VLAN nativas en ambos extremos del troncal. Para corregirlo, se debe configurar también en S2 la misma VLAN nativa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>S2(config)#interface g0/1
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>S2(config-if)#switchport trunk native vlan 99
+</span></code></pre></div>
+<h4 id="seguridad-vlan">Seguridad VLAN</h4>
+<p>Para limitar el tráfico de VLANs que puede transitar por un enlace troncal, se puede definir una lista explícita de VLANs permitidas. Esto se hace con el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>switchport trunk allowed vlan lista-vlan
+</span></code></pre></div>
+<p>Por ejemplo, si se desea permitir únicamente el tráfico etiquetado de las VLANs 10, 20, 30, y la VLAN nativa 99 en el puerto troncal g0/1 del switch S1, se configuraría así:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>S1(config-if)#switchport trunk allowed vlan 10,20,30,99
+</span></code></pre></div>
+<h4 id="etherchannel-como-enlace-troncal">EtherChannel como enlace troncal</h4>
+<p>Dado que los enlaces entre switches suelen manejar un volumen de tráfico considerable, es recomendable utilizar puertos Gigabit Ethernet. Sin embargo, los switches suelen tener un número limitado de estos puertos. Para superar esta limitación y aumentar el ancho de banda, se puede utilizar un EtherChannel.</p>
+<p>Un EtherChannel agrupa varias interfaces físicas en una única interfaz lógica, lo que permite sumar el ancho de banda de las interfaces agrupadas. Por ejemplo, un EtherChannel compuesto por cuatro interfaces FastEthernet proporciona un ancho de banda de 400 Mbps.</p>
+<p><img alt="EtherChannell como enlace troncal" src="../assets/images/ud5/img04.png" width="400" /></p>
+<p>Es posible utilizar un EtherChannel como enlace troncal entre switches. En el siguiente ejemplo, se agrupan las interfaces GigabitEthernet0/1 y GigabitEthernet0/2 del switch S1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>S1(config)#interface port-channel 1
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>S1(config-if)#exit
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>S1(config)#interface range g0/1-2
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>S1(config-if-range)#channel-group 1 mode on
+</span></code></pre></div>
+<p>En el switch S2 deben ejecutarse los mismos comandos para formar el EtherChannel.</p>
+<p>Una vez creado, se configura como troncal de la misma manera que se haría con una interfaz física:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>S1(config)#interface port-channel 1
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>S1(config-if)#switchport mode trunk
+</span></code></pre></div>
+<p>Los mismos comandos deben ejecutarse también en el switch S2 para completar la configuración del enlace troncal sobre EtherChannel.</p>
+<h3 id="restablecimiento-del-enlace-troncal-al-estado-predeterminado">Restablecimiento del enlace troncal al estado predeterminado</h3>
+<p>Si se desea devolver un puerto configurado como enlace troncal a su estado por defecto, es necesario restablecer los parámetros que se hayan modificado, como la lista de VLANs permitidas, la VLAN nativa y el modo de operación del puerto.</p>
+<p>Para ello, se deben ejecutar los siguientes comandos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>S1(config)#interface g0/1
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>S1(config-if)#no switchport trunk allowed vlan 10,20,30,99
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>S1(config-if)#no switchport trunk native vlan 99
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>S1(config-if)#switchport mode access
+</span></code></pre></div>
+<p>Con esta configuración:</p>
+<ul>
+<li>Se elimina la lista de VLANs permitidas personalizada.</li>
+<li>Se restaura la VLAN nativa a la predeterminada (VLAN 1).</li>
+<li>El puerto se configura nuevamente como puerto de acceso, saliendo del modo troncal.</li>
+</ul>
+<h2 id="enrutamiento-entre-vlans">Enrutamiento entre VLANs</h2>
+<p>Los dispositivos ubicados en diferentes VLANs no pueden comunicarse entre sí sin la intervención de un dispositivo de capa 3 que realice funciones de enrutamiento. Los switches de capa 2 tienen capacidades limitadas en lo que respecta al procesamiento de IPv4 e IPv6, por lo que no son adecuados para esta tarea, especialmente cuando se requiere enrutamiento dinámico.</p>
+<p>Para proporcionar conectividad entre VLANs, es necesario utilizar un router o un switch de capa 3 (también conocido como switch multicapa). El proceso de envío de tráfico entre VLANs mediante un dispositivo de capa 3 se denomina enrutamiento entre VLANs.</p>
+<p>Existen tres métodos principales para implementar el enrutamiento entre VLANs:</p>
+<ul>
+<li>Enrutamiento entre VLANs tradicional (obsoleto).</li>
+<li>Router-on-a-stick.</li>
+<li>Enrutamiento mediante interfaces virtuales de switch (SVI).</li>
+</ul>
+<h3 id="enrutamiento-entre-vlans-tradicional">Enrutamiento entre VLANs tradicional</h3>
+<p>En este método, ya en desuso, se utiliza un router con múltiples interfaces físicas, cada una conectada a un puerto del switch configurado en una VLAN específica. Cada puerto del switch debe estar en modo acceso y vinculado a una VLAN determinada.</p>
+<p>Por cada VLAN que se desea enrutar, se requiere una interfaz física distinta en el router. Esta interfaz se configura con una dirección IP perteneciente a la subred asociada a la VLAN correspondiente. De esta forma, el router actúa como puerta de enlace (gateway) para los dispositivos de la VLAN.</p>
+<p>Limitaciones:</p>
+<ul>
+<li>Escalabilidad muy reducida: el número de VLANs enrutables está limitado por la cantidad de interfaces físicas disponibles en el router.</li>
+<li>Uso poco eficiente del hardware disponible.</li>
+</ul>
+<p>Ejemplo de configuración</p>
+<p><img alt="VLANs" src="../assets/images/ud5/img05.png" width="600" /></p>
+<p>En la topología propuesta, se conecta el router R1 al switch S1 con dos interfaces físicas:</p>
+<ul>
+<li>La interfaz G0/0 del router se conecta al puerto Fa0/2 del switch (asignado a la VLAN 10).</li>
+<li>La interfaz G0/1 se conecta al puerto Fa0/9 del switch (asignado a la VLAN 20).</li>
+</ul>
+<p>Configuración del router:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>R1&gt;enable
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>R1#configure terminal
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>R1(config)#interface g0/0
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>R1(config-if)#ip address 192.168.0.1 255.255.255.0
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>R1(config-if)#no shutdown
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>R1(config-if)#interface g0/1
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>R1(config-if)#ip address 192.168.1.1 255.255.255.0
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>R1(config-if)#no shutdown
+</span></code></pre></div>
+<p>Una vez configurado, los dispositivos de ambas VLANs pueden utilizar el router como gateway y comunicarse entre sí a través de él.</p>
+<p>Verificación:</p>
+<p>Al configurar adecuadamente las direcciones IP en los PCs (por ejemplo, PC1 y PC4), se puede verificar la conectividad mediante el comando ping.</p>
+<p>Este método resulta ineficiente y está obsoleto en entornos modernos, donde se utilizan soluciones como router-on-a-stick o switches multicapa con SVI para ofrecer mayor escalabilidad y flexibilidad.</p>
+<h3 id="enrutamiento-entre-vlans-mediante-router-on-a-stick">Enrutamiento entre VLANs mediante Router-on-a-Stick</h3>
+<p>El enrutamiento entre VLANs utilizando interfaces físicas individuales presenta una clara limitación: los routers disponen de un número reducido de interfaces físicas. A medida que crece el número de VLANs en una red, asignar una interfaz física por VLAN se vuelve inviable.</p>
+<p>Una solución eficiente es implementar subinterfaces virtuales sobre una única interfaz física del router, configurada como enlace troncal. Este método se denomina router-on-a-stick y permite enrutar tráfico entre múltiples VLANs a través de una sola interfaz física.</p>
+<p><img alt="Enrutamiento VLANs" src="../assets/images/ud5/img06.png" width="600" /></p>
+<p>Funcionamiento:</p>
+<ul>
+<li>Una única interfaz física del router se conecta al switch mediante un enlace troncal.</li>
+<li>En esa interfaz física se configuran varias subinterfaces, una por cada VLAN.</li>
+<li>Cada subinterfaz se configura con:<ul>
+<li>Una dirección IP correspondiente a la subred de la VLAN.</li>
+<li>Una identificación de VLAN mediante encapsulation dot1Q.</li>
+</ul>
+</li>
+</ul>
+<p>Ejemplo de implementación</p>
+<p>Supongamos la siguiente conexión:</p>
+<ul>
+<li>Router R1 (G0/0) ↔ Switch S1 (G0/2)</li>
+</ul>
+<p>Configuración del switch S1</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>S1&gt;enable
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>S1#configure terminal
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>S1(config)#interface g0/2
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>S1(config-if)#switchport mode trunk
+</span></code></pre></div>
+<p>Configuración del router R1</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>R1&gt;enable
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>R1#configure terminal
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>R1(config)#interface g0/0.10
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>R1(config-subif)#encapsulation dot1Q 10
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>R1(config-subif)#ip address 192.168.0.1 255.255.255.0
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>R1(config)#interface g0/0.20
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>R1(config-subif)#encapsulation dot1Q 20
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>R1(config-subif)#ip address 192.168.1.1 255.255.255.0
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>
+</span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a>R1(config)#interface g0/0.30
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>R1(config-subif)#encapsulation dot1Q 30
+</span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a>R1(config-subif)#ip address 192.168.2.1 255.255.255.0
+</span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>
+</span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>R1(config)#interface g0/0
+</span><span id="__span-33-17"><a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>R1(config-if)#no shutdown
+</span></code></pre></div>
+<p>Explicación de la configuración:</p>
+<ul>
+<li><strong>Subinterfaces</strong>: se crean con el comando interface g0/0.X, donde X suele coincidir con el ID de la VLAN correspondiente.</li>
+<li><strong>Encapsulación</strong>: encapsulation dot1Q asocia la subinterfaz a una VLAN específica.</li>
+<li><strong>Dirección IP</strong>: cada subinterfaz recibe una IP de su respectiva subred.</li>
+<li><strong>Activación</strong>: el comando no shutdown se aplica sobre la interfaz física. Las subinterfaces se activan automáticamente si la interfaz principal está activa.</li>
+</ul>
+<p>Ventajas:</p>
+<ul>
+<li>Requiere solo una interfaz física en el router.</li>
+<li>Permite enrutar entre múltiples VLANs con una solución eficiente y escalable.</li>
+<li>Simplifica la gestión y mantenimiento en redes medianas y grandes.</li>
+</ul>
+<p>Una vez aplicada esta configuración, los dispositivos ubicados en diferentes VLANs pueden comunicarse entre sí, ya que el router enruta internamente el tráfico a través de las subinterfaces correspondientes.</p>
+<h3 id="switch-de-capa-3">Switch de capa 3</h3>
+<p>Es habitual que los switches incorporen funciones de nivel 3. Este tipo de switches admite funciones básicas de nivel de red, como el enrutamiento estático.
+Cuando en una topología de red se crea una VLAN, el switch dispone de una interfaz virtual (SVI) a la que podemos asignar una dirección IP. Todos los dispositivos conectados a la VLAN pueden utilizar la dirección IP de la VLAN como puerta de enlace. Además, al configurar la SVI del switch con una dirección IP y activar el enrutamiento, se añade automáticamente a su tabla de enrutamiento una ruta directamente conectada para la red de la VLAN.</p>
+<p>Para ilustrar este tipo de topología, vamos a emplear la siguiente red de ejemplo.</p>
+<p><img alt="Switch de capa 3" src="../assets/images/ud5/img07.png" width="750" /></p>
+<table>
+<thead>
+<tr>
+<th>VLAN</th>
+<th>Nombre</th>
+<th>Red</th>
+<th>Puertos</th>
+<th>SVI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLAN10</td>
+<td>Administración</td>
+<td>192.168.0.0/24</td>
+<td>SW1 -&gt; Fa0/1-9, SW2 -&gt; Fa0/1-9, SW3 -&gt; Fa0/1-9</td>
+<td>192.168.0.1</td>
+</tr>
+<tr>
+<td>VLAN20</td>
+<td>I+D</td>
+<td>192.168.1.0/24</td>
+<td>SW1 -&gt; Fa0/10-19, SW2 -&gt; Fa0/10-19, SW3 -&gt; Fa0/10-19</td>
+<td>192.168.1.1</td>
+</tr>
+<tr>
+<td>VLAN30</td>
+<td>Facturación</td>
+<td>192.168.2.0/24</td>
+<td>SW1 -&gt; Fa0/20-24, SW2 -&gt; Fa0/20-24, SW3 -&gt; Fa0/20-24</td>
+<td>192.168.2.1</td>
+</tr>
+<tr>
+<td>VLAN40</td>
+<td>Router</td>
+<td>192.168.3.0/24</td>
+<td>SW3 -&gt; G0/1</td>
+<td>192.168.3.1</td>
+</tr>
+</tbody>
+</table>
+<p>Es común que muchos switches modernos incluyan capacidades de nivel 3, lo que les permite realizar funciones básicas de red, como el enrutamiento estático.</p>
+<p>Cuando se crea una VLAN en una red, el switch genera una interfaz virtual (SVI) a la que se le puede asignar una dirección IP. Esta dirección puede ser utilizada como puerta de enlace por todos los dispositivos conectados a esa VLAN. Al asignar una dirección IP a la SVI y habilitar el enrutamiento, el switch añade automáticamente una ruta directamente conectada a su tabla de enrutamiento para esa red.</p>
+<p>Para ilustrar este tipo de configuración, trabajaremos con una topología en la que uno de los switches es de capa 3 y será el encargado de gestionar el enrutamiento entre VLANs. El router que aparece conectado a este switch tiene como función proporcionar salida a Internet para todos los dispositivos de la red. En la red también se incluye un servidor que ofrece servicios DNS y HTTP, lo cual nos permitirá comprobar la conectividad desde cualquier equipo cliente. En cada VLAN, los dispositivos empezarán a recibir direcciones IP a partir del valor 10.</p>
+<p>Primero, se procede a crear las VLAN en cada uno de los switches. En el switch S1, la configuración sería la siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>S1(config)#vlan 10
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>S1(config-vlan)#name Administracion
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>S1(config-vlan)#exit
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>S1(config)#vlan 20
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>S1(config-vlan)#name I+D
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>S1(config-vlan)#exit
+</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>S1(config)#vlan 30
+</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>S1(config-vlan)#name Facturacion
+</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>S1(config-vlan)#exit
+</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>S1(config)#vlan 40
+</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>S1(config-vlan)#name Router
+</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>S1(config-vlan)#exit
+</span></code></pre></div>
+<p>Se repite la misma configuración en los switches S2 y S3, creando las mismas VLAN con sus respectivos nombres.</p>
+<p>A continuación, se configuran los enlaces troncales entre los switches. El enlace entre S1 y S2 se establece a través de las interfaces GigabitEthernet 0/1 en ambos dispositivos. En el switch S1, los comandos serían:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>S1(config)#interface g0/1
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>S1(config-if)#switchport trunk encapsulation dot1q
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>S1(config-if)#switchport mode trunk
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>S1(config-if)#switchport trunk native vlan 99
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>S1(config-if)#switchport trunk allowed vlan 10,20,30,40,99
+</span></code></pre></div>
+<p>Y en S2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>S2(config)#interface g0/1
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>S2(config-if)#switchport trunk encapsulation dot1q
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>S2(config-if)#switchport mode trunk
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>S2(config-if)#switchport trunk native vlan 99
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>S2(config-if)#switchport trunk allowed vlan 10,20,30,40,99
+</span></code></pre></div>
+<p>El mismo proceso se realiza para enlazar S2 con S3, utilizando las interfaces G0/2. Luego se procede a asignar los puertos de acceso a cada VLAN en todos los switches.</p>
+<p>Por ejemplo, en el switch S1:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>S1(config)#interface range fa0/1-9
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>S1(config-if-range)#switchport mode access
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>S1(config-if-range)#switchport access vlan 10
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>...
+</span></code></pre></div>
+<p>El siguiente paso consiste en configurar las interfaces virtuales para cada VLAN en el switch de capa 3 (S1). A cada interfaz SVI se le asigna una dirección IP:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>S1(config)#interface vlan10
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>S1(config-if)#ip address 192.168.0.1 255.255.255.0
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>...
+</span></code></pre></div>
+<p>Finalmente, para habilitar la función de enrutamiento entre VLANs, es necesario activar el enrutamiento en el switch mediante:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>S1(config)#ip routing
+</span></code></pre></div>
+<p>Una vez hecho esto, se puede comprobar que la tabla de enrutamiento del switch contiene rutas conectadas para todas las redes de las VLAN creadas.</p>
+<p>Cada PC debe tener como puerta de enlace la dirección IP correspondiente a la VLAN en la que se encuentra conectado. Por ejemplo, en el PC0 sería así:</p>
+<p><img alt="Switch de capa 3" src="../assets/images/ud5/img08.png" width="450" /></p>
+<p>Podemos comprobar la conectividad en la red haciendo ping desde el PC0 al PC8.</p>
+<p><img alt="Switch de capa 3" src="../assets/images/ud5/img09.png" width="450" /></p>
+<p>Una vez establecido el enrutamiento entre las VLANs, se procede a habilitar el acceso a Internet desde los dispositivos de la topología, utilizando enrutamiento estático tanto en el switch multicapa como en el router.</p>
+<p>Primero se configuran las interfaces del router con las siguientes instrucciones:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Router(config)#interface g0/0  
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>Router(config-if)#ip address 192.168.2.1 255.255.255.0  
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>Router(config-if)#no shutdown  
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>Router(config-if)#interface g0/1  
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>Router(config-if)#ip address 195.0.0.1 255.255.255.0  
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>Router(config-if)#no shutdown  
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>Router(config-if)#  
+</span></code></pre></div>
+<p>A continuación, en el switch multicapa se añade una ruta por defecto utilizando como siguiente salto la IP del router en la VLAN 40:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>S1(config)#ip route 0.0.0.0 0.0.0.0 192.168.3.2  
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>S1(config)#  
+</span></code></pre></div>
+<p>La tabla de enrutamiento del switch S1 quedaría así:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>S1#show ip route  
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP  
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area  
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2  
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP  
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area  
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>       * - candidate default, U - per-user static route, o - ODR  
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>       P - periodic downloaded static route  
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>
+</span><span id="__span-42-10"><a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>Gateway of last resort is 192.168.3.2 to network 0.0.0.0  
+</span><span id="__span-42-11"><a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>
+</span><span id="__span-42-12"><a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>C 192.168.0.0/24 is directly connected, Vlan10  
+</span><span id="__span-42-13"><a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>C 192.168.1.0/24 is directly connected, Vlan20  
+</span><span id="__span-42-14"><a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>C 192.168.2.0/24 is directly connected, Vlan30  
+</span><span id="__span-42-15"><a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a>C 192.168.3.0/24 is directly connected, Vlan40  
+</span><span id="__span-42-16"><a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>S* 0.0.0.0/0 [1/0] via 192.168.3.2  
+</span></code></pre></div>
+<p>Esto permite a los paquetes procedentes de cualquier VLAN alcanzar el exterior. Para el tráfico de retorno, se configura en el router una ruta estática resumida que abarque todas las VLAN internas, utilizando como siguiente salto la dirección IP del switch en la VLAN 40:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>Router(config)#ip route 192.168.0.0 255.255.252.0 192.168.3.1  
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>Router(config)#  
+</span></code></pre></div>
+<p>Con esta configuración, el acceso a Internet se encuentra plenamente habilitado. Se puede verificar accediendo desde el navegador del PC0 al servidor web, siempre que este tenga correctamente definida la puerta de enlace con la dirección IP 195.0.0.1.</p>
+<h2 id="administracion-centralizada">Administración centralizada</h2>
+<p>VTP (Virtual Trunking Protocol) permite gestionar VLANs de forma centralizada. Sin VTP, cada vez que se crea, modifica o elimina una VLAN es necesario realizar esa configuración manualmente en cada switch de la red.</p>
+<p>VTP es un protocolo de Capa 2 del modelo OSI (enlace de datos) que garantiza la coherencia en la creación, gestión y eliminación de VLANs dentro de un dominio común, evitando errores de configuración, duplicación y mejorando la seguridad. Existen tres versiones de VTP: 1, 2 y 3.</p>
+<h3 id="terminologia-vtp">Terminología VTP</h3>
+<p>Antes de configurar VTP es necesario conocer su terminología básica:</p>
+<ul>
+<li><strong>Dominio VTP</strong>: Conjunto de switches bajo una administración común. Un switch solo puede pertenecer a un dominio VTP. Por defecto, no pertenece a ninguno hasta que se configure como servidor o reciba una actualización. Las actualizaciones se intercambian por enlaces troncales y contienen el nombre del dominio y un número de revisión. Si un switch recibe una actualización de otro dominio o con número de revisión inferior, la ignora.</li>
+<li><strong>Modos VTP</strong>:<ul>
+<li><strong>Servidor VTP</strong>: Puede crear, modificar y eliminar VLANs. Es el modo por defecto. Participa activamente en el envío, recepción y sincronización de actualizaciones.</li>
+<li><strong>Cliente VTP</strong>: Recibe y reenvía actualizaciones VTP, pero no puede realizar cambios en la configuración de VLANs.</li>
+<li><strong>VTP Transparente</strong>: No procesa actualizaciones, pero en versiones 2 y 3 puede reenviarlas por los enlaces troncales. No participa en la propagación ni modificación de VLANs.</li>
+<li><strong>VTP Off</strong>: Similar al modo transparente, pero no reenvía ningún tipo de actualización.</li>
+</ul>
+</li>
+</ul>
+<h3 id="configuracion-vtp">Configuración VTP</h3>
+<p>El escenario de red que se empleará requiere la configuración del protocolo VTP y sigue estos pasos:</p>
+<ol>
+<li><strong>Configuración de los puertos troncales</strong>: Se deben configurar los enlaces entre los tres switches en modo troncal. Además, todos los demás puertos deben configurarse en modo acceso como medida de seguridad.</li>
+<li><strong>Configuración del protocolo VTP</strong>:<ul>
+<li>Se establecerá un dominio VTP común para los tres switches.</li>
+<li>Uno de los switches se configurará en modo servidor VTP.</li>
+<li>Los otros dos switches se configurarán en modo cliente VTP.</li>
+<li>Las VLANs se crearán únicamente en el switch configurado como servidor.</li>
+<li>Finalmente, se asignarán los puertos a las VLAN correspondientes en cada switch.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="VTP" src="../assets/images/ud5/img10.png" width="500" /></p>
+<h4 id="configuracion-de-los-puertos-troncales">Configuración de los puertos troncales</h4>
+<p>Los enlaces que conectan los switches deben configurarse en modo troncal para permitir el reenvío de tráfico de todas las VLANs. El resto de puertos debe establecerse en modo acceso como medida de seguridad.</p>
+<p>En el switch0 (Servidor VTP) se configura lo siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>ServidorVTP&gt;enable
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>ServidorVTP#configure terminal
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>ServidorVTP(config)#interface g0/1
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>ServidorVTP(config-if)#switchport mode trunk
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>ServidorVTP(config-if)#interface g0/2
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>ServidorVTP(config-if)#switchport mode trunk
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>ServidorVTP(config-if)#interface range fa0/1-24
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>ServidorVTP(config-if-range)#switchport mode access
+</span></code></pre></div>
+<p>En el switch1 se establece la siguiente configuración:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>switch1&gt;enable
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>switch1#configure terminal
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>switch1(config)#interface g0/1
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>switch1(config-if)#switchport mode trunk
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>switch1(config-if)#interface range fa0/1-24
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>switch1(config-if-range)#switchport mode access
+</span></code></pre></div>
+<p>Finalmente, en el switch2, la configuración sería:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>switch2&gt;enable
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>switch2#configure terminal
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>switch2(config)#interface g0/2
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>switch2(config-if)#switchport mode trunk
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>switch2(config-if)#interface range fa0/1-24
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>switch2(config-if-range)#switchport mode access
+</span></code></pre></div>
+<h4 id="configuracion-del-protocolo-vtp-en-los-switches">Configuración del protocolo VTP en los switches</h4>
+<p>Para establecer el protocolo VTP, primero se define el dominio con el comando vtp domain nombre. Este parámetro es sensible a mayúsculas y minúsculas. Luego se asigna una contraseña al dominio con vtp password, y se indica el modo de operación con vtp mode {server | client | transparent}.</p>
+<p>En el switch servidor se configura lo siguiente:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>ServidorVTP(config)#vtp domain ejemplo
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>Changing VTP domain name from NULL to ejemplo
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>ServidorVTP(config)#vtp password clave1234
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>Setting device VLAN database password to clave1234
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>ServidorVTP(config)#vtp mode server
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>Device mode already VTP SERVER.
+</span></code></pre></div>
+<p>En switch1 se ejecuta:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>switch1(config)#vtp domain ejemplo
+</span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>Domain name already set to ejemplo.
+</span><span id="__span-48-3"><a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>switch1(config)#vtp password clave1234
+</span><span id="__span-48-4"><a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>Setting device VLAN database password to clave1234
+</span><span id="__span-48-5"><a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>switch1(config)#vtp mode client
+</span><span id="__span-48-6"><a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>Setting device to VTP CLIENT mode.
+</span></code></pre></div>
+<p>En switch2 se realiza la misma configuración:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>switch2(config)#vtp domain ejemplo
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>Domain name already set to ejemplo.
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>switch2(config)#vtp password clave1234
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>Setting device VLAN database password to clave1234
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>switch2(config)#vtp mode client
+</span><span id="__span-49-6"><a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>Setting device to VTP CLIENT mode.
+</span></code></pre></div>
+<p>A continuación se crean las VLANs en el switch servidor, que las propagará automáticamente a los demás switches configurados como clientes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>ServidorVTP(config)#vlan 10
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>ServidorVTP(config-vlan)#name Administracion
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>ServidorVTP(config-vlan)#vlan 20
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>ServidorVTP(config-vlan)#name Ventas
+</span></code></pre></div>
+<p>Las VLANs creadas se pueden verificar con el comando show vlan brief.</p>
+<p>Salida en el switch servidor:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>10  Administracion  active
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>20  Ventas         active
+</span></code></pre></div>
+<p>Salida en switch1 y switch2:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>10  Administracion  active
+</span><span id="__span-52-2"><a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>20  Ventas         active
+</span></code></pre></div>
+<p>Esto confirma que las VLANs fueron correctamente propagadas mediante VTP.</p>
+<h4 id="asignacion-de-puertos-a-las-vlans">Asignación de puertos a las VLANs</h4>
+<p>En este último paso se asignan los puertos a las VLAN correspondientes. En los switches 1 y 2, los puertos FastEthernet del 1 al 13 se asignan a la VLAN de Administración (VLAN 10), y los puertos del 14 al 24 a la VLAN de Ventas (VLAN 20).</p>
+<p>En switch1 se ejecuta:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>switch1(config)#interface range fa0/1-13
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>switch1(config-if-range)#switchport access vlan 10
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>switch1(config-if-range)#interface range fa0/14-24
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>switch1(config-if-range)#switchport access vlan 20
+</span></code></pre></div>
+<p>En switch2 la configuración es idéntica:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>switch2(config)#interface range fa0/1-13
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>switch2(config-if-range)#switchport access vlan 10
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>switch2(config-if-range)#interface range fa0/14-24
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>switch2(config-if-range)#switchport access vlan 20
+</span></code></pre></div>
+<p>Una vez asignados los puertos a sus respectivas VLANs, se puede verificar la conectividad entre los PCs pertenecientes a la misma VLAN.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

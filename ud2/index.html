@@ -1,0 +1,3685 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://joperpu.github.io/par2425/ud2/">
+      
+      
+        <link rel="prev" href="../pr1.5/">
+      
+      
+        <link rel="next" href="../pr2.1/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Teoría UD2 - Planificación y administración de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-2-integracion-de-elementos-de-una-red" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Planificación y administración de redes" class="md-header__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Planificación y administración de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teoría UD2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planificación y administración de redes" class="md-nav__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Planificación y administración de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Página principal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD1 - Introducción a las redes de comunicaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 - Introducción a las redes de comunicaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2 - Integración de elementos de una red
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 - Integración de elementos de una red
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#senales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Señales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Señales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-senales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de señales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de señales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#senales-analogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Señales analógicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#senales-digitales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Señales digitales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contaminacion-de-la-senal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contaminación de la señal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-informacion-y-la-senal" class="md-nav__link">
+    <span class="md-ellipsis">
+      La información y la señal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transmision-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmisión de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-a-la-transmision-propiamente-dicha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo a la transmisión propiamente dicha.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión atendiendo a la transmisión propiamente dicha.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transmision-asincrona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión asíncrona
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmision-sincrona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión síncrona
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmisión síncrona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-sincronismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de sincronismo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-al-medio-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo al medio de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión atendiendo al medio de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transmision-en-serie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión en serie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmision-en-paralelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión en paralelo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-a-la-senal-emitida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo a la señal emitida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-al-tipo-de-modulacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo al tipo de modulación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión atendiendo al tipo de modulación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulacion-de-amplitud-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulación de amplitud (ASK)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulacion-de-frecuencia-fsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulación de frecuencia (FSK)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulacion-de-fase-psk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulación de fase (PSK)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medios-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medios de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medios-guiados-o-cableados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medios guiados o cableados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios guiados o cableados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Par trenzado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Par trenzado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utp" class="md-nav__link">
+    <span class="md-ellipsis">
+      UTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stp" class="md-nav__link">
+    <span class="md-ellipsis">
+      STP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cable-coaxial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable coaxial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cable coaxial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cable-coaxial-de-banda-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable coaxial de banda base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cable-coaxial-de-banda-ancha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable coaxial de banda ancha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fibra óptica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medios-no-guiados-o-inalambricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medios no guiados o inalámbricos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Técnicas de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#banda-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banda Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banda-ancha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banda Ancha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizaciones-y-consideraciones-actuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizaciones y consideraciones actuales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigos-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Códigos de transmisión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-control-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos de control de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos de control de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemas-de-deteccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistemas de detección de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemas de detección de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-control-de-paridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      El control de paridad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El control de paridad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paridad-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paridad Simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paridad-de-bloque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paridad de Bloque
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redundancia-ciclica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redundancia cíclica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistemas-de-correccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistemas de corrección de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemas de corrección de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correccion-de-errores-por-retransmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Corrección de errores por retransmisión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direccionamiento-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direccionamiento IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-al-direccionamiento-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción al direccionamiento IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-problema-del-direccionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      El problema del direccionamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El problema del direccionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direccionamiento-a-nivel-de-acceso-al-medio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento a nivel de acceso al medio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccionamiento-a-nivel-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento a nivel de red
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direcciones-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direcciones IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-de-una-direccion-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes de una dirección IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-direcciones-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clases de direcciones IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clases de direcciones IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ips-en-formato-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPs en formato decimal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPs en formato decimal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-especiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones especiales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direcciones especiales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de clase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ips-en-formato-binario" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPs en formato binario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-de-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones de broadcast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mascara-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Máscara de red
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puerta-de-enlace-predeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puerta de enlace predeterminada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asignacion-de-direcciones-ip-a-una-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de direcciones IP a una red
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direcciones-privadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones privadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPv6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reglas-para-construir-direcciones-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reglas para construir direcciones IPv6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-ipv6-especiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones IPv6 especiales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redes-inalambricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redes inalámbricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redes inalámbricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wlan-wireless-local-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      WLAN (Wireless Local Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmaca-carrier-sense-multiple-access-with-collision-avoidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frecuencias-inalambricas-de-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frecuencias Inalámbricas de Wi-Fi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-red-y-tecnologias-normas-ieee-80211" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modos de Red y Tecnologías: Normas IEEE 802.11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topologias-de-wlan-80211" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topologías de WLAN 802.11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssid-y-ssid-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSID y SSID Broadcast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-en-redes-inalambricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad en Redes Inalámbricas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3 - Configuración y administración de conmutadores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 - Configuración y administración de conmutadores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4 - Configuración y administración básica de routers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 - Configuración y administración básica de routers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5 - Redes locales virtuales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 - Redes locales virtuales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr5.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD7 - Conexión a redes de área extensa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD7 - Conexión a redes de área extensa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr7.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 7.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#senales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Señales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Señales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-senales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de señales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de señales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#senales-analogicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Señales analógicas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#senales-digitales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Señales digitales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contaminacion-de-la-senal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contaminación de la señal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-informacion-y-la-senal" class="md-nav__link">
+    <span class="md-ellipsis">
+      La información y la señal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transmision-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión de datos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmisión de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-a-la-transmision-propiamente-dicha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo a la transmisión propiamente dicha.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión atendiendo a la transmisión propiamente dicha.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transmision-asincrona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión asíncrona
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmision-sincrona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión síncrona
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transmisión síncrona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-sincronismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de sincronismo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-al-medio-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo al medio de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión atendiendo al medio de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transmision-en-serie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión en serie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transmision-en-paralelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transmisión en paralelo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-a-la-senal-emitida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo a la señal emitida
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-transmision-atendiendo-al-tipo-de-modulacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de transmisión atendiendo al tipo de modulación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de transmisión atendiendo al tipo de modulación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulacion-de-amplitud-ask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulación de amplitud (ASK)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulacion-de-frecuencia-fsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulación de frecuencia (FSK)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulacion-de-fase-psk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulación de fase (PSK)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medios-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medios de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#medios-guiados-o-cableados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medios guiados o cableados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Medios guiados o cableados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Par trenzado
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Par trenzado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utp" class="md-nav__link">
+    <span class="md-ellipsis">
+      UTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stp" class="md-nav__link">
+    <span class="md-ellipsis">
+      STP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cable-coaxial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable coaxial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cable coaxial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cable-coaxial-de-banda-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable coaxial de banda base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cable-coaxial-de-banda-ancha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cable coaxial de banda ancha
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fibra óptica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medios-no-guiados-o-inalambricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medios no guiados o inalámbricos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tecnicas-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Técnicas de transmisión
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas de transmisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#banda-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banda Base
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banda-ancha" class="md-nav__link">
+    <span class="md-ellipsis">
+      Banda Ancha
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualizaciones-y-consideraciones-actuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizaciones y consideraciones actuales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codigos-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Códigos de transmisión
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodos-de-control-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos de control de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos de control de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sistemas-de-deteccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistemas de detección de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemas de detección de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-control-de-paridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      El control de paridad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El control de paridad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paridad-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paridad Simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paridad-de-bloque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paridad de Bloque
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redundancia-ciclica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redundancia cíclica
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistemas-de-correccion-de-errores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistemas de corrección de errores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemas de corrección de errores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#correccion-de-errores-por-retransmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Corrección de errores por retransmisión
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direccionamiento-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direccionamiento IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduccion-al-direccionamiento-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción al direccionamiento IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-problema-del-direccionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      El problema del direccionamiento
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="El problema del direccionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direccionamiento-a-nivel-de-acceso-al-medio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento a nivel de acceso al medio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccionamiento-a-nivel-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento a nivel de red
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direcciones-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direcciones IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-de-una-direccion-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes de una dirección IP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-direcciones-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clases de direcciones IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clases de direcciones IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ips-en-formato-decimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPs en formato decimal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPs en formato decimal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-especiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones especiales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direcciones especiales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-clase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de clase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ips-en-formato-binario" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPs en formato binario
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-de-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones de broadcast
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mascara-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Máscara de red
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#puerta-de-enlace-predeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puerta de enlace predeterminada
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asignacion-de-direcciones-ip-a-una-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de direcciones IP a una red
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direcciones-privadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones privadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      IPv6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reglas-para-construir-direcciones-ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reglas para construir direcciones IPv6
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-ipv6-especiales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones IPv6 especiales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redes-inalambricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redes inalámbricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Redes inalámbricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wlan-wireless-local-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      WLAN (Wireless Local Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmaca-carrier-sense-multiple-access-with-collision-avoidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frecuencias-inalambricas-de-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frecuencias Inalámbricas de Wi-Fi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-red-y-tecnologias-normas-ieee-80211" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modos de Red y Tecnologías: Normas IEEE 802.11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topologias-de-wlan-80211" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topologías de WLAN 802.11
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssid-y-ssid-broadcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSID y SSID Broadcast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-en-redes-inalambricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seguridad en Redes Inalámbricas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unidad-2-integracion-de-elementos-de-una-red">Unidad 2 - Integración de elementos de una red</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Los elementos fundamentales que permiten la conectividad en una red incluyen tanto los medios de transmisión cableados, como los cables, y las opciones inalámbricas; los adaptadores o tarjetas de red; y las diversas máquinas que interconectan redes, conocidas como dispositivos de red.</p>
+<p>En este capítulo, además de analizar cada uno de estos componentes de conectividad, exploraremos cómo se transmiten las señales y cuáles son sus características básicas.</p>
+<p>Por otro lado, en la segunda parte de la unidad, examinaremos cómo se estructuran las diferentes capas de comunicación entre dos dispositivos, a través de los medios y elementos que conforman una red.</p>
+<h2 id="senales">Señales</h2>
+<p>Enviar señales a través de un medio de comunicación es el método habitual para hacer llegar un mensaje o información a su destino. Según la forma de la señal transmitida y, por lo tanto, los medios de transmisión necesarios, hablamos de transmisión analógica o digital. Los medios de comunicación no son todos iguales, difieren en sus parámetros físicos y lógicos. No todas las líneas pueden transportar el mismo tipo de señales. A veces es necesario adaptar la señal al tipo de canal por el que se transmitirá. Por ejemplo, una línea telefónica analógica es adecuada para la transmisión de voz, pero para transmitir datos se requiere una línea digital.</p>
+<h3 id="tipos-de-senales">Tipos de señales</h3>
+<h4 id="senales-analogicas">Señales analógicas</h4>
+<p>Las señales analógicas son aquellas que representan magnitudes del mundo físico real, es decir, aquellas susceptibles de tomar todos los posibles valores dentro de un rango de magnitud representada, por lo que su representación gráfica dentro de dicho rango es una función continua. Una señal analógica puede verse como una forma de onda que toma un conjunto continuo de valores en un intervalo de tiempo.</p>
+<center>![Señal analógica](assets/images/ud2/img01.png){ width="600" }</center>
+
+<p>La magnitud representada puede ser cualquier magnitud física: caída de tensión, presión, temperatura, etc. En el caso de las redes la señal normalmente es un voltaje en función del tiempo.</p>
+<h4 id="senales-digitales">Señales digitales</h4>
+<p>Las señales digitales son aquellas que representan sus valores con variables discretas en vez de continuas. Por ejemplo, los ordenadores utilizan dos niveles de tensión eléctrica distintos, representados por el cero y el uno (sistema de numeración binario). Tienen las siguientes características:</p>
+<ul>
+<li>Representan únicamente la presencia o ausencia de señal.</li>
+<li>La transición de un nivel a otro no es continua en el tiempo y solo se produce en momento determinados.</li>
+</ul>
+<center>![Señal digital](assets/images/ud2/img02.png){ width="600" }</center>
+
+<p>La representación gráfica de una señal digital corresponde con una función escalonada.</p>
+<h3 id="contaminacion-de-la-senal">Contaminación de la señal</h3>
+<p>Existen diferentes fenómenos que pueden afectar a una señal, modificándola en el canal mientras viaja del emisor al receptor:</p>
+<ul>
+<li><strong>Atenuación</strong>: Es un efecto producido por el debilitamiento de la señal, debido a la resistencia eléctrica que presentan tanto el canal como los demás elementos que intervienen en la transmisión.</li>
+<li><strong>Distorsión</strong>: Consiste en la deformación producida normalmente porque el canal se comporta de modo distinto en cada frecuencia.</li>
+<li><strong>Interferencia</strong>: Es la adicción de una señal conocida y no deseada a la señal que se transmite.</li>
+<li><strong>Ruido</strong>: Se produce con la suma de múltiples interferencias de origen desconocido y de naturaleza aleatoria.</li>
+</ul>
+<h3 id="la-informacion-y-la-senal">La información y la señal</h3>
+<p>Para que la información pueda transmitirse en al señal dcha información debe codificarse, es decir, se debe estructurar según las reglas de un código. Este código será el conjunto de normas para interpretar la información contenida en la señal en el que se habrán puesto de acuerdo el emisor y el receptor.</p>
+<p>De manera formal, codificar es expresar una información de acuerdo a una norma o código. Algunos códigos están diseñados para facilitar la recuperación de los mismos, mientras que otros permiten la compresión de los datos u otras funciones.</p>
+<p>Existen diferentes tipos de código. Algunos ejemplos son:</p>
+<ul>
+<li>Código ASCII</li>
+<li>Código EBCDIC</li>
+<li>Código BAUDOT</li>
+</ul>
+<h2 id="transmision-de-datos">Transmisión de datos</h2>
+<p>Se entiende por transmisión de los datos al proceso de transporte de la información codificada de un punto a otro.</p>
+<p>En toda transmisión de datos se ha de aceptar la información, convertirla a un formato que se pueda enviar rápidamente y de forma fiable, transmitir los datos a un determinado lugar y, una vez recibidos de forma correcta, volverlos a convertir al formato que el receptor pueda reconocer y comprender.</p>
+<p>Todas esas acciones forman el proceso de transmisión. Dicho proceso podemos dividirlo en tres funciones: edición, conversión y control.</p>
+<ul>
+<li>Las funciones de edición dan el formato adecuado a los datos y se encargan de controlar errores.</li>
+<li>Las funciones de conversión se encargan de convertir los datos al formato adecuado.</li>
+<li>Las funciones de control se ocupan del control de la red y del envío y recepción de mensajes.</li>
+</ul>
+<p>Todas estas funciones son implementadas a través de protocolos.</p>
+<h3 id="tipos-de-transmision">Tipos de transmisión</h3>
+<p>Debido a que la transmisión se refiere a los parámetros físicos del transporte de señales, pueden hacerse múltiples clasificaciones</p>
+<h4 id="tipos-de-transmision-atendiendo-a-la-transmision-propiamente-dicha">Tipos de transmisión atendiendo a la transmisión propiamente dicha.</h4>
+<p>Cuando un DTE (equipo terminal de datos) de un emisor quiere enviar información a través de un canal de comunicación físico, debe emplear un código concreto que codifique los datos. Comúnmente, en las transmisiones suelen realizarse en UNICODE, que incluye a ASCII.</p>
+<p>No todos los equipos suministran la información de la misma manera a la línea de datos, por lo que tiene sentido estudiar los diferentes modos en que se puede producir esta entrega.</p>
+<h5 id="transmision-asincrona">Transmisión asíncrona</h5>
+<p>Se entiende por sincronismo el procedimiento por el cual un emisor y un receptor se ponen de acuerdo sobre el instante preciso en el que empieza o acaba una información que se ha puesto en el medio de transmisión.</p>
+<p>La sincronización, por tanto, requiere la definición común de una <strong>base de tiempos</strong> sobre la que medir los distintos eventos que ocurran durante la transmisión. Un error de sincronismo implicará la imposibilidad de interpretar correctamente la información a partir de las señales que viajan por el medio.</p>
+<p>Una transmisión asíncrona se produce cuando el proceso de sincronización entre emisor y receptor se realiza en cada palabra de código transmitida.  Esto implica que por cada carácter emitido sea necesario transmitir un bit de arranque (bit 0), seguido de la información y terminar con un bit de parada (bit 1).</p>
+<center>![Transmisión asíncrona](assets/images/ud2/img03.png){ width="600" }</center>
+
+<p>Puesto que la sincronía de la transmisión se restaura en cada carácter, este sistema de transmisión es poco sensible a los problemas que producen las faltas de sincronismo una vez se ha fijado la velocidad de transmisión de los bits. El inconveniente principal de este método es que se aumenta mucho la cantidad de bits que se envían en cada comunicación.</p>
+<p>Por ejemplo, si se considera un sistema de transmisión asíncrona, con un bit de arranque, 8 bits informativos por cada carácter de código y un bit de parada, se producirán ráfagas de transferencia de 10 bits por cada carácter transmitido. Una falta de sincronía afectará como mucho a los 10 bits emitidos, pero la llegada del siguiente carácter, con su nuevo bit de arranque, producirá una resincronización del proceso de transmisión.</p>
+<h5 id="transmision-sincrona">Transmisión síncrona</h5>
+<p>La transmisión es síncrona cuando se efectúa sin atender a la unidades de comunicación básicas, normalmente caracteres, es decir, cuando se lleva a cabo la sincronización utilizando los mismos cambios de estado en las señales emitidas.</p>
+<p>Emisor y receptor se encargan de la sincronización de modo que sean capaces de reconstruir la información original. Esto exige que los dos extremos de la comunicación sincronicen correctamente sus relojes, con objeto de asegurar una duración del bit constante e igual en ambos extremos.</p>
+<p>En las transmisiones síncronas se suelen utilizar caracteres especiales para evitar los problemas de pérdida de sincronía en los caracteres informativos transmitidos. Al empezar la transmisión se envían una serie de caracteres de sincronismo (SYN) que están formados por una combinación de 0 y 1, tales que si se produce un desplazamiento de sus bits, el receptor es capaz de conocer sin lugar a dudas que hubo un desplazamiento.</p>
+<center>![Transmisión síncrona](assets/images/ud2/img04.png){ width="600" }</center>
+
+<p>El modo de transmisión síncrona permite velocidades de transmisión mayores que la transmisión velocidades de transmisión mayores que la transmisión asíncrona, al utilizar menos bits en cada comunicación (ya que en la transmisión síncrona no son necesarios los bits de arranque y parada que acompañan a cada carácter en la transmisión asíncrona), obteniendo un mejor rendimiento de la línea de datos. Además, es menos sensible al ruido eléctrico que la transmisión asíncrona.</p>
+<p>En la transmisión asíncrona, la emisión de un carácter conlleva la emisión de 8 bits de información, además de 1 bit de arranque y otro de parada, por lo que el rendimiento es del 80%, siendo este el porcentaje de información respecto del total de los bits enviados.</p>
+<p>Sin embargo, si se considera una transmisión de información de 1 kb síncronamente en una línea, el protocolo de comunicaciones prevé el envío de tres caracteres SYN (arranque y parada) cada 256 bytes. En nuestro caso deberían añadirse 8 caracteres SYN, por lo que el rendimiento sería del 99,03%.</p>
+<h6 id="tipos-de-sincronismo">Tipos de sincronismo</h6>
+<ul>
+<li><strong>Sincronismo de bit</strong>: Se encarga de determinar el momento preciso en que comienza o acaba la transmisión de un bit.</li>
+<li><strong>Sincronismo de carácter</strong>: Se ocupa de determinar cuáles son los bits que componen cada palabra transmitida en el código elegido para efectuar la transmisión.</li>
+<li><strong>Sincronismo de bloque</strong>: Fragmenta el mensaje en bloques que deben llevar una secuencia determinada.</li>
+<li><strong>Sincronismo de trama</strong>: Cuando la información no se transmite toda de una vez, si no en tramas, es necesario establecer un procedimiento que permita identificar qué carácter de los recibidos es el primero de la trama.</li>
+</ul>
+<h4 id="tipos-de-transmision-atendiendo-al-medio-de-transmision">Tipos de transmisión atendiendo al medio de transmisión</h4>
+<p>Independientemente del código elegido para efectuar la transmisión, los datos deben viajar por las líneas de comunicación. No todas las líneas de comunicación efectúan la transmisión del mismo modo e incluso un canal de comunicación puede estar compuesto por una o más líneas. Estas líneas pueden tener diferentes funciones: control, datos, etc. Esta clasificación se refiere a aquellas líneas de un canal de transmisión que tienen como misión el flujo de datos.</p>
+<h5 id="transmision-en-serie">Transmisión en serie</h5>
+<p>Se dice que una transmisión es en serie cuando todas las señales se transmiten por una única linea de datos secuencialmente. Esta forma de datos es más adecuada para transmisiones a largas distancias. Los bits se transmiten en cadena por la línea de datos a una velocidad constante negociada por el transmisor y el receptor.</p>
+<center>![Transmisión en serie](assets/images/ud2/img05.png){ width="600" }</center>
+
+<h5 id="transmision-en-paralelo">Transmisión en paralelo</h5>
+<p>Se dice que una transmisión es en paralelo cuando se transmiten simultáneamente un grupo de bits, uno por cada línea del mismo canal. Los agrupamientos de bits pueden ser caracteres u otras asociaciones, dependiendo del tipo de canal.</p>
+<center>![Transmisión en paralelo](assets/images/ud2/img06.png){ width="400" }</center>
+
+<p>Para una misma tecnología de transmisión en los medios conductores, una transmisión en paralelo será n veces más rápida que su equivalente en serie, donde n es el número de líneas.</p>
+<p>Sin embargo, la complejidad de un canal paralelo y los condicionamientos eléctricos hacen que exista una mayor dificultad en emplear este tipo de canales a grandes distancias, por lo que se ha solido utilizar en ámbitos locales, como la comunicación entre un ordenador y una impresora.</p>
+<h4 id="tipos-de-transmision-atendiendo-a-la-senal-emitida">Tipos de transmisión atendiendo a la señal emitida</h4>
+<p>Como se ha comentado anteriormente, según la señal emitida, las señales pueden clasificarse en analógicas y digitales.</p>
+<p>Si la señal es analógica es capaz de tomar todos los valores posibles en un rango, diciéndose que la transmisión es analógica. Por su parte, cuando la transmisión es digital la señal emitida solo puede tomar un conjunto de valores discretos dentro del rango de definición.</p>
+<h4 id="tipos-de-transmision-atendiendo-al-tipo-de-modulacion">Tipos de transmisión atendiendo al tipo de modulación</h4>
+<p>En ocasiones la transmisión exige una modulación, es decir, una conversión para transmitir señales digitales sobre líneas de transmisión analógicas, para que se produzca esa adecuación necesaria entre las líneas y los equipos.</p>
+<p>Si la transmisión se realiza sin ningún proceso de modulación se dice que opera en <strong>banda base</strong>. Por el contrario, si se exige un proceso de modulación previo, se dice que la transmisión se produce en <strong>banda ancha</strong>.</p>
+<h5 id="modulacion-de-amplitud-ask">Modulación de amplitud (ASK)</h5>
+<p>En esta modulación, a cada valor de la señal digital se le hace corresponder una amplitud distinta de la señal analógica (para un valor binario 0 se envía una amplitud 0, pero par aun valor binario 1 se envía una amplitud distinta de 0).</p>
+<p>Se emplea muy poco en transferencia de datos y siempre a muy bajas velocidades de transmisión, ya que es muy susceptible a las interferencias de línea.</p>
+<center>![Modulación en amplitud](assets/images/ud2/img07.png){ width="600" }</center>
+
+<h5 id="modulacion-de-frecuencia-fsk">Modulación de frecuencia (FSK)</h5>
+<p>En ella, cada valor de la señal digital se hace corresponder una frecuencia de la señal analógica (para un valor binario 0 se envía una frecuencia determinada, y para un valor binario 1 se envía otra frecuencia distinta).</p>
+<p>Se emplea para velocidades de transmisión iguales o inferiores a 1200 bps.</p>
+<center>![Modulación de frecuencia](assets/images/ud2/img08.png){ width="600" }</center>
+
+<h5 id="modulacion-de-fase-psk">Modulación de fase (PSK)</h5>
+<p>En la que a cada valor de la señal digital se le hace corresponder con un desfase de la señal analógica (para un valor binario 0 se modifica la fase y par aun valor binario 1 no se modifica).</p>
+<p>Se emplea para velocidades de transmisión superiores a 1200 bps. Para velocidades superiores se emplea la modulación de fase combinada con la modulación de amplitud.</p>
+<center>![Modulación de fase](assets/images/ud2/img09.png){ width="600" }</center>
+
+<h3 id="medios-de-transmision">Medios de transmisión</h3>
+<p>El  medio de transmisión es el soporte físico que facilita el transporte de la información. Es parte fundamental en la comunicación de datos, dependiendo de sus características la calidad de la transmisión.</p>
+<p>El transporte, que puede ser mecánico, óptico, electromagnético, etc., debe ser adecuado a la transmisión de la señal física con objeto de producir la conexión y la comunicación entre dos dispositivos. Cada medio de transmisión tiene ventajas e inconvenientes, por lo que hay una serie de factores que deben tenerse en cuenta a la hora de elegir un medio de transmisión:</p>
+<ul>
+<li>Tipo de instalación en la que es más adecuado.</li>
+<li>Topología que soporta.</li>
+<li>Fiabilidad y vulnerabilidad.</li>
+<li>Influencia de las interferencias.</li>
+<li>Economía y facilidad de instalación.</li>
+<li>Seguridad para intervenir en el medio.</li>
+</ul>
+<p>En principio, podemos distinguir entre dos medios:</p>
+<ul>
+<li>Guiados: Conducen las ondas electromagnéticas a través de un campo físico: los cables.</li>
+<li>No guiados: Proporcionan un soporte para que las ondas se transmitan, pero no las dirigen, como el aire en las redes inalámbricas.</li>
+</ul>
+<h4 id="medios-guiados-o-cableados">Medios guiados o cableados</h4>
+<p>En general, distinguimos de tres tipos: par trenzado, coaxial y fibra óptica.</p>
+<h5 id="par-trenzado">Par trenzado</h5>
+<p>Es el cable más común en las redes. Está formado por cables de cobre aislados, normalmente de 1 mm de espesor, trenzados de dos en dos. La forma trenzada del cable se utiliza para reducir las interferencias eléctricas. Los conectores habituales de este tipo de cableado en redes de datos son los RJ-45.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Categoría</strong></th>
+<th><strong>Uso</strong></th>
+<th><strong>Ancho de banda</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Cat1</strong></td>
+<td>Comunicaciones de voz analógicas (líneas telefónicas). No apto para transmisión de datos.</td>
+<td>Hasta 1 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat2</strong></td>
+<td>Redes Token Ring y otras aplicaciones de baja velocidad de datos.</td>
+<td>Hasta 4 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat3</strong></td>
+<td>Telefonía y redes Ethernet 10 Mbps (10BASE-T).</td>
+<td>Hasta 10 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat5</strong></td>
+<td>Redes Fast Ethernet (100BASE-TX).</td>
+<td>Hasta 100 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat5e</strong></td>
+<td>Redes Gigabit Ethernet (1000BASE-T).</td>
+<td>Hasta 1 Gbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat6</strong></td>
+<td>Redes Gigabit Ethernet y 10 Gigabit Ethernet en distancias cortas.</td>
+<td>Hasta 1 Gbps (100 m), hasta 10 Gbps (55 m)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat6a</strong></td>
+<td>Redes 10 Gigabit Ethernet.</td>
+<td>Hasta 10 Gbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat7</strong></td>
+<td>Redes 10 Gigabit Ethernet con mayor protección contra interferencias (cableado apantallado).</td>
+<td>Hasta 10 Gbps</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Cat8</strong></td>
+<td>Centros de datos y conexiones de alta velocidad.</td>
+<td>Hasta 25/40 Gbps</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos distinguir tres tipo dentro de este cableado:</p>
+<h6 id="utp">UTP</h6>
+<p>El cable UTP (Par trenzado no apantallado o sin blindaje) es el cable de red más utilizado. Consiste en pares de cobre trenzados rodeados por una funda de plástico. Existen distintas categorías de cables UTP, cada una de las cuales especifica unas características eléctricas para el cable. Lo más utilizados actualmente en redes locales son la categoría 5 (cat5) y la 5 mejorada (cat5e).</p>
+<center>![UTP](assets/images/ud2/img10.png){ width="300" }</center>
+
+<h6 id="stp">STP</h6>
+<p>El cable SPT (Par trenzado apantallado o blindado) se caracteriza porque cada par va recubierto por una malla conductora, la cual es mucho más protectora y de mucha más calidad que la utilizada en el UTP. La protección de este cable ante perturbaciones es mucho mayor a la del UTP. Sus desventajas son que es un cable caro y recio/fuerte. Se suele utilizar en las instalaciones de procesamiento de datos.</p>
+<center>![STP](assets/images/ud2/img11.png){ width="300" }</center>
+
+<h6 id="ftp">FTP</h6>
+<p>El cable FTP (Par trenzado con pantalla global) posee una amplia pantalla global, aunque sus pares no se encuentran apantallados individualmente. Esta pantalla provoca una mejora en la protección ante interferencias externas.</p>
+<p>Se suele utilizar para aplicaciones que se van a someter a una elevada interferencia electromagnética externa, ya que este cable tiene un gran aislamiento de la señal.</p>
+<center>![FTP](assets/images/ud2/img12.png){ width="300" }</center>
+
+<p>Una de las ventajas del cable FTP es su capacidad para configurarse en distintas topologías, como estrella y bus; además, su instalación es sencilla.</p>
+<p>Sin embargo, también presenta desventajas, como una alta sensibilidad al ruido y la incapacidad para soportar altas velocidades de transmisión.</p>
+<h5 id="cable-coaxial">Cable coaxial</h5>
+<p>El cable coaxial está compuesto por un conductor central rodeado de material aislante, el cual a su vez está envuelto en una malla metálica y una cubierta exterior. Esta estructura está diseñada para proteger las transmisiones contra interferencias electromagnéticas.</p>
+<center>![Cable coaxial](assets/images/ud2/img14.png){ width="300" }</center>
+
+<p>Existen esencialmente dos tipos de cable coaxial: banda base (también conocido como cable fino) y banda ancha (o cable grueso). La principal diferencia entre ambos radica en su impedancia, siendo de 50 ohmios para el cable de banda base y de 75 ohmios para el de banda ancha. El primero se utiliza principalmente para transmisiones digitales, mientras que el segundo se emplea en transmisiones analógicas.</p>
+<h6 id="cable-coaxial-de-banda-base">Cable coaxial de banda base</h6>
+<p>El cable coaxial de banda base ofrece mejores características de protección que el par trenzado, lo que le permite transportar señales a mayores distancias y con anchos de banda superiores. Su construcción proporciona un alto grado de inmunidad al ruido eléctrico. Sin embargo, en aplicaciones de redes de área local (LAN), su uso ha disminuido considerablemente. Esto se debe a su fragilidad, mayor costo y, especialmente, a los avances en el rendimiento de los cables de par trenzado y fibra óptica, que han ofrecido soluciones más eficientes y económicas para las redes modernas.</p>
+<h6 id="cable-coaxial-de-banda-ancha">Cable coaxial de banda ancha</h6>
+<p>El cable coaxial de banda ancha se utiliza para la transmisión de señales analógicas y es ampliamente empleado en la industria de la televisión por cable. Debido a que las señales analógicas son menos susceptibles a problemas de transmisión que las digitales, esta tecnología puede implementarse con éxito en redes que abarcan cientos de kilómetros.</p>
+<p>Los sistemas de banda ancha pueden alcanzar anchos de banda de hasta 1 GHz o más con las tecnologías actuales. Dividen la transmisión en múltiples canales, habitualmente de 6 a 8 MHz cada uno. Cada canal puede utilizarse para transmitir televisión analógica o digital, audio de alta calidad o datos. Con el avance de las tecnologías digitales y estándares como DOCSIS, los operadores de cable pueden ofrecer servicios de internet de alta velocidad, televisión digital y telefonía sobre el mismo cable coaxial.</p>
+<p>Actualizaciones y consideraciones actuales:</p>
+<ul>
+<li>Transmisión de datos mejorada: Las velocidades de transmisión en cables coaxiales han aumentado significativamente gracias a la modulación digital y a tecnologías avanzadas, permitiendo velocidades de descarga de varios Gbps en conexiones residenciales e industriales.</li>
+<li>Uso en redes modernas: Aunque el cable coaxial ha sido en gran medida reemplazado por par trenzado y fibra óptica en redes LAN, sigue siendo relevante en aplicaciones específicas como conexiones de televisión por cable, antenas satelitales y sistemas de seguridad.</li>
+<li>Conectores: En el cable coaxial fino se utiliza el conector BNC, común en aplicaciones de video profesional, equipos de prueba y algunas redes heredadas. En aplicaciones de televisión por cable y satélite, es más frecuente el uso de conectores F y otros tipos especializados.</li>
+</ul>
+<h5 id="fibra-optica">Fibra óptica</h5>
+<p>El cable de fibra óptica transmite información mediante pulsos de luz en lugar de señales eléctricas, lo que lo hace inmune a las interferencias electromagnéticas y especialmente adecuado para transmisiones a larga distancia. Mientras que los cables de cobre suelen limitar la transmisión de datos a unos pocos cientos de metros, la fibra óptica puede operar eficientemente en distancias de hasta 100 km o más sin necesidad de repetidores. Los conectores más comunes utilizados en instalaciones de fibra óptica para redes de área local son los tipos SC, ST y LC, siendo este último cada vez más popular por su tamaño compacto y facilidad de uso.</p>
+<center>![Cable fibra óptica](assets/images/ud2/img13.png){ width="400" }</center>
+
+<p>El espectro de la luz natural abarca un rango continuo de frecuencias distintas (ultravioleta, visible, infrarrojo, etc.), lo que no la convierte en una fuente ideal para la transmisión de datos debido a su incoherencia y dispersión. Por ello, se emplean fuentes de luz especializadas para garantizar una comunicación eficiente:</p>
+<ul>
+<li>Láseres: Son fuentes de luz altamente coherentes que emiten un haz en una única longitud de onda con ondas en fase. Son ideales para aplicaciones que requieren altas velocidades y largas distancias, y se utilizan principalmente en fibras monomodo.</li>
+<li>Diodos LED: Son dispositivos semiconductores que emiten luz cuando se les aplica una corriente eléctrica. Producen luz menos coherente que los láseres y se utilizan comúnmente en fibras multimodo para aplicaciones de corta a media distancia.</li>
+</ul>
+<p>En la actualidad, se emplean principalmente dos tipos de fibra óptica para la transmisión de datos:</p>
+<ul>
+<li>Fibra monomodo: Permite la transmisión de señales con anchos de banda extremadamente altos y es ideal para largas distancias. La luz se propaga a través de un único modo o trayectoria, minimizando la dispersión modal y permitiendo velocidades de transmisión superiores a 10 Gbps. El diámetro típico del núcleo es de aproximadamente 8 a 10 micrómetros.</li>
+<li>Fibra multimodo: Permite que la luz se propague a través de múltiples modos o trayectorias y es adecuada para distancias más cortas. Se divide en:</li>
+<li>Fibra multimodo de índice gradual: El índice de refracción del núcleo disminuye gradualmente desde el centro hacia el borde, lo que reduce la dispersión modal y mejora el rendimiento en comparación con la fibra de índice escalonado. Puede soportar anchos de banda de varios gigahercios y es adecuada para aplicaciones de hasta 2 km. Las categorías OM1, OM2, OM3, OM4 y OM5 son ejemplos de este tipo, con capacidades que van desde 1 Gbps hasta 100 Gbps a diversas distancias.</li>
+<li>Fibra multimodo de índice escalonado: Tiene un núcleo con índice de refracción uniforme y un cambio abrupto al revestimiento. Debido a la mayor dispersión modal, su ancho de banda y alcance son más limitados, generalmente utilizados en aplicaciones muy cortas y a velocidades más bajas.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tipo de cable</th>
+<th>Tasa de datos máxima</th>
+<th>Ancho de banda</th>
+<th>Distancia entre repetidores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Par trenzado</td>
+<td>- Cat5e: hasta 1 Gbps- Cat6: hasta 10 Gbps (hasta 55 m)- Cat6a: hasta 10 Gbps- Cat7: hasta 10 Gbps- Cat8: hasta 40 Gbps (hasta 30 m)</td>
+<td>- Cat5e: 100 MHz- Cat6: 250 MHz- Cat6a: 500 MHz- Cat7: 600 MHz- Cat8: 2000 MHz</td>
+<td>Hasta 100 metros (estándar Ethernet)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Cable coaxial</td>
+<td>- DOCSIS 3.0: hasta 1 Gbps (descarga)- DOCSIS 3.1: hasta 10 Gbps (descarga), 1-2 Gbps (subida)- Aplicaciones profesionales: varía según el sistema</td>
+<td>Hasta 3 GHz o más (dependiendo del tipo de cable y aplicación)</td>
+<td>Varios kilómetros (con amplificadores o repetidores cada 1-2 km)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Fibra óptica</td>
+<td>- Monomodo: hasta 100 Gbps y superiores- Multimodo: hasta 100 Gbps (distancias más cortas)- Con DWDM: varios Tbps</td>
+<td>- Monomodo: ancho de banda extremadamente alto (decenas de THz)- Multimodo: alto ancho de banda para distancias cortas</td>
+<td>- Fibra Monomodo: hasta 80-100 km (sin repetidores)- Fibra Multimodo: hasta 2 km</td>
+</tr>
+</tbody>
+</table>
+<h4 id="medios-no-guiados-o-inalambricos">Medios no guiados o inalámbricos</h4>
+<p>La comunicación inalámbrica es esencial para los usuarios móviles que requieren conexión constante. Además, es extremadamente útil en áreas geográficas de difícil acceso donde la instalación de cables es costosa o impracticable. Según el tipo de señal utilizada, existen diferentes métodos de enlaces inalámbricos:</p>
+<ul>
+<li><strong>Ondas de radio</strong>: Son sencillas de generar y pueden cubrir largas distancias. Sin embargo, es necesario un control gubernamental estricto para evitar interferencias entre diferentes transmisiones, mediante la regulación del espectro radioeléctrico.</li>
+<li><strong>Microondas</strong>: Se utilizan para transmisiones tanto terrestres como satelitales, permitiendo comunicaciones de alta capacidad y larga distancia. Las microondas requieren una línea de visión directa entre los transmisores y receptores, y son comunes en enlaces punto a punto y en redes de telecomunicaciones.</li>
+<li><strong>Ondas infrarrojas y ondas milimétricas</strong>: Las ondas infrarrojas se emplean en comunicaciones de corto alcance, como en controles remotos de televisores y otros dispositivos electrónicos. Aunque antes eran comunes en puertos de comunicación de ordenadores portátiles, han sido reemplazadas por tecnologías como Bluetooth y Wi-Fi. Las ondas infrarrojas no atraviesan objetos sólidos, lo que limita su uso. Por otro lado, las ondas milimétricas, que operan en frecuencias muy altas, son fundamentales en las redes 5G actuales, ofreciendo altas velocidades de transmisión. Sin embargo, tienen un alcance limitado y pueden ser bloqueadas fácilmente por obstáculos físicos y afectadas por condiciones atmosféricas.</li>
+<li><strong>Ondas de luz</strong>: Permiten la comunicación entre dos puntos mediante haces de luz, como láseres montados en las azoteas de edificios. Este método ofrece altas velocidades de transmisión y es relativamente económico y fácil de instalar. No obstante, requiere una alineación precisa entre los emisores y receptores, y su eficacia puede verse afectada por condiciones atmosféricas adversas como niebla, lluvia o polvo en suspensión, que pueden interrumpir o degradar la señal.</li>
+</ul>
+<h3 id="tecnicas-de-transmision">Técnicas de transmisión</h3>
+<p>Para transmitir información entre un emisor y un receptor, se emplean diversas técnicas de transmisión. Las más comunes son banda base y banda ancha.</p>
+<h4 id="banda-base">Banda Base</h4>
+<p>La transmisión en banda base es el método más común en las redes locales (LAN). Consiste en enviar señales digitales directamente sobre el medio de transmisión sin utilizar técnicas de modulación. En este método, se utiliza todo el ancho de banda disponible para una única señal, por lo que solo es posible transmitir una señal a la vez.</p>
+<p>Este enfoque es especialmente adecuado para distancias cortas, ya que en trayectos más largos pueden surgir problemas de atenuación, ruido e interferencias. Para extender el alcance, se pueden emplear repetidores que regeneran la señal y mantienen su integridad. Los medios de transmisión comúnmente utilizados en banda base incluyen el cable de par trenzado y el cable coaxial.</p>
+<h4 id="banda-ancha">Banda Ancha</h4>
+<p>La transmisión en banda ancha implica modular las señales digitales sobre ondas portadoras analógicas, permitiendo que múltiples señales compartan el ancho de banda del medio. Esto se logra mediante técnicas como la multiplexación por división de frecuencia (FDM), donde el espectro disponible se divide en varios canales, cada uno transmitiendo una señal diferente. Es como si, en lugar de un único medio, se utilizaran múltiples líneas dentro del mismo cable físico.</p>
+<p>Este método requiere el uso de módems para modular y demodular las señales, convirtiendo las señales digitales en analógicas y viceversa. La transmisión en banda ancha es adecuada para distancias mayores, pudiendo alcanzar hasta 50 km o más, dependiendo de la tecnología y el medio utilizado.</p>
+<p>Además, permite que el mismo medio de transmisión transporte diferentes tipos de señales simultáneamente, como datos, televisión y voz. Los medios de conexión empleados en banda ancha incluyen el cable coaxial y la fibra óptica.</p>
+<h4 id="actualizaciones-y-consideraciones-actuales">Actualizaciones y consideraciones actuales</h4>
+<ul>
+<li>Evolución de la Terminología: En la actualidad, el término banda ancha se asocia comúnmente con conexiones de alta velocidad a Internet, independientemente del medio físico o la técnica de transmisión. Esto incluye tecnologías como DSL, cable módem, fibra óptica y conexiones inalámbricas de alta velocidad.</li>
+<li>Tecnologías Modernas: Las redes actuales utilizan medios avanzados como el par trenzado de categorías superiores (Cat6, Cat6a, Cat7, Cat8) y la fibra óptica, que permiten velocidades de transmisión mucho más altas que las mencionadas anteriormente. Por ejemplo, la fibra óptica puede transmitir datos a velocidades de 100 Gbps o superiores y a distancias de 80 km sin necesidad de repetidores.</li>
+<li>Modulación y Multiplexación Avanzadas: Se han desarrollado técnicas de modulación más sofisticadas, como QAM (Modulación por Amplitud en Cuadratura) y OFDM (Multiplexación por División de Frecuencia Ortogonal), que aumentan la eficiencia espectral y permiten mayores velocidades de datos.</li>
+<li>Redes de Larga Distancia: Para transmisiones a muy largas distancias, como en redes troncales de Internet, se utilizan tecnologías como la multiplexación por división de longitud de onda densa (DWDM) en fibra óptica, que permite transmitir múltiples señales ópticas a diferentes longitudes de onda por el mismo cable, aumentando enormemente la capacidad de transmisión.</li>
+<li>Convergencia de Servicios: Las redes modernas suelen ser de tipo multiservicio, capaces de transportar datos, voz y video sobre el mismo medio físico, gracias a las técnicas de multiplexación y protocolos como IP (Protocolo de Internet).</li>
+</ul>
+<h3 id="codigos-de-transmision">Códigos de transmisión</h3>
+<p>El sistema binario constituye la base esencial que permite a un ordenador recibir, procesar y almacenar información. En este sistema, letras, números y caracteres especiales se transforman a binario mediante la asignación de secuencias de 0 y 1 a cada carácter ingresado. Para realizar esta conversión, los ordenadores utilizan códigos específicos como BCD, EBCDIC, ASCII, FIELDATA, entre otros, asegurando que cada carácter tenga una representación única dentro de estos estándares. Estos códigos abarcan una variedad de caracteres, incluyendo alfabéticos (tanto en mayúsculas como en minúsculas), numéricos (del 0 al 9), caracteres especiales (. , ; : etc.) y caracteres de control (como el salto de línea o ACK).</p>
+<p>Principales códigos de codificación:</p>
+<ul>
+<li>FIELDATA: Utiliza 6 bits para representar cada carácter, permitiendo así 2⁶ = 64 caracteres distintos.</li>
+<li>ASCII (American Standard Code for Information Interchange): Emplea 7 bits por carácter, ofreciendo 2⁷ = 128 caracteres diferentes.</li>
+<li>ASCII extendido: Amplía ASCII a 8 bits por carácter, alcanzando 2⁸ = 256 caracteres.</li>
+<li>EBCDIC (Extended Binary Coded Decimal Interchange Code): También utiliza 8 bits por carácter, permitiendo 256 caracteres distintos.</li>
+</ul>
+<p>Estos códigos de entrada/salida (E/S) asignan a cada carácter una secuencia específica de bits, estableciendo correspondencias entre conjuntos según el dispositivo utilizado. Por ejemplo, con un número fijo n de bits para codificar m símbolos:</p>
+<ul>
+<li>Si n = 2, se pueden codificar m = 2² = 4 símbolos.</li>
+<li>Si n = 3, se pueden codificar m = 2³ = 8 símbolos.</li>
+<li>En general, si n = k, se pueden codificar m = 2ᵏ símbolos.</li>
+</ul>
+<p>Por lo tanto, para codificar m símbolos, se requiere un código con n bits tal que m ≤ 2ⁿ, donde n es el menor número entero que cumple n ≥ log₂ m.</p>
+<p>Inicialmente, los códigos de E/S utilizaban 6 bits (n = 6), permitiendo representar 64 caracteres distintos (26 letras del alfabeto, 10 dígitos y 28 caracteres especiales). Posteriormente, se adoptaron códigos de 7 bits para incluir letras minúsculas y caracteres de control adicionales. Hoy en día, los códigos de 8 bits son los más comunes, facilitando una mayor variedad de representaciones.</p>
+<p>Evolución hacia estándares modernos:</p>
+<p>Con la globalización y la diversidad de idiomas y símbolos utilizados en la actualidad, surgió la necesidad de un sistema de codificación más amplio y flexible. Esto llevó al desarrollo y adopción del estándar Unicode, que permite representar más de un millón de caracteres, abarcando prácticamente todos los sistemas de escritura del mundo, así como emojis y símbolos técnicos.</p>
+<p>Formatos de codificación Unicode:</p>
+<ul>
+<li>UTF-8: Es un formato de longitud variable que utiliza entre 1 y 4 bytes (8 a 32 bits) por carácter. Es compatible con ASCII y ampliamente utilizado en internet por su eficiencia y compatibilidad con sistemas existentes.</li>
+<li>UTF-16: Utiliza 16 bits (2 bytes) por carácter, aunque algunos caracteres especiales requieren 4 bytes. Es común en sistemas operativos y entornos de programación modernos.</li>
+<li>UTF-32: Emplea 32 bits (4 bytes) por carácter, permitiendo una representación directa de todos los caracteres Unicode, aunque consume más espacio.</li>
+</ul>
+<p>Estos avances en codificación han permitido a los sistemas informáticos manejar una diversidad mucho mayor de información textual, facilitando la comunicación global y el intercambio de datos en múltiples idiomas y contextos culturales.</p>
+<p>Ejemplo práctico actualizado:</p>
+<p>Consideremos la codificación del carácter ‘A’ en diferentes sistemas:</p>
+<ul>
+<li>En ASCII, ‘A’ se representa como 65 en decimal o 01000001 en binario.</li>
+<li>En Unicode UTF-8, ‘A’ también se representa como 01000001 en binario, manteniendo la compatibilidad con ASCII.</li>
+<li>Sin embargo, un carácter como ‘á’ (a con acento) no existe en ASCII estándar, pero en UTF-8 se codifica con dos bytes (por ejemplo, 11000011 10100001), permitiendo su representación.</li>
+<li>Además, emojis como 😊 se representan en UTF-8 con secuencias de 4 bytes, lo que demuestra la capacidad de Unicode para manejar símbolos modernos y gráficos.</li>
+</ul>
+<p>Estos sistemas de codificación avanzados son esenciales para el funcionamiento de aplicaciones web, sistemas operativos y software que requieren compatibilidad internacional y soporte para una amplia gama de caracteres y símbolos, adaptándose a las necesidades tecnológicas contemporáneas.</p>
+<h3 id="metodos-de-control-de-errores">Métodos de control de errores</h3>
+<p>Los sistemas de comunicación no son infalibles, lo que puede provocar que la información que circula a través de ellos se distorsione o altere. Estas distorsiones pueden originarse por el ruido presente en las líneas de transmisión, la degradación de la señal debido a las grandes distancias que debe recorrer, o por interferencias provenientes de otras señales que operan en los mismos circuitos o generadas por dispositivos cercanos, como motores eléctricos, microondas y otros equipos electrónicos.</p>
+<p>El desafío principal no radica tanto en la inevitabilidad de los errores de transmisión, que en mayor o menor medida siempre ocurrirán, sino en la capacidad para detectarlos eficazmente. Abordar este problema requiere dos enfoques fundamentales:</p>
+<ol>
+<li>Reconocer que las comunicaciones son intrínsecamente susceptibles a errores y, por lo tanto, implementar mecanismos que permitan su detección.</li>
+<li>Una vez detectado un error, corregirlo utilizando técnicas avanzadas de procesamiento de datos o mediante la retransmisión de la información afectada.</li>
+</ol>
+<p>Un concepto esencial en este contexto es la pérdida de información. Este término no se refiere simplemente a que la información enviada por el emisor no llegue al receptor, sino a que se produzcan modificaciones inesperadas y no deseadas en los datos transmitidos. En el caso de la información digital y binaria, esto implica cambios en los valores de los bits, es decir, que un bit que originalmente era 0 se convierta en 1 y viceversa.</p>
+<p>Con el avance de las tecnologías de comunicación, se han desarrollado métodos más sofisticados para mitigar estos problemas. Por ejemplo, la implementación de códigos de corrección de errores como CRC (Cyclic Redundancy Check), códigos Reed-Solomon y códigos de corrección de errores de canal en tecnologías modernas como 5G y redes de fibra óptica han mejorado significativamente la integridad de la transmisión de datos. Además, las redes inalámbricas contemporáneas enfrentan desafíos adicionales debido a la mayor densidad de señales y la interferencia electromagnética, lo que ha impulsado el desarrollo de algoritmos más robustos para la detección y corrección de errores.</p>
+<p>Asimismo, con la creciente importancia de la ciberseguridad, asegurar la integridad de la información transmitida se ha vuelto crucial, no solo para corregir errores inadvertidos sino también para proteger contra manipulaciones maliciosas. En este sentido, se integran técnicas de verificación y encriptación que garantizan que los datos no solo lleguen intactos, sino también seguros.</p>
+<p>Además, la Internet de las Cosas (IoT) y las redes de comunicación masivas han incrementado la complejidad y la cantidad de datos transmitidos, lo que requiere sistemas aún más eficientes y confiables para gestionar la detección y corrección de errores. Tecnologías emergentes como la inteligencia artificial y el aprendizaje automático están siendo aplicadas para predecir y mitigar errores de transmisión de manera proactiva, optimizando así la fiabilidad de las comunicaciones en tiempo real.</p>
+<p>En resumen, aunque los medios de comunicación modernos han avanzado enormemente en la reducción de errores y en la mejora de la calidad de transmisión, la detección y corrección de errores siguen siendo aspectos fundamentales para asegurar la fiabilidad y la integridad de la información en un entorno de comunicación cada vez más complejo y globalizado.</p>
+<h4 id="sistemas-de-deteccion-de-errores">Sistemas de detección de errores</h4>
+<p>Los métodos más habituales para la detección de errores son los siguientes.</p>
+<h5 id="el-control-de-paridad">El control de paridad</h5>
+<p>Uno de los métodos más empleados para la detección de errores en las transmisiones de datos es el control de paridad, el cual consiste en añadir a la información original del usuario una serie de bits adicionales que reflejan ciertas propiedades de esos datos. Este mecanismo permite identificar alteraciones en la información al comparar los bits de paridad recibidos con los valores esperados al momento de la emisión.</p>
+<h6 id="paridad-simple">Paridad Simple</h6>
+<p>El método de paridad simple implica agregar un bit extra a cada byte (grupo de 8 bits) que indica si el número de bits con valor 1 en el byte es par o impar. Este bit adicional se calcula realizando una operación de OR exclusivo (XOR) sobre todos los bits del mensaje original.</p>
+<p>Existen dos variantes de paridad simple:</p>
+<ul>
+<li>Paridad par: El bit de paridad se establece en 0 si el número de unos (1) en el byte es par, y en 1 si es impar.</li>
+<li>Paridad impar: El bit de paridad se configura en 0 cuando el número de unos es impar, y en 1 cuando es par.</li>
+</ul>
+<p>Ejemplos:</p>
+<ul>
+<li>Paridad Par:<ul>
+<li>Byte original: 1 0 0 1 0 0 0 0</li>
+<li>Bit de paridad añadido: (0)</li>
+<li>Transmisión completa: 1 0 0 1 0 0 0 0 (0)</li>
+</ul>
+</li>
+<li>Paridad Impar:<ul>
+<li>Byte original: 1 0 0 1 0 0 0 0</li>
+<li>Bit de paridad añadido: (1)</li>
+<li>Transmisión completa: 1 0 0 1 0 0 0 0 (1)</li>
+</ul>
+</li>
+</ul>
+<p>En ambos casos, si durante la transmisión un bit se altera (por ejemplo, un 0 cambia a 1 o viceversa), el receptor recalcula la paridad del byte recibido y compara el resultado con el bit de paridad recibido. Si hay una discrepancia, se detecta que ha ocurrido un error.</p>
+<p>El sistema de paridad simple solo puede detectar errores que afecten a un número impar de bits en la cadena transmitida. Si el número de bits erróneos es par, el error pasa desapercibido, lo que limita su efectividad para transmisiones de datos críticas. Por esta razón, este método es insuficiente para la transmisión de información sensible o en entornos donde la integridad de los datos es primordial.</p>
+<h6 id="paridad-de-bloque">Paridad de Bloque</h6>
+<p>La paridad de bloque es una extensión de la paridad simple. En lugar de añadir un bit de paridad a cada byte individualmente, este método organiza la información en bloques (por ejemplo, matrices de n filas por m columnas de bits) y añade bits de paridad tanto a las filas como a las columnas. Esto permite detectar y, en algunos casos, corregir errores más complejos que afectan múltiples bits dentro del bloque.</p>
+<p>Por ejemplo, si se desea transmitir la siguiente información:</p>
+<center>0 0 1 1 0 , 0 1 0 1 0 , 1 1 0 0 1 , 1 1 1 1 1</center>
+
+<p>se expresa por filas en una tabla de 5x4 bits:</p>
+<center>![Ejemplo paridad de bloque](assets/images/ud2/img15.png){ width="700" }</center>
+
+<p>Y se calcula la paridad por filas y por columnas:</p>
+<center>![Ejemplo paridad de bloque](assets/images/ud2/img16.png){ width="700" }</center>
+
+<p>Los bits en cursiva y subrayados son los bits de paridad. El bit marcado con X (bit de paridad cruzada) no es significativo para este estudio. Estos bits constituyen la paridad de bloque o checksum. La secuencia transmitida será entonces la siguiente:</p>
+<center>0 0 1 1 0 **0** 0 1 0 1 0 **0** 1 1 0 0 1 **1** 1 1 1 1 1 **1 0 1 0 1 0 X**</center>
+
+<p>Cuando el mensaje llega al receptor este reconstruye la tabla y comprueba que los códigos de paridad son correctos. La detección del error se realiza de la siguiente manera: Si, por ejemplo, el bit de la segunda fila y tercera columna altera su valor durante la transmisión, la secuencia recibida será:</p>
+<center>0 0 1 1 0 **0** 0 1 1 1 0 **0** 1 1 0 0 1 **1** 1 1 1 1 1 **1 0 1 0 1 0 X**</center>
+
+<p>Por lo que la tabla anterior quedaría de la siguiente forma:</p>
+<center>![Ejemplo paridad de bloque](assets/images/ud2/img17.png){ width="700" }</center>
+
+<p>Al recalcular los códigos de paridad, el receptor detectará que no coinciden los bits de paridad de la segunda fila y la tercera columna, que serán respectivamente 1 y 1, mientras que a él le han llegado 0 y 0.</p>
+<p>Ya se ha detectado el error y además se sabe donde se ha producido: en la intersección entre la fila y la columna en que falló la paridad; sabiendo que en ese punto de la tabla está el error, se puede corregir.</p>
+<p>En el caso de que se pierdan, no uno sino varios bits de la secuencia de datos, el sistema es capaz de detectar que se ha producido un error, aunque en general no puede corregirlo. El método es, por tanto mas sensible que el de la paridad simple.</p>
+<h5 id="redundancia-ciclica">Redundancia cíclica</h5>
+<p>Los códigos de detección de error por redundancia cíclica (<strong>CRC</strong>) están basados en las propiedades matemáticas de la división de polinomios. Cada cadena de bits de información a transmitir se representa por un polinomio cuyos coeficientes pueden ser cero 0 ó 1. El grado del polinomio depende del número de bits a transmitir, de forma que cada bit está representado por un monomio.</p>
+<p>De esta forma, un mensaje de k bits será un polinomio de grado k-1 como el siguiente:</p>
+<center>![CRC](assets/images/ud2/img18.png){ width="600" }</center>
+
+<p>El mecanismo de utilización del sistema de detección de errores por Códigos de Redundancia
+Cíclica (CRC) es muy simple:</p>
+<ol>
+<li>El emisor y el receptor se ponen de acuerdo en el polinomio que actuará como clave en la detección del error.</li>
+<li>El emisor divide el polinomio - información entre el polinomio-clave, obteniendo un cociente que carece por completo de interés, pero obteniendo un polinomio-resto que se convertirá en la información redundante necesaria para la detección, equivalente de la paridad.</li>
+<li>Se envían los bit correspondientes al polinomio-información, seguido de los bits que forman los coeficientes del polinomio-resto.</li>
+<li>Cuando el receptor lee el mensaje vuelve a repetir la operación y comprueba que el resto es igual que el que le han transmitido. Si no fuera igual se tendría la prueba de que la transmisión ha fallado.</li>
+</ol>
+<p>Seleccionando de modo adecuado los polinomios-clave se llegan a detectar gran cantidad de errores posibles e incluso se pueden arbitrar mecanismos de autocorrección. </p>
+<p>Para los polinomios-clave los estándares internacionales son:</p>
+<ul>
+<li>CRC-12</li>
+<li>CRC-16</li>
+<li>CRC-CCITT</li>
+</ul>
+<p>Los dos últimos detectan todos los errores de uno y dos bits, los errores con un número impar de bits invertidos, los grupos de errores con longitudes menores o iguales a 16; el 99’997 % con longitudes de 17 y el 99’998 % con longitudes mayores o iguales a 18.</p>
+<p>El CCITT ha adoptado los códigos CRC como parte de alguna de sus normas, tal como la V.41, empleando como polinomio-clave el CRC-CCITT.</p>
+<h4 id="sistemas-de-correccion-de-errores">Sistemas de corrección de errores</h4>
+<p>Una vez que se ha identificado la presencia de un error en una transmisión de datos, es fundamental considerar la posibilidad de corregir dicho error y determinar el grado en el que esta corrección es factible. Existen dos enfoques principales para la corrección de errores:</p>
+<ul>
+<li><strong>Corrección hacia adelante (Forward Error Correction - FEC)</strong>:
+Este método implica que el emisor añade información redundante al mensaje original antes de la transmisión. Utilizando estos datos adicionales, el receptor puede detectar y corregir automáticamente los bits erróneos sin necesidad de solicitar una retransmisión. Este enfoque mejora la eficiencia en entornos donde las retransmisiones son costosas o poco prácticas, como en comunicaciones satelitales o en redes móviles de alta velocidad. Sin embargo, una desventaja es que la cantidad de información redundante requerida puede ser considerable, lo que aumenta el ancho de banda necesario y puede reducir la eficiencia global del sistema.</li>
+<li><strong>Corrección hacia atrás (Automatic Repeat reQuest - ARQ)</strong>:
+En este enfoque, el receptor detecta los errores en la transmisión y solicita al emisor que retransmita los datos erróneos. Este método es ampliamente utilizado en protocolos de comunicación como TCP/IP, donde la fiabilidad es crucial. La ventaja principal de ARQ es que no se necesita agregar información redundante al mensaje original, lo que ahorra ancho de banda. Sin embargo, el proceso de retransmisión puede aumentar la latencia y ocupar más tiempo de la línea de transmisión, especialmente en entornos con alta tasa de errores o en comunicaciones de tiempo real.</li>
+</ul>
+<h5 id="correccion-de-errores-por-retransmision">Corrección de errores por retransmisión</h5>
+<p>Es común que al receptor se le proporcione únicamente la capacidad para detectar errores en la transmisión de datos. Cuando identifica un error, debe solicitar al emisor que retransmita parte o la totalidad del mensaje afectado. Este proceso implica la necesidad de establecer una comunicación bidireccional entre el emisor y el receptor, algo que no era requerido en los métodos de corrección de errores descritos anteriormente.</p>
+<p>El término trama o bloque se refiere a un conjunto de bits que se envía como una unidad de información. Cada trama incluye tanto los datos originales como los bits de comprobación, que pueden generarse mediante métodos como el control de paridad, la redundancia cíclica (CRC) u otras técnicas de detección y corrección de errores.</p>
+<p>Dependiendo de cómo se organice el envío y la verificación de las tramas, se pueden identificar dos estrategias principales:</p>
+<ul>
+<li>
+<p><strong>Envío y Espera</strong>: En este enfoque, el emisor envía una única trama de información y luego espera a que el receptor confirme si la recepción fue exitosa o si hubo errores. Durante este período de espera, el emisor mantiene la trama en un buffer temporal. El receptor responde con un mensaje de confirmación (ACK: Acknowledge) si la trama fue recibida correctamente, o con un mensaje de no confirmación (NACK: Negative Acknowledge) si se detectaron errores. Basándose en esta respuesta, el emisor procederá a enviar una nueva trama o a retransmitir la trama problemática. Además, tanto el emisor como el receptor llevan un registro del número de tramas erróneas; si se excede un umbral predefinido de errores, la comunicación se aborta para evitar una sobrecarga de retransmisiones.</p>
+</li>
+<li>
+<p><strong>Envío Continuo</strong>: En esta estrategia, el emisor envía múltiples tramas de manera continua sin esperar la confirmación inmediata del receptor para cada una de ellas. Las tramas se almacenan en un buffer temporal hasta que el receptor confirme la correcta recepción de un grupo de tramas o en puntos específicos definidos por el protocolo de comunicación. Si el receptor detecta que una trama dentro del grupo presenta errores, puede optar por dos acciones:</p>
+<ul>
+<li>Reenvío Selectivo: El emisor retransmite únicamente la trama que fue identificada como errónea. Este método es conocido como rechazo selectivo y es eficiente en términos de ancho de banda, ya que solo se retransmite la información que realmente falló.</li>
+<li>Reenvío No Selectivo: El emisor retransmite la trama con errores y todas las tramas que aún están pendientes de confirmación. Este método, denominado rechazo no selectivo, puede ahorrar tiempo en situaciones donde múltiples tramas podrían estar afectadas por errores, pero consume más ancho de banda debido a la retransmisión adicional.</li>
+</ul>
+</li>
+</ul>
+<h2 id="direccionamiento-ip">Direccionamiento IP</h2>
+<h3 id="introduccion-al-direccionamiento-ip">Introducción al direccionamiento IP</h3>
+<p>Para que se puedan mover datos entre nodos de uan red es imprescindible que los equipos tengan instalados una serie de programas llamados protocolos. Estos protocolos contienen todos los pasos que se deben seguir para establecer las conexiones, realizar transferencias de información, controlar los errores, etc.</p>
+<p>Ya sabemos que la pila de protocolos más generalizada, por ser la utilizada por todos los dispositivos que se conectan a Internet, es TCP/IP, que no es un único protocolo, sino como su propio nombre indica, una pila de programas o protocolos.</p>
+<p>Las reglas que define la pila TCP/IP son independientes del funcionamiento del dispositivo y del sistema operativo que lleva instalado. Por esta razón, cualquier dispositivo se puede comunicar con otro a través de Internet.</p>
+<p>Ahora bien, para que un dispositivo pueda tener acceso a una red, y en particular a Internet, no basta con tener instalados los protocolos TCP/IP. Es necesario, además, configurar una serie de parámetros de red, como la dirección IP, la máscara de red, la puerta de enlace predeterminada o los puertos de comunicación. También será necesario disponer de, al menos, una dirección de servidor de nombres o DNS.</p>
+<h3 id="el-problema-del-direccionamiento">El problema del direccionamiento</h3>
+<p>El mecanismo de direccionamiento permite distinguir a emisor y receptor dentro de la red. De este modo se puede determinar el equipo que envía la información y el equipo al cual va dirigida.</p>
+<p>Este mecanismo consiste en asignar un identificador único a cada uno de los equipos de la red y puede diferir en función del nivel de la arquitectura de red. </p>
+<p>En el modelo TCP/IP:</p>
+<ul>
+<li><strong>Direccionamiento a nivel de transporte</strong>: puertos.</li>
+<li><strong>Direccionamiento a nivel de red</strong>: direcciones lógicas (IP).</li>
+<li><strong>Direccionamiento a nivel de acceso al medio</strong>: direcciones físicas (MAC).</li>
+</ul>
+<h4 id="direccionamiento-a-nivel-de-acceso-al-medio">Direccionamiento a nivel de acceso al medio</h4>
+<p>El nivel de acceso al medio se encarga, entre otras cosas, de comunicar todos los nodos que están conectados al mismo medio compartido (medio de difusión), es decir, permite la comunicación de equipos que pertenecen a la misma red de área local.</p>
+<p>Dado que las LAN suelen ser redes de difusión, desde un punto de vista simplificado podemos verlas como un bus, lo cual implica que no haya necesidad de tomar decisiones sobre el camino que ha de seguir la información: lo que un equipo envía se difunde por la red, de tal forma, que se garantiza la llegada hasta su destinatario.</p>
+<p>El direccionamiento a este nivel se basa en las direcciones MAC (también conocidas como direcciones físicas) utilizadas en las cabeceras de las tramas. Las direcciones físicas solo permiten distinguir a unos equipos de otros, pero no a unas redes de otras. En el caso en el que tengamos varias redes comunicadas entre sí, no es posible determinar la red a la que pertenece un equipo fijándonos únicamente en su dirección física.</p>
+<h4 id="direccionamiento-a-nivel-de-red">Direccionamiento a nivel de red</h4>
+<p>En el nivel de red se permite la comunicación entre equipos que se encuentran en redes distintas. Para esto es necesaria la intervención de elementos intermedios, los routers, que se encargan de dirigir la información a su destino. Por otro lado, también es necesario un mecanismo de direccionamiento que permita diferenciar no solo a equipos, sino también a unas redes de otras.</p>
+<p>En el nivel de red, el direccionamiento no depende de la tecnología y además permite la distinción entre redes. También se le llama direccionamiento lógico (en contraposición al direccionamiento físico visto anteriormente).</p>
+<p>El mecanismo más extendido para el direccionamiento a nivel de red es el utilizado en la arquitectura TCP/IP. En este tipo de redes se utiliza el protocolo IP a nivel de red, por lo tanto hablamos de direccionamiento IP.</p>
+<p>El modelo TCP/IP, además, utiliza otros protocolos a nivel de red como pueden ser ICMP, ARP, RIP, OSPF, etc. De todos ellos el protocolo IP es el más importante, puesto que define el formato de los paquetes y de las direcciones IP permitiendo resolver el problema del encaminamiento.</p>
+<h2 id="direcciones-ip">Direcciones IP</h2>
+<p>Una dirección IP permite identificar de manera unívoca la ubicación de un equipo en una red, al igual que una dirección postal identifica una casa en una ciudad.</p>
+<p>Las direcciones IP (IPv4) tienen 32 bits formados por 4 campos de 8 bits (octeto), separados por puntos. Por tanto, las direcciones IP están en notación binaria, aunque se traducen habitualmente a representación decimal. Actualmente nos encontramos en un periodo de transición donde se está implementando IPv6, una nueva actualización del protocolo IP que pretende solucionar el problema de agotamiento de direcciones. Aunque IPv6 lleva desarrollándose desde el año 1998 (y en uso desde 2012) aún coexiste con IPv4. Se calcula que en 2020 tan solo el 2,96% de las conexiones totales a Internet eran a través de IPv6.</p>
+<p>Ejemplo de dirección IP:</p>
+<center>01111111.00000000.00000000.00000001 (127.0.0.1 en decimal).</center>
+
+<p>Cada uno de los campos de 8 bits puede tener un valor comprendido entre el 00000000 (0 en decimal) y 11111111 (255 en decimal). De esta forma se pueden obtener hasta 2<sup>32</sup> direcciones distintas, o lo que es lo mismo, aproximadamente 4.000 millones. Por su parte IPv6 permite hasta 2<sup>128</sup> direcciones distintas, es decir, unos 340 sextillones de direcciones (cerca de 670 mil billones de direcciones por cada milímetro cuadrado de la superficie de la Tierra).</p>
+<h3 id="componentes-de-una-direccion-ip">Componentes de una dirección IP</h3>
+<p>Una dirección IP, al igual que ocurre con una dirección postal, está formada por varias partes:</p>
+<ul>
+<li><strong>Dirección de red o identificador de red (ID de red)</strong>: Identifica la red en la que está ubicado el equipo. Todos los equipos de la misma red deben tener el mismo ID de red.</li>
+<li><strong>Dirección de host o identificador de host (ID de host)</strong>: Identifica un nodo de una red. El ID de host debe ser exclusivo dentro de cada red, es decir, debe ser único para cada ID de red.</li>
+</ul>
+<h3 id="clases-de-direcciones-ip">Clases de direcciones IP</h3>
+<p>Existen cinco clases de direcciones IP: A, B, C, D y E. En la práctica solo se usan 3, ya que las de clase D son para multicast y las de clase E para uso experimental.</p>
+<p>Según una IP sea de clase A, B o C variará el número de bytes que dedica a su ID de red y los que dedica a su ID de host.</p>
+<ul>
+<li>En las direcciones IP de clase A, el ID de red es el primer byte y los res restantes constituyen el identificador de host.</li>
+<li>En las de clase B, el ID de red son los dos primeros bytes, mientras que los dos últimos son de host.</li>
+<li>En las de clase C, el ID de red son los tres primeros bytes, mientras que el último es de host.</li>
+</ul>
+<center>![Clases de direcciones IP](assets/images/ud2/img29.png){ width="500" }</center>
+
+<p>La diferencia fundamental entre estos tres tipos de redes es el tamaño de las mismas, es decir, el número de nodos que pueden añadirse a cada una de ellas y que viene determinado por el número de bits de la IP que se destinan al identificador de host.</p>
+<p>Ahora bien, dada una IP, ¿cómo sabemos a qué clase pertenece?</p>
+<p>Para distinguir la clase a la que pertenece una dirección IP, tanto si se encuentra en decimal como si se encuentra en binario, debemos fijarnos en los números por lo que comienza.</p>
+<p>A continuación aprenderemos a distinguir la clase de una IP tanto en notación decimal como en notación binaria, y seremos capaces de determinar el número máximo de nodos que puede haber en cada una de ellas.</p>
+<h4 id="ips-en-formato-decimal">IPs en formato decimal</h4>
+<p>Supongamos que representamos la IP en formato decimal con la siguiente notación:</p>
+<center>*w.x.y.z*</center>
+
+<p>donde w, x, y, z son números en decimal del 0 al 255.</p>
+<p>En el cuadro siguiente se resume el número de bytes que dedica cada clase al ID de red y al ID de host, así como la clase a la que pertenece una IP en decimal en función de los valores que tome su primer número <em>w</em>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Clase</th>
+<th style="text-align: center;">IP</th>
+<th style="text-align: center;">ID de red</th>
+<th style="text-align: center;">ID de host</th>
+<th style="text-align: center;">Valores de <em>w</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">w.x.y.z</td>
+<td style="text-align: center;">w.0.0.0</td>
+<td style="text-align: center;">x.y.z</td>
+<td style="text-align: center;">0 - 127</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">w.x.y.z</td>
+<td style="text-align: center;">w.x.0.0</td>
+<td style="text-align: center;">y.z</td>
+<td style="text-align: center;">128 - 191</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">w.x.y.z</td>
+<td style="text-align: center;">w.x.y.0</td>
+<td style="text-align: center;">z</td>
+<td style="text-align: center;">192 - 223</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">w.x.y.z</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">224 - 239</td>
+</tr>
+<tr>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">w.x.y.z</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">240 - 255</td>
+</tr>
+</tbody>
+</table>
+<h5 id="direcciones-especiales">Direcciones especiales</h5>
+<ul>
+<li><strong>0.0.0.0</strong>: Dirección sin especificar o en blanco. Dirección temporal utilizada por un ordenador a la espera de que se le sea asignada una IP única de forma dinámica (usando DHCP).</li>
+<li><strong>127.0.0.1</strong>: Dirección de <em>este equipo</em> o localhost. También conocida como dirección de <em>loopback</em>, es utilizada por un equipo para referirse a sí mismo. Cualquier dirección del tipo 127.x.x.x es una dirección de <em>loopback</em>.</li>
+<li><strong>rr...r|00...0</strong>: Dirección base de una red (cuando todos los bits del identificador de host están puestos a cero). Es una dirección que identifica a toda la red en su conjunto. Por ejemplo: 192.168.2.0 ó 172.16.0.0.</li>
+<li><strong>rr...r|11...1</strong>: Dirección de difusión de una red (cuando todos los bits del identificador de host están puestos a uno). Permite enviar un paquete en modo broadcast dirigido a todos los equipos de una red concreta.</li>
+<li><strong>255.255.255.255</strong>: Dirección de difusión limitada a la red actual. Permite a un equipo enviar un paquete en modo broadcast limitado a todos los equipos de su misma red.</li>
+</ul>
+<h6 id="ejercicio-de-clase">Ejercicio de clase</h6>
+<p>Dada la IP 192.168.10.37, averiguar:</p>
+<ul>
+<li>La clase de la dirección.</li>
+<li>La dirección base de la red a la que pertenece la IP.</li>
+<li>La dirección de difusión de la red.</li>
+</ul>
+<h4 id="ips-en-formato-binario">IPs en formato binario</h4>
+<p>Si una dirección IP viene expresada en formato binario, para determinar la clase a la que pertenece nos fijamos en los primeros bits del primer octeto, según se refleja en la tabla que se muestra a continuación:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Clase</th>
+<th style="text-align: center;">ID de clase</th>
+<th style="text-align: center;">Nº de bits libres para la red</th>
+<th style="text-align: center;">Nº de bits de host</th>
+<th style="text-align: center;">Nº de redes posibles</th>
+<th style="text-align: center;">Nº de hosts posibles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">7 bits</td>
+<td style="text-align: center;">24 bits</td>
+<td style="text-align: center;">2<sup>7</sup>-2=126</td>
+<td style="text-align: center;">2<sup>24</sup>-2=16777214</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">14 bits</td>
+<td style="text-align: center;">16 bits</td>
+<td style="text-align: center;">2<sup>14</sup>=26384</td>
+<td style="text-align: center;">2<sup>16</sup>-2=65534</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">21 bits</td>
+<td style="text-align: center;">8 bits</td>
+<td style="text-align: center;">2<sup>21</sup>=2097152</td>
+<td style="text-align: center;">2<sup>8</sup>-2=254</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">1110</td>
+<td style="text-align: center;">28 bits</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">---</td>
+</tr>
+<tr>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">11110</td>
+<td style="text-align: center;">27 bits</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">---</td>
+<td style="text-align: center;">---</td>
+</tr>
+</tbody>
+</table>
+<center>![Clases de direcciones IP en formato binario](assets/images/ud2/img30.png){ width="800" }</center>
+
+<h3 id="direcciones-de-broadcast">Direcciones de broadcast</h3>
+<p>En los apartados anteriores hemos visto que a la hora de contabilizar el número de hosts posibles en una red se eliminaba el caso en el que todos los bits de identificación de host eran "1". Esto era debido a que esas IPs se usaban para mensajes de difusión o broadcast dentro de la red. Ese tipo de mensajes son aquellos que van dirigidos a todos los nodos de la red.</p>
+<p>Así pues, para obtener la dirección de broadcast de una red, bastará con poner a "1" todos los bits de identificación de host. En formato decimal correspondería con 255 en los octetos de host.</p>
+<p>Ejemplo:</p>
+<ul>
+<li>IP: 172.16.4.3</li>
+<li>Red: 172.16.0.0</li>
+<li>Broadcast: 172.16.255.255</li>
+</ul>
+<h2 id="mascara-de-red">Máscara de red</h2>
+<p>Otro parámetro que es necesario configurar para conectar un nodo a una red es la máscara de red. Esta consiste en una especia de dirección IP con todos los bits a "1" en el identificador de red, y todos los bits a "0" en el identificador de host. Por lo tanto, la máscara de red permite identificar el número de bits destinados a red y a host.</p>
+<p>Cuando un router recibe un paquete con una IP destino, necesita saber a qué red va dirigido. Para ello se fija en la primera parte de la dirección IP, es decir, su dirección de red. La forma de hacerlo es poner a cero todos los bits del número de host. De esta manera sabe si el destino del paquete está en alguna de las redes que interconecta o es necesario enviar el paquete a otro router.</p>
+<p>La máscara de red también puede venir expresada como un número que se escribiría a continuación de la IP correspondiente y que indicaría el número de bits de dicha IP que se toman para la dirección de red.</p>
+<p>Ejemplo:</p>
+<ul>
+<li>IP: 172.16.4.3</li>
+<li>Máscara de red en decimal: 255.255.0.0</li>
+<li>Máscara de red en binario: 11111111.11111111.00000000.00000000</li>
+<li>Máscara de red abreviada: 172.16.4.3/16</li>
+</ul>
+<h2 id="puerta-de-enlace-predeterminada">Puerta de enlace predeterminada</h2>
+<p>Además de la dirección IP y de la máscara de red, el equipo debe saber también hacia donde se envían los paquetes que van hacia Internet. A este parámetro se le denomina puerta de enlace predeterminada, pasarela por defecto o default gateway. Su valor es el de la IP del dispositivo que conecta nuestro equipo con otra red.</p>
+<h2 id="asignacion-de-direcciones-ip-a-una-red">Asignación de direcciones IP a una red</h2>
+<p>Supongamos que tenemos una red con 4 ordenadores y queremos asignarles direcciones IP</p>
+<ul>
+<li>Primero hay que elegir una clase que tenga capacidad suficiente para el número de ordenadores que tenemos. También hay que tener en cuenta las previsiones de crecimiento de nuestra red.</li>
+<li>En nuestro caso, elegimos la clase C porque tiene capacidad para 254 equipos y nosotros tenemos solo 4. Por lo tanto, es la clase más pequeña con capacidad suficiente.</li>
+<li>Las direcciones de clase C tienen el formato r.r.r.h y se corresponden con el rango 192.0.0.0 hasta 223.255.255.255.</li>
+<li>Elegimos una dirección de red dentro del rango que esté libre (una que nadie más esté utilizando). Por ejemplo, la dirección 200.11.22.0.</li>
+<li>La dirección de difusión de nuestra red será por tanto 200.11.22.255.</li>
+<li>El resto de posibles direcciones (desde la 200.11.22.1 hasta la 200.11.22.254) podemos asignarlas libremente a los hosts que necesitemos sin que haya duplicidad.</li>
+</ul>
+<h2 id="direcciones-privadas">Direcciones privadas</h2>
+<p>El rápido crecimiento de ordenadores conectados a Internet ha generado un verdadero problema con la falta de direcciones IP. Además, cualquier sistema que use una dirección IP pública susceptible de sufrir un ataque, requiriendo el uso de dispositivos de protección llamados cortafuegos.</p>
+<p>Existen direcciones reservadas para uso interno en redes de áreas local. A estas direcciones se las conoce como direcciones privadas:</p>
+<ul>
+<li>Clase A: 10.h.h.h</li>
+<li>Clase B: 172.16.h.h hasta 172.31.h.h y direcciones APIPA (169.254.h.h)</li>
+<li>Clase C: 192.168.0.h hasta 192.168.255.h</li>
+<li>Clase D: G.G.G.G (224.0.0.0 hasta 239.255.255.255)</li>
+</ul>
+<p>Las direcciones APIPA (Automatic Private IP Adressing) son las del tipo 169.254.h.h y son asignadas automáticamente por el sistema operativo cuando un equipo no obtiene respuesta del servidor DHCP.</p>
+<p>La finalidad es que al menos haya una configuración mínima que permita una configuración básica entre los equipos de una misma red de área local para poder así compartir recursos.</p>
+<h2 id="ipv6">IPv6</h2>
+<p>El protocolo IPv4 se ha venido utilizando desde 1981. Al principio se supuso que 4000 millones de direcciones IP serían más que suficiente, pero la realidad ha sido otra. Para solucionar este problema se ha venido desarrollando y desplegando el protocolo IPv6. IPv6 utiliza direcciones de 16 bytes, en lugar de los 4 que usaba la versión. Además, el formato de la cabecera de los paquetes de IPv6 es más simple y puede ser procesado por los routers en menos tiempo.</p>
+<p>Según la norma RFC 5952, las direcciones IPv6, de 128 bits de longitud, se escriben como ocho grupos de cuatro dígitos hexadecimales. Por ejemplo:</p>
+<center>FADB:CA58:96B4:77DC:8975:ABB3:C687:87AB</center>
+
+<h3 id="reglas-para-construir-direcciones-ipv6">Reglas para construir direcciones IPv6</h3>
+<p>Cada una de las palabras de 16 bits se corresponde con 4 dígitos hexadecimales, que pueden variar desde 0000 hasta FFFF. Dentro de cada palabra no hace falta poner los ceros a la izquierda. Por ejemplo, 01AB:0735:0008:... puede simplificarse como 1AB:735:8:...</p>
+<p>Si existen varias palabras consecutivas que son igual a cero, se pueden simplificar usando cuatro puntos (::). Por ejemplo, 17AF:570:A03:60:0:0:0:B9, se simplifica como 17AF:570:A03:60::B9. Estos cuatro puntos sólo pueden aparecer una vez.</p>
+<h3 id="direcciones-ipv6-especiales">Direcciones IPv6 especiales</h3>
+<ul>
+<li>::1. Dirección de loopback. Equivalente a la 127.0.0.1 de IPv4.</li>
+<li>::w.x.y.z. Dirección IPv6 sobre IPv4. Se trata de una dirección IPv6 compatible con IPv4 que permite a los paquetes IPv6 viajar encapsulados por redes IPv4. Ej.: ::192.168.1.1.</li>
+<li>::FFFF:w.x.y.z. Dirección IPv4 sobre IPv6. Se trata de una dirección que permitirá a los antiguos paquetes IPv4 circular por las nuevas redes IPv6. Ej.: ::FFFF:192.168.1.1.</li>
+<li>FE8x::M, FE9x::M, FEAx::M y FEBx::M. Direcciones vínculo-local (local-link ). Son direcciones que se configuran automáticamente a partir de la dirección MAC de la tarjeta de red. Para ello es necesario realizar una serie de transformaciones que permiten obtener la M que está compuesta de 64 bits. Estas direcciones se consideran sólo de cliente, lo cual quiere decir que no pueden utilizarse para un servidor que deba escuchar conexiones entrantes. Ej.: Sin un equipo tiene la MAC 00-0C29-C2-52-FF, pueden obtener una IPv6 automáticamente transformando esta MAC al formato de 64 bits, en este caso, 02-0C-29-FF-FE-C2-52-FF, y añadiendo, por ejemplo, el prefijo FE80::, con lo cual, la dirección IPv6 quedaría como FE80::20C:29FF:FEC2:52FF.</li>
+</ul>
+<h2 id="redes-inalambricas">Redes inalámbricas</h2>
+<p>Las redes inalámbricas han revolucionado la comunicación moderna, permitiendo la conexión y transferencia de datos sin la necesidad de cables físicos. Estas redes utilizan ondas de radio para conectar dispositivos como computadoras, smartphones y otros equipos electrónicos, facilitando la movilidad y flexibilidad en hogares, oficinas y espacios públicos. La tecnología inalámbrica es esencial en nuestra vida diaria, ya que nos permite acceder a internet y compartir información desde casi cualquier lugar.</p>
+<h3 id="wlan-wireless-local-area-network">WLAN (Wireless Local Area Network)</h3>
+<p>Una Red de Área Local Inalámbrica (WLAN) es un sistema de comunicación que conecta dispositivos dentro de un área geográfica limitada utilizando ondas de radio en lugar de cables. Las WLAN ofrecen numerosas ventajas, como la movilidad de los usuarios dentro del área de cobertura, la facilidad de instalación y configuración, y la reducción de costos asociados con el cableado. Sin embargo, también presentan desafíos, especialmente en términos de seguridad y gestión de interferencias.</p>
+<h3 id="csmaca-carrier-sense-multiple-access-with-collision-avoidance">CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)</h3>
+<p>El protocolo CSMA/CA es fundamental en las redes inalámbricas para gestionar el acceso al medio de transmisión y minimizar las colisiones de datos. Funciona mediante la escucha activa del canal por parte de los dispositivos antes de transmitir. Si el canal está ocupado, el dispositivo espera un tiempo aleatorio antes de volver a intentarlo. Este proceso reduce la probabilidad de que dos dispositivos transmitan simultáneamente, mejorando así la eficiencia y estabilidad de la red. A diferencia de CSMA/CD, utilizado en redes cableadas, CSMA/CA es más adecuado para entornos inalámbricos donde la detección de colisiones es más compleja.</p>
+<h3 id="frecuencias-inalambricas-de-wi-fi">Frecuencias Inalámbricas de Wi-Fi</h3>
+<p>El Wi-Fi opera en varias bandas de frecuencia: 2.4 GHz, 5 GHz y, más recientemente, 6 GHz con la introducción de Wi-Fi 6E. La banda de 2.4 GHz ofrece mayor alcance y es más propensa a interferencias debido a la congestión y al uso de otros dispositivos en esta frecuencia. La banda de 5 GHz proporciona mayores velocidades y menos interferencias, pero con un alcance menor. La banda de 6 GHz expande el espectro disponible, permitiendo más canales y mayores anchos de banda, lo que mejora significativamente el rendimiento y reduce la congestión en entornos densos. La elección de la banda adecuada depende de las necesidades específicas de velocidad, alcance y densidad de dispositivos en la red.</p>
+<h3 id="modos-de-red-y-tecnologias-normas-ieee-80211">Modos de Red y Tecnologías: Normas IEEE 802.11</h3>
+<p>Las normas IEEE 802.11 establecen los estándares para las redes inalámbricas de área local. Desde su introducción, han evolucionado para ofrecer mayores velocidades, mejor eficiencia y mayor seguridad. </p>
+<ul>
+<li>El estándar 802.11b, operando en la banda de 2.4 GHz, ofrecía velocidades de hasta 11 Mbps. </li>
+<li>Posteriormente, el 802.11g aumentó la velocidad hasta 54 Mbps en la misma banda. </li>
+<li>El 802.11a, operando en 5 GHz, también ofrecía 54 Mbps pero con menos interferencias. </li>
+<li>El 802.11n (Wi-Fi 4) introdujo el uso de múltiples antenas (MIMO) y soportó ambas bandas, alcanzando hasta 600 Mbps. </li>
+<li>El 802.11ac (Wi-Fi 5) mejoró aún más las velocidades en la banda de 5 GHz, utilizando tecnologías como MU-MIMO y beamforming para alcanzar varios gigabits por segundo. </li>
+<li>El 802.11ax (Wi-Fi 6) y el futuro 802.11be (Wi-Fi 7) continúan esta tendencia, ofreciendo mayores velocidades, eficiencia y capacidad para soportar la creciente demanda de dispositivos conectados.</li>
+</ul>
+<h3 id="topologias-de-wlan-80211">Topologías de WLAN 802.11</h3>
+<p>Las redes inalámbricas pueden configurarse en diferentes topologías según las necesidades. La topología ad-hoc permite que los dispositivos se conecten directamente entre sí sin un punto de acceso central, formando una red peer-to-peer. Esta configuración es útil para conexiones temporales o en entornos donde no existe una infraestructura de red. Por otro lado, la topología de infraestructura utiliza un punto de acceso inalámbrico que actúa como hub central, permitiendo que los dispositivos se conecten entre sí y accedan a redes cableadas e internet. Esta es la configuración más común en hogares y oficinas, ofreciendo mayor control, seguridad y capacidad de gestión.</p>
+<h3 id="ssid-y-ssid-broadcast">SSID y SSID Broadcast</h3>
+<p>El SSID (Service Set Identifier) es el nombre de una red Wi-Fi que permite identificarla entre múltiples redes disponibles. Es esencial para que los dispositivos puedan encontrar y conectarse a la red deseada. El SSID Broadcast es la función mediante la cual el punto de acceso difunde el nombre de la red, haciéndola visible a los dispositivos cercanos. Deshabilitar el SSID Broadcast puede añadir una capa básica de seguridad al ocultar la red de usuarios no autorizados. Sin embargo, esta medida no es totalmente efectiva por sí sola, ya que existen métodos para detectar redes ocultas.</p>
+<h3 id="seguridad-en-redes-inalambricas">Seguridad en Redes Inalámbricas</h3>
+<p>La seguridad es un aspecto crítico en las redes inalámbricas debido a la naturaleza abierta del medio de transmisión. Sin medidas adecuadas, las redes son vulnerables a accesos no autorizados, robo de información y otros ataques. Una de las medidas básicas es el filtrado de direcciones MAC, que permite controlar qué dispositivos pueden conectarse a la red al permitir o denegar el acceso basado en la dirección MAC única de cada dispositivo. Sin embargo, esta medida puede ser superada mediante técnicas de suplantación de direcciones MAC.</p>
+<p>Es esencial cambiar las configuraciones predeterminadas del router, como el SSID y las contraseñas de administración, ya que las configuraciones de fábrica suelen ser conocidas y explotables por atacantes. La autenticación de usuarios mediante contraseñas fuertes y la implementación de protocolos de cifrado robustos son fundamentales. Los protocolos de cifrado han evolucionado desde WEP, que es inseguro y no se recomienda, pasando por WPA y WPA2-PSK, que ofrecen mayores niveles de seguridad. WPA2-PSK, utilizando cifrado AES, es ampliamente utilizado y considerado seguro para la mayoría de las aplicaciones. El más reciente, WPA3, introduce mejoras significativas en la seguridad, protegiendo contra ataques de diccionario y ofreciendo cifrado individualizado en redes abiertas. Además, es recomendable mantener el firmware del router actualizado y considerar el uso de VPNs para añadir capas adicionales de seguridad.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

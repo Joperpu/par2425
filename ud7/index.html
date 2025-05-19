@@ -1,0 +1,2501 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://joperpu.github.io/par2425/ud7/">
+      
+      
+        <link rel="prev" href="../pr5.1/">
+      
+      
+        <link rel="next" href="../pr7.1/">
+      
+      
+      <link rel="icon" href="../assets/images/logo.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Teoría UD7 - Planificación y administración de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-7-conexion-a-redes-de-area-extensa" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Planificación y administración de redes" class="md-header__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Planificación y administración de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Teoría UD7
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planificación y administración de redes" class="md-nav__button md-logo" aria-label="Planificación y administración de redes" data-md-component="logo">
+      
+  <img src="../assets/images/logo.png" alt="logo">
+
+    </a>
+    Planificación y administración de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Página principal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD1 - Introducción a las redes de comunicaciones
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            UD1 - Introducción a las redes de comunicaciones
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr1.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 1.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD2 - Integración de elementos de una red
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            UD2 - Integración de elementos de una red
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr2.8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 2.8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD3 - Configuración y administración de conmutadores
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            UD3 - Configuración y administración de conmutadores
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr3.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 3.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD4 - Configuración y administración básica de routers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            UD4 - Configuración y administración básica de routers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr4.5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 4.5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD5 - Redes locales virtuales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            UD5 - Redes locales virtuales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr5.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 5.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    UD7 - Conexión a redes de área extensa
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            UD7 - Conexión a redes de área extensa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD7
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teoría UD7
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direccionamiento-interno-y-externo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento interno y externo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT origen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT destino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla NAT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de NAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-estatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT estática
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT dinámica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-dinamica-con-sobrecarga-pat" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT dinámica con sobrecarga (PAT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-inversa-o-apertura-de-puertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT inversa (o apertura de puertos)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-masivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT masivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostico-de-incidencias-de-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnóstico de incidencias de NAT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-de-acceso-a-la-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologías de acceso a la WAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tecnologías de acceso a la WAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceso-cableado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso cableado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceso inalámbrico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico-wpan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico WPAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico-wlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico WLAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceso inalámbrico WLAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principales-conceptos-sobre-wifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principales conceptos sobre WiFi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-seguridad-en-redes-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modos de seguridad en redes Wi-Fi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-wman-wireless-metropolitan-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso WMAN (Wireless Metropolitan Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico-wwan-wireless-wide-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico WWAN (Wireless Wide Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilizacion-de-nat-en-los-routers-cisco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilización de NAT en los routers CISCO
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr7.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Práctica 7.1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direccionamiento-interno-y-externo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direccionamiento interno y externo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT origen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT destino
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabla-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabla NAT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de NAT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de NAT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nat-estatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT estática
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-dinamica" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT dinámica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-dinamica-con-sobrecarga-pat" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT dinámica con sobrecarga (PAT)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-inversa-o-apertura-de-puertos" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT inversa (o apertura de puertos)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-masivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAT masivo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostico-de-incidencias-de-nat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnóstico de incidencias de NAT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologias-de-acceso-a-la-wan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tecnologías de acceso a la WAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tecnologías de acceso a la WAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceso-cableado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso cableado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceso inalámbrico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico-wpan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico WPAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico-wlan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico WLAN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Acceso inalámbrico WLAN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principales-conceptos-sobre-wifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principales conceptos sobre WiFi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modos-de-seguridad-en-redes-wi-fi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modos de seguridad en redes Wi-Fi
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-wman-wireless-metropolitan-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso WMAN (Wireless Metropolitan Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceso-inalambrico-wwan-wireless-wide-area-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceso inalámbrico WWAN (Wireless Wide Area Network)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilizacion-de-nat-en-los-routers-cisco" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilización de NAT en los routers CISCO
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unidad-7-conexion-a-redes-de-area-extensa">Unidad 7 - Conexión a redes de área extensa</h1>
+<h2 id="introduccion">Introducción</h2>
+<p>Para hacer que Internet fuese accesible y atractivo para el gran público, se han diseñado dispositivos fáciles de usar, aunque integran muchas de las funciones que se estudian en esta asignatura. Pese a su sencillez, estos dispositivos ofrecen amplias opciones de configuración: compartir la conexión, acceder remotamente al ordenador del hogar, o imprimir desde el móvil en la impresora de casa, entre otras. El conocimiento adquirido es esencial para poder realizar estas tareas.</p>
+<h2 id="direccionamiento-interno-y-externo">Direccionamiento interno y externo</h2>
+<p>La expansión masiva de Internet provocó el agotamiento de direcciones IPv4 públicas. En Europa, RIPE asignó el último bloque en 2012. Aunque existe IPv6 como solución a largo plazo, su implantación aún no es total.</p>
+<p>Ante esta situación, se desarrollaron alternativas que permitieran seguir utilizando IPv4. La más utilizada fue NAT (Network Address Translation), una técnica que permite compartir una única dirección IPv4 pública entre múltiples dispositivos. Estos dispositivos reciben direcciones IPv4 privadas para comunicarse entre sí. Gracias a NAT, estas IP privadas quedan ocultas desde el exterior, estableciendo así dos tipos de direccionamiento: interno (privado) y externo (público).</p>
+<p><img alt="NAT" src="../assets/images/ud7/img01.png" width="600" /></p>
+<p>El direccionamiento interno se emplea en redes locales privadas para permitir la comunicación entre dispositivos. Para ello, deben utilizarse direcciones IP dentro de los rangos definidos por la RFC 1918, que son los siguientes:</p>
+<table>
+<thead>
+<tr>
+<th>CLASE</th>
+<th>RANGO RESERVADO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>10.0.0.0 - 10.255.255.255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>172.16.0.0 - 172.31.0.0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>192.168.0.0 - 192.168.255.0</td>
+</tr>
+</tbody>
+</table>
+<p>Estas direcciones están aisladas del resto de Internet. De hecho, los routers en la red global suelen estar configurados para descartar cualquier paquete que tenga como destino una dirección privada. Por tanto, las IP privadas solo tienen validez dentro de la red donde se asignan.</p>
+<p>El uso de direcciones internas aporta seguridad, ya que impide que estas redes sean visibles directamente desde Internet. Esta característica se considera una ventaja de IPv4, frente a IPv6, donde se pretende que todos los dispositivos tengan direcciones públicas.</p>
+<p>El direccionamiento externo corresponde a las redes públicas, que utilizan direcciones IP válidas en Internet, es decir, aquellas que no pertenecen a los rangos privados ni a las reservadas por otros fines especiales (RFC 3330). Estas direcciones públicas son accesibles desde cualquier dispositivo conectado a la red global.</p>
+<h2 id="nat">NAT</h2>
+<p>NAT (Network Address Translation) es una técnica que permite modificar las direcciones IP contenidas en los paquetes que pasan por un router, sustituyendo unas direcciones por otras.</p>
+<p>En el proceso más común, cuando un paquete IP sale de una red privada hacia Internet, el router NAT cambia la dirección IP de origen (una IP privada) por una dirección IP pública antes de reenviar el paquete. Así, el dispositivo externo ve el paquete como si procediera del router y no del dispositivo interno.</p>
+<p>Aunque este es el caso más habitual, NAT puede aplicarse de varias formas, incluyendo la modificación de:</p>
+<ul>
+<li>La dirección IP de origen o de destino.</li>
+<li>Los números de puerto.</li>
+<li>Traducción de muchas IPs internas a una sola IP externa (NAT overload o PAT).</li>
+<li>Traducción de una IP a una IP (NAT estático), entre otros.</li>
+</ul>
+<p>NAT es esencial para permitir que múltiples dispositivos compartan una única dirección IP pública y, al mismo tiempo, mantener cierta seguridad y aislamiento entre la red interna y el exterior.</p>
+<h3 id="nat-origen">NAT origen</h3>
+<p>NAT en origen (Source NAT) es un tipo de traducción de direcciones que consiste en sustituir la dirección IP de origen de un paquete por otra dirección IP diferente antes de enviarlo fuera de la red local.</p>
+<p>Este tipo de NAT es el más habitual en redes que acceden a Internet:
+cuando un dispositivo con una IP privada envía un paquete, el router sustituye su IP de origen por una IP pública (normalmente la del propio router), permitiendo así que el paquete sea aceptado en redes externas.</p>
+<p><img alt="NAT origen" src="../assets/images/ud7/img02.png" width="500" /></p>
+<h3 id="nat-destino">NAT destino</h3>
+<p>NAT en Destino o Destination NAT consiste en sustituir la dirección IP de destino de un paquete por una diferente. Este proceso es necesario cuando un dispositivo externo accede a un recurso dentro de una red privada, como un servidor web, y se requiere que el tráfico entrante se redirija a la IP interna correspondiente.</p>
+<p><img alt="NAT destino" src="../assets/images/ud7/img03.png" width="500" /></p>
+<p>La NAT de origen y la NAT de destino están estrechamente relacionadas, ya que toda traducción NAT en origen debe complementarse con una traducción inversa en destino al recibir la respuesta. Es decir, cuando se modifica la IP de origen de un paquete al salir, al regresar la respuesta debe restaurarse esa IP como destino, permitiendo así que el paquete llegue correctamente al dispositivo solicitante.</p>
+<h3 id="tabla-nat">Tabla NAT</h3>
+<p>El dispositivo encargado de realizar la traducción de direcciones IP mantiene un registro de dichas conversiones en una tabla NAT. Esta tabla permite identificar a qué dispositivo interno debe redirigirse una respuesta recibida desde el exterior, garantizando así la correcta continuidad de la comunicación.</p>
+<p>En dicha tabla pueden aparecer los siguientes tipos de direcciones:</p>
+<ul>
+<li><strong>Dirección local interna (inside local)</strong>: IP privada del dispositivo interno que origina la comunicación.</li>
+<li><strong>Dirección global interna (inside global)</strong>: IP pública asignada temporalmente al dispositivo interno al salir por el router NAT.</li>
+<li><strong>Dirección global externa (outside global)</strong>: IP pública del dispositivo externo al que se quiere acceder.</li>
+<li><strong>Dirección local externa (outside local)</strong>: Dirección interna (en caso de uso de NAT por parte del destino) correspondiente al dispositivo externo.</li>
+</ul>
+<p>Ejemplo (visto desde el router A):</p>
+<table>
+<thead>
+<tr>
+<th>Local interna</th>
+<th>Global interna</th>
+<th>Global externa</th>
+<th>Local externa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.0.10</td>
+<td>1.1.1.1</td>
+<td>2.2.2.2</td>
+<td>172.16.0.10</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Tabla NAT" src="../assets/images/ud7/img04.png" width="700" /></p>
+<p>Desde el punto de vista del router B, los conceptos de interno y externo se invertirían.</p>
+<h2 id="tipos-de-nat">Tipos de NAT</h2>
+<p>Existen diversas técnicas de traducción de direcciones IP y puertos, según el tipo de modificación que se realice en los paquetes. Es importante tener en cuenta que la nomenclatura puede variar dependiendo del contexto o la fuente. A continuación, se explican algunos términos y sus posibles interpretaciones:</p>
+<ul>
+<li><strong>SNAT</strong>: Generalmente hace referencia a Source NAT, es decir, la traducción de la dirección IP de origen. No obstante, en algunas ocasiones también se utiliza para referirse a Static NAT, que veremos más adelante.</li>
+<li><strong>DNAT</strong>: De forma genérica, se asocia a Destination NAT, o traducción de la IP de destino. Sin embargo, también se emplea frecuentemente para hacer referencia a la técnica de apertura de puertos o port forwarding, que se explicará más adelante.</li>
+<li><strong>NAT</strong>: Aunque el término abarca cualquier tipo de traducción de direcciones IP, comúnmente se utiliza para referirse a NAT dinámico con sobrecarga, también conocido como PAT (Port Address Translation), que es el tipo más habitual de NAT. En este documento, se ha adoptado este uso.</li>
+</ul>
+<h3 id="nat-estatica">NAT estática</h3>
+<p>La NAT estática realiza una traducción uno a uno entre una dirección IP privada (local interna) y una dirección IP pública (global interna). Se denomina “estática” porque la relación entre ambas direcciones es fija y permanente: siempre se traduce la misma IP privada a la misma IP pública, y viceversa.</p>
+<p>Esto implica que, si se desea proporcionar acceso a Internet a varios dispositivos locales usando NAT estática, será necesario disponer de tantas direcciones IP públicas como dispositivos internos, ya que no se pueden compartir.</p>
+<p>Para configurar una NAT estática en el router, es necesario:</p>
+<ul>
+<li>Definir manualmente la correspondencia entre direcciones privadas y públicas.</li>
+<li>Especificar cuál de las interfaces del router conecta con la red interna (privada) y cuál con la red externa (pública).</li>
+</ul>
+<p>Ejemplo:</p>
+<p><img alt="NAT estática" src="../assets/images/ud7/img05.png" width="700" /></p>
+<p>La dirección privada 172.16.0.10 se traduce de forma permanente a 2.2.2.2.</p>
+<ul>
+<li>Cuando un paquete sale desde 172.16.0.10, el router sustituye su IP de origen por 2.2.2.2.</li>
+<li>Cuando un paquete llega desde el exterior dirigido a 2.2.2.2, el router traduce el destino a 172.16.0.10.</li>
+</ul>
+<p>En este caso, la tabla NAT mantiene una entrada fija con esta traducción.</p>
+<p><img alt="NAT estática" src="../assets/images/ud7/img06.png" width="700" /></p>
+<p>¿Cómo visitaría el PC externo la web alojada en el Servidor?</p>
+<p>En una aplicación navegador se introduce la web http://2.2.2.2, no tiene sentido indicar la IP 172.16.0.10 porque es privada y porque de cara al exterior no existe. </p>
+<p>¿Qué entrada se producirá en la tabla NAT? </p>
+<p><img alt="NAT estática" src="../assets/images/ud7/img07.png" width="700" /></p>
+<p>En este caso, la entrada generada en la tabla NAT tiene las siguientes características:</p>
+<ul>
+<li>Tipo: Dinámica – aunque la IP estática esté predefinida, la entrada se activa al producirse tráfico.</li>
+<li>Protocolo: TCP – el protocolo utilizado por HTTP.</li>
+<li>IP local interna: 172.16.0.10 – dirección del servidor web en la red privada.</li>
+<li>IP global interna: 2.2.2.2 – dirección pública asociada al servidor web.</li>
+<li>Puerto local interno: 80 – puerto en el que escucha el servicio web (HTTP).</li>
+<li>IP global externa: 11.11.11.11, puerto: 1030 – dirección y puerto desde donde el cliente externo realizó la petición.</li>
+<li>IP local externa: es la misma que la global externa (11.11.11.11:1030), ya que el router NAT no puede conocer qué dispositivo hay detrás.</li>
+</ul>
+<p>Respuesta del servidor web:</p>
+<p>El servidor responde a la solicitud recibida desde 11.11.11.11:1030.
+Cuando la respuesta vuelve al router NAT, éste detecta en su tabla que 2.2.2.2 corresponde a 172.16.0.10 y realiza la traducción inversa, reenviando el paquete al cliente original en 11.11.11.11:1030.</p>
+<h3 id="nat-dinamica">NAT dinámica</h3>
+<p>Este tipo de NAT realiza una traducción de varios a varios, sustituyendo múltiples IPs locales internas por múltiples IPs globales internas. Es común que se trate de una relación de muchos a pocos, es decir, varios dispositivos privados comparten un conjunto limitado de direcciones públicas.</p>
+<p>Conforme los dispositivos de la red privada generan tráfico hacia el exterior, el router les asigna dinámicamente una IP pública disponible. Una vez que la comunicación finaliza, esa IP pública queda libre para otro dispositivo. Por tanto, el número máximo de conexiones simultáneas está limitado por la cantidad de direcciones públicas configuradas.</p>
+<p>Para implementar esta NAT dinámica, es necesario:</p>
+<ul>
+<li>Definir en el router qué interfaz corresponde a la red privada y cuál a la red pública.</li>
+<li>Especificar el conjunto de direcciones IP privadas y públicas que participarán en la traducción.</li>
+</ul>
+<p>Ejemplo de NAT dinámica (sin sobrecarga)</p>
+<p><img alt="NAT dinámica" src="../assets/images/ud7/img08.png" width="700" /></p>
+<p>En este escenario, tres PCs comparten dos direcciones IP públicas (1.1.1.1 y 1.1.1.2). Esto significa que solo dos PCs pueden estar conectados a Internet al mismo tiempo.</p>
+<p>La tabla NAT no tiene entradas predefinidas. Las asignaciones se realizan de forma dinámica a medida que se generan conexiones.</p>
+<p><strong>Caso 1: El PC A accede a la web 2.2.2.2</strong></p>
+<p>El router le asigna una IP pública disponible, por ejemplo, 1.1.1.1:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+<th>IP Local Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.10</td>
+<td>1300</td>
+<td>1.1.1.1</td>
+<td>1300</td>
+<td>2.2.2.2</td>
+<td>80</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Caso 2: El mismo PC abre otra ventana del navegador</strong></p>
+<p>El router conserva la IP global 1.1.1.1, pero asigna un nuevo puerto:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+<th>IP Local Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.10</td>
+<td>1301</td>
+<td>1.1.1.1</td>
+<td>1301</td>
+<td>2.2.2.2</td>
+<td>80</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p>Dos aplicaciones (o ventanas) distintas usan puertos TCP distintos para evitar conflictos en las respuestas.</p>
+<p><strong>Caso 3: El PC B visita también la web 2.2.2.2</strong></p>
+<p>Se le asigna la siguiente IP pública libre: 1.1.1.2</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+<th>IP Local Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.11</td>
+<td>1300</td>
+<td>1.1.1.2</td>
+<td>1300</td>
+<td>2.2.2.2</td>
+<td>80</td>
+<td>?</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Caso 4: El PC C intenta acceder a la web 2.2.2.2</strong></p>
+<p>Como no hay más direcciones IP públicas disponibles, el router no puede hacer la traducción. El navegador mostrará un error tras agotar el tiempo de espera. El usuario del PC C deberá esperar a que se libere una IP pública para poder conectarse.</p>
+<h3 id="nat-dinamica-con-sobrecarga-pat">NAT dinámica con sobrecarga (PAT)</h3>
+<p>Este es el tipo de NAT más común, especialmente en routers domésticos, donde suele venir configurado por defecto. Se trata de una traducción de varios a varios, como la NAT dinámica, pero con la diferencia de que también se traducen los puertos TCP/UDP. Por esta razón también se conoce como PAT (Port Address Translation).</p>
+<p>Gracias a esta traducción adicional de puertos, se resuelve el principal problema de la NAT dinámica: el agotamiento de direcciones IP públicas. En la práctica, múltiples dispositivos privados pueden compartir una única IP pública, diferenciándose únicamente por sus puertos.</p>
+<p>Ejemplo: funcionamiento típico de un router doméstico.</p>
+<p><img alt="NAT dinámica PAT" src="../assets/images/ud7/img09.png" width="700" /></p>
+<p>En este escenario, una única IP pública (1.1.1.1) es compartida por tres PCs con IPs privadas.</p>
+<p><strong>Caso 1: El PC A accede a la web 2.2.2.2</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.10</td>
+<td>1300</td>
+<td>1.1.1.1</td>
+<td>1300</td>
+<td>2.2.2.2</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Caso 2: El PC A accede a la web 3.3.3.3 desde otra ventana</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.10</td>
+<td>1301</td>
+<td>1.1.1.1</td>
+<td>1301</td>
+<td>3.3.3.3</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Caso 3: El PC B accede a la web 2.2.2.2 usando el puerto 1300</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.11</td>
+<td>1300</td>
+<td>1.1.1.1</td>
+<td>1302</td>
+<td>2.2.2.2</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Caso 4: El PC C accede a la web 2.2.2.2 también con el puerto 1300</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>TCP</td>
+<td>192.168.0.12</td>
+<td>1300</td>
+<td>1.1.1.1</td>
+<td>1303</td>
+<td>2.2.2.2</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>¿Qué sucede cuando llega una respuesta desde 2.2.2.2 hacia 1.1.1.1?</p>
+<p>Dependerá del puerto de destino:</p>
+<ul>
+<li>Si es el puerto 1300, se redirige al PC A.</li>
+<li>Si es el puerto 1302, se redirige al PC B.</li>
+<li>Si es el puerto 1303, se redirige al PC C.</li>
+</ul>
+<p>Gracias a PAT, una sola IP pública puede ser compartida sin conflictos mediante la asignación dinámica de puertos.</p>
+<h3 id="nat-inversa-o-apertura-de-puertos">NAT inversa (o apertura de puertos)</h3>
+<p>La expresión “abrir puertos” puede tener distintos significados. Técnicamente, hace referencia a tener una aplicación activa “escuchando” en un puerto determinado, es decir, preparada para enviar o recibir datos a través de él. También se usa para describir la acción de permitir conexiones específicas en un firewall, habilitando el tráfico entrante o saliente en ciertos puertos.</p>
+<p>En el contexto de traducción de direcciones y puertos (NAT), “abrir puertos” se refiere a permitir el acceso desde Internet hacia un dispositivo en la red local sin que haya habido previamente una solicitud desde el interior. A esto se le denomina NAT inversa, Port Forwarding o Servidor Virtual, y es común en las interfaces de configuración de routers domésticos. Permite que servicios internos como servidores web, servidores de bases de datos, etc., puedan ser accedidos desde el exterior, configurando una entrada fija en la tabla NAT.</p>
+<p><strong>Ejemplo de NAT inversa:</strong></p>
+<p>Se tiene un servidor web en la red local. Para permitir el acceso desde el exterior (por ejemplo, escribiendo http://1.1.1.1 en un navegador), se debe abrir el puerto 80.</p>
+<p><img alt="NAT inversa" src="../assets/images/ud7/img10.png" width="700" /></p>
+<p>Antes de abrir el puerto:</p>
+<p>La tabla NAT solo contendrá entradas dinámicas, si acaso algún equipo interno ha iniciado conexiones hacia Internet.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+<th>IP Global Externa</th>
+<th>Puerto</th>
+<th>IP Local Externa</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dinámica</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Después de abrir el puerto:</p>
+<p>Se añade una entrada fija, que asocia el puerto 80 de la IP pública con el servidor interno.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fija</td>
+<td>TCP</td>
+<td>192.168.0.100</td>
+<td>80</td>
+<td>1.1.1.1</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<p>De este modo, cualquier petición entrante a 1.1.1.1:80 será redirigida al servidor local 192.168.0.100:80.</p>
+<p>¿Y si queremos tener dos servidores web?</p>
+<p>Sí es posible, pero no se puede usar el mismo puerto en la IP pública para ambos. Se usaría otro puerto (por ejemplo, el 81) para redirigir al segundo servidor:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Protocolo</th>
+<th>IP Local Interna</th>
+<th>Puerto</th>
+<th>IP Global Interna</th>
+<th>Puerto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fija</td>
+<td>TCP</td>
+<td>192.168.0.100</td>
+<td>80</td>
+<td>1.1.1.1</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Fija</td>
+<td>TCP</td>
+<td>192.168.0.200</td>
+<td>80</td>
+<td>1.1.1.1</td>
+<td>81</td>
+</tr>
+</tbody>
+</table>
+<p>Para acceder al segundo servidor web desde el exterior, habría que escribir: http://1.1.1.1:81</p>
+<h3 id="nat-masivo">NAT masivo</h3>
+<p>El NAT masivo, también conocido como Carrier Grade NAT (CGNAT) o large-scale NAT, es una técnica utilizada por los proveedores de servicios de Internet (ISP) para compartir un conjunto limitado de direcciones IP públicas entre una gran cantidad de usuarios. Esta traducción se realiza dentro de la red del propio proveedor.</p>
+<p>Las traducciones NAT tradicionales (como la traducción de direcciones, de puertos y la NAT con sobrecarga) se conocen como NAT44, porque implican una conversión de IPv4 a IPv4. En cambio, CGNAT se conoce como NAT444, ya que realiza una doble traducción IPv4 a IPv4 a IPv4, es decir, desde una IP privada del usuario a una IP intermedia del proveedor, y de ahí a una IP pública.</p>
+<p><strong>¿Por qué surgió CGNAT?</strong></p>
+<p>Inicialmente, los proveedores asignaban una IP pública a cada cliente mientras estaba conectado. Sin embargo, al generalizarse las conexiones permanentes, esas IPs públicas ya no se liberaban, provocando una escasez grave de direcciones IPv4. Para resolverlo, se implementó el NAT masivo.</p>
+<p><strong>¿Cómo funciona?</strong></p>
+<p>Un ISP con 10 direcciones IP públicas puede, mediante CGNAT, compartirlas entre cientos de clientes. Se basa en la idea de overbooking, asumiendo que no todos los clientes estarán conectados simultáneamente, y que cada cliente no utilizará todas las posibles combinaciones de puertos.</p>
+<p>Cada IP pública ofrece hasta 65.536 puertos (por cada protocolo TCP/UDP), así que si el proveedor reserva 1.000 conexiones por cliente, podría atender a unos 655 usuarios por IP pública.</p>
+<p><strong>Problemas para el usuario</strong></p>
+<p>Con CGNAT, el usuario no tiene control directo sobre la traducción que realiza el ISP, lo que puede generar inconvenientes en aplicaciones que requieren entrada desde Internet, como servidores web o videojuegos online. Para paliarlo, algunos proveedores ofrecen interfaz web de configuración o protocolos como PCP (Port Control Protocol) que permiten cierto control sobre la asignación de puertos.</p>
+<p><strong>Rango reservado para CGNAT</strong></p>
+<p>La IANA ha reservado el rango 100.64.0.0/10 exclusivamente para CGNAT. Este bloque:</p>
+<ul>
+<li>No puede usarse en Internet.</li>
+<li>Tampoco debe usarse en redes privadas.</li>
+<li>Es un espacio intermedio entre redes internas y la Internet pública.</li>
+</ul>
+<p>Este rango es independiente de los bloques privados clásicos, como 10.0.0.0/8, 172.16.0.0/12 y 192.168.0.0/16.</p>
+<h2 id="diagnostico-de-incidencias-de-nat">Diagnóstico de incidencias de NAT</h2>
+<p>La manera más directa de verificar que la traducción de direcciones se está llevando a cabo correctamente es probar la conexión a Internet desde la red local. Si los dispositivos locales acceden sin problemas, se puede concluir que la configuración NAT es funcional.</p>
+<p>En la mayoría de los casos, los routers domésticos proporcionados por los ISP ya vienen con NAT preconfigurada, y su modificación no suele estar permitida fácilmente por el usuario. Los errores más comunes suelen estar relacionados con:</p>
+<ul>
+<li>Cortafuegos (firewalls) que bloquean conexiones entrantes o salientes.</li>
+<li>Mala configuración de los puertos abiertos (port forwarding o NAT inversa).</li>
+</ul>
+<p>Para detectar posibles incidencias en la configuración de NAT, es imprescindible consultar la tabla de traducciones del router, donde se reflejan las asociaciones dinámicas o estáticas entre IPs y puertos que se están aplicando en tiempo real.</p>
+<h2 id="tecnologias-de-acceso-a-la-wan">Tecnologías de acceso a la WAN</h2>
+<p>Una WAN (Wide Area Network) es una red que conecta múltiples ubicaciones físicas, permitiendo la comunicación entre redes locales (LAN) distribuidas en diferentes áreas geográficas, desde una ciudad hasta varios continentes. Estas redes pueden ser privadas, creadas por empresas, o gestionadas por proveedores de internet (ISP) para ofrecer conectividad a sus clientes.</p>
+<p><strong>Clasificación de los accesos a la WAN</strong></p>
+<h3 id="acceso-cableado">Acceso cableado</h3>
+<ul>
+<li><strong>RTC (Red Telefónica Conmutada)</strong>: Sistema obsoleto que utilizaba la red telefónica analógica y un módem para convertir señales digitales en analógicas y viceversa.</li>
+<li><strong>RDSI (Red Digital de Servicios Integrados)</strong>: Línea telefónica completamente digital que utiliza adaptadores de red en lugar de módems, mejorando la calidad de la transmisión.</li>
+<li><strong>ADSL (Asymmetric Digital Subscriber Line)</strong>: Aprovecha la línea telefónica para transmitir voz y datos simultáneamente mediante tres canales independientes (subida, bajada y voz). Es asimétrica porque el canal de descarga tiene mayor capacidad que el de subida.</li>
+<li><strong>BPL (Broadband over Power Lines)</strong>: Tecnología que utiliza la red eléctrica para transmitir datos. Su uso es limitado debido a las interferencias y a la competencia con tecnologías más eficientes.</li>
+<li><strong>FTTx (Fiber to the x)</strong>: Tecnologías basadas en fibra óptica, como FTTH (hasta el hogar) o FTTB (hasta el edificio). Permiten conexiones de alta velocidad mediante una topología en estrella o una red óptica pasiva (PON).</li>
+<li><strong>Cable coaxial</strong>: Utiliza el cable de televisión para ofrecer conexión a internet.</li>
+</ul>
+<h3 id="acceso-inalambrico">Acceso inalámbrico</h3>
+<ul>
+<li><strong>WPAN (Wireless Personal Area Network)</strong>: Redes de corto alcance, como Bluetooth.</li>
+<li><strong>WLAN (Wireless Local Area Network)</strong>: Alcance de varios centenares de metros, usado en oficinas o edificios (ej. WiFi).</li>
+<li><strong>WMAN (Wireless Metropolitan Area Network)</strong>: Cubre zonas metropolitanas, enlazando varios edificios (ej. WiMAX).</li>
+<li><strong>WWAN (Wireless Wide Area Network)</strong>: Redes de gran cobertura, como países o regiones enteras (ej. HSDPA).</li>
+</ul>
+<h4 id="acceso-inalambrico-wpan">Acceso inalámbrico WPAN</h4>
+<p>Además de las tecnologías habituales de acceso a la WAN, existen otras tecnologías utilizadas en redes personales (PAN):</p>
+<ul>
+<li><strong>Bluetooth</strong>: Permite la comunicación entre dispositivos con corto alcance y baja capacidad. Se usa para conectar equipos informáticos y transferir pequeñas cantidades de datos.</li>
+<li><strong>NFC</strong>: Diseñado para teléfonos y dispositivos móviles. Permite transferencias casi instantáneas sin emparejamiento previo. Tiene un alcance máximo de 20 cm y una velocidad de hasta 424 kbit/s, lo que lo hace útil para identificación y validación rápida.</li>
+<li><strong>ZigBee</strong>: Se utiliza en entornos como la domótica. Ofrece comunicación segura con bajo consumo energético y velocidades reducidas de transmisión.</li>
+<li><strong>Infrarrojos</strong>: Tecnología óptica de corto alcance, bajo coste y consumo. Requiere línea de visión directa entre dispositivos. Aunque antigua, sigue en uso en algunos entornos.</li>
+<li><strong>HomeRF</strong>: Especificación que permite conectar dispositivos como ordenadores, teléfonos o electrodomésticos dentro de un espacio reducido.</li>
+</ul>
+<h4 id="acceso-inalambrico-wlan">Acceso inalámbrico WLAN</h4>
+<p>Aunque existen otras tecnologías como HiperLAN, la más utilizada con diferencia es Wi-Fi (Wireless Fidelity), evolución natural de las redes Ethernet cableadas.</p>
+<p>Wi-Fi permite conectarse a una red local o a Internet mediante radiofrecuencia. Solo se necesita un punto de acceso o router Wi-Fi conectado físicamente a la red, y una tarjeta Wi-Fi en el dispositivo a conectar. Esto elimina la necesidad de cableado extenso, siendo ideal para hogares y oficinas. Hoy en día, la mayoría de los dispositivos incluyen conectividad Wi-Fi de serie.</p>
+<p>Estándares más comunes:</p>
+<ul>
+<li>802.11b, 802.11g, 802.11n, 802.11ac, 802.11ax.</li>
+<li>Nuevos estándares: 802.11be (Wi-Fi 7).</li>
+</ul>
+<p>Para conectar equipos de distintos estándares, el punto de acceso debe operar en modo mixto.</p>
+<h5 id="principales-conceptos-sobre-wifi">Principales conceptos sobre WiFi</h5>
+<ul>
+<li><strong>SSID (Service Set Identifier)</strong>: Es el identificador único que permite a los dispositivos cliente distinguir entre diferentes redes Wi-Fi que estén dentro del alcance. Es el nombre visible de la red inalámbrica.</li>
+<li><strong>Canal</strong>: El espectro de frecuencias autorizado para la transmisión Wi-Fi se divide en 11 canales. Los dispositivos seleccionan uno de estos canales para emitir y recibir datos, evitando interferencias con otras redes cercanas.</li>
+</ul>
+<p>Topologías de redes inalámbricas:</p>
+<ul>
+<li><strong>BSS (Basic Service Set)</strong>: Es una célula básica compuesta por un punto de acceso (AP) y los dispositivos conectados a él. El AP centraliza toda la comunicación y se identifica mediante un BSSID (identificador único de 48 bits).</li>
+<li><strong>IBSS (Independent Basic Service Set)</strong>: Red formada por dos o más estaciones que se comunican directamente sin un punto de acceso. Es una red ad-hoc en la que los dispositivos se enlazan entre sí de forma directa.</li>
+<li><strong>ESS (Extended Service Set)</strong>: Agrupación de varias BSS interconectadas. Permite el roaming, es decir, que un usuario pueda moverse entre diferentes puntos de acceso dentro de la misma red manteniendo la conectividad.</li>
+</ul>
+<p>Modos operativos según el estándar 802.11:</p>
+<ul>
+<li><strong>Modo infraestructura</strong>: Los dispositivos cliente se conectan a través de un punto de acceso. Es el modo más habitual y el que se configura por defecto.</li>
+<li><strong>Modo ad-hoc</strong>: Los dispositivos se conectan directamente entre ellos sin necesidad de un punto de acceso. Se emplea para redes temporales o entre pocos dispositivos.</li>
+</ul>
+<p><strong>WDS (Wireless Distribution System):</strong></p>
+<p>Es un estándar que permite a dos puntos de acceso enlazarse inalámbricamente entre sí. Así, además de ofrecer acceso a clientes, estos AP también pueden comunicar datos entre ellos, extendiendo la cobertura de la red sin necesidad de cables adicionales.</p>
+<h5 id="modos-de-seguridad-en-redes-wi-fi">Modos de seguridad en redes Wi-Fi</h5>
+<ul>
+<li><strong>Redes abiertas</strong>: No requieren contraseña para conectarse. No se recomienda su uso bajo ningún concepto por motivos evidentes de seguridad.</li>
+<li><strong>WEP (Wired Equivalent Privacy)</strong>:<ul>
+<li><strong>WEP de 64 bits</strong>: Estándar antiguo y completamente vulnerable.</li>
+<li><strong>WEP de 128 bits</strong>: Ofrece un cifrado mayor, pero igual de inseguro.</li>
+</ul>
+</li>
+<li><strong>WPA (Wi-Fi Protected Access)</strong>: Mejora la seguridad respecto a WEP e incorpora autenticación mediante servidor o clave compartida (PSK). Sin embargo, ya no se considera seguro.</li>
+<li><strong>WPA2</strong>: Soluciona las debilidades de WPA. Es el estándar más recomendado actualmente, especialmente con AES como cifrado.</li>
+<li><strong>WPA3</strong>: Último estándar. Refuerza la seguridad con cifrado individual por conexión y protección frente a ataques de fuerza bruta. Su adopción es aún limitada por requerir hardware compatible.</li>
+</ul>
+<p>Mecanismos de encriptación:</p>
+<ul>
+<li><strong>TKIP (Temporal Key Integrity Protocol)</strong>: Obsoleto y menos seguro.</li>
+<li><strong>AES (Advanced Encryption Standard)</strong>: Recomendado por su robustez y eficiencia.</li>
+</ul>
+<p>Medidas de seguridad recomendadas:</p>
+<ul>
+<li>Ocultar el SSID desactivando su difusión.</li>
+<li>Activar el filtrado por direcciones MAC.</li>
+<li>Utilizar WPA2-PSK con cifrado AES.</li>
+<li>Evitar parámetros por defecto (como SSID o contraseñas predeterminadas).</li>
+<li>Otras prácticas recomendadas:<ul>
+<li>Apagar el router en ausencias prolongadas.</li>
+<li>Supervisar los accesos a la red desde el panel de administración del router.</li>
+</ul>
+</li>
+</ul>
+<h4 id="acceso-wman-wireless-metropolitan-area-network">Acceso WMAN (Wireless Metropolitan Area Network)</h4>
+<ul>
+<li><strong>WiMAX (Worldwide Interoperability for Microwave Access)</strong>: Estándar de comunicación inalámbrica basado en IEEE 802.16. Similar al Wi-Fi, pero diseñado para ofrecer cobertura a gran escala mediante estaciones base que conectan múltiples usuarios a través de paneles exteriores. Aunque su uso ha disminuido en favor de LTE y 5G, sigue empleándose en entornos rurales y conexiones empresariales donde no hay acceso por cable.</li>
+<li><strong>LMDS (Local Multipoint Distribution Service)</strong>: Tecnología de altas frecuencias que requiere visibilidad directa entre el emisor y el receptor. Es menos común hoy día por sus altos costes y menor eficiencia frente a tecnologías como fibra o 5G fijo inalámbrico (Fixed Wireless Access).</li>
+<li><strong>Radioenlace (Microwave Link)</strong>: Utiliza microondas de alta frecuencia. Necesita línea de visión directa. Se emplea como solución de respaldo o en entornos sin cobertura de fibra o móvil, especialmente para conectar ubicaciones remotas o rurales.</li>
+</ul>
+<h4 id="acceso-inalambrico-wwan-wireless-wide-area-network">Acceso inalámbrico WWAN (Wireless Wide Area Network)</h4>
+<ul>
+<li><strong>2G / GSM</strong> (obsoleto en la mayoría de países):<ul>
+<li>CSD, GPRS, EDGE: Tecnologías ya en desuso debido a sus bajas velocidades.</li>
+</ul>
+</li>
+<li><strong>3G / UMTS, HSPA, HSPA+</strong>:<ul>
+<li>UMTS: Hasta 2 Mbps.</li>
+<li>HSDPA/HSUPA: Mejoras en bajada y subida. En fase de retirada en muchos países.</li>
+</ul>
+</li>
+<li><strong>4G / LTE</strong> (Long Term Evolution):<ul>
+<li>Tecnología dominante aún en muchas zonas.</li>
+<li>Velocidades reales de hasta 100 Mbps (descarga) y 50 Mbps (subida).</li>
+<li>Soporta servicios como VoLTE y redes de emergencia.</li>
+</ul>
+</li>
+<li><strong>4G+ / LTE Advanced / LTE-A Pro</strong>:<ul>
+<li>Mejora el rendimiento de LTE mediante agregación de portadoras y MIMO avanzado.</li>
+<li>Velocidades teóricas de hasta 1 Gbps.</li>
+<li>Utilizado como base de transición a 5G.</li>
+</ul>
+</li>
+<li><strong>5G NR (New Radio)</strong>:<ul>
+<li>Desde 2020</li>
+<li>Release 15 y 16: Ya desplegadas.</li>
+<li>Release 17 y 18 (en 2024–2025): Incluyen mejoras en latencia, eficiencia energética, soporte para redes privadas, y conectividad masiva para IoT.</li>
+<li>Velocidades de hasta 10–20 Gbps en condiciones ideales.</li>
+<li>Latencia inferior a 1 ms.</li>
+<li>Clave en vehículos autónomos, realidad aumentada/virtual, telemedicina, industria 4.0.</li>
+</ul>
+</li>
+<li><strong>5G FWA (Fixed Wireless Access)</strong>:<ul>
+<li>Alternativa al FTTH en zonas rurales y suburbanas.</li>
+<li>Ofrece velocidades similares a la fibra con menor coste de despliegue.</li>
+</ul>
+</li>
+<li><strong>6G (en fase de investigación y desarrollo)</strong>:
+    •   Se espera su estandarización en torno a 2028.
+    •   Promete velocidades de hasta 1 Tbps, latencias del orden de microsegundos, comunicaciones holográficas, inteligencia artificial integrada en red, y cobertura satelital total.</li>
+<li><strong>Acceso por satélite (LEO - Low Earth Orbit)</strong>:<ul>
+<li>Empresas como Starlink (SpaceX), OneWeb, o Amazon Kuiper están desplegando constelaciones de satélites de baja órbita para ofrecer acceso global a Internet.</li>
+<li>Latencia menor que el satélite geoestacionario tradicional.</li>
+<li>Ideal para zonas sin infraestructura terrestre.</li>
+</ul>
+</li>
+</ul>
+<h2 id="utilizacion-de-nat-en-los-routers-cisco">Utilización de NAT en los routers CISCO</h2>
+<p>A continuación se muestran los comandos utilizados para configurar los distintos tipos de NAT según el estándar de Cisco. En todos los casos, es necesario especificar qué interfaz es interna y cuál es externa.</p>
+<p>Para definir la interfaz interna:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Router(config)# interface xx/xx  
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Router(config-if)# ip nat inside
+</span></code></pre></div>
+<p>Para definir la interfaz externa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Router(config)# interface xx/xx  
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Router(config-if)# ip nat outside
+</span></code></pre></div>
+<p><strong>NAT estática</strong></p>
+<p>Para realizar siempre la misma traducción entre una IP interna y una IP externa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Router(config)# ip nat inside source static ipinterna ipexterna
+</span></code></pre></div>
+<p>Además, como se ha comentado, es necesario definir cuál es la interfaz interna y cuál la externa.</p>
+<p><strong>NAT dinámica</strong></p>
+<p>En este caso, suele haber pocas IPs externas y muchas IPs internas. A medida que se necesita el acceso al exterior, se van realizando las traducciones. Hay que llevar a cabo varias configuraciones.</p>
+<p>Primero se definen las IPs internas, usando una lista de acceso estándar:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Router(config)# ip access-list standard IPs_internas  
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Router(config-std-nacl)# permit ip wildcard
+</span></code></pre></div>
+<p>Después, se definen las IPs externas como un pool:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Router(config)# ip nat pool IPs_externas primeraip ultimaip netmask máscara
+</span></code></pre></div>
+<p>A continuación, se configura la traducción:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Router(config)# ip nat inside source list IPs_internas pool IPs_externas
+</span></code></pre></div>
+<p>También hay que indicar cuál es la interfaz interna y cuál la externa.</p>
+<p><strong>NAT dinámica con sobrecarga</strong></p>
+<p>La configuración es igual que en la NAT dinámica, pero al definir la traducción se añade la palabra overload, lo cual permite traducir también los puertos:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Router(config)# ip nat inside source list IPs_internas pool IPs_externas overload
+</span></code></pre></div>
+<p>Si se quiere abrir un puerto en esta configuración, se utiliza el siguiente comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Router(config)# ip nat inside source static tcp IP_interna IP_externa puertoaabrir
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2025 José María Pérez Puentes - Licencia CC BY-NC-SA 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
