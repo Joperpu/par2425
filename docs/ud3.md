@@ -21,7 +21,7 @@ Los estándares de Ethernet abarcan tanto los protocolos de la capa 2 como las t
 - **Subcapa LLC (Logical Link Control)**: Esta subcapa toma los datos del protocolo de red, generalmente un paquete IPv4, y añade información de control para facilitar su entrega al nodo de destino. En un ordenador, el LLC puede considerarse como el software del controlador de la tarjeta de red (NIC, Network Interface Card).
 - **Subcapa MAC (Media Access Control)**: Es la subcapa inferior de la capa de enlace de datos y se implementa en hardware, usualmente en la tarjeta de red del ordenador.
 
-<center>![Estándares Ethernet](assets/images/ud3/img01.png){ width="700" }</center>
+![Estándares Ethernet](assets/images/ud3/img01.png){ width="700" }
 
 La subcapa MAC de Ethernet tiene dos funciones principales:
 
@@ -47,7 +47,7 @@ Anteriormente, mencionamos que la unidad de datos del protocolo en la capa de en
 - Datos: Corresponde a la Unidad de Datos de Protocolo (PDU) de nivel 3, generalmente un paquete IP.
 - Tráiler: Incluye información para la detección y posible corrección de errores.
 
-<center>![Trama Ethernet](assets/images/ud3/img02.png){ width="700" }</center>
+![Trama Ethernet](assets/images/ud3/img02.png){ width="700" }
 
 El tamaño de una trama Ethernet varía entre un mínimo de 64 bytes y un máximo de 1518 bytes. Los campos específicos de una trama Ethernet son los siguientes:
 
@@ -137,7 +137,7 @@ Las direcciones IP se utilizan para identificar el origen y el destino de los pa
 
 Por otro lado, las direcciones MAC de Ethernet tienen un propósito distinto: se usan para entregar la trama, que contiene el paquete IP encapsulado, de un dispositivo a otro dentro de la misma red. Si la dirección IP de destino está en la misma red, la dirección MAC de destino en la trama será la del dispositivo final.
 
-<center>![ARP 1](assets/images/ud3/img03.png){ width="700" }</center>
+![ARP 1](assets/images/ud3/img03.png){ width="700" }
 
 En la figura anterior, observamos que la trama Ethernet de capa 2 incluye lo siguiente:
 
@@ -153,7 +153,7 @@ Sin embargo, cuando la dirección IP de destino está en una red remota, la dire
 
 Cuando el gateway recibe una trama Ethernet, desencapsula la información de capa 2. A través de la dirección IP de destino, determina el siguiente dispositivo en la ruta y encapsula el paquete IP en una nueva trama de enlace de datos para la interfaz de salida. En cada enlace a lo largo del camino, el paquete IP se encapsula en una trama específica para la tecnología de enlace de datos correspondiente a ese enlace. Si el siguiente salto es el destino final, la dirección MAC de destino será la de la NIC Ethernet de ese dispositivo.
 
-<center>![ARP 2](assets/images/ud3/img04.png){ width="700" }</center>
+![ARP 2](assets/images/ud3/img04.png){ width="700" }
 
 Entonces, ¿cómo se asocian las direcciones IPv4 de los paquetes con las direcciones MAC en cada enlace durante el trayecto hacia el destino? Esto se logra mediante un proceso conocido como Protocolo de Resolución de Direcciones (ARP).
 
@@ -250,7 +250,7 @@ Al encenderse un switch Cisco, este sigue la siguiente secuencia de arranque:
 
 Un switch Cisco tiene un conjunto de indicadores led que muestran información sobre el estado y el rendimiento del switch. Dependiendo del modelo habrá diferentes indicadores LEDs con un diverso rango de significados.
 
-<center>![LEDs CISCO](assets/images/ud3/img05.png){ width="700" }</center>
+![LEDs CISCO](assets/images/ud3/img05.png){ width="700" }
 
 En la imagen anterior aparecen los indicadores de la serie Catalyst 2960. Veamos en detalle cuáles son:
 
@@ -460,7 +460,7 @@ S1(config)#
 
 Los comandos anteriores hemos utilizado las cinco primeras líneas VTY (0 a 4) para acceso por SSH. Ahora se puede acceder remotamente al router solo con SSH. En la siguiente imagen se observa una conexión desde un PC conectado a un puerto del switch.
 
-<center>![SSH](assets/images/ud3/img06.png){ width="350" }</center>
+![SSH](assets/images/ud3/img06.png){ width="350" }
 
 Para mostrar los datos de la versión y de configuración de SSH en el dispositivo que se configuró como servidor SSH, usamos el comando show ip ssh. En el ejemplo, se habilitó la versión 2 de SSH. Para revisar las conexiones SSH al dispositivo usamos el comando show ssh.
 
@@ -470,19 +470,19 @@ Se trata de un puerto de administración que permite acceder al switch cuando no
 
 La ventaja de emplear un puerto de consola es que es posible acceder al dispositivo sin necesidad de realizar una configuración previa, a diferencia de lo que ocurre al acceder mediante Telnet o SSH. Sin embargo, presenta el inconveniente de que se requiere acceso físico al dispositivo para conectar un ordenador, equipado con un puerto serie RS232, al puerto de consola del switch utilizando un cable especial. Luego, se inicia una sesión con el IOS mediante un software de emulación de terminal como PuTTY desde el PC.
 
-<center>![Consola](assets/images/ud3/img07.png){ width="700" }</center>
+![Consola](assets/images/ud3/img07.png){ width="700" }
 
 El cable de consola posee en un extremo un conector serial DB-9 que se conecta al puerto serie RS232 del PC, y en el otro extremo un conector RJ-45 que se enchufa al puerto de consola del dispositivo. En los equipos Cisco, contamos con un puerto de consola dedicado exclusivamente a fines administrativos.
 
-<center>![Consola](assets/images/ud3/img08.png){ width="700" }</center>
+![Consola](assets/images/ud3/img08.png){ width="700" }
 
 Podemos probar una conexión mediante Cisco Packet Tracer. Si creamos el siguiente escenario en el que conectamos un portátil al switch 2960 con un cable de consola.
 
-<center>![Consola](assets/images/ud3/img09.png){ width="400" }</center>
+![Consola](assets/images/ud3/img09.png){ width="400" }
 
 El ordenador portátil está conectado a través del puerto RS232 y el switch mediante el puerto de consola. Al acceder al portátil, en la pestaña “Escritorio”, seleccionamos “Terminal”. Aceptamos los parámetros de conexión predeterminados y hacemos clic en el botón “Aceptar”. Observaremos que se muestra la interfaz de texto del Cisco IOS.
 
-<center>![Consola](assets/images/ud3/img10.png){ width="700" }</center>
+![Consola](assets/images/ud3/img10.png){ width="700" }
 
 Los parámetros de conexión por defecto para el software de emulación de terminal serían los siguientes:
 
@@ -664,7 +664,7 @@ Las direcciones MAC configuradas como seguras no solo se almacenan en la tabla d
 
 A continuación, se muestra un ejemplo basado en un mapa de red para ilustrar esta funcionalidad:
 
-<center>![Seguridad de puertos](assets/images/ud3/img11.png){ width="350" }</center>
+![Seguridad de puertos](assets/images/ud3/img11.png){ width="350" }
 
 En esta red básica, se procederá a configurar la seguridad de puertos en las interfaces Fa0/1 y Fa0/2 para protegerlas frente a accesos no autorizados.
 
@@ -1084,7 +1084,7 @@ De todos los puertos disponibles en un switch, se recomienda utilizar los puerto
 
 Un EtherChannel es una interfaz lógica que agrupa varias interfaces físicas para proporcionar mayor ancho de banda, balanceo de carga y tolerancia a fallos. Por ejemplo, si se agrupan 4 puertos FastEthernet en un único EtherChannel, se obtiene una interfaz lógica con un ancho de banda de 400 Mbps. Es posible agrupar hasta 8 puertos en un único EtherChannel.
 
-<center>![Etherchannel](assets/images/ud3/img12.png){ width="700" }</center>
+![Etherchannel](assets/images/ud3/img12.png){ width="700" }
 
 En la figura anterior se observan dos switches conectados mediante 4 enlaces FastEthernet, cada uno con un ancho de banda de 100 Mbps. Al combinar estos enlaces mediante un EtherChannel, se obtiene un ancho de banda total de 400 Mbps. Para lograrlo, es necesario configurar el EtherChannel en ambos switches, de forma que se gestione la comunicación de datos entre ellos.
 
@@ -1125,7 +1125,7 @@ Al asignar el port-channel creado a las interfaces físicas, es necesario especi
 
 Supongamos un caso básico donde dos switches están conectados mediante dos puertos Gigabit Ethernet y se desea crear un EtherChannel con un ancho de banda de 2 Gbps.
 
-<center>![Etherchannel](assets/images/ud3/img13.png){ width="700" }</center>
+![Etherchannel](assets/images/ud3/img13.png){ width="700" }
 
 Para crear la interfaz lógica de un EtherChannel, se debe ejecutar el siguiente comando en el modo de configuración global:
 
@@ -1205,7 +1205,7 @@ Por ejemplo, si se tiene un EtherChannel en el que cuatro PCs se comunican con u
 - Como el router tiene una única dirección MAC, se recomienda configurar el balanceo de carga en el switch basado en la dirección de origen. Esto garantiza que el switch utiliza todo el ancho de banda hacia el router.
 - Por otro lado, en el router, el balanceo de carga debe basarse en la dirección de destino porque el tráfico será distribuido entre las múltiples direcciones de los PCs.
 
-<center>![Balanceo de carga](assets/images/ud3/img14.png){ width="350" }</center>
+![Balanceo de carga](assets/images/ud3/img14.png){ width="350" }
 
 Siguiendo con nuestro ejemplo, si queremos configurar el balanceo de carga para que el switch S1 utilice como criterio la dirección MAC de origen y el switch S2 utilice la dirección MAC de destino, se deben ejecutar los siguientes comandos:
 
@@ -1258,7 +1258,7 @@ Sin el protocolo STP, no sería posible contar con enlaces redundantes, ya que e
 
 En una red donde existen dos enlaces redundantes entre SW1 y SW2, se crea un bucle potencial. Por ejemplo, si PC3 envía tráfico de difusión hacia PC4, este tráfico circularía de manera continua entre ambos switches, saturando la red.
 
-<center>![Balanceo de carga](assets/images/ud3/img15.png){ width="700" }</center>
+![Balanceo de carga](assets/images/ud3/img15.png){ width="700" }
 
 Sin embargo, al ejecutarse STP en los switches, uno de los enlaces entre SW1 y SW2 será bloqueado por el protocolo. De esta manera:
 
@@ -1345,7 +1345,7 @@ La siguiente tabla muestra el coste de enlace para diferentes valores de ancho d
 | 100 Mbps | 19 |
 | 10 Mbps | 100 |
 
-<center>![Balanceo de carga](assets/images/ud3/img16.png){ width="700" }</center>
+![Balanceo de carga](assets/images/ud3/img16.png){ width="700" }
 
 Como se observa en la red de la imagen anterior, el switch 4 tiene dos caminos para alcanzar el switch raíz (switch 1).
 
@@ -1362,7 +1362,7 @@ Cuando un switch debe seleccionar el puerto raíz, utiliza el coste del enlace d
 
 Si todos los puertos tienen el mismo valor de prioridad (valor predeterminado de 128), entonces se utiliza el número de puerto para romper el empate, seleccionando el puerto con el número más bajo. Esta situación puede variar si se cambia la prioridad del puerto de manera manual.
 
-<center>![Balanceo de carga](assets/images/ud3/img17.png){ width="250" }</center>
+![Balanceo de carga](assets/images/ud3/img17.png){ width="250" }
 
 Supongamos dos switches conectados como se muestra en la siguiente figura. Ambos switches están conectados a través de los puertos Fa0/23 y Fa0/24, lo que crea un bucle en la red. En esta situación, el switch superior ha sido designado como switch raíz.
 
@@ -1378,7 +1378,7 @@ Por lo tanto, el puerto Fa0/23 será designado como puerto raíz, al tener un n�
 
 Por defecto, STP está activado en los switches Cisco. Para ilustrar su configuración, utilizaremos una red conmutada donde existen caminos redundantes entre dos PCs, lo que puede generar bucles.
 
-<center>![STP](assets/images/ud3/img18.png){ width="600" }</center>
+![STP](assets/images/ud3/img18.png){ width="600" }
 
 
 En nuestro caso, la configuración incluirá:

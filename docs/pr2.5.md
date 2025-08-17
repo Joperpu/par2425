@@ -6,7 +6,7 @@ El router inalámbrico WRT300N de Cisco cuenta con una interfaz web para su conf
 
 Antes de acceder al router, se nos pedirá autenticarnos. Aparecerá un formulario de incio de sesión en el que debemos ingresar el nombre de usuario administrador y la contraseña. Si el router es nuevo o ha sido reiniciado a valores de fábrica, el usuario administrador por defecto es admin y la contraseña también es admin. Una vez autenticados, deberíamos ver la siguiente pantalla:
 
-<center>![Router WRT300N](assets/images/ud2/img35.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img35.png){ width="700" }
 
 ### Parámetros Wi-Fi
 
@@ -34,7 +34,7 @@ Para configurar los parámetros de la red inalámbrica, debemos hacer clic en el
 
 Una vez establecidos estos parámetros, debemos hacer clic en el botón Save Settings en la parte inferior de la pantalla.
 
-<center>![Router WRT300N](assets/images/ud2/img36.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img36.png){ width="700" }
 
 ### Servidor DHCP
 
@@ -48,7 +48,7 @@ Los clientes de la red, tanto inalámbricos como cableados, necesitarán configu
 
 No es necesario especificar un servidor DNS en la configuración del rango de direcciones del servidor DHCP, ya que el router asignará el mismo que haya obtenido de la conexión a Internet.
 
-<center>![Router WRT300N](assets/images/ud2/img37.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img37.png){ width="700" }
 
 Si hemos cambiado la red en la que operaba por defecto el router (192.168.0.0/24), quedaremos desconectados, ya que nuestros parámetros IP pertenecían a la red anterior. Por lo tanto, debemos cerrar el navegador, renovar la configuración de red en nuestro PC desactivando y reactivando la tarjeta de red, y volver a conectar con la interfaz web de configuración del router para continuar. Esta vez, en el navegador deberemos ingresar la dirección IP de LAN que asignamos al router, en nuestro caso 192.168.1.1.
 
@@ -62,7 +62,7 @@ En esta sección, veremos cómo establecer una seguridad básica en nuestro rout
 4. En el campo Passphrase, establecer la clave que los usuarios deben utilizar para conectar sus dispositivos a la red inalámbrica.
 5. Hacer clic en el botón Save Settings en la parte inferior de la pantalla.
 
-<center>![Router WRT300N](assets/images/ud2/img38.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img38.png){ width="700" }
 
 Una parte crucial de la seguridad de una red inalámbrica reside en la contraseña elegida. Al crear una clave inalámbrica, se recomienda:
 
@@ -83,7 +83,7 @@ Para habilitar y configurar el filtrado MAC, seguir estos pasos:
 5. Introducir todas las direcciones MAC de los dispositivos conocidos. Aquí debemos incluir los PCs, portátiles, smartphones, tablets, etc., que queremos conectar a nuestra red.
 6. Hacer clic en el botón Save Settings en la parte inferior de la pantalla.
 
-<center>![Router WRT300N](assets/images/ud2/img39.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img39.png){ width="700" }
 
 2.3.2 Servidor RADIUS
 
@@ -97,11 +97,11 @@ Una alternativa más segura que utilizar autenticación y cifrado a través del 
 
 Gráficamente, el proceso sería así:
 
-<center>![Router WRT300N](assets/images/ud2/img40.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img40.png){ width="700" }
 
 Para realizar la configuración, crearemos el siguiente esquema de red en Packet Tracer.
 
-<center>![Router WRT300N](assets/images/ud2/img41.png){ width="300" }</center>
+![Router WRT300N](assets/images/ud2/img41.png){ width="300" }
 
 Como podemos observar, disponemos de un router WiFi con dirección IP 192.168.1.1 conectado a un servidor RADIUS con dirección IP 192.168.1.2. Hay dos clientes inalámbricos que se conectarán al router WiFi tras autenticarse en el servidor RADIUS. La configuración que debemos realizar consiste en:
 
@@ -111,13 +111,13 @@ Como podemos observar, disponemos de un router WiFi con dirección IP 192.168.1.
 
 Para el punto 1, debemos acceder al servidor y seleccionar la pestaña Services. Seleccionamos AAA y establecemos la siguiente configuración.
 
-<center>![Router WRT300N](assets/images/ud2/img42.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img42.png){ width="700" }
 
 Observamos que hay configurado un cliente inalámbrico (el WRT300N), el cual se identifica por su dirección IP y la clave de acceso. El puerto utilizado para las solicitudes de autenticación al servidor RADIUS es el 1645. Además, se han incluido dos credenciales de usuario en la base de datos.
 
 En el router WiFi, debemos acceder a la interfaz web de configuración, en la opción de menú Wireless → Wireless Security.
 
-<center>![Router WRT300N](assets/images/ud2/img43.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img43.png){ width="700" }
 
 Vemos que en el modo de seguridad, debemos seleccionar WPA2 Enterprise, establecer la dirección IP del servidor RADIUS y la clave que configuramos al incluir este cliente de autenticación en el servidor RADIUS.
 
@@ -132,7 +132,7 @@ Finalmente, debemos configurar los clientes inalámbricos para que se autentique
 7. Dejar activada la opción _Obtain network settings automatically (DHCP)_ para obtener los parámetros IP y hacer clic en _Next_.
 8. En _Wireless Security_, seleccionar WPA2-Enterprise y hacer clic en _Next_.
 
-<center>![Router WRT300N](assets/images/ud2/img44.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img44.png){ width="700" }
 
 9. Rellenar los campos _Login name_ y _password_ con usuario1 y clave1 respectivamente. Hacer clic en _Next_.
 10. Confirmar la creación del perfil haciendo clic en _Save._
@@ -140,7 +140,7 @@ Finalmente, debemos configurar los clientes inalámbricos para que se autentique
 
 El portátil habrá conectado a la WiFi después de autenticarse en el servidor RADIUS. Si consultamos su configuración IP veremos que el router WiFi le ha servidor sus parámetros después de tener éxito la autenticación.
 
-<center>![Router WRT300N](assets/images/ud2/img45.png){ width="700" }</center>
+![Router WRT300N](assets/images/ud2/img45.png){ width="700" }
 
 ### Administración del router
 

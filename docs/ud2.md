@@ -18,7 +18,7 @@ Enviar señales a través de un medio de comunicación es el método habitual pa
 
 Las señales analógicas son aquellas que representan magnitudes del mundo físico real, es decir, aquellas susceptibles de tomar todos los posibles valores dentro de un rango de magnitud representada, por lo que su representación gráfica dentro de dicho rango es una función continua. Una señal analógica puede verse como una forma de onda que toma un conjunto continuo de valores en un intervalo de tiempo.
 
-<center>![Señal analógica](assets/images/ud2/img01.png){ width="600" }</center>
+![Señal analógica](assets/images/ud2/img01.png){ width="600" }
 
 La magnitud representada puede ser cualquier magnitud física: caída de tensión, presión, temperatura, etc. En el caso de las redes la señal normalmente es un voltaje en función del tiempo.
 
@@ -29,7 +29,7 @@ Las señales digitales son aquellas que representan sus valores con variables di
 - Representan únicamente la presencia o ausencia de señal.
 - La transición de un nivel a otro no es continua en el tiempo y solo se produce en momento determinados.
 
-<center>![Señal digital](assets/images/ud2/img02.png){ width="600" }</center>
+![Señal digital](assets/images/ud2/img02.png){ width="600" }
 
 La representación gráfica de una señal digital corresponde con una función escalonada.
 
@@ -86,7 +86,7 @@ La sincronización, por tanto, requiere la definición común de una **base de t
 
 Una transmisión asíncrona se produce cuando el proceso de sincronización entre emisor y receptor se realiza en cada palabra de código transmitida.  Esto implica que por cada carácter emitido sea necesario transmitir un bit de arranque (bit 0), seguido de la información y terminar con un bit de parada (bit 1).
 
-<center>![Transmisión asíncrona](assets/images/ud2/img03.png){ width="600" }</center>
+![Transmisión asíncrona](assets/images/ud2/img03.png){ width="600" }
 
 Puesto que la sincronía de la transmisión se restaura en cada carácter, este sistema de transmisión es poco sensible a los problemas que producen las faltas de sincronismo una vez se ha fijado la velocidad de transmisión de los bits. El inconveniente principal de este método es que se aumenta mucho la cantidad de bits que se envían en cada comunicación.
 
@@ -100,7 +100,7 @@ Emisor y receptor se encargan de la sincronización de modo que sean capaces de 
 
 En las transmisiones síncronas se suelen utilizar caracteres especiales para evitar los problemas de pérdida de sincronía en los caracteres informativos transmitidos. Al empezar la transmisión se envían una serie de caracteres de sincronismo (SYN) que están formados por una combinación de 0 y 1, tales que si se produce un desplazamiento de sus bits, el receptor es capaz de conocer sin lugar a dudas que hubo un desplazamiento.
 
-<center>![Transmisión síncrona](assets/images/ud2/img04.png){ width="600" }</center>
+![Transmisión síncrona](assets/images/ud2/img04.png){ width="600" }
 
 El modo de transmisión síncrona permite velocidades de transmisión mayores que la transmisión velocidades de transmisión mayores que la transmisión asíncrona, al utilizar menos bits en cada comunicación (ya que en la transmisión síncrona no son necesarios los bits de arranque y parada que acompañan a cada carácter en la transmisión asíncrona), obteniendo un mejor rendimiento de la línea de datos. Además, es menos sensible al ruido eléctrico que la transmisión asíncrona.
 
@@ -123,13 +123,13 @@ Independientemente del código elegido para efectuar la transmisión, los datos 
 
 Se dice que una transmisión es en serie cuando todas las señales se transmiten por una única linea de datos secuencialmente. Esta forma de datos es más adecuada para transmisiones a largas distancias. Los bits se transmiten en cadena por la línea de datos a una velocidad constante negociada por el transmisor y el receptor.
 
-<center>![Transmisión en serie](assets/images/ud2/img05.png){ width="600" }</center>
+![Transmisión en serie](assets/images/ud2/img05.png){ width="600" }
 
 ##### Transmisión en paralelo
 
 Se dice que una transmisión es en paralelo cuando se transmiten simultáneamente un grupo de bits, uno por cada línea del mismo canal. Los agrupamientos de bits pueden ser caracteres u otras asociaciones, dependiendo del tipo de canal.
 
-<center>![Transmisión en paralelo](assets/images/ud2/img06.png){ width="400" }</center>
+![Transmisión en paralelo](assets/images/ud2/img06.png){ width="400" }
 
 Para una misma tecnología de transmisión en los medios conductores, una transmisión en paralelo será n veces más rápida que su equivalente en serie, donde n es el número de líneas.
 
@@ -153,7 +153,7 @@ En esta modulación, a cada valor de la señal digital se le hace corresponder u
 
 Se emplea muy poco en transferencia de datos y siempre a muy bajas velocidades de transmisión, ya que es muy susceptible a las interferencias de línea.
 
-<center>![Modulación en amplitud](assets/images/ud2/img07.png){ width="600" }</center>
+![Modulación en amplitud](assets/images/ud2/img07.png){ width="600" }
 
 ##### Modulación de frecuencia (FSK)
 
@@ -161,7 +161,7 @@ En ella, cada valor de la señal digital se hace corresponder una frecuencia de 
 
 Se emplea para velocidades de transmisión iguales o inferiores a 1200 bps.
 
-<center>![Modulación de frecuencia](assets/images/ud2/img08.png){ width="600" }</center>
+![Modulación de frecuencia](assets/images/ud2/img08.png){ width="600" }
 
 ##### Modulación de fase (PSK)
 
@@ -169,7 +169,7 @@ En la que a cada valor de la señal digital se le hace corresponder con un desfa
 
 Se emplea para velocidades de transmisión superiores a 1200 bps. Para velocidades superiores se emplea la modulación de fase combinada con la modulación de amplitud.
 
-<center>![Modulación de fase](assets/images/ud2/img09.png){ width="600" }</center>
+![Modulación de fase](assets/images/ud2/img09.png){ width="600" }
 
 ### Medios de transmisión
 
@@ -215,13 +215,13 @@ Podemos distinguir tres tipo dentro de este cableado:
 
 El cable UTP (Par trenzado no apantallado o sin blindaje) es el cable de red más utilizado. Consiste en pares de cobre trenzados rodeados por una funda de plástico. Existen distintas categorías de cables UTP, cada una de las cuales especifica unas características eléctricas para el cable. Lo más utilizados actualmente en redes locales son la categoría 5 (cat5) y la 5 mejorada (cat5e).
 
-<center>![UTP](assets/images/ud2/img10.png){ width="300" }</center>
+![UTP](assets/images/ud2/img10.png){ width="300" }
 
 ###### STP
 
 El cable SPT (Par trenzado apantallado o blindado) se caracteriza porque cada par va recubierto por una malla conductora, la cual es mucho más protectora y de mucha más calidad que la utilizada en el UTP. La protección de este cable ante perturbaciones es mucho mayor a la del UTP. Sus desventajas son que es un cable caro y recio/fuerte. Se suele utilizar en las instalaciones de procesamiento de datos.
 
-<center>![STP](assets/images/ud2/img11.png){ width="300" }</center>
+![STP](assets/images/ud2/img11.png){ width="300" }
 
 ###### FTP
 
@@ -229,7 +229,7 @@ El cable FTP (Par trenzado con pantalla global) posee una amplia pantalla global
 
 Se suele utilizar para aplicaciones que se van a someter a una elevada interferencia electromagnética externa, ya que este cable tiene un gran aislamiento de la señal.
 
-<center>![FTP](assets/images/ud2/img12.png){ width="300" }</center>
+![FTP](assets/images/ud2/img12.png){ width="300" }
 
 Una de las ventajas del cable FTP es su capacidad para configurarse en distintas topologías, como estrella y bus; además, su instalación es sencilla.
 
@@ -240,7 +240,7 @@ Sin embargo, también presenta desventajas, como una alta sensibilidad al ruido 
 
 El cable coaxial está compuesto por un conductor central rodeado de material aislante, el cual a su vez está envuelto en una malla metálica y una cubierta exterior. Esta estructura está diseñada para proteger las transmisiones contra interferencias electromagnéticas.
 
-<center>![Cable coaxial](assets/images/ud2/img14.png){ width="300" }</center>
+![Cable coaxial](assets/images/ud2/img14.png){ width="300" }
 
 Existen esencialmente dos tipos de cable coaxial: banda base (también conocido como cable fino) y banda ancha (o cable grueso). La principal diferencia entre ambos radica en su impedancia, siendo de 50 ohmios para el cable de banda base y de 75 ohmios para el de banda ancha. El primero se utiliza principalmente para transmisiones digitales, mientras que el segundo se emplea en transmisiones analógicas.
 
@@ -264,7 +264,7 @@ Actualizaciones y consideraciones actuales:
 
 El cable de fibra óptica transmite información mediante pulsos de luz en lugar de señales eléctricas, lo que lo hace inmune a las interferencias electromagnéticas y especialmente adecuado para transmisiones a larga distancia. Mientras que los cables de cobre suelen limitar la transmisión de datos a unos pocos cientos de metros, la fibra óptica puede operar eficientemente en distancias de hasta 100 km o más sin necesidad de repetidores. Los conectores más comunes utilizados en instalaciones de fibra óptica para redes de área local son los tipos SC, ST y LC, siendo este último cada vez más popular por su tamaño compacto y facilidad de uso.
 
-<center>![Cable fibra óptica](assets/images/ud2/img13.png){ width="400" }</center>
+![Cable fibra óptica](assets/images/ud2/img13.png){ width="400" }
 
 El espectro de la luz natural abarca un rango continuo de frecuencias distintas (ultravioleta, visible, infrarrojo, etc.), lo que no la convierte en una fuente ideal para la transmisión de datos debido a su incoherencia y dispersión. Por ello, se emplean fuentes de luz especializadas para garantizar una comunicación eficiente:
 
@@ -424,11 +424,11 @@ Por ejemplo, si se desea transmitir la siguiente información:
 
 se expresa por filas en una tabla de 5x4 bits:
 
-<center>![Ejemplo paridad de bloque](assets/images/ud2/img15.png){ width="700" }</center>
+![Ejemplo paridad de bloque](assets/images/ud2/img15.png){ width="700" }
 
 Y se calcula la paridad por filas y por columnas:
 
-<center>![Ejemplo paridad de bloque](assets/images/ud2/img16.png){ width="700" }</center>
+![Ejemplo paridad de bloque](assets/images/ud2/img16.png){ width="700" }
 
 Los bits en cursiva y subrayados son los bits de paridad. El bit marcado con X (bit de paridad cruzada) no es significativo para este estudio. Estos bits constituyen la paridad de bloque o checksum. La secuencia transmitida será entonces la siguiente:
 
@@ -440,7 +440,7 @@ Cuando el mensaje llega al receptor este reconstruye la tabla y comprueba que lo
 
 Por lo que la tabla anterior quedaría de la siguiente forma:
 
-<center>![Ejemplo paridad de bloque](assets/images/ud2/img17.png){ width="700" }</center>
+![Ejemplo paridad de bloque](assets/images/ud2/img17.png){ width="700" }
 
 Al recalcular los códigos de paridad, el receptor detectará que no coinciden los bits de paridad de la segunda fila y la tercera columna, que serán respectivamente 1 y 1, mientras que a él le han llegado 0 y 0.
 
@@ -454,7 +454,7 @@ Los códigos de detección de error por redundancia cíclica (**CRC**) están ba
 
 De esta forma, un mensaje de k bits será un polinomio de grado k-1 como el siguiente:
 
-<center>![CRC](assets/images/ud2/img18.png){ width="600" }</center>
+![CRC](assets/images/ud2/img18.png){ width="600" }
 
 El mecanismo de utilización del sistema de detección de errores por Códigos de Redundancia
 Cíclica (CRC) es muy simple:
@@ -569,7 +569,7 @@ Según una IP sea de clase A, B o C variará el número de bytes que dedica a su
 - En las de clase B, el ID de red son los dos primeros bytes, mientras que los dos últimos son de host.
 - En las de clase C, el ID de red son los tres primeros bytes, mientras que el último es de host.
 
-<center>![Clases de direcciones IP](assets/images/ud2/img29.png){ width="500" }</center>
+![Clases de direcciones IP](assets/images/ud2/img29.png){ width="500" }
 
 La diferencia fundamental entre estos tres tipos de redes es el tamaño de las mismas, es decir, el número de nodos que pueden añadirse a cada una de ellas y que viene determinado por el número de bits de la IP que se destinan al identificador de host.
 
@@ -625,7 +625,7 @@ Si una dirección IP viene expresada en formato binario, para determinar la clas
 | D | 1110 | 28 bits | --- | --- | --- |
 | E | 11110 | 27 bits | --- | --- | --- |
 
-<center>![Clases de direcciones IP en formato binario](assets/images/ud2/img30.png){ width="800" }</center>
+![Clases de direcciones IP en formato binario](assets/images/ud2/img30.png){ width="800" }
 
 ### Direcciones de broadcast
 

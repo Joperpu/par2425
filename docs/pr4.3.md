@@ -2,7 +2,7 @@
 
 Dado el [siguiente escenario](assets/pr4.3.pkt) de Cisco Packet Tracer:
 
-<center>![Escenario Práctica 4.2](assets/images/ud4/img12.png){ width="700" }</center>
+![Escenario Práctica 4.2](assets/images/ud4/img12.png){ width="700" }
 
 Configura las rutas estáticas para que todos los hosts sean alcanzables entre sí, dadas las siguientes condiciones:
 

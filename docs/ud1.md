@@ -6,7 +6,7 @@ La comunicación es un proceso fundamental que permite el intercambio de informa
 
 ### Elementos de la comunicación
 
-<center>![Sistema de comunicación](assets/images/ud1/img01.png){ width="800"}</center>
+![Sistema de comunicación](assets/images/ud1/img01.png){ width="800"}
 
 * **Fuente**: Origen del cual procede la información. Se le denomina **Equipo terminal de datos** o _DTE_.
 * **Emisor**: Elemento que se encarga específicamente de adaptar la señal o mensaje para transmitirlo convenientemente por un canal de transmisión. Se le denomina  **Equipo terminal de línea de comunicaciones** o _DCE_.
@@ -104,7 +104,7 @@ La topología de una red nos indica la arquitectura que posee la red, es decir, 
 
 En la topología jerárquica, también llamada en árbol, los nodos están organizados en niveles, donde los superiores controlan a los inferiores.
 
-<center>![Topología jerárquica](assets/images/ud1/img02.png){width="600"}</center>
+![Topología jerárquica](assets/images/ud1/img02.png){width="600"}
 
 * **Ventajas**:
     * Escalabilidad: Fácil de expandir añadiendo nuevos niveles.
@@ -122,7 +122,7 @@ En la topología jerárquica, también llamada en árbol, los nodos están organ
 
 En la topología en estrella, todos los nodos están conectados a un dispositivo central, como un switch o hub. Este dispositivo central actúa como un repetidor, retransmitiendo datos entre los nodos. Cada nodo tiene una conexión directa al dispositivo central, el cual es el encargado de gestionar el tráfico de la red.
 
-<center>![Topología estrella](assets/images/ud1/img03.png){width="600"}</center>
+![Topología estrella](assets/images/ud1/img03.png){width="600"}
 
 * **Ventajas**:
     * Facilidad de Gestión: Es sencillo agregar o eliminar nodos sin afectar a otros.
@@ -141,7 +141,7 @@ En la topología en estrella, todos los nodos están conectados a un dispositivo
 
 Cada nodo está conectado directamente a uno o más nodos de la red. Puede ser una malla completa (todos con todos) o parcial (algunos nodos conectados). Esta tipología permite múltiples caminos para llegar a un destino, lo cual permite una alta fiabilidad incluso aunque algunos enlaces fallen.
 
-<center>![Topología malla](assets/images/ud1/img04.png){width="600"}</center>
+![Topología malla](assets/images/ud1/img04.png){width="600"}
 
 * **Ventajas**:
     * Tolerancia a Fallos: Fallos en enlaces individuales no afectan al funcionamiento general.
@@ -161,7 +161,7 @@ Cada nodo está conectado directamente a uno o más nodos de la red. Puede ser u
 
 Todos los nodos están conectados a un único cable central llamado bus o backbone. Los datos enviados por un dispositivo se transmiten en ambas direcciones a lo largo del bus y son recibidos por todos los demás nodos de la red.
 
-<center>![Topología bus](assets/images/ud1/img05.png){width="600"}</center>
+![Topología bus](assets/images/ud1/img05.png){width="600"}
 
 * **Ventajas**:
     * Simplicidad y Economía: Fácil de instalar y requiere menos cableado.
@@ -180,7 +180,7 @@ Todos los nodos están conectados a un único cable central llamado bus o backbo
 
 En la topología en anillo, cada nodo está conectado al siguiente, formando un círculo cerrado. Los datos viajan en una dirección (unidireccional) o en ambas (bidireccional), pasando por cada nodo hasta llegar al destino.
 
-<center>![Topología bus](assets/images/ud1/img06.png){width="600"}</center>
+![Topología bus](assets/images/ud1/img06.png){width="600"}
 
 * **Ventajas**:
     * Igualdad de Acceso: Todos los nodos tienen igual oportunidad de transmitir.
@@ -200,7 +200,7 @@ En la topología en anillo, cada nodo está conectado al siguiente, formando un 
 
 La topología celular es un modelo utilizado principalmente en redes de comunicación inalámbricas, especialmente en las redes de telefonía móvil. Esta topología divide el área geográfica en secciones llamadas células, cada una de las cuales es atendida por una estación base o torre celular que proporciona cobertura dentro de su área específica.
 
-<center>![Topología bus](assets/images/ud1/img07.png){width="600"}</center>
+![Topología bus](assets/images/ud1/img07.png){width="600"}
 
 * **Ventajas**:
     * Cobertura Amplia y Continua: Permite cubrir grandes áreas geográficas, proporcionando servicio tanto en zonas urbanas como rurales.
@@ -233,13 +233,13 @@ En los sistemas posicionales cualquier número puede expresarse como suma de los
 
 El sistema decimal, o base 10, emplea para su representación los dígitos 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9. Siendo sus valores posicionales potencia de 10. Por ejemplo:
 
-<center>![Sistema decimal](assets/images/ud1/img08.png){ width="400" }</center>
+![Sistema decimal](assets/images/ud1/img08.png){ width="400" }
 
 ### Sistema de numeración binario
 
 El sistema binario o base 2, emplea para su representación los dígitos 0 ó 1, siendo sus valores posicionales potencias de 2. Es el sistema más utilizado en los sistemas digitales. Un ejemplo de su valor en función de la posición sería:
 
-<center>![Sistema decimal](assets/images/ud1/img10.png){ width="400" }</center>
+![Sistema decimal](assets/images/ud1/img10.png){ width="400" }
 
 A la hora de representarlo en un ordenador, a cada dígito del sistema binario se le denomina _bit_. Al bit más a la derecha en el número se le conoce como el _bit menos significativo_ (LSB). Por el contrario, el bit más a la izquierda del número recibe el nombre de _bit más significativo_ (MSB).
 
@@ -257,27 +257,27 @@ El sistema hexadecimal o base 16, utiliza 16 dígitos para su representación. L
 
 Sus valores posicionales se ven en la siguiente imagen:
 
-<center>![Sistema hexadecimal](assets/images/ud1/img09.png){ width="400" }</center>
+![Sistema hexadecimal](assets/images/ud1/img09.png){ width="400" }
 
 ### Sistema de numeración octal
 
 El sistema octal, o base 8, utiliza 8 dígitos para su representación (del 0 al 7), siendo sus valores posicionales como los de la siguiente imagen:
 
-<center>![Sistema octal](assets/images/ud1/img11.png){ width="400" }</center>
+![Sistema octal](assets/images/ud1/img11.png){ width="400" }
 
 ### Conversión de decimal a otro sistema
 
 Un procedimiento muy empleado para la conversión es el de las divisiones sucesivas, es decir, se divide el número entre el valor de la base sin ibtener decimales. Los cocientes resultantes se dividen nuevamente hasta que sea menor que la base. Por último, se obtiene el número en el nuevo sistema colocando el último cociente como dígito más significativo y los restos de forma ascendente de izquierda a derecha. Por ejemplo, para convertir el número 43 de sistema decimal a binario se realizaría como se muestra en la siguiente imagen:
 
-<center>![Conversión de decimal a binario](assets/images/ud1/img12.png){ width="400" }</center>
+![Conversión de decimal a binario](assets/images/ud1/img12.png){ width="400" }
 
 Para convertir el número 543 de sistema decimal a hexadecimal sería de la siguiente forma:
 
-<center>![Conversión de decimal a hexadecimal](assets/images/ud1/img13.png){ width="400" }</center>
+![Conversión de decimal a hexadecimal](assets/images/ud1/img13.png){ width="400" }
 
 Para convertir el número 209 de sistema decimal a sistema octal lo realizaríamos de la siguiente manera:
 
-<center>![Conversión de decimal a octal](assets/images/ud1/img14.png){ width="300" }</center>
+![Conversión de decimal a octal](assets/images/ud1/img14.png){ width="300" }
 
 ### Conversión de cualquier sistema a decimal
 
@@ -285,15 +285,15 @@ Por otro lado, podemos usar un método que nos permite convertir un número en c
 
 Por ejemplo, para convertir el número 101101 del sistema binario al sistema decimal:
 
-<center>![Conversión de binario a decimal](assets/images/ud1/img15.png){ width="400" }</center>
+![Conversión de binario a decimal](assets/images/ud1/img15.png){ width="400" }
 
 Para convertir el número hexadecimal 3C05 a decimal lo haríamos de la siguiente forma:
 
-<center>![Conversión de hexadecimal a decimal](assets/images/ud1/img16.png){ width="400" }</center>
+![Conversión de hexadecimal a decimal](assets/images/ud1/img16.png){ width="400" }
 
 Finalmente, para convertir el número 742 en octal a decimal, sería:
 
-<center>![Conversión de octal a decimal](assets/images/ud1/img17.png){ width="350" }</center>
+![Conversión de octal a decimal](assets/images/ud1/img17.png){ width="350" }
 
 ### Juego para practicar conversiones a binario
 
@@ -340,7 +340,7 @@ En cada fase del proceso, una PDU recibe un nombre diferente para reflejar su es
 * **Trama**: PDU de la capa de enlace.
 * **Bits**: PDU que se utiliza para transmitir físicamente los datos a través de un medio.
 
-<center>![Encapsulación](assets/images/ud1/img18.png){ width="750" }</center>
+![Encapsulación](assets/images/ud1/img18.png){ width="750" }
 
 En todas las capas de una arquitectura de red se añaden cabeceras de control para facilitar la comunicación, y estas cabeceras varían según el protocolo utilizado en cada nivel. Por ejemplo, en una arquitectura de siete capas se añaden seis cabceras de control al mensaje original durante la transmisión. La última capa generalmente no añade información adocional, ya que su función es transmitir los bits por el medio físico.
 
@@ -383,7 +383,7 @@ Aunque el modelo OSI es exhaustivo y proporciona una guía completa para la comu
 
 Estas adaptaciones reflejan la evolución de las tecnologías de red y las necesidades cambiantes en las comunicaciones, demostrando que, si bien el modelo OSI es una herramienta valiosa para comprender y diseñar sistemas de comunicación, las implementaciones prácticas a menudo requieren ajustes y personalizaciones para adaptarse a contextos específicos.
 
-<center>![Modelo OSI](assets/images/ud1/img19.jpg){ width="750" }</center>
+![Modelo OSI](assets/images/ud1/img19.jpg){ width="750" }
 
 ### Modelo TCP/IP
 
@@ -407,13 +407,13 @@ Los niveles o capas de este modelo son los siguientes:
 
 4. **Capa de aplicación**: Al igual que en el modelo OSI, esta capa incluye todos los protocolos de alto nivel que utilizan las aplicaciones para comunicarse. Aquí se encuentran protocolos como FTP para la transferencia de archivos, HTTP que utilizan los navegadores para acceder a páginas web, y los protocolos para la gestión del correo electrónico, entre otros.
 
-<center>![Modelo TCP/IP](assets/images/ud1/img20.png){ width="600" }</center>
+![Modelo TCP/IP](assets/images/ud1/img20.png){ width="600" }
 
 ### Comparación entre OSI Y TCP/IP
 
 Los modelos OSI y TCP/IP son fundamentales para comprender el funcionamiento de las redes de comunicación. Aunque ambos sirven para estructurar y entender cómo se transmiten los datos a través de una red, presentan diferencias en su enfoque y aplicación.
 
-<center>![Comparación OSI y TCP/IP](assets/images/ud1/img21.png){ width="500" }</center>
+![Comparación OSI y TCP/IP](assets/images/ud1/img21.png){ width="500" }
 
 #### Ventajas del modelo OSI:
 
@@ -453,7 +453,7 @@ Para conformar una red, se emplea una variedad de dispositivos capaces de operar
 
 El repetidor es un sistema de interconexión que opera en la capa física. Las señales que transportan información en una red pueden viajar una distancia fija antes de que la atenuación ponga en peligro la integridad de los datos. Un repetidor recibe la señal y la regenera, enviándola refrescada. Este dispositivo puede extender la lóngitud física de una LAN. La ausencia de procesamiento de la señal provoca una gran velocidad repitiéndola.
 
-<center>![Repetidor inalámbrico](assets/images/ud1/img22.jpg){ width="400"}</center>
+![Repetidor inalámbrico](assets/images/ud1/img22.jpg){ width="400"}
 
 Es importante destacar que el repetidor no conecta dos LAN distintas, sino varios segmentos de la misma LAN. En la actualidad los repetidores se han vuelto muy populares a nivel de redes inalámbricas, ya que regeneran la señal para aumentar la coberta de una WLAN.
 
@@ -461,7 +461,7 @@ Es importante destacar que el repetidor no conecta dos LAN distintas, sino vario
 
 Un hub, o concentrador, es un dispositivo de red que se utiliza para conectar múltiples equipos o dispositivos dentro de una red de área local (LAN). Operando en la capa física del modelo OSI, su función principal es facilitar la comunicación entre los dispositivos conectados al reenviar los datos recibidos a todos los puertos del hub.
 
-<center>![Hub](assets/images/ud1/img23.jpg){ width="400"}</center>
+![Hub](assets/images/ud1/img23.jpg){ width="400"}
 
 Cuando un dispositivo envía datos al hub, este toma esa señal y la retransmite a todos los demás puertos, sin distinguir cuál es el destinatario real. Esto significa que todos los dispositivos conectados reciben los datos, aunque solo uno sea el destinatario previsto. Este método de transmisión puede generar tráfico innecesario en la red y potenciales colisiones de datos, especialmente en redes con mucho tráfico.
 
@@ -471,7 +471,7 @@ Los hubs son dispositivos no inteligentes y no gestionables, ya que no pueden fi
 
 Un switch, o conmutador, es un dispositivo de red utilizado para conectar múltiples equipos o dispositivos dentro de una red de área local (LAN). A diferencia de un hub, que opera en la capa física del modelo OSI y transmite los datos a todos los puertos, un switch funciona en la capa de enlace de datos. Esto le permite gestionar el tráfico de datos de manera más eficiente y dirigida.
 
-<center>![Switch](assets/images/ud1/img24.jpg){ width="400"}</center>
+![Switch](assets/images/ud1/img24.jpg){ width="400"}
 
 Cuando un dispositivo conectado al switch envía datos, el switch analiza la dirección MAC (Media Access Control) de destino contenida en los paquetes. Utilizando una tabla de direcciones MAC que mantiene internamente, el switch identifica el puerto específico al que está conectado el dispositivo de destino y envía los datos únicamente a ese puerto. Este proceso reduce significativamente el tráfico innecesario en la red y minimiza las colisiones, mejorando el rendimiento y la eficiencia general de la red.
 
@@ -481,7 +481,7 @@ Además, los switches pueden segmentar la red en múltiples dominios de colisió
 
 Un punto de acceso inalámbrico, también conocido como Wireless Access Point o WAP, es un dispositivo de red que permite conectar dispositivos inalámbricos a una red de área local (LAN) cableada utilizando tecnologías inalámbricas como Wi-Fi. Actúa como un puente entre la red cableada y los dispositivos inalámbricos, facilitando que ordenadores portátiles, smartphones, tablets y otros equipos con capacidad inalámbrica accedan a la red y, a través de ella, a Internet.
 
-<center>![WAP](assets/images/ud1/img25.jpg){ width="400"}</center>
+![WAP](assets/images/ud1/img25.jpg){ width="400"}
 
 Operando principalmente en la capa física y de enlace de datos del modelo OSI, el punto de acceso inalámbrico recibe señales inalámbricas de los dispositivos y las convierte en señales eléctricas para transmitirlas a través de la red cableada, y viceversa.
 
@@ -489,7 +489,7 @@ Operando principalmente en la capa física y de enlace de datos del modelo OSI, 
 
 Un router, también conocido como enrutador, es un dispositivo de red que se utiliza para conectar múltiples redes y dirigir el tráfico de datos entre ellas. Operando en la capa de red del modelo OSI, su función principal es determinar la mejor ruta para enviar paquetes de datos desde su origen hasta su destino a través de diferentes redes interconectadas.
 
-<center>![Router](assets/images/ud1/img26.jpg){ width="400"}</center>
+![Router](assets/images/ud1/img26.jpg){ width="400"}
 
 Características clave de un router:
 

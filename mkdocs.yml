@@ -75,3 +75,5 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - md_in_html
+  - admonition
+  - pymdownx.details

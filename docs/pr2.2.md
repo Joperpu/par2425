@@ -31,7 +31,7 @@ Utiliza las conclusiones obtenidas a lo largo de las cuestiones anteriores para 
 
 Supongamos que tenemos cuatro ordenadores en las que hemos usado el comando ipconfig. Tras ello, hemos obtenido sus direcciones de red, máscaras de subred y puerta de enlace predeterminadas:
 
-<center>![Hosts en red](assets/images/ud2/img31.png){ width="700" }</center>
+![Hosts en red](assets/images/ud2/img31.png){ width="700" }
 
 Responde a las siguientes cuestiones:
 

@@ -11,7 +11,7 @@ Utiliza el simulador Cisco Packet Tracer para reproducir el escenario adjunto. C
 - Confirma la comunicación entre equipos usando los comandos ipconfig y ping.
 - Confirma que dos equipos con conexión física no tienen por qué comunicarse si no están en la misma red lógica.
 
-<center>![Esquema de red](assets/images/ud2/img32.png){ width="800" }</center>
+![Esquema de red](assets/images/ud2/img32.png){ width="800" }
 
 A continuación, realiza los siguientes comandos:
 

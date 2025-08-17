@@ -116,7 +116,7 @@ El servidor DHCPv4 integrado en Cisco IOS permite ofrecer direcciones IP, junto 
 
 Para ilustrar esta funcionalidad, se utilizará una red de ejemplo, en la que el router R1 dispone de dos interfaces ya configuradas con sus respectivas direcciones IP y máscaras de subred.
 
-<center>![Escenario DHCPv4](assets/images/ud4/img13.png){ width="700" }</center>
+![Escenario DHCPv4](assets/images/ud4/img13.png){ width="700" }
 
 
 A continuación, se detallarán todos los pasos necesarios para configurar un servidor DHCP completo en el router R1, permitiendo así la distribución automática de direcciones IPv4 y parámetros adicionales a los clientes conectados.

@@ -1,5 +1,8 @@
 # Planificación y administración de redes
 
+!!! info "Créditos y licencia"
+    Estos apuntes se han elaborado en parte a partir de los materiales de Rafael Lozano, disponibles bajo licencia CC BY-NC-SA 4.0, y de David Martín. Los presentes apuntes se comparten bajo la misma licencia CC BY-NC-SA 4.0.
+
 ## Introducción
 
 Bienvenido a los apuntes del módulo profesional de **Planificación y administración de redes** que se imparte en el primer curso del *Ciclo formativo de Grado Superior de Administración de Sistemas Informáticos en Red*.

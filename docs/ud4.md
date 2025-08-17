@@ -41,7 +41,7 @@ La tabla de enrutamiento de un router puede contener varios tipos de rutas:
 - **Rutas remotas**. Son rutas que conducen a redes que no están conectadas directamente al router, sino a través de otros routers. Estas rutas pueden configurarse de forma manual por el administrador o aprenderse de manera automática mediante protocolos de enrutamiento dinámico, que permiten a los routers intercambiar información sobre rutas.
 - **Ruta predeterminada**. Igual que ocurre en los hosts, los routers también disponen de una ruta predeterminada. Esta se utiliza como último recurso para reenviar paquetes cuyo destino no coincide con ninguna de las otras rutas especificadas en la tabla.
 
-<center>![Enrutamiento](assets/images/ud4/img01.png){ width="700" }</center>
+![Enrutamiento](assets/images/ud4/img01.png){ width="700" }
 
 Además de contener información sobre rutas hacia redes directamente conectadas y redes remotas, la tabla de enrutamiento también incluye detalles adicionales como el método mediante el cual se aprendió la ruta, su grado de confiabilidad, la métrica o coste asociado, la fecha y hora de la última actualización, así como la interfaz de red que se debe utilizar para alcanzar el destino especificado.
 
@@ -178,7 +178,7 @@ La configuración de una interfaz de red se realiza utilizando el comando ip add
 
 A continuación, se mostrará un ejemplo práctico de configuración basado en una red específica.
 
-<center>![Configuración interfaces del router](assets/images/ud4/img02.png){ width="700" }</center>
+![Configuración interfaces del router](assets/images/ud4/img02.png){ width="700" }
 
 El router R1 se conecta a LAN1, compuesta por un switch y un PC, a través de su interfaz GigabitEthernet 0/0. De manera similar, el router R2 establece conexión con LAN2, que también incluye un switch y un PC, mediante su interfaz GigabitEthernet 0/0. Finalmente, el router R3 se conecta a LAN3, la cual presenta la misma estructura de dispositivos. Siempre que un router se conecte a una red local (LAN), se emplearán interfaces de tipo GigabitEthernet, adecuadas para redes locales de alta velocidad.
 
@@ -365,7 +365,7 @@ Para que un dispositivo pueda comunicarse a través de una red, es necesario con
 - **Máscara de subred**. Define a qué subred pertenece el host, facilitando la segmentación y el enrutamiento.
 - **Puerta de enlace predeterminada**. Es la dirección IP del router al que se deben enviar los paquetes cuyo destino no se encuentra dentro de la misma subred local.
 
-<center>![Puerta de enlace predeterminada](assets/images/ud4/img03.png){ width="700" }</center>
+![Puerta de enlace predeterminada](assets/images/ud4/img03.png){ width="700" }
 
 Cuando un host envía un paquete dirigido a otro dispositivo ubicado dentro de su misma red IP, el paquete se entrega directamente a través de la interfaz del host hacia el dispositivo de destino. Sin embargo, si el paquete tiene como destino un dispositivo ubicado en una red diferente, el host no puede comunicarse directamente con él. En su lugar, el paquete se reenvía a la puerta de enlace predeterminada, que es la encargada de redirigirlo hacia su destino final. La puerta de enlace actúa, por tanto, como intermediario entre la red local y las redes externas, y en muchos casos permite el acceso a Internet.
 
@@ -379,7 +379,7 @@ Como se explicó anteriormente, para que un equipo pueda comunicarse en la red, 
 
 Si un PC únicamente necesita comunicarse con otros dispositivos dentro de su misma red local, basta con que tenga asignadas una dirección IP y una máscara de subred. No obstante, si requiere establecer comunicación con equipos ubicados en redes distintas, también será necesario configurar la puerta de enlace predeterminada, que permitirá enviar el tráfico hacia destinos fuera de la red local.
 
-<center>![Configuración IP](assets/images/ud4/img04.png){ width="300" }</center>
+![Configuración IP](assets/images/ud4/img04.png){ width="300" }
 
 ## Encaminamiento IPv4
 
@@ -391,7 +391,7 @@ Una de las funciones fundamentales de un router es determinar la ruta óptima pa
 
 - **Sin ruta específica**. Si la dirección IP de destino no coincide con ninguna red directamente conectada ni remota, el router verifica si dispone de una ruta predeterminada, también conocida como gateway de último recurso. Esta ruta puede ser configurada manualmente o aprendida dinámicamente. Si dicha ruta existe, el paquete se reenvía a través de ella. En caso de que no exista una ruta predeterminada, el router descarta el paquete por no tener una ruta válida para su entrega.
 
-<center>![Reenvío de paquetes](assets/images/ud4/img05.png){ width="600" }</center>
+![Reenvío de paquetes](assets/images/ud4/img05.png){ width="600" }
 
 Es posible que un router disponga de múltiples rutas hacia una misma red de destino. En tal caso, debe determinar cuál de ellas representa la mejor ruta. Este proceso implica evaluar todas las rutas disponibles hacia dicha red y seleccionar la más eficiente o la que ofrezca el camino más corto. Cada una de estas rutas puede implicar el uso de una interfaz de salida distinta en el router para alcanzar el destino.
 
@@ -428,7 +428,7 @@ Cada protocolo de enrutamiento define su propia forma de calcular la métrica, y
 
 A continuación, se presenta un ejemplo práctico con una red compuesta por los routers R1, R2, R3 y R4, que servirá para ilustrar cómo se aplica el concepto de métrica en la selección de rutas.
 
-<center>![Métrica](assets/images/ud4/img06.png){ width="500" }</center>
+![Métrica](assets/images/ud4/img06.png){ width="500" }
 
 El router R1 debe decidir cuál es la mejor ruta para alcanzar la red 172.16.23.0/24, ya que existen dos caminos posibles: uno directo a través de R4, y otro más largo que pasa por R2 → R3 → R4. A primera vista, parecería lógico suponer que el camino más corto, el que conecta directamente con R4, sería el más adecuado. De hecho, esto es precisamente lo que ocurre cuando se utiliza el protocolo de enrutamiento RIP en toda la topología.
 
@@ -485,7 +485,7 @@ show ip route
 
 Este comando muestra la tabla de enrutamiento IPv4 del dispositivo. La salida incluye información detallada sobre cada ruta, como la forma en que fue descubierta (estática, dinámica, conectada), el tiempo de permanencia en la tabla, y la interfaz exacta que debe emplearse para reenviar paquetes hacia cada red de destino.
 
-<center>![Router R1](assets/images/ud4/img07.png){ width="600" }</center>
+![Router R1](assets/images/ud4/img07.png){ width="600" }
 
 Las entradas de la tabla de enrutamiento pueden ser generadas por distintos mecanismos, dependiendo de cómo se ha configurado y gestionado la red. Las formas más comunes de añadir rutas a la tabla son las siguientes:
 
@@ -508,7 +508,7 @@ Estos códigos ayudan a interpretar y analizar el contenido de la tabla de enrut
 
 En siguiente imagen, se muestra una entrada de la tabla de enrutamiento IPv4 en el R1 para la ruta a la red remota 10.1.1.0/24.
 
-<center>![Entrada de tabla de enrutamiento](assets/images/ud4/img08.png){ width="600" }</center>
+![Entrada de tabla de enrutamiento](assets/images/ud4/img08.png){ width="600" }
 
 Cada entrada en la tabla de enrutamiento proporciona información detallada que permite al router tomar decisiones informadas sobre el reenvío de paquetes. Los campos más relevantes que se incluyen en una entrada son los siguientes:
 	
@@ -679,7 +679,7 @@ Para reducir el número de entradas en la tabla de enrutamiento, es posible agru
 
 Este enfoque permite optimizar la tabla de enrutamiento, reduciendo su tamaño y facilitando su mantenimiento. A continuación, se presentará un ejemplo basado en una topología de red específica.
 
-<center>![Ruta estática resumida](assets/images/ud4/img09.png){ width="700" }</center>
+![Ruta estática resumida](assets/images/ud4/img09.png){ width="700" }
 
 En el ejemplo mostrado, el router R1 necesita configurar cuatro rutas estáticas individuales para alcanzar las redes comprendidas entre 192.168.0.0/24 y 192.168.3.0/24. No obstante, estas rutas pueden reemplazarse por una única ruta estática resumida, lo que permite reducir el número de entradas en la tabla de enrutamiento y, en consecuencia, mejorar la eficiencia del proceso de reenvío de paquetes.
 
@@ -772,7 +772,7 @@ Para configurar una ruta estática flotante IPv4, se utiliza el comando ip route
 
 A continuación, se presentará un ejemplo práctico basado en una topología de red concreta.
 
-<center>![Ruta estática flotante](assets/images/ud4/img10.png){ width="700" }</center>
+![Ruta estática flotante](assets/images/ud4/img10.png){ width="700" }
 
 En este escenario, la ruta predeterminada preferida para ir desde la red 192.168.0.0/24 hacia la 192.168.1.0/24 es a través del enlace entre R2 y R3. La conexión con R1 se debe usar únicamente como respaldo.
 
@@ -840,7 +840,7 @@ S 192.168.1.0/24 [5/0] via 172.16.0.2
 
 Esto demuestra que, ante una caída de la ruta principal, el router es capaz de utilizar automáticamente la ruta estática flotante para mantener la conectividad. En la siguiente imagen podemos ver la traza de conectividad de PC0 a PC1:
 
-<center>![Tracert](assets/images/ud4/img11.png){ width="600" }</center>
+![Tracert](assets/images/ud4/img11.png){ width="600" }
 
 ### Verificar las rutas estáticas
 
